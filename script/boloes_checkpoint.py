@@ -1,0 +1,514 @@
+# -*- coding: utf-8 -*-
+"""
+Checkpoint / retomada da extração de bolões (API).
+
+Não altera login, navegação nem parsing — só persiste progresso entre páginas
+para permitir pausar e continuar do próximo número de página.
+"""
+from __future__ import annotations
+
+import json
+import os
+import re
+import threading
+import time
+from datetime import datetime
+from typing import Any, Callable, Dict, List, Optional, Tuple
+
+STATUS_EXECUTANDO = 'Em execução'
+STATUS_PAUSADO = 'Pausado'
+STATUS_CONCLUIDO = 'Concluído'
+
+_NOME_CHECKPOINT = '_checkpoint_extracao.json'
+_NOME_CHECKPOINT_ESPELHO = 'checkpoint_extracao.json'
+_NOMES_CHECKPOINT = (_NOME_CHECKPOINT, _NOME_CHECKPOINT_ESPELHO)
+_NOME_PAUSE = '_PAUSE.request'
+
+# Flag em memória (thread do terminal pode setar)
+_pause_solicitada = False
+_pause_lock = threading.Lock()
+
+
+def caminho_checkpoint(pasta_json: str) -> str:
+    return os.path.join(pasta_json, _NOME_CHECKPOINT)
+
+
+def caminho_pause_request(pasta_json: str) -> str:
+    return os.path.join(pasta_json, _NOME_PAUSE)
+
+
+def agora_iso() -> str:
+    return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+
+def limpar_pause_request(pasta_json: str) -> None:
+    path = caminho_pause_request(pasta_json)
+    try:
+        if os.path.isfile(path):
+            os.remove(path)
+    except OSError:
+        pass
+
+
+def solicitar_pause(pasta_json: str) -> None:
+    """Cria arquivo de pedido de pausa (termina a página atual e para)."""
+    global _pause_solicitada
+    with _pause_lock:
+        _pause_solicitada = True
+    os.makedirs(pasta_json, exist_ok=True)
+    with open(caminho_pause_request(pasta_json), 'w', encoding='utf-8') as f:
+        f.write(agora_iso())
+
+
+def reset_pause_flags(pasta_json: str) -> None:
+    global _pause_solicitada
+    with _pause_lock:
+        _pause_solicitada = False
+    limpar_pause_request(pasta_json)
+
+
+def pause_solicitada(pasta_json: str) -> bool:
+    with _pause_lock:
+        if _pause_solicitada:
+            return True
+    if os.path.isfile(caminho_pause_request(pasta_json)):
+        return True
+    # Tecla P sem Enter (Windows)
+    try:
+        import msvcrt
+        while msvcrt.kbhit():
+            ch = msvcrt.getwch()
+            if ch in ('p', 'P'):
+                solicitar_pause(pasta_json)
+                return True
+    except Exception:
+        pass
+    return False
+
+
+def instruir_pause(pasta_json: str, out_fn: Callable[[str], None] = print) -> None:
+    out_fn('  [CHECKPOINT] PAUSAR: pressione a tecla P (sem Enter) ou crie:')
+    out_fn(f'               {caminho_pause_request(pasta_json)}')
+
+
+def carregar_checkpoint(pasta_json: str) -> Optional[Dict[str, Any]]:
+    """Lê _checkpoint_extracao.json e o espelho sem underscore; fica com o mais avançado."""
+    melhores: List[Dict[str, Any]] = []
+    for nome in _NOMES_CHECKPOINT:
+        path = os.path.join(pasta_json, nome)
+        if not os.path.isfile(path):
+            continue
+        try:
+            with open(path, encoding='utf-8') as f:
+                data = json.load(f)
+            if isinstance(data, dict):
+                melhores.append(data)
+        except Exception:
+            continue
+    if not melhores:
+        return None
+
+    def _chave(ck: Dict[str, Any]) -> tuple:
+        return (
+            int(ck.get('boloes_extraidos') or 0),
+            ck.get('atualizado_em') or '',
+            int(ck.get('pagina_atual') or 0),
+        )
+
+    melhores.sort(key=_chave, reverse=True)
+    return melhores[0]
+
+
+def salvar_checkpoint(
+    pasta_json: str,
+    *,
+    modalidade: str = '',
+    modalidade_label: str = '',
+    concurso: str = '',
+    arquivo_base: str = '',
+    pagina_atual: int = 0,
+    total_paginas: int = 0,
+    boloes_extraidos: int = 0,
+    status: str = STATUS_EXECUTANDO,
+    extra: Optional[Dict[str, Any]] = None,
+) -> str:
+    """Grava checkpoint atômico (tmp + replace)."""
+    os.makedirs(pasta_json, exist_ok=True)
+    path = caminho_checkpoint(pasta_json)
+    payload: Dict[str, Any] = {
+        'modalidade': modalidade or '',
+        'modalidade_label': modalidade_label or '',
+        'concurso': re.sub(r'\D', '', str(concurso or '')) or '',
+        'arquivo_base': (arquivo_base or '').removesuffix('.json'),
+        'pagina_atual': int(pagina_atual or 0),
+        'proxima_pagina': int(pagina_atual or 0) + 1 if status != STATUS_CONCLUIDO else 0,
+        'total_paginas': int(total_paginas or 0),
+        'boloes_extraidos': int(boloes_extraidos or 0),
+        'atualizado_em': agora_iso(),
+        'status': status,
+    }
+    if extra:
+        payload.update(extra)
+
+    tmp = path + '.tmp'
+    with open(tmp, 'w', encoding='utf-8') as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    os.replace(tmp, path)
+    espelho = os.path.join(pasta_json, _NOME_CHECKPOINT_ESPELHO)
+    try:
+        with open(espelho, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+    except OSError:
+        pass
+    return path
+
+
+def checkpoint_incompleto(ck: Optional[Dict[str, Any]]) -> bool:
+    if not ck:
+        return False
+    status = str(ck.get('status') or '')
+    if status == STATUS_CONCLUIDO:
+        return False
+    return int(ck.get('pagina_atual') or 0) > 0
+
+
+def ultima_pagina_do_json(boloes: List[dict]) -> int:
+    """Maior campo 'pagina' já gravado (pode incluir página isolada / buraco)."""
+    mx = 0
+    for b in boloes or []:
+        try:
+            p = int(b.get('pagina') or 0)
+        except (TypeError, ValueError):
+            p = 0
+        if p > mx:
+            mx = p
+    return mx
+
+
+def ultima_pagina_completa_sequencial(boloes: List[dict]) -> int:
+    """
+    Última página COMPLETA em sequência a partir de 1.
+
+    Se o JSON tem 1–8 e um leftover 13, retorna 8 (retomada na 9),
+    não 13 (isso mandava o site para 14 e caía na página 1).
+<<<<<<< HEAD
+    """
+    vistos = set()
+=======
+
+    A última página presente com poucos bolões (ex.: 4 de 30, salto
+    falso para 182) NÃO conta como completa.
+    """
+    cont: Dict[int, int] = {}
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+    for b in boloes or []:
+        try:
+            p = int(b.get('pagina') or 0)
+        except (TypeError, ValueError):
+            p = 0
+        if p > 0:
+<<<<<<< HEAD
+            vistos.add(p)
+    n = 1
+    while n in vistos:
+=======
+            cont[p] = cont.get(p, 0) + 1
+    n = 1
+    while n in cont:
+        eh_ultima = (n + 1) not in cont
+        if eh_ultima and n > 1:
+            prev = cont.get(n - 1) or 30
+            minimo = min(15, max(8, prev // 2))
+            if cont[n] < minimo:
+                break
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+        n += 1
+    return n - 1
+
+
+<<<<<<< HEAD
+def boloes_do_concurso(boloes: List[dict], concurso: str) -> List[dict]:
+    """Só os registros deste concurso. Outro concurso não define a página de retomada."""
+    conc = re.sub(r'\D', '', str(concurso or ''))
+    if not conc:
+        return list(boloes or [])
+    return [
+        b for b in (boloes or [])
+        if re.sub(r'\D', '', str(b.get('concurso') or '')) == conc
+    ]
+
+
+=======
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+def resolver_pagina_retomada(
+    pasta_json: str,
+    arquivo_base: str,
+    boloes_existentes: List[dict],
+    uf: str = '',
+) -> Tuple[int, Optional[Dict[str, Any]]]:
+    """
+    Retorna (ultima_pagina_ok, checkpoint).
+
+    Fonte da verdade: páginas 1..N sem buraco no JSON da modalidade.
+    Checkpoint só entra se for da MESMA arquivo e não pular o buraco
+    (ex.: ck=13 com JSON só até 8 → usa 8).
+<<<<<<< HEAD
+=======
+    Se uf for informada, ignora a página do checkpoint de outra UF
+    (evita retomar AC na pág. 272 só porque SP parou lá).
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+    """
+    ck = carregar_checkpoint(pasta_json)
+    seq = ultima_pagina_completa_sequencial(boloes_existentes)
+    pagina_ck = int((ck or {}).get('pagina_atual') or 0)
+    if uf:
+        ck_uf = str((ck or {}).get('uf_atual') or '').upper()
+        if ck_uf != uf.upper():
+            pagina_ck = 0
+
+    if ck and arquivo_base:
+        ab_ck = str(ck.get('arquivo_base') or '').removesuffix('.json')
+        ab = arquivo_base.removesuffix('.json')
+        if ab_ck and ab and ab_ck != ab:
+<<<<<<< HEAD
+            # Outro concurso da MESMA modalidade: o checkpoint ainda vale.
+            # Sem isso o reinício caía na página 2 e baixava tudo de novo.
+            slug_ck = '_'.join(ab_ck.split('_')[2:])
+            slug_ab = '_'.join(ab.split('_')[2:])
+            if (
+                slug_ck
+                and slug_ck == slug_ab
+                and checkpoint_incompleto(ck)
+                and pagina_ck > 0
+            ):
+                return max(pagina_ck, seq), ck
+            return seq, None
+        # Mesma extração: o checkpoint é onde parou. Não volta para a
+        # página 1 só porque o campo "pagina" do JSON tem buraco.
+        if checkpoint_incompleto(ck) and pagina_ck > 0:
+            return max(pagina_ck, seq), ck
+
+    if pagina_ck > seq + 1:
+        pagina_ck = seq
+
+    if ck and checkpoint_incompleto(ck) and pagina_ck > 0:
+        return max(pagina_ck, seq), ck
+=======
+            return seq, None
+
+    tem_arquivo = _arquivo_sessao_existe(pasta_json, arquivo_base)
+
+    if pagina_ck > seq + 1:
+        if seq > 0:
+            # Checkpoint à frente de um buraco (13 vs 8) — ignora o ck
+            pagina_ck = seq
+        elif not tem_arquivo:
+            # Checkpoint órfão (sem JSON na pasta)
+            pagina_ck = 0
+        # else: JSON na pasta mas não leu itens (Drive/parse) — CONFIA no checkpoint
+
+    if ck and checkpoint_incompleto(ck) and pagina_ck > 0:
+        if seq <= 0 and tem_arquivo:
+            return pagina_ck, ck
+        return max(pagina_ck, seq) if pagina_ck <= seq + 1 else seq, ck
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+
+    ultima = max(pagina_ck, seq)
+    if ultima <= 0:
+        return 0, ck if checkpoint_incompleto(ck) else None
+    return ultima, ck
+
+
+def decidir_pagina_inicial(
+    pasta_json: str,
+    arquivo_base: str,
+    boloes_existentes: Optional[List[dict]] = None,
+    pagina_ciclo: int = 0,
+    uf: str = '',
+) -> Tuple[int, int]:
+    """
+    Página em que a extração deve começar, olhando o JSON na pasta + checkpoint.
+
+    Retorna (pagina_inicial, n_registros).
+    pagina_inicial = 1 (arquivo novo) ou ultima_completa + 1 (retomada).
+    uf: se informado, o checkpoint de outra UF não empurra a página.
+    """
+    existentes = list(boloes_existentes or [])
+    ultima, ck = resolver_pagina_retomada(pasta_json, arquivo_base, existentes, uf=uf)
+    n = len(existentes) or int((ck or {}).get('boloes_extraidos') or 0)
+    pag_ciclo = int(pagina_ciclo or 0)
+    # Não herda pág. do ciclo se o JSON já tem sequência completa (evita 183 com 182 incompleta).
+    if pag_ciclo > ultima and ultima <= 0 and _arquivo_sessao_existe(pasta_json, arquivo_base):
+        ultima = pag_ciclo
+    if ultima > 0:
+        return ultima + 1, n
+    return 1, n
+
+
+def _arquivo_sessao_existe(pasta_json: str, arquivo_base: str) -> bool:
+    """True se o JSON da sessão existe de fato na pasta (não só checkpoint)."""
+    ab = (arquivo_base or '').removesuffix('.json').strip()
+    if not ab or not pasta_json:
+        return False
+    path = os.path.join(pasta_json, f'{ab}.json')
+    try:
+        return os.path.isfile(path) and os.path.getsize(path) > 2
+    except OSError:
+        return False
+
+
+def perguntar_retomada(
+    pasta_json: str,
+    arquivo_base: str,
+    boloes_existentes: List[dict],
+    *,
+    input_fn: Callable[[str], str] = input,
+    out_fn: Callable[[str], None] = print,
+) -> Tuple[int, bool]:
+    """
+    Se houver extração incompleta, pergunta ao usuário.
+    Retorna (pagina_inicial, retomou).
+    pagina_inicial = 1 (nova) ou ultima+1 (continuar).
+
+    Regra: pergunta [C/N] SE E SOMENTE SE existir o JSON daquela
+    modalidade/arquivo na pasta. Checkpoint órfão (outra mod / sem arquivo)
+    NÃO dispara pergunta.
+    """
+    ab = (arquivo_base or '').removesuffix('.json')
+    tem_arquivo = bool(boloes_existentes) or _arquivo_sessao_existe(pasta_json, ab)
+    if not tem_arquivo:
+        return 1, False
+
+    ultima, ck = resolver_pagina_retomada(pasta_json, arquivo_base, boloes_existentes)
+    if ultima <= 0:
+        return 1, False
+
+    # Checkpoint de outro JSON → não pergunta (já filtrado no resolver)
+    if ck and arquivo_base:
+        ab_ck = str(ck.get('arquivo_base') or '').removesuffix('.json')
+        if ab_ck and ab and ab_ck != ab:
+            return 1, False
+
+    status = (ck or {}).get('status') or ''
+    total = int((ck or {}).get('total_paginas') or 0)
+    # Já marcado concluído → não oferece
+    if status == STATUS_CONCLUIDO:
+        return 1, False
+
+    # Sem checkpoint mas JSON parcial: ainda oferece retomada
+    if not ck and ultima > 0:
+        status = STATUS_PAUSADO
+    qtd = int((ck or {}).get('boloes_extraidos') or len(boloes_existentes) or 0)
+    mod = (ck or {}).get('modalidade_label') or (ck or {}).get('modalidade') or '?'
+    conc = (ck or {}).get('concurso') or '?'
+    quando = (ck or {}).get('atualizado_em') or '?'
+
+    out_fn('')
+    out_fn('=' * 60)
+    out_fn('  EXTRACAO INCOMPLETA DETECTADA')
+    out_fn('=' * 60)
+    out_fn(f'  Modalidade : {mod}')
+    out_fn(f'  Concurso   : {conc}')
+    out_fn(f'  Ultima pag.: {ultima}' + (f' / {total}' if total else ''))
+    out_fn(f'  Boloes     : {qtd}')
+    out_fn(f'  Status     : {status}')
+    out_fn(f'  Atualizado : {quando}')
+    ab_show = str((ck or {}).get('arquivo_base') or arquivo_base or '').replace('_CONSOLIDADO', '')
+    out_fn(f'  Arquivo    : {ab_show}.json')
+    out_fn('-' * 60)
+    out_fn(f'  [C] Continuar da pagina {ultima + 1}')
+    out_fn('  [N] Nova extracao (desde a pagina 1)')
+    out_fn('=' * 60)
+
+    try:
+        resp = (input_fn('  Escolha [C/N] (Enter=Continuar): ') or '').strip().upper()
+    except EOFError:
+        resp = 'C'
+
+    if resp in ('N', 'NOVA', 'NEW'):
+        out_fn('  >> Nova extracao a partir da pagina 1.')
+        return 1, False
+
+    out_fn(f'  >> Continuando a partir da pagina {ultima + 1}.')
+    return ultima + 1, True
+
+
+def perguntar_retomada_varredura(
+    pasta_json: str,
+    arquivo_base: str,
+    *,
+    input_fn: Callable[[str], str] = input,
+    out_fn: Callable[[str], None] = print,
+) -> Tuple[bool, str, int, list]:
+    """
+    Retomada do modo [1] (27 UFs).
+
+    Retorna (continuar, uf_retomar, pagina_retomar, ufs_concluidas).
+    - continuar=False → usuário escolheu NOVA (começar do zero: SP pág. 1).
+    - continuar=True sem checkpoint incompleto → seguir fluxo normal (sem forçar página).
+    """
+    ck = carregar_checkpoint(pasta_json) or {}
+    ufs_ok = [str(u).upper() for u in (ck.get('ufs_concluidas') or []) if str(u).strip()]
+    status = str(ck.get('status') or '')
+    uf_atual = str(ck.get('uf_atual') or '').upper()
+    pagina_atual = int(ck.get('pagina_atual') or 0)
+    total = int(ck.get('total_paginas') or 0)
+    ab_ck = str(ck.get('arquivo_base') or '').removesuffix('.json')
+    ab = (arquivo_base or '').removesuffix('.json')
+
+    # Checkpoint de outro arquivo → não oferece retomada deste
+    if ab_ck and ab and ab_ck != ab:
+        return True, '', 1, []
+
+    incompleto = status in (STATUS_EXECUTANDO, STATUS_PAUSADO) and (
+        pagina_atual > 0 or bool(uf_atual) or bool(ufs_ok)
+    )
+    if status == STATUS_CONCLUIDO and (not total or pagina_atual >= total) and len(ufs_ok) >= 27:
+        return True, '', 1, list(ufs_ok)
+
+    if not incompleto and status != STATUS_CONCLUIDO:
+        return True, '', 1, list(ufs_ok)
+
+    # UF em andamento NÃO pode estar em "concluídas" — senão a retomada pula ela
+    if uf_atual and status in (STATUS_EXECUTANDO, STATUS_PAUSADO):
+        ufs_ok = [u for u in ufs_ok if u != uf_atual]
+
+    pagina_prox = pagina_atual + 1 if pagina_atual > 0 else 1
+    if pagina_prox < 1:
+        pagina_prox = 1
+
+    mod = ck.get('modalidade_label') or ck.get('modalidade') or '?'
+    conc = ck.get('concurso') or '?'
+    qtd = int(ck.get('boloes_extraidos') or 0)
+    quando = ck.get('atualizado_em') or '?'
+
+    out_fn('')
+    out_fn('=' * 60)
+    out_fn('  EXTRACAO INCOMPLETA DETECTADA')
+    out_fn('=' * 60)
+    out_fn(f'  Modalidade : {mod}')
+    out_fn(f'  Concurso   : {conc}')
+    out_fn(f'  UF atual   : {uf_atual or "?"}  |  página {pagina_atual}' + (f' / {total}' if total else ''))
+    out_fn(f'  Próximo    : {uf_atual or "SP"} página {pagina_prox}')
+    if ufs_ok:
+        out_fn(f'  UFs ok     : {", ".join(ufs_ok)} ({len(ufs_ok)}/27)')
+    out_fn(f'  Bolões     : {qtd}')
+    out_fn(f'  Status     : {status}')
+    out_fn(f'  Atualizado : {quando}')
+    out_fn(f'  Arquivo    : {(ab_ck or ab)}.json')
+    out_fn('-' * 60)
+    out_fn(f'  [C] Continuar de onde parou ({uf_atual or "SP"} pág. {pagina_prox})')
+    out_fn('  [N] Nova extração (SP página 1 — NÃO apaga o JSON; só reinicia o checkpoint)')
+    out_fn('=' * 60)
+
+    try:
+        resp = (input_fn('  Escolha [C/N] (Enter=Continuar): ') or '').strip().upper()
+    except EOFError:
+        resp = 'C'
+
+    if resp in ('N', 'NOVA', 'NEW'):
+        out_fn('  >> Nova varredura: SP página 1 (JSON existente será mesclado por hash).')
+        return False, '', 1, []
+
+    out_fn(f'  >> Continuando: {uf_atual or "SP"} a partir da página {pagina_prox}.')
+    return True, uf_atual, pagina_prox, ufs_ok

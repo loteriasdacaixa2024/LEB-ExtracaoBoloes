@@ -1,0 +1,164 @@
+:root {
+  --fundo: #07110f;
+  --cartao: #10211c;
+  --linha: #1e3d34;
+  --texto: #e7f6f1;
+  --mudo: #8eaea4;
+  --ciano: #3dffe8;
+  --ciano-escuro: #0e8f80;
+  --erro: #ffb4a8;
+  --erro-fundo: #3a1612;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: "Segoe UI", sans-serif;
+  color: var(--texto);
+  background:
+    radial-gradient(circle at top left, rgba(61, 255, 232, 0.08), transparent 42%),
+    var(--fundo);
+}
+
+.pagina {
+  width: 100%;
+  padding: 16px;
+}
+
+.cartao {
+  width: 100%;
+  margin: 0;
+  padding: 18px 16px 16px;
+  border: 1px solid var(--linha);
+  border-radius: 16px;
+  background: var(--cartao);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.marca img {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  background: #000;
+}
+
+.sigla {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--ciano);
+}
+
+h1 {
+  margin: 2px 0 0;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.node {
+  margin: 4px 0 0;
+  color: var(--mudo);
+  font-size: 0.92rem;
+  overflow-wrap: anywhere;
+}
+
+.texto {
+  margin: 16px 0 0;
+  color: var(--mudo);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+button {
+  width: 100%;
+  margin-top: 18px;
+  border: 0;
+  border-radius: 12px;
+  padding: 16px 18px;
+  font: inherit;
+  font-weight: 700;
+  color: #04221d;
+  background: var(--ciano);
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  color: #d7fff8;
+  background: var(--ciano-escuro);
+}
+
+.aviso,
+.status {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+  background: #0b1916;
+}
+
+.aviso {
+  margin-bottom: 0;
+  color: var(--texto);
+  line-height: 1.45;
+}
+
+.rotulo {
+  margin: 0 0 6px;
+  color: var(--mudo);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#mensagem {
+  margin: 0;
+  white-space: pre-line;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.status.erro {
+  border-color: #8a3b32;
+  background: var(--erro-fundo);
+}
+
+.status.erro #mensagem { color: var(--erro); }
+
+.status.sucesso { border-color: #1f6f62; }
+
+@media (min-width: 720px) {
+  .pagina {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 32px;
+  }
+
+  .cartao {
+    width: min(440px, 100%);
+    margin: 0 auto;
+    padding: 28px 26px 22px;
+  }
+
+  .marca img {
+    width: 72px;
+    height: 72px;
+  }
+
+  h1 { font-size: 1.7rem; }
+}

@@ -1,0 +1,2039 @@
+<<<<<<< HEAD
+[M] Tabela completa de modalidades
+[0] Fechar navegador
+------------------------------------------------------------
+  Opcional: M1-M9 | QSJ | DSP — so para forcar parser
+------------------------------------------------------------
+Opção: c
+
+============================================================
+  CICLO INCOMPLETO DETECTADO
+============================================================
+  ID        : 20261109-055728
+  Status    : EM EXECUÇÃO
+  Início    : 2026-11-09 05:57:28
+  Atualizado: 2026-11-10 18:01:04
+  Modalidade: mega-virada
+  UF        : ?
+  Próximo   : mega-sena / SP pág. 1
+  Resumo    : mods_ok=0 | ufs_ok=0 | erros=0 | bolões≈4778
+------------------------------------------------------------
+  [C] Continuar de onde parou
+  [N] Novo ciclo (NÃO apaga JSONs; reinicia só o checkpoint do ciclo)
+============================================================
+  Escolha [C/N] (Enter=Continuar): n
+  >> Novo ciclo a partir da primeira modalidade/UF.
+
+  CICLO AUTOMÁTICO:
+  — App abre inicio-bolao e lê os cards (modalidade + concurso)
+  — UM SIM: começa no Dia de Sorte
+  — Em cada página: Detalhes de todos, grava o JSON, próxima página
+  — O site troca de estado na paginação; acabou a lista, vai a próxima modalidade
+  — 1 JSON por modalidade | sem misturar
+
+Iniciando Edge (hook API)...
+
+DevTools listening on ws://127.0.0.1:51480/devtools/browser/5d88e470-2dff-4f6b-aff7-0936f1a59f15
+
+  [LOGIN AUTO] Fluxo de autenticação Caixa (módulo isolado)...
+[3984:14332:1110/180509.107:ERROR:chrome\browser\task_manager\providers\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.
+2026-11-10 18:05:09 | INFO | === Início login automatizado Caixa (módulo isolado) ===
+2026-11-10 18:05:09 | INFO | Credenciais carregadas. CPF: ***.***.***-79
+2026-11-10 18:05:09 | INFO | Senha carregada com sucesso.
+2026-11-10 18:05:09 | INFO | Etapa 1 — Abrindo portal (termos de uso)
+2026-11-10 18:05:14 | INFO | Etapa 1 — Página carregada
+2026-11-10 18:05:14 | INFO | Etapa 2 — Clique Sim (+18) — aguardando botão id=botaosim clicável
+2026-11-10 18:05:18 | INFO | Etapa 2 — Clique Sim (+18) — clique realizado em id=botaosim
+2026-11-10 18:05:23 | INFO | Etapa 3 — Aguardando botão Acessar id=btnLogin (após fechar termos)
+2026-11-10 18:05:23 | INFO | Etapa 3 — Clique Acessar — aguardando botão id=btnLogin clicável
+2026-11-10 18:05:25 | INFO | Etapa 3 — Clique Acessar — clique realizado em id=btnLogin
+[3984:14332:1110/180530.667:ERROR:chrome\browser\task_manager\providers\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.
+2026-11-10 18:05:30 | INFO | Contexto login: janela/aba URL=https://login.caixa.gov.br/auth/realms/internet/protocol/openid-connect/auth
+2026-11-10 18:05:30 | INFO | Etapa 4 — Informar CPF — localizando input#username
+2026-11-10 18:05:30 | INFO | Campo CPF encontrado via id=username (tag=input type=text)
+2026-11-10 18:05:31 | INFO | Etapa 4 — Usando elemento id=username name=username
+2026-11-10 18:05:32 | INFO | Etapa 4 — Digitação caractere a caractere concluída
+2026-11-10 18:05:32 | INFO | Etapa 4 — Campo preenchido (CPF informado: ***.***.***-79)
+2026-11-10 18:05:37 | INFO | Etapa 5 — Confirmar CPF / Próximo — aguardando botão id=button-submit clicável
+2026-11-10 18:05:38 | INFO | Etapa 5 — Confirmar CPF / Próximo — clique realizado em id=button-submit
+2026-11-10 18:05:43 | INFO | Etapa 5b — Verificando tela Vincular Dispositivo (id=vincular)
+2026-11-10 18:05:43 | INFO | Etapa 5b — Vincular não apareceu (já na validação)
+2026-11-10 18:05:43 | INFO | Etapa 6 — E-mail já selecionado (input[name='mail'][type='radio'])
+2026-11-10 18:05:43 | INFO | Etapa 6 — Clicar em Receber código
+2026-11-10 18:05:44 | INFO | Etapa 6 — Receber código — clicando via xpath=//form[@id='form-login']//div[contains(@class,'button-group')]/button[@name='login' and not(contains(@onclick,'vincularDisp'))]
+2026-11-10 18:05:44 | INFO | Etapa 6 — Receber código — clique realizado
+2026-11-10 18:05:49 | INFO | Etapa 7 — Aguardando campo id=codigo. Digite o código do e-mail no navegador. NÃO clique automático em Enviar — faça isso manualmente.
+2026-11-10 18:05:49 | INFO | Etapa 7 — Campo código visível. Aguardando preenchimento pelo operador (timeout 600s). O valor NÃO será lido nem gravado em log.
+2026-11-10 18:05:58 | INFO | Etapa 7 — Código detectado no campo (conteúdo omitido). Aguardando operador clicar em Enviar (id=login). Automação NÃO clica.
+2026-11-10 18:06:02 | INFO | Etapa 7 — Confirmação manual do código concluída (campo senha apareceu)
+2026-11-10 18:06:02 | INFO | Etapa 8 — Senha carregada com sucesso (valor omitido no log)
+2026-11-10 18:06:03 | INFO | Etapa 8 — Campo senha preenchido
+2026-11-10 18:06:04 | INFO | Etapa 9 — Clicando em Entrar (#template-section div.button-group > button[tabindex='1'])
+2026-11-10 18:06:04 | INFO | Etapa 9 — Clique Entrar — clicando via xpath=//section[@id='template-section']//div[contains(@class,'button-group')]/button[normalize-space()='Entrar']
+2026-11-10 18:06:05 | INFO | Etapa 9 — Clique Entrar — clique realizado
+2026-11-10 18:06:10 | INFO | Etapa 9 — Clique em Entrar realizado
+2026-11-10 18:06:10 | INFO | Aguardando retorno OAuth ao portal (120s) — não interromper o redirect...
+2026-11-10 18:07:29 | INFO | Sessão ativa no portal: https://www.loteriasonline.caixa.gov.br/silce-web/#/home
+2026-11-10 18:07:29 | INFO | Automação de login ENCERRADA com sessão no portal. Não recarregue a página de login.
+
+  [LOGIN] Sessão confirmada — aviso sonoro.
+  [LOGIN AUTO] Login concluído.
+  Abrindo Bolões Caixa (você já está logado)...
+
+  ========================================================
+  LOGIN AUTO FINALIZADO (Entrar já clicado pelo app)
+    [C] UM SIM → Detalhes + próxima página (o site troca o estado)
+    [1] abra a lista da modalidade e digite SIM
+  ========================================================
+  [CARDS] 9 modalidade(s) detectada(s) em inicio-bolao.
+  [CARDS] Ordem: 1º Dia de Sorte → depois maior premiação.
+    ★1 Dia de Sorte                 conc 1344   | prêmio R$ 4.400.000
+      2 Mega da Virada               conc 3100   | prêmio R$ 1.000.000.000
+      3 +Milionária                  conc 406    | prêmio R$ 113.000.000
+      4 Timemania                    conc 2466   | prêmio R$ 26.300.000
+      5 Dupla Sena                   conc 3031   | prêmio R$ 12.200.000
+      6 Quina                        conc 7164   | prêmio R$ 3.800.000
+      7 Mega-Sena                    conc 3084   | prêmio R$ 3.500.000
+      8 Lotofácil                    conc 3826   | prêmio R$ 2.000.000
+      9 Super Sete                   conc 921    | prêmio R$ 300.000
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : —
+  Operação   : Iniciando
+  Progresso  : ░░░░░░░░░░░░░░░░░░░░ 0%  (0/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 AGUARDANDO     conc 1344
+  Mega da Virada               AGUARDANDO     conc 3100
+  +Milionária                  AGUARDANDO     conc 406
+  Timemania                    AGUARDANDO     conc 2466
+  Dupla Sena                   AGUARDANDO     conc 3031
+  Quina                        AGUARDANDO     conc 7164
+  Mega-Sena                    AGUARDANDO     conc 3084
+  Lotofácil                    AGUARDANDO     conc 3826
+  Super Sete                   AGUARDANDO     conc 921
+================================================================
+
+  ⏸⏸⏸  PAUSA ÚNICA — cards já detectados.
+  Digite SIM para começar.
+  Continuar lê o checkpoint: modalidade já baixada é pulada.
+  O site percorre os estados. No fim da lista, vai à próxima modalidade.
+
+============================================================
+  ⏸⏸⏸  PAUSA — SCRIPT PARADO  [CICLO-COMPLETO-v4.4.21 (pula modalidade já baixada)]
+============================================================
+
+  1. Cards já detectados no Edge (inicio-bolao)
+  2. Pode clicar no site normalmente enquanto o terminal espera
+  3. Digite SIM uma vez — esta é a única confirmação
+  4. Detalhes de todos os bolões da página, grava, próxima página
+     O site percorre os estados. No fim da lista, próxima modalidade
+
+  ⚠  NADA será baixado antes de você digitar SIM.
+  JSON: D:\Loterias\LEB-ExtracaoBoloes\json-boloes
+============================================================
+
+>>> PAUSA: digite SIM e Enter (Enter sozinho NÃO inicia): sim
+
+  ✔ Login OK — próximo passo: clicar Compre seu bolão (extração só no SIM da lista).
+  [CARDS] 9 modalidade(s) detectada(s) em inicio-bolao.
+  [CARDS] Ordem: 1º Dia de Sorte → depois maior premiação.
+    ★1 Dia de Sorte                 conc 1344   | prêmio R$ 4.400.000
+      2 Mega da Virada               conc 3100   | prêmio R$ 1.000.000.000
+      3 +Milionária                  conc 406    | prêmio R$ 113.000.000
+      4 Timemania                    conc 2466   | prêmio R$ 26.300.000
+      5 Dupla Sena                   conc 3031   | prêmio R$ 12.200.000
+      6 Quina                        conc 7164   | prêmio R$ 3.800.000
+      7 Mega-Sena                    conc 3084   | prêmio R$ 3.500.000
+      8 Lotofácil                    conc 3826   | prêmio R$ 2.000.000
+      9 Super Sete                   conc 921    | prêmio R$ 300.000
+
+  ✔ SIM OK — Detalhes, grava, próxima página. Sem filtro de estado.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : —
+  Operação   : Iniciando
+  Progresso  : ░░░░░░░░░░░░░░░░░░░░ 0%  (0/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 AGUARDANDO     conc 1344
+  Mega da Virada               AGUARDANDO     conc 3100
+  +Milionária                  AGUARDANDO     conc 406
+  Timemania                    AGUARDANDO     conc 2466
+  Dupla Sena                   AGUARDANDO     conc 3031
+  Quina                        AGUARDANDO     conc 7164
+  Mega-Sena                    AGUARDANDO     conc 3084
+  Lotofácil                    AGUARDANDO     conc 3826
+  Super Sete                   AGUARDANDO     conc 921
+================================================================
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : dia-de-sorte
+  Operação   : Auto card — Dia de Sorte (1/9)
+  Progresso  : ░░░░░░░░░░░░░░░░░░░░ 0%  (0/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 EM ANDAMENTO   conc 1344
+  Mega da Virada               AGUARDANDO     conc 3100
+  +Milionária                  AGUARDANDO     conc 406
+  Timemania                    AGUARDANDO     conc 2466
+  Dupla Sena                   AGUARDANDO     conc 3031
+  Quina                        AGUARDANDO     conc 7164
+  Mega-Sena                    AGUARDANDO     conc 3084
+  Lotofácil                    AGUARDANDO     conc 3826
+  Super Sete                   AGUARDANDO     conc 921
+================================================================
+
+================================================================
+  1/9 — Dia de Sorte | conc 1344 | AUTO
+  Arquivo destino: json-boloes/boloes_1344_dia-de-sorte.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Dia de Sorte | concurso 1344
+  [TUTORIAL] Overlay bolão digital — Pular apresentação + não exibir de novo.
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 30 botao(oes) Detalhes.
+[3984:14332:1110/180807.434:ERROR:services\on_device_model\public\cpp\service_client.cc:37] Unexpected on_device_model service disconnect; reason: 1, description: Error loading backend.
+
+  ✔ Lista aberta: Dia de Sorte conc 1344. Detalhes de cada bolão da página, grava e vai à próxima.
+  Sem filtro de estado. A paginação do site é que troca a UF.
+  Arquivo: json-boloes/boloes_1344_dia-de-sorte.json
+  [AMARRA] Lista aberta, modalidade ainda não lida — usa arquivo da sessão.
+  [AMARRA] Dia de Sorte conc=1344 → boloes_1344_dia-de-sorte.json
+
+============================================================
+  EXTRAÇÃO — VIA API (SEM POPUP)
+============================================================
+  Modalidade : Dia de Sorte
+  Concurso   : 1344
+  Arquivo    : json-boloes/boloes_1344_dia-de-sorte.json
+  (1 JSON por modalidade — não mistura com Dia de Sorte / outras)
+  Filtro     : NENHUM (sem estado / lotérica)
+  Ação       : Detalhes → próxima página → até acabar
+  Download   : API detalhar-bolao (sem popup)
+
+  Modo [1] VISIVEL: clica Detalhes e voce ve o popup abrir/fechar.
+  Modo [C] RAPIDO: MESMO fluxo do [1], mas baixa via API (detalhar-bolao) — SEM popup.
+  Contagem: botoes Detalhes = meta por pagina. JSON via interceptacao API.
+
+  [RÁPIDO] Modo SEM POPUP ativo nesta extração.
+  [CICLO] Detalhes de todos os bolões da página, grava, próxima página.
+  [CICLO] Sem filtro de estado — a paginação do site troca a UF.
+  [AMARRA] Lista aberta, modalidade ainda não lida — usa arquivo da sessão.
+  [AMARRA] Dia de Sorte conc=1344 → boloes_1344_dia-de-sorte.json
+  [ARQUIVO] Criado agora: D:\Loterias\LEB-ExtracaoBoloes\json-boloes\boloes_1344_dia-de-sorte.json
+  [ARQUIVO] (vazio [] — será preenchido ao baixar os Detalhes)
+  [API] Capturas anteriores limpas — só dados desta extração.
+  [UF] Iniciando ? na página 1
+  [CHECKPOINT] PAUSAR: pressione a tecla P (sem Enter) ou crie:
+               D:\Loterias\LEB-ExtracaoBoloes\json-boloes\_PAUSE.request
+
+  [PAINEL] Contadores: páginas | registros/página | total | únicos
+  Filtro lotérica: QUALQUER lotérica | dezenas: qualquer (painel/resumo)
+  JSON arquivo  : json-boloes/boloes_1344_dia-de-sorte.json  (modalidade + concurso 1344)
+  Gravação      : tempo real — um único JSON de sessão (sem CONSOLIDADO duplicado)
+  Modalidade alvo: Dia de Sorte
+
+>>> Processando PÁGINA 1...
+  [FILTRO] Página 1 — aguardando botões Detalhes...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 30 botao(oes) Detalhes.
+  [TELA] 30 botão(ões) Detalhes visíveis.
+  [TELA] Preparando pagina (limpar marcas + rolar lista)...
+  [TELA] Meta desta página: 30 bolão(ões).
+  [TELA] Iniciando cliques em Detalhes...
+  [RÁPIDO] CSS anti-popup ATIVO nesta página (até o fim).
+  [TELA] Rodada 1 [SEM POPUP]: meta=30 | coletados=0 | faltam=30 | botoes_pendentes=30
+  [API] Baixando via endpoint detalhar-bolao (SEM popup)...
+  [API] ░░░░░░░░░░░░░░░░░░░░ 0/30 (0%)  iniciando
+  [API] Endpoint indisponível (sem-metodo) — fallback clique oculto.
+  [API] Fallback: mesmo clique do [1], popup OCULTO.
+  [TELA] Meta: 30 Detalhes nesta pagina (SEM POPUP).
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 1/30 (3%)  Detalhes 1/30
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 2/30 (7%)  Detalhes 2/30
+  [RÁPIDO] ██░░░░░░░░░░░░░░░░░░ 3/30 (10%)  Detalhes 3/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 4/30 (13%)  Detalhes 4/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 5/30 (17%)  Detalhes 5/30
+  [RÁPIDO] ████░░░░░░░░░░░░░░░░ 6/30 (20%)  Detalhes 6/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 7/30 (23%)  Detalhes 7/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 8/30 (27%)  Detalhes 8/30
+  [RÁPIDO] ██████░░░░░░░░░░░░░░ 9/30 (30%)  Detalhes 9/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 10/30 (33%)  Detalhes 10/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 11/30 (37%)  Detalhes 11/30
+  [RÁPIDO] ████████░░░░░░░░░░░░ 12/30 (40%)  Detalhes 12/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 13/30 (43%)  Detalhes 13/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 14/30 (47%)  Detalhes 14/30
+  [RÁPIDO] ██████████░░░░░░░░░░ 15/30 (50%)  Detalhes 15/30
+  [RÁPIDO] ███████████░░░░░░░░░ 16/30 (53%)  Detalhes 16/30
+  [RÁPIDO] ███████████░░░░░░░░░ 17/30 (57%)  Detalhes 17/30
+  [RÁPIDO] ████████████░░░░░░░░ 18/30 (60%)  Detalhes 18/30
+  [RÁPIDO] █████████████░░░░░░░ 19/30 (63%)  Detalhes 19/30
+  [RÁPIDO] █████████████░░░░░░░ 20/30 (67%)  Detalhes 20/30
+  [RÁPIDO] ██████████████░░░░░░ 21/30 (70%)  Detalhes 21/30
+  [RÁPIDO] ███████████████░░░░░ 22/30 (73%)  Detalhes 22/30
+  [RÁPIDO] ███████████████░░░░░ 23/30 (77%)  Detalhes 23/30
+  [RÁPIDO] ████████████████░░░░ 24/30 (80%)  Detalhes 24/30
+  [RÁPIDO] █████████████████░░░ 25/30 (83%)  Detalhes 25/30
+  [RÁPIDO] █████████████████░░░ 26/30 (87%)  Detalhes 26/30
+  [RÁPIDO] ██████████████████░░ 27/30 (90%)  Detalhes 27/30
+  [RÁPIDO] ███████████████████░ 28/30 (93%)  Detalhes 28/30
+  [RÁPIDO] ███████████████████░ 29/30 (97%)  Detalhes 29/30
+  [RÁPIDO] ████████████████████ 30/30 (100%)  Detalhes 30/30
+  [TELA] 30 clique(s) Detalhes nesta rodada.
+  [RÁPIDO] Coletando JSON das capturas API...
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=12 dez.
+  [API] +1 bolão |  | Ap.1=12 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=12 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=12 dez.
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=13 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  💾 SALVO pág 1: 30 reg. total (+30 novos) | 139.5 KB | boloes_1344_dia-de-sorte.json
+  [SAVE] ████████████████████ 30/30 (100%)  +30 no JSON parcial
+  [TELA] Completo: 30/30 bolao(oes) nesta pagina.
+  [RÁPIDO] Página concluída — CSS anti-popup desligado. Segue a paginação (próxima página).
+  💾 SALVO pág 1: 30 reg. total (+0 novos) | 129.6 KB | boloes_1344_dia-de-sorte.json
+
+  --------------------------------------------------------
+  [PAINEL] Página 1 concluída | 💾 129.6 KB no disco
+    Nesta página : +0 registro(s) | 30 captura(s) API | detalhes_tela=30
+    Total sessão  : 0 registro(s) | 30 único(s)
+    Páginas       : 1 processada(s) | 0 com dados | 1 vazia(s)
+    Capturas API  : 30 acumulada(s) na sessão
+  --------------------------------------------------------
+  📁 Arquivo: 30 reg. | 129.6 KB | boloes_1344_dia-de-sorte.json
+  [CHECKPOINT] Página 1 gravada — próximo retomaria em 2.
+
+>>> Processando PÁGINA 2...
+  [PÁGINA] Avançando para página 2 (Seguinte)...
+  [PAGINA] Seguinte via Angular (1 clique).
+  [PAGINA] OK — 1 → 2.
+  [PÁGINA] Avanço OK 1 → 2.
+  [TELA] Página 2: 30 botão(ões) Detalhes visíveis.
+  [TELA] Preparando pagina (limpar marcas + rolar lista)...
+  [TELA] Meta desta página: 30 bolão(ões).
+  [TELA] Iniciando cliques em Detalhes...
+  [RÁPIDO] CSS anti-popup ATIVO nesta página (até o fim).
+  [TELA] Rodada 1 [SEM POPUP]: meta=30 | coletados=0 | faltam=30 | botoes_pendentes=30
+  [API] Baixando via endpoint detalhar-bolao (SEM popup)...
+  [API] ░░░░░░░░░░░░░░░░░░░░ 0/30 (0%)  iniciando
+  [API] Endpoint indisponível (sem-metodo) — fallback clique oculto.
+  [API] Fallback: mesmo clique do [1], popup OCULTO.
+  [TELA] Meta: 30 Detalhes nesta pagina (SEM POPUP).
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 1/30 (3%)  Detalhes 1/30
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 2/30 (7%)  Detalhes 2/30
+  [RÁPIDO] ██░░░░░░░░░░░░░░░░░░ 3/30 (10%)  Detalhes 3/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 4/30 (13%)  Detalhes 4/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 5/30 (17%)  Detalhes 5/30
+  [RÁPIDO] ████░░░░░░░░░░░░░░░░ 6/30 (20%)  Detalhes 6/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 7/30 (23%)  Detalhes 7/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 8/30 (27%)  Detalhes 8/30
+  [RÁPIDO] ██████░░░░░░░░░░░░░░ 9/30 (30%)  Detalhes 9/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 10/30 (33%)  Detalhes 10/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 11/30 (37%)  Detalhes 11/30
+  [RÁPIDO] ████████░░░░░░░░░░░░ 12/30 (40%)  Detalhes 12/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 13/30 (43%)  Detalhes 13/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 14/30 (47%)  Detalhes 14/30
+  [RÁPIDO] ██████████░░░░░░░░░░ 15/30 (50%)  Detalhes 15/30
+  [RÁPIDO] ███████████░░░░░░░░░ 16/30 (53%)  Detalhes 16/30
+  [RÁPIDO] ███████████░░░░░░░░░ 17/30 (57%)  Detalhes 17/30
+  [RÁPIDO] ████████████░░░░░░░░ 18/30 (60%)  Detalhes 18/30
+  [RÁPIDO] █████████████░░░░░░░ 19/30 (63%)  Detalhes 19/30
+  [RÁPIDO] █████████████░░░░░░░ 20/30 (67%)  Detalhes 20/30
+  [RÁPIDO] ██████████████░░░░░░ 21/30 (70%)  Detalhes 21/30
+  [RÁPIDO] ███████████████░░░░░ 22/30 (73%)  Detalhes 22/30
+  [RÁPIDO] ███████████████░░░░░ 23/30 (77%)  Detalhes 23/30
+  [RÁPIDO] ████████████████░░░░ 24/30 (80%)  Detalhes 24/30
+  [RÁPIDO] █████████████████░░░ 25/30 (83%)  Detalhes 25/30
+  [RÁPIDO] █████████████████░░░ 26/30 (87%)  Detalhes 26/30
+  [RÁPIDO] ██████████████████░░ 27/30 (90%)  Detalhes 27/30
+  [RÁPIDO] ███████████████████░ 28/30 (93%)  Detalhes 28/30
+  [RÁPIDO] ███████████████████░ 29/30 (97%)  Detalhes 29/30
+  [RÁPIDO] ████████████████████ 30/30 (100%)  Detalhes 30/30
+  [TELA] 30 clique(s) Detalhes nesta rodada.
+  [RÁPIDO] Coletando JSON das capturas API...
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  💾 SALVO pág 2: 59 reg. total (+29 novos) | 298.3 KB | boloes_1344_dia-de-sorte.json
+  [SAVE] ███████████████████░ 29/30 (97%)  +29 no JSON parcial
+  [TELA] Rodada 2 [SEM POPUP]: meta=30 | coletados=29 | faltam=1 | botoes_pendentes=0
+  [API] Baixando via endpoint detalhar-bolao (SEM popup)...
+  [API] ░░░░░░░░░░░░░░░░░░░░ 0/30 (0%)  iniciando
+  [API] Fallback: mesmo clique do [1], popup OCULTO.
+  [TELA] Meta: 30 Detalhes nesta pagina (SEM POPUP).
+  [TELA] Nenhum Detalhes pendente encontrado.
+  [RÁPIDO] Coletando JSON das capturas API...
+  [TELA] Rodada 3 [SEM POPUP]: meta=30 | coletados=29 | faltam=1 | botoes_pendentes=0
+  [API] Baixando via endpoint detalhar-bolao (SEM popup)...
+  [API] ░░░░░░░░░░░░░░░░░░░░ 0/30 (0%)  iniciando
+  [API] Fallback: mesmo clique do [1], popup OCULTO.
+  [TELA] Meta: 30 Detalhes nesta pagina (SEM POPUP).
+  [TELA] Nenhum Detalhes pendente encontrado.
+  [RÁPIDO] Coletando JSON das capturas API...
+  [TELA] Rodada 4 [SEM POPUP]: meta=30 | coletados=29 | faltam=1 | botoes_pendentes=0
+  [API] Baixando via endpoint detalhar-bolao (SEM popup)...
+  [API] ░░░░░░░░░░░░░░░░░░░░ 0/30 (0%)  iniciando
+  [API] Fallback: mesmo clique do [1], popup OCULTO.
+  [TELA] Meta: 30 Detalhes nesta pagina (SEM POPUP).
+  [TELA] Nenhum Detalhes pendente encontrado.
+  [RÁPIDO] Coletando JSON das capturas API...
+  [TELA] Sem mais Detalhes para clicar nesta pagina.
+  [RÁPIDO] Página concluída — CSS anti-popup desligado. Segue a paginação (próxima página).
+  💾 SALVO pág 2: 59 reg. total (+0 novos) | 288.9 KB | boloes_1344_dia-de-sorte.json
+
+  --------------------------------------------------------
+  [PAINEL] Página 2 concluída | 💾 288.9 KB no disco
+    Nesta página : +0 registro(s) | 31 captura(s) API | detalhes_tela=30
+    Total sessão  : 0 registro(s) | 59 único(s)
+    Páginas       : 2 processada(s) | 0 com dados | 2 vazia(s)
+    Capturas API  : 61 acumulada(s) na sessão
+  --------------------------------------------------------
+  📁 Arquivo: 59 reg. | 288.9 KB | boloes_1344_dia-de-sorte.json
+  [PÁGINA] API: página 2 de 21 (618 bolões).
+  [CHECKPOINT] Página 2 gravada — próximo retomaria em 3.
+
+>>> Processando PÁGINA 3...
+  [PÁGINA] Avançando para página 3 (Seguinte)...
+  [PAGINA] Seguinte via Angular (1 clique).
+  [PAGINA] OK — 2 → 3.
+  [PÁGINA] Avanço OK 2 → 3.
+  [TELA] Página 3: 30 botão(ões) Detalhes visíveis.
+  [TELA] Preparando pagina (limpar marcas + rolar lista)...
+  [TELA] Meta desta página: 30 bolão(ões).
+  [TELA] Iniciando cliques em Detalhes...
+  [RÁPIDO] CSS anti-popup ATIVO nesta página (até o fim).
+  [TELA] Rodada 1 [SEM POPUP]: meta=30 | coletados=0 | faltam=30 | botoes_pendentes=30
+  [API] Baixando via endpoint detalhar-bolao (SEM popup)...
+  [API] ░░░░░░░░░░░░░░░░░░░░ 0/30 (0%)  iniciando
+  [API] Endpoint indisponível (sem-metodo) — fallback clique oculto.
+  [API] Fallback: mesmo clique do [1], popup OCULTO.
+  [TELA] Meta: 30 Detalhes nesta pagina (SEM POPUP).
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 1/30 (3%)  Detalhes 1/30
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 2/30 (7%)  Detalhes 2/30
+  [RÁPIDO] ██░░░░░░░░░░░░░░░░░░ 3/30 (10%)  Detalhes 3/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 4/30 (13%)  Detalhes 4/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 5/30 (17%)  Detalhes 5/30
+  [RÁPIDO] ████░░░░░░░░░░░░░░░░ 6/30 (20%)  Detalhes 6/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 7/30 (23%)  Detalhes 7/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 8/30 (27%)  Detalhes 8/30
+  [RÁPIDO] ██████░░░░░░░░░░░░░░ 9/30 (30%)  Detalhes 9/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 10/30 (33%)  Detalhes 10/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 11/30 (37%)  Detalhes 11/30
+  [RÁPIDO] ████████░░░░░░░░░░░░ 12/30 (40%)  Detalhes 12/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 13/30 (43%)  Detalhes 13/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 14/30 (47%)  Detalhes 14/30
+  [RÁPIDO] ██████████░░░░░░░░░░ 15/30 (50%)  Detalhes 15/30
+  [RÁPIDO] ███████████░░░░░░░░░ 16/30 (53%)  Detalhes 16/30
+  [RÁPIDO] ███████████░░░░░░░░░ 17/30 (57%)  Detalhes 17/30
+  [RÁPIDO] ████████████░░░░░░░░ 18/30 (60%)  Detalhes 18/30
+  [RÁPIDO] █████████████░░░░░░░ 19/30 (63%)  Detalhes 19/30
+  [RÁPIDO] █████████████░░░░░░░ 20/30 (67%)  Detalhes 20/30
+  [RÁPIDO] ██████████████░░░░░░ 21/30 (70%)  Detalhes 21/30
+  [RÁPIDO] ███████████████░░░░░ 22/30 (73%)  Detalhes 22/30
+  [RÁPIDO] ███████████████░░░░░ 23/30 (77%)  Detalhes 23/30
+  [RÁPIDO] ████████████████░░░░ 24/30 (80%)  Detalhes 24/30
+  [RÁPIDO] █████████████████░░░ 25/30 (83%)  Detalhes 25/30
+  [RÁPIDO] █████████████████░░░ 26/30 (87%)  Detalhes 26/30
+  [RÁPIDO] ██████████████████░░ 27/30 (90%)  Detalhes 27/30
+  [RÁPIDO] ███████████████████░ 28/30 (93%)  Detalhes 28/30
+  [RÁPIDO] ███████████████████░ 29/30 (97%)  Detalhes 29/30
+  [RÁPIDO] ████████████████████ 30/30 (100%)  Detalhes 30/30
+  [TELA] 30 clique(s) Detalhes nesta rodada.
+  [RÁPIDO] Coletando JSON das capturas API...
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=12 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=12 dez.
+  [API] +1 bolão |  | Ap.1=13 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  💾 SALVO pág 3: 89 reg. total (+30 novos) | 450.8 KB | boloes_1344_dia-de-sorte.json
+  [SAVE] ████████████████████ 30/30 (100%)  +30 no JSON parcial
+  [TELA] Completo: 30/30 bolao(oes) nesta pagina.
+  [RÁPIDO] Página concluída — CSS anti-popup desligado. Segue a paginação (próxima página).
+  💾 SALVO pág 3: 89 reg. total (+0 novos) | 440.9 KB | boloes_1344_dia-de-sorte.json
+
+  --------------------------------------------------------
+  [PAINEL] Página 3 concluída | 💾 440.9 KB no disco
+    Nesta página : +0 registro(s) | 31 captura(s) API | detalhes_tela=30
+    Total sessão  : 0 registro(s) | 89 único(s)
+    Páginas       : 3 processada(s) | 0 com dados | 3 vazia(s)
+    Capturas API  : 92 acumulada(s) na sessão
+  --------------------------------------------------------
+  📁 Arquivo: 89 reg. | 440.9 KB | boloes_1344_dia-de-sorte.json
+  [PÁGINA] API: página 3 de 21 (616 bolões).
+  [CHECKPOINT] Página 3 gravada — próximo retomaria em 4.
+
+>>> Processando PÁGINA 4...
+  [PÁGINA] Avançando para página 4 (Seguinte)...
+  [PAGINA] Seguinte via Angular (1 clique).
+  [PAGINA] OK — 3 → 4.
+  [PÁGINA] Avanço OK 3 → 4.
+  [TELA] Página 4: 30 botão(ões) Detalhes visíveis.
+  [TELA] Preparando pagina (limpar marcas + rolar lista)...
+  [TELA] Meta desta página: 30 bolão(ões).
+  [TELA] Iniciando cliques em Detalhes...
+  [RÁPIDO] CSS anti-popup ATIVO nesta página (até o fim).
+  [TELA] Rodada 1 [SEM POPUP]: meta=30 | coletados=0 | faltam=30 | botoes_pendentes=30
+  [API] Baixando via endpoint detalhar-bolao (SEM popup)...
+  [API] ░░░░░░░░░░░░░░░░░░░░ 0/30 (0%)  iniciando
+  [API] Endpoint indisponível (sem-metodo) — fallback clique oculto.
+  [API] Fallback: mesmo clique do [1], popup OCULTO.
+  [TELA] Meta: 30 Detalhes nesta pagina (SEM POPUP).
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 1/30 (3%)  Detalhes 1/30
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 2/30 (7%)  Detalhes 2/30
+  [RÁPIDO] ██░░░░░░░░░░░░░░░░░░ 3/30 (10%)  Detalhes 3/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 4/30 (13%)  Detalhes 4/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 5/30 (17%)  Detalhes 5/30
+  [RÁPIDO] ████░░░░░░░░░░░░░░░░ 6/30 (20%)  Detalhes 6/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 7/30 (23%)  Detalhes 7/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 8/30 (27%)  Detalhes 8/30
+  [RÁPIDO] ██████░░░░░░░░░░░░░░ 9/30 (30%)  Detalhes 9/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 10/30 (33%)  Detalhes 10/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 11/30 (37%)  Detalhes 11/30
+  [RÁPIDO] ████████░░░░░░░░░░░░ 12/30 (40%)  Detalhes 12/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 13/30 (43%)  Detalhes 13/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 14/30 (47%)  Detalhes 14/30
+  [RÁPIDO] ██████████░░░░░░░░░░ 15/30 (50%)  Detalhes 15/30
+  [RÁPIDO] ███████████░░░░░░░░░ 16/30 (53%)  Detalhes 16/30
+  [RÁPIDO] ███████████░░░░░░░░░ 17/30 (57%)  Detalhes 17/30
+  [RÁPIDO] ████████████░░░░░░░░ 18/30 (60%)  Detalhes 18/30
+  [RÁPIDO] █████████████░░░░░░░ 19/30 (63%)  Detalhes 19/30
+  [RÁPIDO] █████████████░░░░░░░ 20/30 (67%)  Detalhes 20/30
+  [RÁPIDO] ██████████████░░░░░░ 21/30 (70%)  Detalhes 21/30
+  [RÁPIDO] ███████████████░░░░░ 22/30 (73%)  Detalhes 22/30
+  [RÁPIDO] ███████████████░░░░░ 23/30 (77%)  Detalhes 23/30
+  [RÁPIDO] ████████████████░░░░ 24/30 (80%)  Detalhes 24/30
+  [RÁPIDO] █████████████████░░░ 25/30 (83%)  Detalhes 25/30
+  [RÁPIDO] █████████████████░░░ 26/30 (87%)  Detalhes 26/30
+  [RÁPIDO] ██████████████████░░ 27/30 (90%)  Detalhes 27/30
+  [RÁPIDO] ███████████████████░ 28/30 (93%)  Detalhes 28/30
+  [RÁPIDO] ███████████████████░ 29/30 (97%)  Detalhes 29/30
+  [RÁPIDO] ████████████████████ 30/30 (100%)  Detalhes 30/30
+  [TELA] 30 clique(s) Detalhes nesta rodada.
+  [RÁPIDO] Coletando JSON das capturas API...
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  💾 SALVO pág 4: 119 reg. total (+30 novos) | 615.6 KB | boloes_1344_dia-de-sorte.json
+  [SAVE] ████████████████████ 30/30 (100%)  +30 no JSON parcial
+  [TELA] Completo: 30/30 bolao(oes) nesta pagina.
+  [RÁPIDO] Página concluída — CSS anti-popup desligado. Segue a paginação (próxima página).
+  💾 SALVO pág 4: 119 reg. total (+0 novos) | 605.7 KB | boloes_1344_dia-de-sorte.json
+
+  --------------------------------------------------------
+  [PAINEL] Página 4 concluída | 💾 605.7 KB no disco
+    Nesta página : +0 registro(s) | 31 captura(s) API | detalhes_tela=30
+    Total sessão  : 0 registro(s) | 119 único(s)
+    Páginas       : 4 processada(s) | 0 com dados | 4 vazia(s)
+    Capturas API  : 123 acumulada(s) na sessão
+  --------------------------------------------------------
+  📁 Arquivo: 119 reg. | 605.7 KB | boloes_1344_dia-de-sorte.json
+  [PÁGINA] API: página 4 de 21 (614 bolões).
+  [CHECKPOINT] Página 4 gravada — próximo retomaria em 5.
+
+>>> Processando PÁGINA 5...
+  [PÁGINA] Avançando para página 5 (Seguinte)...
+  [PAGINA] Seguinte via Angular (1 clique).
+  [PAGINA] OK — 4 → 5.
+  [PÁGINA] Avanço OK 4 → 5.
+  [TELA] Página 5: 30 botão(ões) Detalhes visíveis.
+  [TELA] Preparando pagina (limpar marcas + rolar lista)...
+  [TELA] Meta desta página: 30 bolão(ões).
+  [TELA] Iniciando cliques em Detalhes...
+  [RÁPIDO] CSS anti-popup ATIVO nesta página (até o fim).
+  [TELA] Rodada 1 [SEM POPUP]: meta=30 | coletados=0 | faltam=30 | botoes_pendentes=30
+  [API] Baixando via endpoint detalhar-bolao (SEM popup)...
+  [API] ░░░░░░░░░░░░░░░░░░░░ 0/30 (0%)  iniciando
+  [API] Endpoint indisponível (sem-metodo) — fallback clique oculto.
+  [API] Fallback: mesmo clique do [1], popup OCULTO.
+  [TELA] Meta: 30 Detalhes nesta pagina (SEM POPUP).
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 1/30 (3%)  Detalhes 1/30
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 2/30 (7%)  Detalhes 2/30
+  [RÁPIDO] ██░░░░░░░░░░░░░░░░░░ 3/30 (10%)  Detalhes 3/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 4/30 (13%)  Detalhes 4/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 5/30 (17%)  Detalhes 5/30
+  [RÁPIDO] ████░░░░░░░░░░░░░░░░ 6/30 (20%)  Detalhes 6/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 7/30 (23%)  Detalhes 7/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 8/30 (27%)  Detalhes 8/30
+  [RÁPIDO] ██████░░░░░░░░░░░░░░ 9/30 (30%)  Detalhes 9/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 10/30 (33%)  Detalhes 10/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 11/30 (37%)  Detalhes 11/30
+  [RÁPIDO] ████████░░░░░░░░░░░░ 12/30 (40%)  Detalhes 12/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 13/30 (43%)  Detalhes 13/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 14/30 (47%)  Detalhes 14/30
+  [RÁPIDO] ██████████░░░░░░░░░░ 15/30 (50%)  Detalhes 15/30
+  [RÁPIDO] ███████████░░░░░░░░░ 16/30 (53%)  Detalhes 16/30
+  [RÁPIDO] ███████████░░░░░░░░░ 17/30 (57%)  Detalhes 17/30
+  [RÁPIDO] ████████████░░░░░░░░ 18/30 (60%)  Detalhes 18/30
+  [RÁPIDO] █████████████░░░░░░░ 19/30 (63%)  Detalhes 19/30
+  [RÁPIDO] █████████████░░░░░░░ 20/30 (67%)  Detalhes 20/30
+  [RÁPIDO] ██████████████░░░░░░ 21/30 (70%)  Detalhes 21/30
+  [RÁPIDO] ███████████████░░░░░ 22/30 (73%)  Detalhes 22/30
+  [RÁPIDO] ███████████████░░░░░ 23/30 (77%)  Detalhes 23/30
+  [RÁPIDO] ████████████████░░░░ 24/30 (80%)  Detalhes 24/30
+  [RÁPIDO] █████████████████░░░ 25/30 (83%)  Detalhes 25/30
+  [RÁPIDO] █████████████████░░░ 26/30 (87%)  Detalhes 26/30
+  [RÁPIDO] ██████████████████░░ 27/30 (90%)  Detalhes 27/30
+  [RÁPIDO] ███████████████████░ 28/30 (93%)  Detalhes 28/30
+  [RÁPIDO] ███████████████████░ 29/30 (97%)  Detalhes 29/30
+  [RÁPIDO] ████████████████████ 30/30 (100%)  Detalhes 30/30
+  [TELA] 30 clique(s) Detalhes nesta rodada.
+  [RÁPIDO] Coletando JSON das capturas API...
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  💾 SALVO pág 5: 149 reg. total (+30 novos) | 777.4 KB | boloes_1344_dia-de-sorte.json
+  [SAVE] ████████████████████ 30/30 (100%)  +30 no JSON parcial
+  [TELA] Completo: 30/30 bolao(oes) nesta pagina.
+  [RÁPIDO] Página concluída — CSS anti-popup desligado. Segue a paginação (próxima página).
+  💾 SALVO pág 5: 149 reg. total (+0 novos) | 767.3 KB | boloes_1344_dia-de-sorte.json
+
+  --------------------------------------------------------
+  [PAINEL] Página 5 concluída | 💾 767.3 KB no disco
+    Nesta página : +0 registro(s) | 31 captura(s) API | detalhes_tela=30
+    Total sessão  : 0 registro(s) | 149 único(s)
+    Páginas       : 5 processada(s) | 0 com dados | 5 vazia(s)
+    Capturas API  : 154 acumulada(s) na sessão
+  --------------------------------------------------------
+  📁 Arquivo: 149 reg. | 767.3 KB | boloes_1344_dia-de-sorte.json
+  [PÁGINA] API: página 5 de 21 (612 bolões).
+  [CHECKPOINT] Página 5 gravada — próximo retomaria em 6.
+
+>>> Processando PÁGINA 6...
+  [PÁGINA] Avançando para página 6 (Seguinte)...
+  [PAGINA] Seguinte via Angular (1 clique).
+  [PAGINA] OK — 5 → 6.
+  [PÁGINA] Avanço OK 5 → 6.
+  [TELA] Página 6: 30 botão(ões) Detalhes visíveis.
+  [TELA] Preparando pagina (limpar marcas + rolar lista)...
+  [TELA] Meta desta página: 30 bolão(ões).
+  [TELA] Iniciando cliques em Detalhes...
+  [RÁPIDO] CSS anti-popup ATIVO nesta página (até o fim).
+  [TELA] Rodada 1 [SEM POPUP]: meta=30 | coletados=0 | faltam=30 | botoes_pendentes=30
+  [API] Baixando via endpoint detalhar-bolao (SEM popup)...
+  [API] ░░░░░░░░░░░░░░░░░░░░ 0/30 (0%)  iniciando
+  [API] Endpoint indisponível (sem-metodo) — fallback clique oculto.
+  [API] Fallback: mesmo clique do [1], popup OCULTO.
+  [TELA] Meta: 30 Detalhes nesta pagina (SEM POPUP).
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 1/30 (3%)  Detalhes 1/30
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 2/30 (7%)  Detalhes 2/30
+  [RÁPIDO] ██░░░░░░░░░░░░░░░░░░ 3/30 (10%)  Detalhes 3/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 4/30 (13%)  Detalhes 4/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 5/30 (17%)  Detalhes 5/30
+  [RÁPIDO] ████░░░░░░░░░░░░░░░░ 6/30 (20%)  Detalhes 6/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 7/30 (23%)  Detalhes 7/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 8/30 (27%)  Detalhes 8/30
+  [RÁPIDO] ██████░░░░░░░░░░░░░░ 9/30 (30%)  Detalhes 9/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 10/30 (33%)  Detalhes 10/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 11/30 (37%)  Detalhes 11/30
+  [RÁPIDO] ████████░░░░░░░░░░░░ 12/30 (40%)  Detalhes 12/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 13/30 (43%)  Detalhes 13/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 14/30 (47%)  Detalhes 14/30
+  [RÁPIDO] ██████████░░░░░░░░░░ 15/30 (50%)  Detalhes 15/30
+  [RÁPIDO] ███████████░░░░░░░░░ 16/30 (53%)  Detalhes 16/30
+  [RÁPIDO] ███████████░░░░░░░░░ 17/30 (57%)  Detalhes 17/30
+  [RÁPIDO] ████████████░░░░░░░░ 18/30 (60%)  Detalhes 18/30
+  [RÁPIDO] █████████████░░░░░░░ 19/30 (63%)  Detalhes 19/30
+  [RÁPIDO] █████████████░░░░░░░ 20/30 (67%)  Detalhes 20/30
+  [RÁPIDO] ██████████████░░░░░░ 21/30 (70%)  Detalhes 21/30
+  [RÁPIDO] ███████████████░░░░░ 22/30 (73%)  Detalhes 22/30
+  [RÁPIDO] ███████████████░░░░░ 23/30 (77%)  Detalhes 23/30
+  [RÁPIDO] ████████████████░░░░ 24/30 (80%)  Detalhes 24/30
+  [RÁPIDO] █████████████████░░░ 25/30 (83%)  Detalhes 25/30
+  [RÁPIDO] █████████████████░░░ 26/30 (87%)  Detalhes 26/30
+  [RÁPIDO] ██████████████████░░ 27/30 (90%)  Detalhes 27/30
+  [RÁPIDO] ███████████████████░ 28/30 (93%)  Detalhes 28/30
+  [RÁPIDO] ███████████████████░ 29/30 (97%)  Detalhes 29/30
+  [RÁPIDO] ████████████████████ 30/30 (100%)  Detalhes 30/30
+  [TELA] 30 clique(s) Detalhes nesta rodada.
+  [RÁPIDO] Coletando JSON das capturas API...
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  💾 SALVO pág 6: 179 reg. total (+30 novos) | 947.1 KB | boloes_1344_dia-de-sorte.json
+  [SAVE] ████████████████████ 30/30 (100%)  +30 no JSON parcial
+  [TELA] Completo: 30/30 bolao(oes) nesta pagina.
+  [RÁPIDO] Página concluída — CSS anti-popup desligado. Segue a paginação (próxima página).
+  💾 SALVO pág 6: 179 reg. total (+0 novos) | 937.2 KB | boloes_1344_dia-de-sorte.json
+
+  --------------------------------------------------------
+  [PAINEL] Página 6 concluída | 💾 937.2 KB no disco
+    Nesta página : +0 registro(s) | 31 captura(s) API | detalhes_tela=30
+    Total sessão  : 0 registro(s) | 179 único(s)
+    Páginas       : 6 processada(s) | 0 com dados | 6 vazia(s)
+    Capturas API  : 185 acumulada(s) na sessão
+  --------------------------------------------------------
+  📁 Arquivo: 179 reg. | 937.2 KB | boloes_1344_dia-de-sorte.json
+  [PÁGINA] API: página 6 de 21 (606 bolões).
+  [CHECKPOINT] Página 6 gravada — próximo retomaria em 7.
+
+>>> Processando PÁGINA 7...
+  [PÁGINA] Avançando para página 7 (Seguinte)...
+  [PAGINA] Seguinte via Angular (1 clique).
+  [PAGINA] OK — 6 → 7.
+  [PÁGINA] Avanço OK 6 → 7.
+  [TELA] Página 7: 30 botão(ões) Detalhes visíveis.
+  [TELA] Preparando pagina (limpar marcas + rolar lista)...
+  [TELA] Meta desta página: 30 bolão(ões).
+  [TELA] Iniciando cliques em Detalhes...
+  [RÁPIDO] CSS anti-popup ATIVO nesta página (até o fim).
+  [TELA] Rodada 1 [SEM POPUP]: meta=30 | coletados=0 | faltam=30 | botoes_pendentes=30
+  [API] Baixando via endpoint detalhar-bolao (SEM popup)...
+  [API] ░░░░░░░░░░░░░░░░░░░░ 0/30 (0%)  iniciando
+  [API] Endpoint indisponível (sem-metodo) — fallback clique oculto.
+  [API] Fallback: mesmo clique do [1], popup OCULTO.
+  [TELA] Meta: 30 Detalhes nesta pagina (SEM POPUP).
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 1/30 (3%)  Detalhes 1/30
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 2/30 (7%)  Detalhes 2/30
+  [RÁPIDO] ██░░░░░░░░░░░░░░░░░░ 3/30 (10%)  Detalhes 3/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 4/30 (13%)  Detalhes 4/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 5/30 (17%)  Detalhes 5/30
+  [RÁPIDO] ████░░░░░░░░░░░░░░░░ 6/30 (20%)  Detalhes 6/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 7/30 (23%)  Detalhes 7/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 8/30 (27%)  Detalhes 8/30
+  [RÁPIDO] ██████░░░░░░░░░░░░░░ 9/30 (30%)  Detalhes 9/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 10/30 (33%)  Detalhes 10/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 11/30 (37%)  Detalhes 11/30
+  [RÁPIDO] ████████░░░░░░░░░░░░ 12/30 (40%)  Detalhes 12/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 13/30 (43%)  Detalhes 13/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 14/30 (47%)  Detalhes 14/30
+  [RÁPIDO] ██████████░░░░░░░░░░ 15/30 (50%)  Detalhes 15/30
+  [RÁPIDO] ███████████░░░░░░░░░ 16/30 (53%)  Detalhes 16/30
+  [RÁPIDO] ███████████░░░░░░░░░ 17/30 (57%)  Detalhes 17/30
+  [RÁPIDO] ████████████░░░░░░░░ 18/30 (60%)  Detalhes 18/30
+  [RÁPIDO] █████████████░░░░░░░ 19/30 (63%)  Detalhes 19/30
+  [RÁPIDO] █████████████░░░░░░░ 20/30 (67%)  Detalhes 20/30
+  [RÁPIDO] ██████████████░░░░░░ 21/30 (70%)  Detalhes 21/30
+  [RÁPIDO] ███████████████░░░░░ 22/30 (73%)  Detalhes 22/30
+  [RÁPIDO] ███████████████░░░░░ 23/30 (77%)  Detalhes 23/30
+  [RÁPIDO] ████████████████░░░░ 24/30 (80%)  Detalhes 24/30
+  [RÁPIDO] █████████████████░░░ 25/30 (83%)  Detalhes 25/30
+  [RÁPIDO] █████████████████░░░ 26/30 (87%)  Detalhes 26/30
+  [RÁPIDO] ██████████████████░░ 27/30 (90%)  Detalhes 27/30
+  [RÁPIDO] ███████████████████░ 28/30 (93%)  Detalhes 28/30
+  [RÁPIDO] ███████████████████░ 29/30 (97%)  Detalhes 29/30
+  [RÁPIDO] ████████████████████ 30/30 (100%)  Detalhes 30/30
+  [TELA] 30 clique(s) Detalhes nesta rodada.
+  [RÁPIDO] Coletando JSON das capturas API...
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=11 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  💾 SALVO pág 7: 209 reg. total (+30 novos) | 1125.3 KB | boloes_1344_dia-de-sorte.json
+  [SAVE] ████████████████████ 30/30 (100%)  +30 no JSON parcial
+  [TELA] Completo: 30/30 bolao(oes) nesta pagina.
+  [RÁPIDO] Página concluída — CSS anti-popup desligado. Segue a paginação (próxima página).
+  💾 SALVO pág 7: 209 reg. total (+0 novos) | 1115.4 KB | boloes_1344_dia-de-sorte.json
+
+  --------------------------------------------------------
+  [PAINEL] Página 7 concluída | 💾 1115.4 KB no disco
+    Nesta página : +0 registro(s) | 32 captura(s) API | detalhes_tela=30
+    Total sessão  : 0 registro(s) | 209 único(s)
+    Páginas       : 7 processada(s) | 0 com dados | 7 vazia(s)
+    Capturas API  : 217 acumulada(s) na sessão
+  --------------------------------------------------------
+  📁 Arquivo: 209 reg. | 1115.4 KB | boloes_1344_dia-de-sorte.json
+  [PÁGINA] API: página 7 de 21 (602 bolões).
+  [CHECKPOINT] Página 7 gravada — próximo retomaria em 8.
+
+>>> Processando PÁGINA 8...
+  [PÁGINA] Avançando para página 8 (Seguinte)...
+  [PAGINA] Seguinte via Angular (1 clique).
+  [PAGINA] OK — 7 → 8.
+  [PÁGINA] Avanço OK 7 → 8.
+  [TELA] Página 8: 30 botão(ões) Detalhes visíveis.
+  [TELA] Preparando pagina (limpar marcas + rolar lista)...
+  [TELA] Meta desta página: 30 bolão(ões).
+  [TELA] Iniciando cliques em Detalhes...
+  [RÁPIDO] CSS anti-popup ATIVO nesta página (até o fim).
+  [TELA] Rodada 1 [SEM POPUP]: meta=30 | coletados=0 | faltam=30 | botoes_pendentes=30
+  [API] Baixando via endpoint detalhar-bolao (SEM popup)...
+  [API] ░░░░░░░░░░░░░░░░░░░░ 0/30 (0%)  iniciando
+  [API] Endpoint indisponível (sem-metodo) — fallback clique oculto.
+  [API] Fallback: mesmo clique do [1], popup OCULTO.
+  [TELA] Meta: 30 Detalhes nesta pagina (SEM POPUP).
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 1/30 (3%)  Detalhes 1/30
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 2/30 (7%)  Detalhes 2/30
+  [RÁPIDO] ██░░░░░░░░░░░░░░░░░░ 3/30 (10%)  Detalhes 3/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 4/30 (13%)  Detalhes 4/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 5/30 (17%)  Detalhes 5/30
+  [RÁPIDO] ████░░░░░░░░░░░░░░░░ 6/30 (20%)  Detalhes 6/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 7/30 (23%)  Detalhes 7/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 8/30 (27%)  Detalhes 8/30
+  [RÁPIDO] ██████░░░░░░░░░░░░░░ 9/30 (30%)  Detalhes 9/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 10/30 (33%)  Detalhes 10/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 11/30 (37%)  Detalhes 11/30
+  [RÁPIDO] ████████░░░░░░░░░░░░ 12/30 (40%)  Detalhes 12/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 13/30 (43%)  Detalhes 13/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 14/30 (47%)  Detalhes 14/30
+  [RÁPIDO] ██████████░░░░░░░░░░ 15/30 (50%)  Detalhes 15/30
+  [RÁPIDO] ███████████░░░░░░░░░ 16/30 (53%)  Detalhes 16/30
+  [RÁPIDO] ███████████░░░░░░░░░ 17/30 (57%)  Detalhes 17/30
+  [RÁPIDO] ████████████░░░░░░░░ 18/30 (60%)  Detalhes 18/30
+  [RÁPIDO] █████████████░░░░░░░ 19/30 (63%)  Detalhes 19/30
+  [RÁPIDO] █████████████░░░░░░░ 20/30 (67%)  Detalhes 20/30
+  [RÁPIDO] ██████████████░░░░░░ 21/30 (70%)  Detalhes 21/30
+  [RÁPIDO] ███████████████░░░░░ 22/30 (73%)  Detalhes 22/30
+  [RÁPIDO] ███████████████░░░░░ 23/30 (77%)  Detalhes 23/30
+  [RÁPIDO] ████████████████░░░░ 24/30 (80%)  Detalhes 24/30
+  [RÁPIDO] █████████████████░░░ 25/30 (83%)  Detalhes 25/30
+  [RÁPIDO] █████████████████░░░ 26/30 (87%)  Detalhes 26/30
+  [RÁPIDO] ██████████████████░░ 27/30 (90%)  Detalhes 27/30
+  [RÁPIDO] ███████████████████░ 28/30 (93%)  Detalhes 28/30
+  [RÁPIDO] ███████████████████░ 29/30 (97%)  Detalhes 29/30
+  [RÁPIDO] ████████████████████ 30/30 (100%)  Detalhes 30/30
+  [TELA] 30 clique(s) Detalhes nesta rodada.
+  [RÁPIDO] Coletando JSON das capturas API...
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  💾 SALVO pág 8: 239 reg. total (+30 novos) | 1327.4 KB | boloes_1344_dia-de-sorte.json
+  [SAVE] ████████████████████ 30/30 (100%)  +30 no JSON parcial
+  [TELA] Completo: 30/30 bolao(oes) nesta pagina.
+  [RÁPIDO] Página concluída — CSS anti-popup desligado. Segue a paginação (próxima página).
+  💾 SALVO pág 8: 239 reg. total (+0 novos) | 1317.4 KB | boloes_1344_dia-de-sorte.json
+
+  --------------------------------------------------------
+  [PAINEL] Página 8 concluída | 💾 1317.4 KB no disco
+    Nesta página : +0 registro(s) | 31 captura(s) API | detalhes_tela=30
+    Total sessão  : 0 registro(s) | 239 único(s)
+    Páginas       : 8 processada(s) | 0 com dados | 8 vazia(s)
+    Capturas API  : 248 acumulada(s) na sessão
+  --------------------------------------------------------
+  📁 Arquivo: 239 reg. | 1317.4 KB | boloes_1344_dia-de-sorte.json
+  [PÁGINA] API: página 8 de 20 (599 bolões).
+  [CHECKPOINT] Página 8 gravada — próximo retomaria em 9.
+
+>>> Processando PÁGINA 9...
+  [PÁGINA] Avançando para página 9 (Seguinte)...
+  [PAGINA] Seguinte via Angular (1 clique).
+  [PAGINA] OK — 8 → 9.
+  [PÁGINA] Avanço OK 8 → 9.
+  [TELA] Página 9: 30 botão(ões) Detalhes visíveis.
+  [TELA] Preparando pagina (limpar marcas + rolar lista)...
+  [TELA] Meta desta página: 30 bolão(ões).
+  [TELA] Iniciando cliques em Detalhes...
+  [RÁPIDO] CSS anti-popup ATIVO nesta página (até o fim).
+  [TELA] Rodada 1 [SEM POPUP]: meta=30 | coletados=0 | faltam=30 | botoes_pendentes=30
+  [API] Baixando via endpoint detalhar-bolao (SEM popup)...
+  [API] ░░░░░░░░░░░░░░░░░░░░ 0/30 (0%)  iniciando
+  [API] Endpoint indisponível (sem-metodo) — fallback clique oculto.
+  [API] Fallback: mesmo clique do [1], popup OCULTO.
+  [TELA] Meta: 30 Detalhes nesta pagina (SEM POPUP).
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 1/30 (3%)  Detalhes 1/30
+  [RÁPIDO] █░░░░░░░░░░░░░░░░░░░ 2/30 (7%)  Detalhes 2/30
+  [RÁPIDO] ██░░░░░░░░░░░░░░░░░░ 3/30 (10%)  Detalhes 3/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 4/30 (13%)  Detalhes 4/30
+  [RÁPIDO] ███░░░░░░░░░░░░░░░░░ 5/30 (17%)  Detalhes 5/30
+  [RÁPIDO] ████░░░░░░░░░░░░░░░░ 6/30 (20%)  Detalhes 6/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 7/30 (23%)  Detalhes 7/30
+  [RÁPIDO] █████░░░░░░░░░░░░░░░ 8/30 (27%)  Detalhes 8/30
+  [RÁPIDO] ██████░░░░░░░░░░░░░░ 9/30 (30%)  Detalhes 9/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 10/30 (33%)  Detalhes 10/30
+  [RÁPIDO] ███████░░░░░░░░░░░░░ 11/30 (37%)  Detalhes 11/30
+  [RÁPIDO] ████████░░░░░░░░░░░░ 12/30 (40%)  Detalhes 12/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 13/30 (43%)  Detalhes 13/30
+  [RÁPIDO] █████████░░░░░░░░░░░ 14/30 (47%)  Detalhes 14/30
+  [RÁPIDO] ██████████░░░░░░░░░░ 15/30 (50%)  Detalhes 15/30
+  [RÁPIDO] ███████████░░░░░░░░░ 16/30 (53%)  Detalhes 16/30
+  [RÁPIDO] ███████████░░░░░░░░░ 17/30 (57%)  Detalhes 17/30
+  [RÁPIDO] ████████████░░░░░░░░ 18/30 (60%)  Detalhes 18/30
+  [RÁPIDO] █████████████░░░░░░░ 19/30 (63%)  Detalhes 19/30
+  [RÁPIDO] █████████████░░░░░░░ 20/30 (67%)  Detalhes 20/30
+  [RÁPIDO] ██████████████░░░░░░ 21/30 (70%)  Detalhes 21/30
+  [RÁPIDO] ███████████████░░░░░ 22/30 (73%)  Detalhes 22/30
+  [RÁPIDO] ███████████████░░░░░ 23/30 (77%)  Detalhes 23/30
+  [RÁPIDO] ████████████████░░░░ 24/30 (80%)  Detalhes 24/30
+  [RÁPIDO] █████████████████░░░ 25/30 (83%)  Detalhes 25/30
+  [RÁPIDO] █████████████████░░░ 26/30 (87%)  Detalhes 26/30
+  [RÁPIDO] ██████████████████░░ 27/30 (90%)  Detalhes 27/30
+  [RÁPIDO] ███████████████████░ 28/30 (93%)  Detalhes 28/30
+  [RÁPIDO] ███████████████████░ 29/30 (97%)  Detalhes 29/30
+  [RÁPIDO] ████████████████████ 30/30 (100%)  Detalhes 30/30
+  [TELA] 30 clique(s) Detalhes nesta rodada.
+  [RÁPIDO] Coletando JSON das capturas API...
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=8 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=9 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=7 dez.
+  [API] +1 bolão |  | Ap.1=10 dez.
+  💾 SALVO pág 9: 269 reg. total (+30 novos) | 1523.6 KB | boloes_1344_dia-de-sorte.json
+  [SAVE] ████████████████████ 30/30 (100%)  +30 no JSON parcial
+  [TELA] Completo: 30/30 bolao(oes) nesta pagina.
+  [RÁPIDO] Página concluída — CSS anti-popup desligado. Segue a paginação (próxima página).
+  💾 SALVO pág 9: 269 reg. total (+0 novos) | 1513.7 KB | boloes_1344_dia-de-sorte.json
+
+  --------------------------------------------------------
+  [PAINEL] Página 9 concluída | 💾 1513.7 KB no disco
+    Nesta página : +0 registro(s) | 31 captura(s) API | detalhes_tela=30
+    Total sessão  : 0 registro(s) | 269 único(s)
+    Páginas       : 9 processada(s) | 0 com dados | 9 vazia(s)
+    Capturas API  : 279 acumulada(s) na sessão
+  --------------------------------------------------------
+  📁 Arquivo: 269 reg. | 1513.7 KB | boloes_1344_dia-de-sorte.json
+  [PÁGINA] API: página 9 de 20 (589 bolões).
+  [CHECKPOINT] Página 9 gravada — próximo retomaria em 10.
+
+>>> Processando PÁGINA 10...
+  [PÁGINA] Avançando para página 10 (Seguinte)...
+  [PAGINA] Seguinte via Angular (1 clique).
+  [PAGINA] OK — 9 → nova lista.
+  [PÁGINA] Avanço OK 9 → nova lista.
+  [TELA] Preparando pagina (limpar marcas + rolar lista)...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [TELA] Nenhum Detalhes visível — tentando lista API interceptada...
+  [RÁPIDO] CSS anti-popup ATIVO nesta página (até o fim).
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [RÁPIDO] Página concluída — CSS anti-popup desligado. Segue a paginação (próxima página).
+  [SAVE] Pág 10: 0 bolões parseáveis (captura: api_r1_p10_1794345916.json) | arquivo: 269 reg. (1513.7 KB)
+  [DIAG] Nenhum bolão parseável nas capturas API desta página.
+
+  --------------------------------------------------------
+  [PAINEL] Página 10 concluída | 💾 1513.7 KB no disco
+    Nesta página : +0 registro(s) | 4 captura(s) API
+    Total sessão  : 0 registro(s) | 269 único(s)
+    Páginas       : 10 processada(s) | 0 com dados | 10 vazia(s)
+    Capturas API  : 283 acumulada(s) na sessão
+  --------------------------------------------------------
+  📁 Arquivo: 269 reg. | 1513.7 KB | boloes_1344_dia-de-sorte.json
+  [PÁGINA] API: página 9 de 20 (589 bolões).
+  [CHECKPOINT] Página 10 gravada — próximo retomaria em 11.
+
+>>> Processando PÁGINA 11...
+  [PÁGINA] Avançando para página 11 (Seguinte)...
+  [PAGINA] Botão Seguinte não encontrado.
+  [PAGINA] Sem próxima página nesta tentativa (barra=?, Seguinte=ausente).
+  [PÁGINA] Seguinte ausente/desabilitado (barra=?, estado=ausente). Sem próxima página na API.
+  [PÁGINA] Seguinte=ausente (barra=?) — não encerra (1/2). Relogin e segue a paginação.
+  [SESSÃO] Relogin automático — retoma Dia de Sorte na página 11 (checkpoint). Sem procurar estado no site.
+  [CARDS] Abriu lista: Dia de Sorte | concurso 1344
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+
+>>> Processando PÁGINA 11...
+  [PÁGINA] Avançando para página 11 (Seguinte)...
+  [PAGINA] Botão Seguinte não encontrado.
+  [PAGINA] Sem próxima página nesta tentativa (barra=?, Seguinte=ausente).
+  [PÁGINA] Seguinte ausente/desabilitado (barra=?, estado=ausente). Sem próxima página na API.
+  [PÁGINA] Seguinte=ausente (barra=?) — não encerra (2/2). Relogin e segue a paginação.
+  [SESSÃO] Relogin automático — retoma Dia de Sorte na página 11 (checkpoint). Sem procurar estado no site.
+  [CARDS] Abriu lista: Dia de Sorte | concurso 1344
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+
+>>> Processando PÁGINA 11...
+  [PÁGINA] Avançando para página 11 (Seguinte)...
+  [PAGINA] Botão Seguinte não encontrado.
+  [PAGINA] Sem próxima página nesta tentativa (barra=?, Seguinte=ausente).
+  [PÁGINA] Seguinte ausente/desabilitado (barra=?, estado=ausente). Sem próxima página na API.
+
+  [PÁGINA] Lista esgotada (Seguinte=ausente, barra=?). Próxima modalidade.
+  Paginação desta modalidade esgotada — todas as páginas. Segue para a próxima modalidade.
+  [ERRO INTEGRIDADE] 36950 bolão(ões) de outra modalidade (ex.: Mega-Sena, Mega-Sena, Mega-Sena) — NÃO gravados em Dia de Sorte.
+
+  [RECUPERO] 269 reg. no arquivo (+0 novos) | 1507.2 KB | 2980 captura(s) API.
+
+  [CHECKPOINT] Status=Concluído | páginas=10
+
+  [AVISO] Nenhum bolão baixado nesta sessão — extração não consolidou nada novo.
+
+============================================================
+  RESUMO FINAL DA EXTRAÇÃO
+============================================================
+
+  Lotérica alvo      : QUALQUER
+  Páginas processadas: 10
+  Páginas com dados  : 0
+  Páginas vazias     : 10
+  Registros no arquivo : 0 (modalidade + concurso — pronto p/ importar)
+  Hashes únicos sessão : 269
+  Total no arquivo   : 269 reg. (+269 novo(s) nesta extração)
+  Capturas API       : 283 JSON(s)
+  Tempo              : 21min 2s
+  Arquivo            : D:\Loterias\LEB-ExtracaoBoloes\json-boloes\boloes_1344_dia-de-sorte.json
+  Tamanho final      : 1507.2 KB
+
+  Registros por página:
+    Pág   1:    0  (vazia)
+    Pág   2:    0  (vazia)
+    Pág   3:    0  (vazia)
+    Pág   4:    0  (vazia)
+    Pág   5:    0  (vazia)
+    Pág   6:    0  (vazia)
+    Pág   7:    0  (vazia)
+    Pág   8:    0  (vazia)
+    Pág   9:    0  (vazia)
+    Pág  10:    0  (vazia)
+============================================================
+
+  [OK] Dia de Sorte concluída pela paginação (269 bolões | UFs: SP).
+
+  [SOM] Extração completa — todas as páginas processadas.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : dia-de-sorte
+  Operação   : Detalhes + próxima página — Dia de Sorte
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               AGUARDANDO     conc 3100
+  +Milionária                  AGUARDANDO     conc 406
+  Timemania                    AGUARDANDO     conc 2466
+  Dupla Sena                   AGUARDANDO     conc 3031
+  Quina                        AGUARDANDO     conc 7164
+  Mega-Sena                    AGUARDANDO     conc 3084
+  Lotofácil                    AGUARDANDO     conc 3826
+  Super Sete                   AGUARDANDO     conc 921
+================================================================
+  [SESSÃO] Voltando ao hub / conferindo login para a próxima...
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : mega-virada
+  Operação   : Auto card — Mega da Virada (2/9)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               EM ANDAMENTO   conc 3100
+  +Milionária                  AGUARDANDO     conc 406
+  Timemania                    AGUARDANDO     conc 2466
+  Dupla Sena                   AGUARDANDO     conc 3031
+  Quina                        AGUARDANDO     conc 7164
+  Mega-Sena                    AGUARDANDO     conc 3084
+  Lotofácil                    AGUARDANDO     conc 3826
+  Super Sete                   AGUARDANDO     conc 921
+================================================================
+
+================================================================
+  2/9 — Mega da Virada | conc 3100 | AUTO
+  Arquivo destino: json-boloes/boloes_3100_mega-virada.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Mega da Virada | concurso 3100
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Mega da Virada não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Mega da Virada | concurso 3100
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Mega da Virada — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : mais-milionaria
+  Operação   : Auto card — +Milionária (3/9)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  EM ANDAMENTO   conc 406
+  Timemania                    AGUARDANDO     conc 2466
+  Dupla Sena                   AGUARDANDO     conc 3031
+  Quina                        AGUARDANDO     conc 7164
+  Mega-Sena                    AGUARDANDO     conc 3084
+  Lotofácil                    AGUARDANDO     conc 3826
+  Super Sete                   AGUARDANDO     conc 921
+================================================================
+
+================================================================
+  3/9 — +Milionária | conc 406 | AUTO
+  Arquivo destino: json-boloes/boloes_406_mais-milionaria.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: +Milionária | concurso 406
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de +Milionária não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: +Milionária | concurso 406
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de +Milionária — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : timemania
+  Operação   : Auto card — Timemania (4/9)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    EM ANDAMENTO   conc 2466
+  Dupla Sena                   AGUARDANDO     conc 3031
+  Quina                        AGUARDANDO     conc 7164
+  Mega-Sena                    AGUARDANDO     conc 3084
+  Lotofácil                    AGUARDANDO     conc 3826
+  Super Sete                   AGUARDANDO     conc 921
+================================================================
+
+================================================================
+  4/9 — Timemania | conc 2466 | AUTO
+  Arquivo destino: json-boloes/boloes_2466_timemania.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Timemania | concurso 2466
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Timemania não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Timemania | concurso 2466
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Timemania — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : dupla-sena
+  Operação   : Auto card — Dupla Sena (5/9)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    PENDENTE       conc 2466
+  Dupla Sena                   EM ANDAMENTO   conc 3031
+  Quina                        AGUARDANDO     conc 7164
+  Mega-Sena                    AGUARDANDO     conc 3084
+  Lotofácil                    AGUARDANDO     conc 3826
+  Super Sete                   AGUARDANDO     conc 921
+================================================================
+
+================================================================
+  5/9 — Dupla Sena | conc 3031 | AUTO
+  Arquivo destino: json-boloes/boloes_3031_dupla-sena.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Dupla Sena | concurso 3031
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Dupla Sena não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Dupla Sena | concurso 3031
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Dupla Sena — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : quina
+  Operação   : Auto card — Quina (6/9)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    PENDENTE       conc 2466
+  Dupla Sena                   PENDENTE       conc 3031
+  Quina                        EM ANDAMENTO   conc 7164
+  Mega-Sena                    AGUARDANDO     conc 3084
+  Lotofácil                    AGUARDANDO     conc 3826
+  Super Sete                   AGUARDANDO     conc 921
+================================================================
+
+================================================================
+  6/9 — Quina | conc 7164 | AUTO
+  Arquivo destino: json-boloes/boloes_7164_quina.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Quina | concurso 7164
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Quina não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Quina | concurso 7164
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Quina — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : mega-sena
+  Operação   : Auto card — Mega-Sena (7/9)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    PENDENTE       conc 2466
+  Dupla Sena                   PENDENTE       conc 3031
+  Quina                        PENDENTE       conc 7164
+  Mega-Sena                    EM ANDAMENTO   conc 3084
+  Lotofácil                    AGUARDANDO     conc 3826
+  Super Sete                   AGUARDANDO     conc 921
+================================================================
+
+================================================================
+  7/9 — Mega-Sena | conc 3084 | AUTO
+  Arquivo destino: json-boloes/boloes_3084_mega-sena.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Mega-Sena | concurso 3084
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Mega-Sena não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Mega-Sena | concurso 3084
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Mega-Sena — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : lotofacil
+  Operação   : Auto card — Lotofácil (8/9)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    PENDENTE       conc 2466
+  Dupla Sena                   PENDENTE       conc 3031
+  Quina                        PENDENTE       conc 7164
+  Mega-Sena                    PENDENTE       conc 3084
+  Lotofácil                    EM ANDAMENTO   conc 3826
+  Super Sete                   AGUARDANDO     conc 921
+================================================================
+
+================================================================
+  8/9 — Lotofácil | conc 3826 | AUTO
+  Arquivo destino: json-boloes/boloes_3826_lotofacil.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Lotofácil | concurso 3826
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Lotofácil não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Lotofácil | concurso 3826
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Lotofácil — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : super-sete
+  Operação   : Auto card — Super Sete (9/9)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    PENDENTE       conc 2466
+  Dupla Sena                   PENDENTE       conc 3031
+  Quina                        PENDENTE       conc 7164
+  Mega-Sena                    PENDENTE       conc 3084
+  Lotofácil                    PENDENTE       conc 3826
+  Super Sete                   EM ANDAMENTO   conc 921
+================================================================
+
+================================================================
+  9/9 — Super Sete | conc 921 | AUTO
+  Arquivo destino: json-boloes/boloes_921_super-sete.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Super Sete | concurso 921
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Super Sete não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Super Sete | concurso 921
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Super Sete — fica PENDENTE; próxima.
+
+  [CICLO] Checkpoint — voltando às modalidades que ainda não esgotaram a paginação: Mega da Virada, +Milionária, Timemania, Dupla Sena, Quina, Mega-Sena, Lotofácil, Super Sete
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : mega-virada
+  Operação   : Auto card — Mega da Virada (1/8)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               EM ANDAMENTO   conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    PENDENTE       conc 2466
+  Dupla Sena                   PENDENTE       conc 3031
+  Quina                        PENDENTE       conc 7164
+  Mega-Sena                    PENDENTE       conc 3084
+  Lotofácil                    PENDENTE       conc 3826
+  Super Sete                   PENDENTE       conc 921
+================================================================
+
+================================================================
+  1/8 — Mega da Virada | conc 3100 | AUTO
+  Arquivo destino: json-boloes/boloes_3100_mega-virada.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Mega da Virada | concurso 3100
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Mega da Virada não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Mega da Virada | concurso 3100
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Mega da Virada — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : mais-milionaria
+  Operação   : Auto card — +Milionária (2/8)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  EM ANDAMENTO   conc 406
+  Timemania                    PENDENTE       conc 2466
+  Dupla Sena                   PENDENTE       conc 3031
+  Quina                        PENDENTE       conc 7164
+  Mega-Sena                    PENDENTE       conc 3084
+  Lotofácil                    PENDENTE       conc 3826
+  Super Sete                   PENDENTE       conc 921
+================================================================
+
+================================================================
+  2/8 — +Milionária | conc 406 | AUTO
+  Arquivo destino: json-boloes/boloes_406_mais-milionaria.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: +Milionária | concurso 406
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de +Milionária não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: +Milionária | concurso 406
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de +Milionária — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : timemania
+  Operação   : Auto card — Timemania (3/8)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    EM ANDAMENTO   conc 2466
+  Dupla Sena                   PENDENTE       conc 3031
+  Quina                        PENDENTE       conc 7164
+  Mega-Sena                    PENDENTE       conc 3084
+  Lotofácil                    PENDENTE       conc 3826
+  Super Sete                   PENDENTE       conc 921
+================================================================
+
+================================================================
+  3/8 — Timemania | conc 2466 | AUTO
+  Arquivo destino: json-boloes/boloes_2466_timemania.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Timemania | concurso 2466
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Timemania não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Timemania | concurso 2466
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Timemania — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : dupla-sena
+  Operação   : Auto card — Dupla Sena (4/8)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    PENDENTE       conc 2466
+  Dupla Sena                   EM ANDAMENTO   conc 3031
+  Quina                        PENDENTE       conc 7164
+  Mega-Sena                    PENDENTE       conc 3084
+  Lotofácil                    PENDENTE       conc 3826
+  Super Sete                   PENDENTE       conc 921
+================================================================
+
+================================================================
+  4/8 — Dupla Sena | conc 3031 | AUTO
+  Arquivo destino: json-boloes/boloes_3031_dupla-sena.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Dupla Sena | concurso 3031
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Dupla Sena não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Dupla Sena | concurso 3031
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Dupla Sena — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : quina
+  Operação   : Auto card — Quina (5/8)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    PENDENTE       conc 2466
+  Dupla Sena                   PENDENTE       conc 3031
+  Quina                        EM ANDAMENTO   conc 7164
+  Mega-Sena                    PENDENTE       conc 3084
+  Lotofácil                    PENDENTE       conc 3826
+  Super Sete                   PENDENTE       conc 921
+================================================================
+
+================================================================
+  5/8 — Quina | conc 7164 | AUTO
+  Arquivo destino: json-boloes/boloes_7164_quina.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Quina | concurso 7164
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Quina não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Quina | concurso 7164
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Quina — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : mega-sena
+  Operação   : Auto card — Mega-Sena (6/8)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    PENDENTE       conc 2466
+  Dupla Sena                   PENDENTE       conc 3031
+  Quina                        PENDENTE       conc 7164
+  Mega-Sena                    EM ANDAMENTO   conc 3084
+  Lotofácil                    PENDENTE       conc 3826
+  Super Sete                   PENDENTE       conc 921
+================================================================
+
+================================================================
+  6/8 — Mega-Sena | conc 3084 | AUTO
+  Arquivo destino: json-boloes/boloes_3084_mega-sena.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Mega-Sena | concurso 3084
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Mega-Sena não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Mega-Sena | concurso 3084
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Mega-Sena — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : lotofacil
+  Operação   : Auto card — Lotofácil (7/8)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    PENDENTE       conc 2466
+  Dupla Sena                   PENDENTE       conc 3031
+  Quina                        PENDENTE       conc 7164
+  Mega-Sena                    PENDENTE       conc 3084
+  Lotofácil                    EM ANDAMENTO   conc 3826
+  Super Sete                   PENDENTE       conc 921
+================================================================
+
+================================================================
+  7/8 — Lotofácil | conc 3826 | AUTO
+  Arquivo destino: json-boloes/boloes_3826_lotofacil.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Lotofácil | concurso 3826
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Lotofácil não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Lotofácil | concurso 3826
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Lotofácil — fica PENDENTE; próxima.
+
+================================================================
+  CICLO COMPLETO — AUTOMÁTICO (cards inicio-bolao)
+  Ordem: 1º Dia de Sorte → 2º maior premiação nos cards
+  1 JSON por modalidade | Detalhes + próxima página | SEM POPUP
+================================================================
+  Status     : EM EXECUÇÃO
+  Modalidade : super-sete
+  Operação   : Auto card — Super Sete (8/8)
+  Progresso  : ██░░░░░░░░░░░░░░░░░░ 11%  (1/9 modalidades)
+  Bolões≈    : 0 | Erros: 0
+----------------------------------------------------------------
+  Dia de Sorte                 CONCLUÍDO      conc 1344 | UFs no JSON: SP
+  Mega da Virada               PENDENTE       conc 3100
+  +Milionária                  PENDENTE       conc 406
+  Timemania                    PENDENTE       conc 2466
+  Dupla Sena                   PENDENTE       conc 3031
+  Quina                        PENDENTE       conc 7164
+  Mega-Sena                    PENDENTE       conc 3084
+  Lotofácil                    PENDENTE       conc 3826
+  Super Sete                   EM ANDAMENTO   conc 921
+================================================================
+
+================================================================
+  8/8 — Super Sete | conc 921 | AUTO
+  Arquivo destino: json-boloes/boloes_921_super-sete.json
+================================================================
+  [SESSÃO] Conferindo Edge/login antes de abrir o card...
+  [CARDS] Abriu lista: Super Sete | concurso 921
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [SESSÃO] Lista de Super Sete não abriu (0 Detalhes / sessão). Recuperando login e tentando 1×...
+  [CARDS] Abriu lista: Super Sete | concurso 921
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CARDS] Lista abriu, mas 0 Detalhes ainda — aguardando mais 8s...
+  [TELA] Rolando lista e contando botoes Detalhes (aguarde)...
+  [TELA] Contagem apos rolagem: 0 botao(oes) Detalhes.
+  [TELA] Contagem rapida: 0 botao(oes) Detalhes.
+  [CICLO] Não abriu lista de Super Sete — fica PENDENTE; próxima.
+
+================================================================
+  EXTRAÇÃO COMPLETA — RESUMO
+================================================================
+  Início : 2026-11-10 18:05:05
+  Fim    : 2026-11-10 19:10:37
+  Duração: 01:05:32
+  Modalidades concluídas : 1
+  Bolões                 : 0
+  Erros / pendências     : 0 / 0
+================================================================
+
+  [SOM] Extração completa — todas as páginas processadas.
+
+============================================================
+  EXTRATOR DE BOLOES — Caixa (API)
+  >>> VERSAO: CICLO-COMPLETO-v4.4.21 (pula modalidade já baixada)
+============================================================
+
+  Modalidade: vem da API do site (MEGA_SENA, QUINA…) — não precisa M1.
+
+  OPCIONAL — forçar parser no terminal (senão usa API do site):
+  M1 Mega-Sena   M2 Quina        M3 Lotofácil
+  M4 Lotomania   M5 Timemania    M6 Dia de Sorte
+  M7 Super Sete  M8 Dupla Sena   M9 +Milionária
+  Especiais: DSP | QSJ | LTI | MSV | MS3
+
+  JSON: D:\Loterias\LEB-ExtracaoBoloes\json-boloes
+
+[C] INICIAR EXTRAÇÃO — CICLO COMPLETO  ★
+    = AUTO: cards → SIM → Compre seu bolão → SIM (lista) → JSON
+[1] EXTRAIR AUTOMATICO (uma modalidade)
+    = lista já aberta | clique Detalhes COM popup
+[2] EXTRAIR MANUAL (ENTER a cada pagina / varios filtros)
+[3] Consolidar capturas-api/
+[M] Tabela completa de modalidades
+[0] Fechar navegador
+------------------------------------------------------------
+  Opcional: M1-M9 | QSJ | DSP — so para forcar parser
+------------------------------------------------------------
+Opção:
+
+
+=======
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257

@@ -1,0 +1,5496 @@
+[
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:09.416",
+      "payload": {
+        "contemResiduo": false,
+        "cotas": [
+          {
+            "codigoBolao": "MjAyNjsxMTs2MjM5NTM4ODY7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 760,
+            "index": 3,
+            "loterica": 14210,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 5,
+                "numero": 760
+              },
+              "nome": "BRAGANCA PAULISTA",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA BRAGANTINA",
+            "nomeRazaoSocial": "LOTERICA BRAGANTINA LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 1,
+            "qtdCotaDigital": 27,
+            "qtdCotaDisponivel": 27,
+            "qtdCotaTotal": 30,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 10,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 14.7,
+            "vrCotaComTarifa": 56.7,
+            "vrCotaSemTarifa": 42,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 14.7,
+            "vrUltimaCotaComTarifa": 56.7,
+            "vrUltimaCotaSemTarifa": 42
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MzczNDg4NTk7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 950,
+            "index": 3,
+            "loterica": 7426,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 2,
+                "numero": 950
+              },
+              "nome": "CAMPINAS",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "NACIONAL LOTERIAS LTDA",
+            "nomeRazaoSocial": "NACIONAL LOTERIAS LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 20,
+            "qtdCotaDisponivel": 17,
+            "qtdCotaTotal": 40,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 8,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 14.7,
+            "vrCotaComTarifa": 56.7,
+            "vrCotaSemTarifa": 42,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 14.7,
+            "vrUltimaCotaComTarifa": 56.7,
+            "vrUltimaCotaSemTarifa": 42
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2Mzk3MjAwMTg7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 390,
+            "index": 3,
+            "loterica": 4874,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 1,
+                "numero": 390
+              },
+              "nome": "ARUJA",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA ARUJA",
+            "nomeRazaoSocial": "LUCIANI E LUCIANI LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 1,
+            "qtdCotaDigital": 35,
+            "qtdCotaDisponivel": 35,
+            "qtdCotaTotal": 45,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 10,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 9.8,
+            "vrCotaComTarifa": 37.8,
+            "vrCotaSemTarifa": 28,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 9.8,
+            "vrUltimaCotaComTarifa": 37.8,
+            "vrUltimaCotaSemTarifa": 28
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MTIyMDAxNjk7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 1907,
+            "index": 3,
+            "loterica": 25724,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 1,
+                "numero": 1907
+              },
+              "nome": "HORTOLANDIA",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA FLORA",
+            "nomeRazaoSocial": "LOTERICA VILLA FLORA LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 1,
+            "qtdCotaDigital": 24,
+            "qtdCotaDisponivel": 18,
+            "qtdCotaTotal": 34,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 10,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 12.97,
+            "vrCotaComTarifa": 50.02,
+            "vrCotaSemTarifa": 37.05,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 12.99,
+            "vrUltimaCotaComTarifa": 50.34,
+            "vrUltimaCotaSemTarifa": 37.35
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MjE1MTUzNDM7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 3870,
+            "index": 3,
+            "loterica": 1032,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 9,
+                "numero": 3870
+              },
+              "nome": "PIRACICABA",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA IDEAL",
+            "nomeRazaoSocial": "QUINZE COM. JORN. REV. E LOTERIAS LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 2,
+            "qtdCotaDigital": 12,
+            "qtdCotaDisponivel": 9,
+            "qtdCotaTotal": 12,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 9,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 29.39,
+            "vrCotaComTarifa": 113.39,
+            "vrCotaSemTarifa": 84,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 29.5,
+            "vrUltimaCotaComTarifa": 113.5,
+            "vrUltimaCotaSemTarifa": 84
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MzgxNTA1MTc7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 950,
+            "index": 3,
+            "loterica": 695,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 2,
+                "numero": 950
+              },
+              "nome": "CAMPINAS",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "TREVO DA SORTE",
+            "nomeRazaoSocial": "CRIVARI E BITTAR LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 2,
+            "qtdCotaDigital": 20,
+            "qtdCotaDisponivel": 20,
+            "qtdCotaTotal": 50,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 11,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 38.8,
+            "vrCotaComTarifa": 149.68,
+            "vrCotaSemTarifa": 110.88,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 39.19,
+            "vrUltimaCotaComTarifa": 150.07,
+            "vrUltimaCotaSemTarifa": 110.88
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MzY0MDA0MTY7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 4910,
+            "index": 3,
+            "loterica": 1950,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 2,
+                "numero": 4910
+              },
+              "nome": "SAO JOAO DA BOA VISTA",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA SANJOANENSE",
+            "nomeRazaoSocial": "A CASA DOS SONHOS LTDA ME",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 3,
+            "qtdCotaDigital": 18,
+            "qtdCotaDisponivel": 18,
+            "qtdCotaTotal": 18,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 8,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 9.79,
+            "vrCotaComTarifa": 37.79,
+            "vrCotaSemTarifa": 28,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 9.96,
+            "vrUltimaCotaComTarifa": 37.96,
+            "vrUltimaCotaSemTarifa": 28
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MjY5ODcwNjE7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 330,
+            "index": 3,
+            "loterica": 8227,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 7,
+                "numero": 330
+              },
+              "nome": "ARARAS",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICAS LAPA - LOJA 1",
+            "nomeRazaoSocial": "ARARAS LAPA 1 LOTERIAS LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 2,
+            "qtdCotaDigital": 4,
+            "qtdCotaDisponivel": 4,
+            "qtdCotaTotal": 10,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 8,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 11.76,
+            "vrCotaComTarifa": 45.36,
+            "vrCotaSemTarifa": 33.6,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 11.76,
+            "vrUltimaCotaComTarifa": 45.36,
+            "vrUltimaCotaSemTarifa": 33.6
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MzQ5NjgyMDk7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 3580,
+            "index": 3,
+            "loterica": 9776,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 4,
+                "numero": 3580
+              },
+              "nome": "PARANAPANEMA",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA PARANAPANEMA",
+            "nomeRazaoSocial": "LOTERICA PARANAPANEMA LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 8,
+            "qtdCotaDisponivel": 8,
+            "qtdCotaTotal": 8,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 6,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 2.62,
+            "vrCotaComTarifa": 10.12,
+            "vrCotaSemTarifa": 7.5,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 2.66,
+            "vrUltimaCotaComTarifa": 10.16,
+            "vrUltimaCotaSemTarifa": 7.5
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2NDAyMzA3MDE7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 4780,
+            "index": 3,
+            "loterica": 1279,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 9,
+                "numero": 4780
+              },
+              "nome": "SANTO ANDRE",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "CASA DA FORTUNA LOTERICA LTDA",
+            "nomeRazaoSocial": "CASA DA FORTUNA LOTERICA LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 5,
+            "qtdCotaDigital": 36,
+            "qtdCotaDisponivel": 36,
+            "qtdCotaTotal": 42,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 8,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 7,
+            "vrCotaComTarifa": 27,
+            "vrCotaSemTarifa": 20,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 7,
+            "vrUltimaCotaComTarifa": 27,
+            "vrUltimaCotaSemTarifa": 20
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MDIzMTMyNDM7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 3550,
+            "index": 3,
+            "loterica": 24476,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 7,
+                "numero": 3550
+              },
+              "nome": "PARAGUACU PAULISTA",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "KHASA LOTERICA",
+            "nomeRazaoSocial": "LOTERICA GARMS E MARUBAYASHI LTDA ME",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 9,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 5,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 6,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 3.78,
+            "vrCotaComTarifa": 14.58,
+            "vrCotaSemTarifa": 10.8,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 3.78,
+            "vrUltimaCotaComTarifa": 14.58,
+            "vrUltimaCotaSemTarifa": 10.8
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MzU4OTM5Nzg7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 4870,
+            "index": 3,
+            "loterica": 1197,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 8,
+                "numero": 4870
+              },
+              "nome": "SAO BERNARDO DO CAMPO",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "SORTE NA MARECHAL",
+            "nomeRazaoSocial": "J & S LOTERICA LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 8,
+            "qtdCotaDigital": 50,
+            "qtdCotaDisponivel": 39,
+            "qtdCotaTotal": 50,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 8,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 9.4,
+            "vrCotaComTarifa": 36.28,
+            "vrCotaSemTarifa": 26.88,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 9.8,
+            "vrUltimaCotaComTarifa": 36.68,
+            "vrUltimaCotaSemTarifa": 26.88
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MzE3MTY0NDc7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 4980,
+            "index": 3,
+            "loterica": 13291,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 5,
+                "numero": 4980
+              },
+              "nome": "SAO JOSE DO RIO PRETO",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA CHAVE DA SORTE",
+            "nomeRazaoSocial": "LOTERICA CHAVE DA SORTE LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 6,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 6,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 3.5,
+            "vrCotaComTarifa": 13.5,
+            "vrCotaSemTarifa": 10,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 3.5,
+            "vrUltimaCotaComTarifa": 13.5,
+            "vrUltimaCotaSemTarifa": 10
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MDU3MjgyNzY7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 5100,
+            "index": 3,
+            "loterica": 24382,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 9,
+                "numero": 5100
+              },
+              "nome": "SAO VICENTE",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "CASA LOTERICA SAO VICENTE",
+            "nomeRazaoSocial": "CASA LOTERICA SAO VICENTE LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 6,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 6,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 3.5,
+            "vrCotaComTarifa": 13.5,
+            "vrCotaSemTarifa": 10,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 3.5,
+            "vrUltimaCotaComTarifa": 13.5,
+            "vrUltimaCotaSemTarifa": 10
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs1OTA5OTQ2NjQ7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 5070,
+            "index": 3,
+            "loterica": 20906,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 4,
+                "numero": 5070
+              },
+              "nome": "SAO SEBASTIAO",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "CASA LOTERICA CANTO DO MAR DA SORTE",
+            "nomeRazaoSocial": "CASA LOTERICA CANTO DO MAR DA SORTE LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 1,
+            "qtdCotaDigital": 23,
+            "qtdCotaDisponivel": 23,
+            "qtdCotaTotal": 30,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 11,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 32.33,
+            "vrCotaComTarifa": 124.73,
+            "vrCotaSemTarifa": 92.4,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 32.62,
+            "vrUltimaCotaComTarifa": 125.02,
+            "vrUltimaCotaSemTarifa": 92.4
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MzQ3MzU1MzA7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 650,
+            "index": 3,
+            "loterica": 12995,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 8,
+                "numero": 650
+              },
+              "nome": "BIRIGUI",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA CANTINHO DA SORTE",
+            "nomeRazaoSocial": "LOTERICA CANTINHO DA SORTE BIRIGUI LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 5,
+            "qtdCotaDigital": 10,
+            "qtdCotaDisponivel": 6,
+            "qtdCotaTotal": 10,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 7.35,
+            "vrCotaComTarifa": 28.35,
+            "vrCotaSemTarifa": 21,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 7.35,
+            "vrUltimaCotaComTarifa": 28.35,
+            "vrUltimaCotaSemTarifa": 21
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MTk5NTQ3MTI7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 1300,
+            "index": 3,
+            "loterica": 4867,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 9,
+                "numero": 1300
+              },
+              "nome": "COTIA",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "PORTAO LOTERIAS LIMITADA - ME",
+            "nomeRazaoSocial": "PORTAO LOTERIAS LIMITADA - ME",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 1,
+            "qtdCotaDigital": 85,
+            "qtdCotaDisponivel": 80,
+            "qtdCotaTotal": 85,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 10,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 5.18,
+            "vrCotaComTarifa": 20,
+            "vrCotaSemTarifa": 14.82,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 5.88,
+            "vrUltimaCotaComTarifa": 21,
+            "vrUltimaCotaSemTarifa": 15.12
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MzAwODg3MjM7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 950,
+            "index": 3,
+            "loterica": 697,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 2,
+                "numero": 950
+              },
+              "nome": "CAMPINAS",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "CAMPEA DA SORTE",
+            "nomeRazaoSocial": "CASA LOTERICA LEITE SOARES",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 2,
+            "qtdCotaDigital": 26,
+            "qtdCotaDisponivel": 26,
+            "qtdCotaTotal": 26,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 10,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 33.92,
+            "vrCotaComTarifa": 130.84,
+            "vrCotaSemTarifa": 96.92,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 34,
+            "vrUltimaCotaComTarifa": 131,
+            "vrUltimaCotaSemTarifa": 97
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MTc2ODM5NTk7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 4900,
+            "index": 3,
+            "loterica": 19639,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 3,
+                "numero": 4900
+              },
+              "nome": "SAO FRANCISCO",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA SAO FRANCISCO",
+            "nomeRazaoSocial": "HBM CASA LOTERICA LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 1,
+            "qtdCotaDigital": 99,
+            "qtdCotaDisponivel": 94,
+            "qtdCotaTotal": 100,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 13,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 36.03,
+            "vrCotaComTarifa": 138.99,
+            "vrCotaSemTarifa": 102.96,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 36.63,
+            "vrUltimaCotaComTarifa": 139.59,
+            "vrUltimaCotaSemTarifa": 102.96
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs1ODE1NzE1ODk7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 650,
+            "index": 3,
+            "loterica": 12664,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 8,
+                "numero": 650
+              },
+              "nome": "BIRIGUI",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA CALESTINE",
+            "nomeRazaoSocial": "IRMAS CALESTINE LOTERICA LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 6,
+            "qtdCotaDigital": 20,
+            "qtdCotaDisponivel": 14,
+            "qtdCotaTotal": 91,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 8,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 3.87,
+            "vrCotaComTarifa": 14.94,
+            "vrCotaSemTarifa": 11.07,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 4.49,
+            "vrUltimaCotaComTarifa": 16.19,
+            "vrUltimaCotaSemTarifa": 11.7
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MzI4NjQzNjQ7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 4780,
+            "index": 3,
+            "loterica": 1211,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 9,
+                "numero": 4780
+              },
+              "nome": "SANTO ANDRE",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "CHAPARRAL CASA LOTERICA LTDA",
+            "nomeRazaoSocial": "CHAPARRAL CASA LOTERICA LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 7,
+            "qtdCotaDisponivel": 6,
+            "qtdCotaTotal": 8,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 6,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 2.62,
+            "vrCotaComTarifa": 10.12,
+            "vrCotaSemTarifa": 7.5,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 2.66,
+            "vrUltimaCotaComTarifa": 10.16,
+            "vrUltimaCotaSemTarifa": 7.5
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MjUxMzQ2Nzg7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 4780,
+            "index": 3,
+            "loterica": 1270,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 9,
+                "numero": 4780
+              },
+              "nome": "SANTO ANDRE",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA CAMPESTRE",
+            "nomeRazaoSocial": "GASQUES & MARTINS LTDA ME",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 2,
+            "qtdCotaDigital": 6,
+            "qtdCotaDisponivel": 6,
+            "qtdCotaTotal": 7,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 4.2,
+            "vrCotaComTarifa": 16.2,
+            "vrCotaSemTarifa": 12,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 4.2,
+            "vrUltimaCotaComTarifa": 16.2,
+            "vrUltimaCotaSemTarifa": 12
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2NDAxNTY1MDM7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 2900,
+            "index": 3,
+            "loterica": 14318,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 5,
+                "numero": 2900
+              },
+              "nome": "MARILIA",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA MIL",
+            "nomeRazaoSocial": "LOTERICA MIL DE MARILIA LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 50,
+            "qtdCotaDisponivel": 44,
+            "qtdCotaTotal": 50,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 2.94,
+            "vrCotaComTarifa": 11.34,
+            "vrCotaSemTarifa": 8.4,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 2.94,
+            "vrUltimaCotaComTarifa": 11.34,
+            "vrUltimaCotaSemTarifa": 8.4
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MTQ2MzUxNzk7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 1970,
+            "index": 3,
+            "loterica": 13185,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 9,
+                "numero": 1970
+              },
+              "nome": "IBIUNA",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "GANHE FACIL",
+            "nomeRazaoSocial": "GANHE FACIL IBIUNA LTDA ME",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 1,
+            "qtdCotaDigital": 9,
+            "qtdCotaDisponivel": 8,
+            "qtdCotaTotal": 12,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 10,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 36.75,
+            "vrCotaComTarifa": 141.75,
+            "vrCotaSemTarifa": 105,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 36.75,
+            "vrUltimaCotaComTarifa": 141.75,
+            "vrUltimaCotaSemTarifa": 105
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MjcyMDM4MjY7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 4880,
+            "index": 3,
+            "loterica": 24328,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 7,
+                "numero": 4880
+              },
+              "nome": "SAO CAETANO DO SUL",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA PARK",
+            "nomeRazaoSocial": "CASA LOTERICA PARK LTDA ME",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 3,
+            "qtdCotaDigital": 14,
+            "qtdCotaDisponivel": 14,
+            "qtdCotaTotal": 34,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 9,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 15.56,
+            "vrCotaComTarifa": 60.03,
+            "vrCotaSemTarifa": 44.47,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 15.71,
+            "vrUltimaCotaComTarifa": 60.2,
+            "vrUltimaCotaSemTarifa": 44.49
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MzQ0NjU1NDA7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 4870,
+            "index": 3,
+            "loterica": 19830,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 8,
+                "numero": 4870
+              },
+              "nome": "SAO BERNARDO DO CAMPO",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "LOTERICA ROYALE",
+            "nomeRazaoSocial": "CASA LOTERICA ROYALE LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 9,
+            "qtdCotaDigital": 3,
+            "qtdCotaDisponivel": 3,
+            "qtdCotaTotal": 6,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 6,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 3.15,
+            "vrCotaComTarifa": 12.15,
+            "vrCotaSemTarifa": 9,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 3.15,
+            "vrUltimaCotaComTarifa": 12.15,
+            "vrUltimaCotaSemTarifa": 9
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MTcyMTA4MjY7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 2050,
+            "index": 3,
+            "loterica": 14374,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 9,
+                "numero": 2050
+              },
+              "nome": "INDAIATUBA",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "VANDO LOTERIAS CECAP",
+            "nomeRazaoSocial": "GAZAFI & BORSARI LOTERICA CECAP LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 5,
+            "qtdCotaDigital": 14,
+            "qtdCotaDisponivel": 14,
+            "qtdCotaTotal": 20,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 9,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 44.1,
+            "vrCotaComTarifa": 170.1,
+            "vrCotaSemTarifa": 126,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 44.1,
+            "vrUltimaCotaComTarifa": 170.1,
+            "vrUltimaCotaSemTarifa": 126
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2Mjg1MTUyNTE7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 5030,
+            "index": 3,
+            "loterica": 14122,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 8,
+                "numero": 5030
+              },
+              "nome": "SAO PAULO",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "POP MANIA",
+            "nomeRazaoSocial": "POP MANIA LOTERIAS LTDA ME",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 2,
+            "qtdCotaDigital": 7,
+            "qtdCotaDisponivel": 7,
+            "qtdCotaTotal": 15,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 8,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 7.84,
+            "vrCotaComTarifa": 30.24,
+            "vrCotaSemTarifa": 22.4,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 7.84,
+            "vrUltimaCotaComTarifa": 30.24,
+            "vrUltimaCotaSemTarifa": 22.4
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MTc2NjcwODg7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": false,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 4780,
+            "index": 3,
+            "loterica": 1296,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 9,
+                "numero": 4780
+              },
+              "nome": "SANTO ANDRE",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "MORAIS LOTERIAS",
+            "nomeRazaoSocial": "MORAIS LOTERIAS COMERCIO E SERVICOS LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 2,
+            "qtdCotaDigital": 13,
+            "qtdCotaDisponivel": 13,
+            "qtdCotaTotal": 30,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 8,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 3.92,
+            "vrCotaComTarifa": 15.12,
+            "vrCotaSemTarifa": 11.2,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 3.92,
+            "vrUltimaCotaComTarifa": 15.12,
+            "vrUltimaCotaSemTarifa": 11.2
+          },
+          {
+            "codigoBolao": "MjAyNjsxMTs2MjY1NjM2ODU7MTA3Nzk7",
+            "concurso": 3100,
+            "contemResiduo": true,
+            "dataSorteio": "01/01/2027",
+            "diaSorteio": "Sexta-feira",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 2,
+            "idMunicipio": 4910,
+            "index": 3,
+            "loterica": 22031,
+            "lotericaFavorita": false,
+            "modalidade": "MEGA_SENA",
+            "municipio": {
+              "id": {
+                "codigoUF": 35,
+                "digitoVerificador": 2,
+                "numero": 4910
+              },
+              "nome": "SAO JOAO DA BOA VISTA",
+              "uf": {
+                "id": 35,
+                "nome": "SAO PAULO           ",
+                "sigla": "SP"
+              }
+            },
+            "nomeFantasia": "B IG SORTE SAO JOAO LTDA ME",
+            "nomeRazaoSocial": "BIG SORTE SAO JOAO LTDA",
+            "numeroUF": 35,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 8,
+            "qtdCotaDisponivel": 8,
+            "qtdCotaTotal": 8,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 6,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 2,
+            "uf": {
+              "id": 35,
+              "nome": "SAO PAULO           ",
+              "sigla": "SP"
+            },
+            "valorTarifaServico": 2.62,
+            "vrCotaComTarifa": 10.12,
+            "vrCotaSemTarifa": 7.5,
+            "vrPremioEstimado": 1000000000,
+            "vrTarifaServicoUltimaCota": 2.66,
+            "vrUltimaCotaComTarifa": 10.16,
+            "vrUltimaCotaSemTarifa": 7.5
+          }
+        ],
+        "paginaAtual": 144,
+        "totalRegistros": 21171,
+        "ultimaPagina": 706,
+        "valorMenorCota": 3
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935866459,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL3JlY3VwZXJhci1ib2xvZXMtZGlzcG9uaXZlaXM=/?q=%5B%1E;%1F%C2%BA5%0C:%3C%C2%BD%11%C2%98f%C3%88%C3%B1%C2%A3%0Caxe%11%C3%AB%C3%95%C2%A7%C2%87%0E%0F!%C3%A8m%C3%A0%C2%83%C2%BD,%C2%88%C3%98D%C2%97%11hnd%C3%BE%18%C3%8D%038%C2%B2%C3%97%C3%8A%17CEwZ%04%C3%8E%0Fn%C3%AE%C3%99%C2%9D%C3%A3%0C%C3%8Br%C2%AA%12%C2%9D4%C2%A8%C2%89%C3%A5%C3%99;%C3%9A%C3%ABT%60v%C2%BC4%11%C3%A5%C3%B6%C3%A7%C2%8A%C2%BF%C2%8F1%60%C3%89%C2%89@%C2%9E%07%C2%AC%1D%1AxN%13g%C2%9C%032%C3%A7%7B%C2%85%C2%8FH%C3%8F!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:21.682",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              6,
+              15,
+              28,
+              30,
+              31,
+              43,
+              51,
+              56,
+              57,
+              58
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 14210,
+        "lotericaFormatada": {
+          "bairro": "CID PLANEJADA II                        ",
+          "codigo": "21.014210-3",
+          "dv": 3,
+          "dvMunicipio": 5,
+          "id": 14210,
+          "idMunicipio": 760,
+          "idUF": 35,
+          "logradouro": "R AGOSTINHO ROSA                                  ",
+          "nome": "LOTERICA BRAGANTINA LTDA                                                                                           ",
+          "nomeFantasia": "LOTERICA BRAGANTINA",
+          "nomeMunicipio": "BRAGANCA PAULISTA                  ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.014210-3",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 5,
+            "numero": 760
+          },
+          "nome": "BRAGANCA PAULISTA",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA BRAGANTINA",
+        "qtdApostas": 1,
+        "qtdCotaDisponivel": 27,
+        "qtdCotaTotal": 30,
+        "qtdNumeros": 10,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 56.7,
+        "vrCotaSemTarifa": 42,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 14.7,
+        "vrTarifaServicoUltimaCota": 14.7,
+        "vrUltimaCotaComTarifa": 56.7,
+        "vrUltimaCotaSemTarifa": 42
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935878263,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1AFl%C2%B1%3E%C2%89%C2%8A%C3%91%C3%81sM%C3%B2%C2%B2U%26E%C3%82%7F%C2%A5%C2%B5p%C3%9D%5BNis%C3%B8%C2%AE%60R%C2%81A%C2%96!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:24.185",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              19,
+              26,
+              32,
+              35,
+              44,
+              53,
+              56,
+              60
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              15,
+              25,
+              26,
+              27,
+              36,
+              41,
+              48,
+              60
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              3,
+              21,
+              26,
+              45,
+              46,
+              49,
+              54,
+              55
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              3,
+              6,
+              15,
+              33,
+              35,
+              37,
+              40,
+              43
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              2,
+              24,
+              27,
+              30,
+              31,
+              53,
+              59
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              6,
+              19,
+              36,
+              39,
+              42,
+              60
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              4,
+              21,
+              34,
+              35,
+              39,
+              47,
+              49,
+              56
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              12,
+              13,
+              19,
+              22,
+              34,
+              55,
+              58
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              14,
+              26,
+              30,
+              32,
+              36,
+              42,
+              53
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              13,
+              14,
+              24,
+              27,
+              39,
+              53,
+              58
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 7426,
+        "lotericaFormatada": {
+          "bairro": "JARDIM ITATINGA                         ",
+          "codigo": "21.007426-4",
+          "dv": 4,
+          "dvMunicipio": 2,
+          "id": 7426,
+          "idMunicipio": 950,
+          "idUF": 35,
+          "logradouro": "RUA ELDORADO                                      ",
+          "nome": "NACIONAL LOTERIAS LTDA                                                                                             ",
+          "nomeFantasia": "NACIONAL LOTERIAS LTDA",
+          "nomeMunicipio": "CAMPINAS                           ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.007426-4",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 2,
+            "numero": 950
+          },
+          "nome": "CAMPINAS",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "NACIONAL LOTERIAS LTDA",
+        "qtdApostas": 10,
+        "qtdCotaDisponivel": 17,
+        "qtdCotaTotal": 40,
+        "qtdNumeros": 8,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 56.7,
+        "vrCotaSemTarifa": 42,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 14.7,
+        "vrTarifaServicoUltimaCota": 14.7,
+        "vrUltimaCotaComTarifa": 56.7,
+        "vrUltimaCotaSemTarifa": 42
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935880786,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%3E%C2%B4%7FG%C3%BB%C3%A2%C2%90H%C2%B3q%C3%BF%C3%8D:%C2%8A%C2%95U%C2%90%C2%B9%C3%84%C3%89M%5B%7C%C3%80)%C3%8D%26%C2%95%C2%80%1C%C3%9F%C3%9B!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:26.697",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              9,
+              15,
+              18,
+              26,
+              37,
+              40,
+              42,
+              47,
+              59
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 4874,
+        "lotericaFormatada": {
+          "bairro": "Centro                                  ",
+          "codigo": "21.004874-3",
+          "dv": 3,
+          "dvMunicipio": 1,
+          "id": 4874,
+          "idMunicipio": 390,
+          "idUF": 35,
+          "logradouro": "Av Joao Manoel                                    ",
+          "nome": "LUCIANI E LUCIANI LTDA                                                                                             ",
+          "nomeFantasia": "LOTERICA ARUJA",
+          "nomeMunicipio": "ARUJA                              ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.004874-3",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 1,
+            "numero": 390
+          },
+          "nome": "ARUJA",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA ARUJA",
+        "qtdApostas": 1,
+        "qtdCotaDisponivel": 35,
+        "qtdCotaTotal": 45,
+        "qtdNumeros": 10,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 37.8,
+        "vrCotaSemTarifa": 28,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 9.8,
+        "vrTarifaServicoUltimaCota": 9.8,
+        "vrUltimaCotaComTarifa": 37.8,
+        "vrUltimaCotaSemTarifa": 28
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935883278,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%25*s%5EDQw%C2%89%C3%A3%15%C2%BE%C2%A2E%C2%8BFo%C2%9F%C2%8CIC%12%C3%AD%C3%9D%C2%9B%0A%0A%C3%BF%C3%8B%C3%8D%3C%C3%87%C3%B1!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:30.621",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              5,
+              11,
+              20,
+              28,
+              46,
+              47,
+              53,
+              55,
+              59
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 25724,
+        "lotericaFormatada": {
+          "bairro": "JARDIM INTERLAGOS                       ",
+          "codigo": "21.025724-5",
+          "dv": 5,
+          "dvMunicipio": 1,
+          "id": 25724,
+          "idMunicipio": 1907,
+          "idUF": 35,
+          "logradouro": "RUA JOAQUIM MARCELINO LEITE                       ",
+          "nome": "LOTERICA VILLA FLORA LTDA                                                                                          ",
+          "nomeFantasia": "LOTERICA FLORA",
+          "nomeMunicipio": "HORTOLANDIA                        ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.025724-5",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 1,
+            "numero": 1907
+          },
+          "nome": "HORTOLANDIA",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA FLORA",
+        "qtdApostas": 1,
+        "qtdCotaDisponivel": 18,
+        "qtdCotaTotal": 34,
+        "qtdNumeros": 10,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 50.02,
+        "vrCotaSemTarifa": 37.05,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 12.97,
+        "vrTarifaServicoUltimaCota": 12.99,
+        "vrUltimaCotaComTarifa": 50.34,
+        "vrUltimaCotaSemTarifa": 37.35
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935887201,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C3%AA%C2%83%C3%91y%C2%BF%C2%BC%07+%C3%B5%C2%80%C3%8A%01%19%C3%BF%00%C2%92%C2%A9C%C3%A7l%C2%AD%C3%AD)K%C3%B3~Wfa2v%C3%A9!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:35.245",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              2,
+              9,
+              16,
+              22,
+              29,
+              31,
+              32,
+              45,
+              47
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              4,
+              12,
+              30,
+              32,
+              41,
+              43,
+              45,
+              52,
+              55
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 1032,
+        "lotericaFormatada": {
+          "bairro": "PIRACICAMIRIM                           ",
+          "codigo": "21.001032-0",
+          "dv": 0,
+          "dvMunicipio": 9,
+          "id": 1032,
+          "idMunicipio": 3870,
+          "idUF": 35,
+          "logradouro": "AV DOIS CORREGOS                                  ",
+          "nome": "QUINZE COM. JORN. REV. E LOTERIAS LTDA                                                                             ",
+          "nomeFantasia": "LOTERICA IDEAL",
+          "nomeMunicipio": "PIRACICABA                         ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.001032-0",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 9,
+            "numero": 3870
+          },
+          "nome": "PIRACICABA",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA IDEAL",
+        "qtdApostas": 2,
+        "qtdCotaDisponivel": 9,
+        "qtdCotaTotal": 12,
+        "qtdNumeros": 9,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 113.39,
+        "vrCotaSemTarifa": 84,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 29.39,
+        "vrTarifaServicoUltimaCota": 29.5,
+        "vrUltimaCotaComTarifa": 113.5,
+        "vrUltimaCotaSemTarifa": 84
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935893175,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%B8%1E%C3%B4%C3%9D%C3%AAjz%C3%82%C2%BA%C2%BAg%17i%C2%9C%C3%A4%C3%85%C2%BD%C2%A7v%C2%A6%C3%AB$%C3%B6(C%11%7BU%C3%98v%0CD!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:39.165",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              3,
+              4,
+              6,
+              12,
+              14,
+              20,
+              30,
+              32,
+              47,
+              53,
+              58
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              30,
+              33,
+              34,
+              35,
+              36,
+              39,
+              45,
+              50,
+              53,
+              55,
+              56
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 695,
+        "lotericaFormatada": {
+          "bairro": "BARAO GERALDO                           ",
+          "codigo": "21.000695-1",
+          "dv": 1,
+          "dvMunicipio": 2,
+          "id": 695,
+          "idMunicipio": 950,
+          "idUF": 35,
+          "logradouro": "AV ALBINO J  BARBOSA DE OLIVEIRA                  ",
+          "nome": "CRIVARI E BITTAR LTDA                                                                                              ",
+          "nomeFantasia": "TREVO DA SORTE",
+          "nomeMunicipio": "CAMPINAS                           ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.000695-1",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 2,
+            "numero": 950
+          },
+          "nome": "CAMPINAS",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "TREVO DA SORTE",
+        "qtdApostas": 2,
+        "qtdCotaDisponivel": 20,
+        "qtdCotaTotal": 50,
+        "qtdNumeros": 11,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 149.68,
+        "vrCotaSemTarifa": 110.88,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 38.8,
+        "vrTarifaServicoUltimaCota": 39.19,
+        "vrUltimaCotaComTarifa": 150.07,
+        "vrUltimaCotaSemTarifa": 110.88
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935895747,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%BD%C3%9C%C2%A5%12B_%3D~%C2%B9%C2%98-%C3%B6%04%25%C3%A8%C2%8AVU%C3%A5W%22%C3%AFJH%C2%95%C2%B0%C2%98%C2%86%0E%C3%8CQ%C2%90!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:41.646",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              5,
+              15,
+              22,
+              31,
+              36,
+              49,
+              51,
+              54
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              5,
+              7,
+              28,
+              35,
+              38,
+              44,
+              58,
+              60
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              5,
+              9,
+              16,
+              22,
+              26,
+              38,
+              41,
+              60
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 1950,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "21.001950-6",
+          "dv": 6,
+          "dvMunicipio": 2,
+          "id": 1950,
+          "idMunicipio": 4910,
+          "idUF": 35,
+          "logradouro": "PCA CEL JOSE PIRES                                ",
+          "nome": "A CASA DOS SONHOS LTDA ME                                                                                          ",
+          "nomeFantasia": "LOTERICA SANJOANENSE",
+          "nomeMunicipio": "SAO JOAO DA BOA VISTA              ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.001950-6",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 2,
+            "numero": 4910
+          },
+          "nome": "SAO JOAO DA BOA VISTA",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA SANJOANENSE",
+        "qtdApostas": 3,
+        "qtdCotaDisponivel": 18,
+        "qtdCotaTotal": 18,
+        "qtdNumeros": 8,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 37.79,
+        "vrCotaSemTarifa": 28,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 9.79,
+        "vrTarifaServicoUltimaCota": 9.96,
+        "vrUltimaCotaComTarifa": 37.96,
+        "vrUltimaCotaSemTarifa": 28
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935898227,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1AzI%C2%91%C3%97%0D%C3%B4Y%C3%9BR%C2%A6%C3%9A%C2%AC%C2%BD%C2%BAv%2B%C2%AF%C3%99%C3%A2%C3%9B%C2%BD$Z%1A,P%19%0F%C3%81%C3%A4%C3%BDX!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:44.092",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              7,
+              12,
+              17,
+              20,
+              32,
+              41,
+              43,
+              49
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              8,
+              15,
+              20,
+              24,
+              26,
+              30,
+              40,
+              54
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 8227,
+        "lotericaFormatada": {
+          "bairro": "VILA MICHELIN                           ",
+          "codigo": "21.008227-5",
+          "dv": 5,
+          "dvMunicipio": 7,
+          "id": 8227,
+          "idMunicipio": 330,
+          "idUF": 35,
+          "logradouro": "AV DONA RENATA SUL                                ",
+          "nome": "ARARAS LAPA 1 LOTERIAS LTDA                                                                                        ",
+          "nomeFantasia": "LOTERICAS LAPA - LOJA 1",
+          "nomeMunicipio": "ARARAS                             ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.008227-5",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 7,
+            "numero": 330
+          },
+          "nome": "ARARAS",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICAS LAPA - LOJA 1",
+        "qtdApostas": 2,
+        "qtdCotaDisponivel": 4,
+        "qtdCotaTotal": 10,
+        "qtdNumeros": 8,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 45.36,
+        "vrCotaSemTarifa": 33.6,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 11.76,
+        "vrTarifaServicoUltimaCota": 11.76,
+        "vrUltimaCotaComTarifa": 45.36,
+        "vrUltimaCotaSemTarifa": 33.6
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935900670,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%15%C3%BE%C2%9Fp%07w%C2%A7%122%1BE%C2%BAa%2F%C2%B9%C2%83%C3%B3%C2%AC%C2%8F%05v%C3%8Fr%C2%B8;%C2%B0%C2%8D%C2%A5K%C3%B6%C3%BEj!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:46.586",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              6,
+              12,
+              32,
+              33,
+              44
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              5,
+              21,
+              24,
+              29,
+              51,
+              60
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              8,
+              11,
+              31,
+              35,
+              42,
+              55
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              4,
+              16,
+              26,
+              31,
+              53,
+              55
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              12,
+              24,
+              31,
+              39,
+              51,
+              52
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              7,
+              19,
+              31,
+              38,
+              40,
+              42
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              15,
+              23,
+              29,
+              46,
+              53,
+              57
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              7,
+              24,
+              27,
+              29,
+              39,
+              48
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              5,
+              8,
+              13,
+              33,
+              37,
+              43
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              6,
+              10,
+              15,
+              17,
+              44
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 9776,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "21.009776-0",
+          "dv": 0,
+          "dvMunicipio": 4,
+          "id": 9776,
+          "idMunicipio": 3580,
+          "idUF": 35,
+          "logradouro": "PRACA DA MATRIZ                                   ",
+          "nome": "LOTERICA PARANAPANEMA LTDA                                                                                         ",
+          "nomeFantasia": "LOTERICA PARANAPANEMA",
+          "nomeMunicipio": "PARANAPANEMA                       ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.009776-0",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 4,
+            "numero": 3580
+          },
+          "nome": "PARANAPANEMA",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA PARANAPANEMA",
+        "qtdApostas": 10,
+        "qtdCotaDisponivel": 8,
+        "qtdCotaTotal": 8,
+        "qtdNumeros": 6,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 10.12,
+        "vrCotaSemTarifa": 7.5,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 2.62,
+        "vrTarifaServicoUltimaCota": 2.66,
+        "vrUltimaCotaComTarifa": 10.16,
+        "vrUltimaCotaSemTarifa": 7.5
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935903176,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%B2-%C3%A2I%C3%B4%C2%9Ba%C2%A7%C3%BCu%7Bl%C3%89%C2%8B%C2%BC%03%C3%A4h%17%C3%9Fy%C3%A7Z%C2%AC%C3%B3%C3%B9Q%C2%87%C3%89%C3%84%C3%ABM!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:49.076",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              2,
+              3,
+              13,
+              14,
+              17,
+              20,
+              34,
+              46
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              9,
+              19,
+              20,
+              22,
+              39,
+              44,
+              46,
+              49
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              8,
+              13,
+              24,
+              27,
+              42,
+              44,
+              45,
+              50
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              6,
+              8,
+              20,
+              35,
+              36,
+              40,
+              44,
+              58
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              2,
+              4,
+              12,
+              24,
+              37,
+              48,
+              58
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 1279,
+        "lotericaFormatada": {
+          "bairro": "VILA ASSUNCAO                           ",
+          "codigo": "21.001279-0",
+          "dv": 0,
+          "dvMunicipio": 9,
+          "id": 1279,
+          "idMunicipio": 4780,
+          "idUF": 35,
+          "logradouro": "R DR ANTONIO ALVARO                               ",
+          "nome": "CASA DA FORTUNA LOTERICA LTDA                                                                                      ",
+          "nomeFantasia": "CASA DA FORTUNA LOTERICA LTDA",
+          "nomeMunicipio": "SANTO ANDRE                        ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.001279-0",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 9,
+            "numero": 4780
+          },
+          "nome": "SANTO ANDRE",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "CASA DA FORTUNA LOTERICA LTDA",
+        "qtdApostas": 5,
+        "qtdCotaDisponivel": 36,
+        "qtdCotaTotal": 42,
+        "qtdNumeros": 8,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 27,
+        "vrCotaSemTarifa": 20,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 7,
+        "vrTarifaServicoUltimaCota": 7,
+        "vrUltimaCotaComTarifa": 27,
+        "vrUltimaCotaSemTarifa": 20
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935905660,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A+%C2%95%02%C2%AA!g%03%C2%890X%C2%B7%C3%A8%C3%BE-ubl%C2%96qJ%C3%9B%C2%B1%C2%A5%C3%84%C2%AD5wQ%C3%9D%C3%9B%01J!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:51.458",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              6,
+              22,
+              23,
+              27,
+              37,
+              53
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              7,
+              8,
+              9,
+              26,
+              27,
+              31
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              9,
+              15,
+              19,
+              21,
+              34,
+              52
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              11,
+              13,
+              26,
+              43,
+              48,
+              55
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              7,
+              12,
+              15,
+              31,
+              39,
+              42
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              30,
+              32,
+              36,
+              44,
+              52,
+              53
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              18,
+              20,
+              23,
+              41,
+              44
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              25,
+              27,
+              28,
+              46,
+              48,
+              49
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              21,
+              22,
+              24,
+              33,
+              39,
+              43
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 24476,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "21.024476-3",
+          "dv": 3,
+          "dvMunicipio": 7,
+          "id": 24476,
+          "idMunicipio": 3550,
+          "idUF": 35,
+          "logradouro": "R 12 DE MARÇO                                     ",
+          "nome": "LOTERICA GARMS E MARUBAYASHI LTDA ME                                                                               ",
+          "nomeFantasia": "KHASA LOTERICA",
+          "nomeMunicipio": "PARAGUACU PAULISTA                 ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.024476-3",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 7,
+            "numero": 3550
+          },
+          "nome": "PARAGUACU PAULISTA",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "KHASA LOTERICA",
+        "qtdApostas": 9,
+        "qtdCotaDisponivel": 5,
+        "qtdCotaTotal": 5,
+        "qtdNumeros": 6,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 14.58,
+        "vrCotaSemTarifa": 10.8,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 3.78,
+        "vrTarifaServicoUltimaCota": 3.78,
+        "vrUltimaCotaComTarifa": 14.58,
+        "vrUltimaCotaSemTarifa": 10.8
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935908364,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%A1%C2%8A5t1%C3%8A%C2%A6%C3%92%C3%82%C3%91%C2%96*%19%1C%C3%9F%0Bi%C3%B2%C2%B9%7B%C3%8F%60%C3%BFb%C3%99U%C3%9D%C3%A6j3%C3%98%09!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:53.840",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              13,
+              25,
+              32,
+              43,
+              51,
+              56,
+              58
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              25,
+              31,
+              32,
+              43,
+              47,
+              52
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              6,
+              30,
+              32,
+              40,
+              44,
+              45,
+              48,
+              51
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              24,
+              27,
+              29,
+              36,
+              42,
+              54,
+              59
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              3,
+              10,
+              12,
+              15,
+              27,
+              29,
+              35,
+              46
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              9,
+              28,
+              29,
+              30,
+              50,
+              57
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              10,
+              19,
+              45,
+              49,
+              50,
+              55,
+              59,
+              60
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              18,
+              19,
+              24,
+              34,
+              40,
+              41,
+              58
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 1197,
+        "lotericaFormatada": {
+          "bairro": "Centro                                  ",
+          "codigo": "21.001197-1",
+          "dv": 1,
+          "dvMunicipio": 8,
+          "id": 1197,
+          "idMunicipio": 4870,
+          "idUF": 35,
+          "logradouro": "R. Marechal Deodoro                               ",
+          "nome": "J & S LOTERICA LTDA                                                                                                ",
+          "nomeFantasia": "SORTE NA MARECHAL",
+          "nomeMunicipio": "SAO BERNARDO DO CAMPO              ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.001197-1",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 8,
+            "numero": 4870
+          },
+          "nome": "SAO BERNARDO DO CAMPO",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "SORTE NA MARECHAL",
+        "qtdApostas": 8,
+        "qtdCotaDisponivel": 39,
+        "qtdCotaTotal": 50,
+        "qtdNumeros": 8,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 36.28,
+        "vrCotaSemTarifa": 26.88,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 9.4,
+        "vrTarifaServicoUltimaCota": 9.8,
+        "vrUltimaCotaComTarifa": 36.68,
+        "vrUltimaCotaSemTarifa": 26.88
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935910420,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C3%85%C3%B2h%C3%A8%01%C3%9Fje96%C2%BC%7F%C2%B0%C3%B7T%0E%C3%93m%1AEM%06%C2%8C%5E%15%C2%96%26%C2%A7%C3%86%C2%BB%C2%95%C2%92!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:56.382",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              6,
+              7,
+              18,
+              25,
+              44,
+              52
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              22,
+              38,
+              43,
+              49,
+              56
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              10,
+              12,
+              15,
+              16,
+              27,
+              53
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              5,
+              9,
+              14,
+              28,
+              46,
+              57
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              35,
+              38,
+              41,
+              42,
+              49,
+              60
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              20,
+              33,
+              35,
+              45,
+              52,
+              54
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              16,
+              19,
+              38,
+              39,
+              45,
+              57
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              14,
+              29,
+              32,
+              36,
+              53
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              3,
+              13,
+              14,
+              21,
+              26,
+              38
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              7,
+              26,
+              29,
+              35,
+              40,
+              60
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 13291,
+        "lotericaFormatada": {
+          "bairro": "QUINTA DAS PAINEIRAS                    ",
+          "codigo": "21.013291-4",
+          "dv": 4,
+          "dvMunicipio": 5,
+          "id": 13291,
+          "idMunicipio": 4980,
+          "idUF": 35,
+          "logradouro": "AV POTIRENDABA                                    ",
+          "nome": "LOTERICA CHAVE DA SORTE LTDA                                                                                       ",
+          "nomeFantasia": "LOTERICA CHAVE DA SORTE",
+          "nomeMunicipio": "SAO JOSE DO RIO PRETO              ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.013291-4",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 5,
+            "numero": 4980
+          },
+          "nome": "SAO JOSE DO RIO PRETO",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA CHAVE DA SORTE",
+        "qtdApostas": 10,
+        "qtdCotaDisponivel": 5,
+        "qtdCotaTotal": 6,
+        "qtdNumeros": 6,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 13.5,
+        "vrCotaSemTarifa": 10,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 3.5,
+        "vrTarifaServicoUltimaCota": 3.5,
+        "vrUltimaCotaComTarifa": 13.5,
+        "vrUltimaCotaSemTarifa": 10
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935912988,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%10%C3%B6%7B@%033%04%13$%C2%95N'%17%C2%BD%C3%8B%C3%B6%C2%ABg%C3%B7%2BK%23%C3%9D%0D%C2%8C%C3%87,F%17%C2%98y%09!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:31:58.782",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              2,
+              4,
+              7,
+              19,
+              34,
+              51
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              14,
+              18,
+              36,
+              38,
+              47,
+              54
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              14,
+              24,
+              30,
+              39,
+              47,
+              58
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              12,
+              17,
+              22,
+              26,
+              39,
+              40
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              6,
+              37,
+              44,
+              49,
+              57
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              4,
+              5,
+              10,
+              28,
+              32,
+              57
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              4,
+              16,
+              28,
+              35,
+              42,
+              55
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              5,
+              9,
+              11,
+              41,
+              43
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              7,
+              11,
+              33,
+              50,
+              52
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              36,
+              42,
+              46,
+              57
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 24382,
+        "lotericaFormatada": {
+          "bairro": "JD RIO BRANCO                           ",
+          "codigo": "21.024382-1",
+          "dv": 1,
+          "dvMunicipio": 9,
+          "id": 24382,
+          "idMunicipio": 5100,
+          "idUF": 35,
+          "logradouro": "AV DEP ULISSES GUIMARAES                          ",
+          "nome": "CASA LOTERICA SAO VICENTE LTDA                                                                                     ",
+          "nomeFantasia": "CASA LOTERICA SAO VICENTE",
+          "nomeMunicipio": "SAO VICENTE                        ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.024382-1",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 9,
+            "numero": 5100
+          },
+          "nome": "SAO VICENTE",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "CASA LOTERICA SAO VICENTE",
+        "qtdApostas": 10,
+        "qtdCotaDisponivel": 5,
+        "qtdCotaTotal": 6,
+        "qtdNumeros": 6,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 13.5,
+        "vrCotaSemTarifa": 10,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 3.5,
+        "vrTarifaServicoUltimaCota": 3.5,
+        "vrUltimaCotaComTarifa": 13.5,
+        "vrUltimaCotaSemTarifa": 10
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935915384,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%06%22%C3%A8(w%C2%90%23%C2%B0%3C%C2%85%C2%B14%2F%C2%82%00%C3%B0%C2%97V%00K%1C+z%60%1F%C3%AB%C2%BC%C2%B6%3FHk%C3%B8!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:01.212",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              3,
+              10,
+              16,
+              21,
+              27,
+              34,
+              38,
+              43,
+              49,
+              52,
+              57
+            ],
+            "indicadorSurpresinha": false
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 20906,
+        "lotericaFormatada": {
+          "bairro": "CANTO DO MAR                            ",
+          "codigo": "21.020906-2",
+          "dv": 2,
+          "dvMunicipio": 4,
+          "id": 20906,
+          "idMunicipio": 5070,
+          "idUF": 35,
+          "logradouro": "AV ODISSEU                                        ",
+          "nome": "CASA LOTERICA CANTO DO MAR DA SORTE LTDA                                                                           ",
+          "nomeFantasia": "CASA LOTERICA CANTO DO MAR DA SORTE",
+          "nomeMunicipio": "SAO SEBASTIAO                      ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.020906-2",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 4,
+            "numero": 5070
+          },
+          "nome": "SAO SEBASTIAO",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "CASA LOTERICA CANTO DO MAR DA SORTE",
+        "qtdApostas": 1,
+        "qtdCotaDisponivel": 23,
+        "qtdCotaTotal": 30,
+        "qtdNumeros": 11,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 124.73,
+        "vrCotaSemTarifa": 92.4,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 32.33,
+        "vrTarifaServicoUltimaCota": 32.62,
+        "vrUltimaCotaComTarifa": 125.02,
+        "vrUltimaCotaSemTarifa": 92.4
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935917789,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C3%B4%C3%85%C3%BF%C3%B2%C3%8F0%1Ac%C3%91%1Fg%C2%BE%C3%BC%C3%B9%C2%84U%C2%86g_h%C2%B1%C3%AD%C2%B0%C2%85%1E%C3%B4%C2%B2%C3%9EJ%C3%80%07%C3%B7!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:03.863",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              2,
+              15,
+              24,
+              41,
+              42,
+              51
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              4,
+              12,
+              25,
+              38,
+              39,
+              41,
+              59
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              9,
+              23,
+              26,
+              31,
+              35,
+              45,
+              55
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              21,
+              34,
+              37,
+              42,
+              50,
+              51
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              17,
+              20,
+              35,
+              43,
+              44,
+              57,
+              58
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 12995,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "21.012995-6",
+          "dv": 6,
+          "dvMunicipio": 8,
+          "id": 12995,
+          "idMunicipio": 650,
+          "idUF": 35,
+          "logradouro": "RUA SAUDADES                                      ",
+          "nome": "LOTERICA CANTINHO DA SORTE BIRIGUI LTDA                                                                            ",
+          "nomeFantasia": "LOTERICA CANTINHO DA SORTE",
+          "nomeMunicipio": "BIRIGUI                            ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.012995-6",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 8,
+            "numero": 650
+          },
+          "nome": "BIRIGUI",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA CANTINHO DA SORTE",
+        "qtdApostas": 5,
+        "qtdCotaDisponivel": 6,
+        "qtdCotaTotal": 10,
+        "qtdNumeros": 7,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 28.35,
+        "vrCotaSemTarifa": 21,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 7.35,
+        "vrTarifaServicoUltimaCota": 7.35,
+        "vrUltimaCotaComTarifa": 28.35,
+        "vrUltimaCotaSemTarifa": 21
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935920447,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A9%C2%BEa%C3%AA1%26JI3:%C3%88%C3%86%C3%A3%C2%84%25%C3%B8jUO%C3%AE%5EX%C2%9B%00%0BC9%10%13%160%0A!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:06.508",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              8,
+              9,
+              21,
+              30,
+              31,
+              33,
+              37,
+              40,
+              51
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 4867,
+        "lotericaFormatada": {
+          "bairro": "PARQUE BAHIA                            ",
+          "codigo": "21.004867-0",
+          "dv": 0,
+          "dvMunicipio": 9,
+          "id": 4867,
+          "idMunicipio": 1300,
+          "idUF": 35,
+          "logradouro": "RUA DA MARINHA                                    ",
+          "nome": "PORTAO LOTERIAS LIMITADA - ME                                                                                      ",
+          "nomeFantasia": "PORTAO LOTERIAS LIMITADA - ME",
+          "nomeMunicipio": "COTIA                              ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.004867-0",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 9,
+            "numero": 1300
+          },
+          "nome": "COTIA",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "PORTAO LOTERIAS LIMITADA - ME",
+        "qtdApostas": 1,
+        "qtdCotaDisponivel": 80,
+        "qtdCotaTotal": 85,
+        "qtdNumeros": 10,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 20,
+        "vrCotaSemTarifa": 14.82,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 5.18,
+        "vrTarifaServicoUltimaCota": 5.88,
+        "vrUltimaCotaComTarifa": 21,
+        "vrUltimaCotaSemTarifa": 15.12
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935923085,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%BC%02%01%10%C3%BD%C3%A0s%01%C3%A0%C2%B5%0DD%C3%83%12b%C2%91%3C7%C3%B4%1C,s%C2%AA%068.%C3%9B%C2%96i%C3%9C%C3%B3%C3%97!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:09.017",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              2,
+              10,
+              11,
+              13,
+              18,
+              24,
+              26,
+              30,
+              42,
+              51
+            ],
+            "indicadorSurpresinha": false
+          },
+          {
+            "dezenas": [
+              1,
+              4,
+              9,
+              22,
+              29,
+              36,
+              42,
+              44,
+              56,
+              60
+            ],
+            "indicadorSurpresinha": false
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 697,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "21.000697-8",
+          "dv": 8,
+          "dvMunicipio": 2,
+          "id": 697,
+          "idMunicipio": 950,
+          "idUF": 35,
+          "logradouro": "R BARAO DE JAGUARA,                               ",
+          "nome": "CASA LOTERICA LEITE SOARES                                                                                         ",
+          "nomeFantasia": "CAMPEA DA SORTE",
+          "nomeMunicipio": "CAMPINAS                           ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.000697-8",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 2,
+            "numero": 950
+          },
+          "nome": "CAMPINAS",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "CAMPEA DA SORTE",
+        "qtdApostas": 2,
+        "qtdCotaDisponivel": 26,
+        "qtdCotaTotal": 26,
+        "qtdNumeros": 10,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 130.84,
+        "vrCotaSemTarifa": 96.92,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 33.92,
+        "vrTarifaServicoUltimaCota": 34,
+        "vrUltimaCotaComTarifa": 131,
+        "vrUltimaCotaSemTarifa": 97
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935925596,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%B2%C3%B0%C2%AD%5D%C2%BFP%0C%C2%A4%03%C2%93yw%C2%8D%C2%AF92%C3%A92Z-%C3%BA%C3%97%C2%B3%C3%BB%13%C3%9B%0B%C3%AB%C3%87%C2%B9%C3%A1i!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:11.630",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              8,
+              19,
+              21,
+              22,
+              23,
+              27,
+              28,
+              44,
+              49,
+              50,
+              58,
+              59,
+              60
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 19639,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "21.019639-4",
+          "dv": 4,
+          "dvMunicipio": 3,
+          "id": 19639,
+          "idMunicipio": 4900,
+          "idUF": 35,
+          "logradouro": "RUA SANTA CATARINA                                ",
+          "nome": "HBM CASA LOTERICA LTDA                                                                                             ",
+          "nomeFantasia": "LOTERICA SAO FRANCISCO",
+          "nomeMunicipio": "SAO FRANCISCO                      ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.019639-4",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 3,
+            "numero": 4900
+          },
+          "nome": "SAO FRANCISCO",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA SAO FRANCISCO",
+        "qtdApostas": 1,
+        "qtdCotaDisponivel": 94,
+        "qtdCotaTotal": 100,
+        "qtdNumeros": 13,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 138.99,
+        "vrCotaSemTarifa": 102.96,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 36.03,
+        "vrTarifaServicoUltimaCota": 36.63,
+        "vrUltimaCotaComTarifa": 139.59,
+        "vrUltimaCotaSemTarifa": 102.96
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935928208,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C3%ADU%C3%9B%C2%ADc5%09%1A%C2%BA%C3%BE%C2%BA%C2%BB%C3%811%C3%95%C2%97%C2%B1%14%C3%B84%26*%C2%BF%13%C3%99l%C2%82%C3%80%C2%92%C3%B2X%C2%81!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:14.111",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              11,
+              16,
+              26,
+              31,
+              42,
+              53,
+              58
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              24,
+              26,
+              28,
+              38,
+              44,
+              55,
+              57,
+              59
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              15,
+              23,
+              30,
+              36,
+              40,
+              51,
+              57
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              13,
+              14,
+              15,
+              32,
+              35,
+              38,
+              56,
+              59
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              4,
+              28,
+              33,
+              34,
+              36,
+              37,
+              41,
+              53
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              5,
+              17,
+              21,
+              24,
+              26,
+              32,
+              38,
+              39
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 12664,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "21.012664-7",
+          "dv": 7,
+          "dvMunicipio": 8,
+          "id": 12664,
+          "idMunicipio": 650,
+          "idUF": 35,
+          "logradouro": "RUA BARAO DO RIO BRANCO                           ",
+          "nome": "IRMAS CALESTINE LOTERICA LTDA                                                                                      ",
+          "nomeFantasia": "LOTERICA CALESTINE",
+          "nomeMunicipio": "BIRIGUI                            ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.012664-7",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 8,
+            "numero": 650
+          },
+          "nome": "BIRIGUI",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA CALESTINE",
+        "qtdApostas": 6,
+        "qtdCotaDisponivel": 14,
+        "qtdCotaTotal": 91,
+        "qtdNumeros": 8,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 14.94,
+        "vrCotaSemTarifa": 11.07,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 3.87,
+        "vrTarifaServicoUltimaCota": 4.49,
+        "vrUltimaCotaComTarifa": 16.19,
+        "vrUltimaCotaSemTarifa": 11.7
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935930705,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1Ag%12%02%C3%9A%C3%BA%C2%9C%C3%87%C2%A0%C2%AC%C2%94%C2%8D$%C3%A2%22%08%22T%0B%26q%C2%88%C3%B1%C2%8C%C2%80%0B%04%C2%B5%2B%0Ao%5B%C3%98!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:16.633",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              4,
+              6,
+              16,
+              22,
+              27,
+              30
+            ],
+            "indicadorSurpresinha": false
+          },
+          {
+            "dezenas": [
+              4,
+              6,
+              16,
+              23,
+              30,
+              32
+            ],
+            "indicadorSurpresinha": false
+          },
+          {
+            "dezenas": [
+              4,
+              6,
+              16,
+              24,
+              32,
+              47
+            ],
+            "indicadorSurpresinha": false
+          },
+          {
+            "dezenas": [
+              25,
+              26,
+              29,
+              50,
+              52,
+              54
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              11,
+              16,
+              47,
+              49
+            ],
+            "indicadorSurpresinha": false
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              11,
+              22,
+              47,
+              53
+            ],
+            "indicadorSurpresinha": false
+          },
+          {
+            "dezenas": [
+              2,
+              6,
+              11,
+              23,
+              47,
+              54
+            ],
+            "indicadorSurpresinha": false
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              10,
+              11,
+              30,
+              32
+            ],
+            "indicadorSurpresinha": false
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              10,
+              16,
+              30,
+              47
+            ],
+            "indicadorSurpresinha": false
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              10,
+              22,
+              30,
+              49
+            ],
+            "indicadorSurpresinha": false
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 1211,
+        "lotericaFormatada": {
+          "bairro": "Centro                                  ",
+          "codigo": "21.001211-0",
+          "dv": 0,
+          "dvMunicipio": 9,
+          "id": 1211,
+          "idMunicipio": 4780,
+          "idUF": 35,
+          "logradouro": "RUA XAVIER DE TOLEDO                              ",
+          "nome": "CHAPARRAL CASA LOTERICA LTDA                                                                                       ",
+          "nomeFantasia": "CHAPARRAL CASA LOTERICA LTDA",
+          "nomeMunicipio": "SANTO ANDRE                        ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.001211-0",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 9,
+            "numero": 4780
+          },
+          "nome": "SANTO ANDRE",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "CHAPARRAL CASA LOTERICA LTDA",
+        "qtdApostas": 10,
+        "qtdCotaDisponivel": 6,
+        "qtdCotaTotal": 8,
+        "qtdNumeros": 6,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 10.12,
+        "vrCotaSemTarifa": 7.5,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 2.62,
+        "vrTarifaServicoUltimaCota": 2.66,
+        "vrUltimaCotaComTarifa": 10.16,
+        "vrUltimaCotaSemTarifa": 7.5
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935933233,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%B8%12%C3%BC%C3%8BH%00gq%0F%7D%14%60FQ%C3%86%C2%96%C3%83t%C2%AD%0E%C2%9E%C3%98NLG%C3%85%C3%80c%23Q%C3%BA%01!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:19.408",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              7,
+              18,
+              20,
+              35,
+              36,
+              45,
+              59
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              4,
+              24,
+              36,
+              39,
+              40,
+              51
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 1270,
+        "lotericaFormatada": {
+          "bairro": "CAMPESTRE                               ",
+          "codigo": "21.001270-6",
+          "dv": 6,
+          "dvMunicipio": 9,
+          "id": 1270,
+          "idMunicipio": 4780,
+          "idUF": 35,
+          "logradouro": "RUA MARINA                                        ",
+          "nome": "GASQUES & MARTINS LTDA ME                                                                                          ",
+          "nomeFantasia": "LOTERICA CAMPESTRE",
+          "nomeMunicipio": "SANTO ANDRE                        ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.001270-6",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 9,
+            "numero": 4780
+          },
+          "nome": "SANTO ANDRE",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA CAMPESTRE",
+        "qtdApostas": 2,
+        "qtdCotaDisponivel": 6,
+        "qtdCotaTotal": 7,
+        "qtdNumeros": 7,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 16.2,
+        "vrCotaSemTarifa": 12,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 4.2,
+        "vrTarifaServicoUltimaCota": 4.2,
+        "vrUltimaCotaComTarifa": 16.2,
+        "vrUltimaCotaSemTarifa": 12
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935935987,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1Ao%09%C2%91%0E%C2%ADq%C2%9F%01%0D%1EL%08%C2%81Q%1D9%C2%A6%C2%83%C2%83V%C3%96%C2%B5%C2%95%C2%86%13M%C2%BC%C2%A19%C2%89%C2%B0%C2%B7!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:21.968",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              4,
+              9,
+              10,
+              13,
+              18,
+              27,
+              32
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              3,
+              8,
+              10,
+              11,
+              15,
+              24,
+              28
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              6,
+              26,
+              31,
+              33,
+              49,
+              58,
+              59
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              16,
+              20,
+              32,
+              33,
+              36,
+              56,
+              59
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              21,
+              22,
+              30,
+              32,
+              52,
+              53
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              18,
+              19,
+              24,
+              42,
+              50,
+              58
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              4,
+              9,
+              28,
+              32,
+              43,
+              52,
+              59
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              4,
+              5,
+              19,
+              50,
+              52,
+              53,
+              58
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              3,
+              15,
+              24,
+              28,
+              35,
+              42
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              15,
+              19,
+              20,
+              24,
+              42,
+              50,
+              55
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 14318,
+        "lotericaFormatada": {
+          "bairro": "PALMITAL                                ",
+          "codigo": "21.014318-5",
+          "dv": 5,
+          "dvMunicipio": 5,
+          "id": 14318,
+          "idMunicipio": 2900,
+          "idUF": 35,
+          "logradouro": "AVENIDA REPUBLICA                                 ",
+          "nome": "LOTERICA MIL DE MARILIA LTDA                                                                                       ",
+          "nomeFantasia": "LOTERICA MIL",
+          "nomeMunicipio": "MARILIA                            ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.014318-5",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 5,
+            "numero": 2900
+          },
+          "nome": "MARILIA",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA MIL",
+        "qtdApostas": 10,
+        "qtdCotaDisponivel": 44,
+        "qtdCotaTotal": 50,
+        "qtdNumeros": 7,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 11.34,
+        "vrCotaSemTarifa": 8.4,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 2.94,
+        "vrTarifaServicoUltimaCota": 2.94,
+        "vrUltimaCotaComTarifa": 11.34,
+        "vrUltimaCotaSemTarifa": 8.4
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935938576,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1Am%C3%83%C3%B0%C2%BEX%C2%BEPo%C2%A3%C3%BF2%16%C2%8C%25%C2%AB5%07%C2%A1%C3%8C%C3%94%C2%9A,%16%2B%C3%81%5E%C3%BEK%C3%82%C3%83%C2%9Bo!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:24.580",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              7,
+              10,
+              15,
+              27,
+              31,
+              33,
+              38,
+              45,
+              51,
+              58
+            ],
+            "indicadorSurpresinha": false
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 13185,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "21.013185-3",
+          "dv": 3,
+          "dvMunicipio": 9,
+          "id": 13185,
+          "idMunicipio": 1970,
+          "idUF": 35,
+          "logradouro": "RUA XV DE NOVEMBRO 184                            ",
+          "nome": "GANHE FACIL IBIUNA LTDA ME                                                                                         ",
+          "nomeFantasia": "GANHE FACIL",
+          "nomeMunicipio": "IBIUNA                             ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.013185-3",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 9,
+            "numero": 1970
+          },
+          "nome": "IBIUNA",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "GANHE FACIL",
+        "qtdApostas": 1,
+        "qtdCotaDisponivel": 8,
+        "qtdCotaTotal": 12,
+        "qtdNumeros": 10,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 141.75,
+        "vrCotaSemTarifa": 105,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 36.75,
+        "vrTarifaServicoUltimaCota": 36.75,
+        "vrUltimaCotaComTarifa": 141.75,
+        "vrUltimaCotaSemTarifa": 105
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935941154,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A@%C3%B4R%C2%9F%C2%B25Ht%1A%C2%B5%09%25%04%2F%C2%A8%C3%8Br%C3%92J%C3%B8%C3%85E%C2%BA%7F%C2%B88Q%C2%8D~%C3%A4%C3%91%C2%AB!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:27.146",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              2,
+              17,
+              22,
+              34,
+              37,
+              38,
+              44,
+              59,
+              60
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              2,
+              4,
+              10,
+              14,
+              41,
+              46,
+              47,
+              52
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              21,
+              22,
+              30,
+              31,
+              46,
+              50,
+              58,
+              59
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 24328,
+        "lotericaFormatada": {
+          "bairro": "CERAMICA                                ",
+          "codigo": "21.024328-7",
+          "dv": 7,
+          "dvMunicipio": 7,
+          "id": 24328,
+          "idMunicipio": 4880,
+          "idUF": 35,
+          "logradouro": "ALAMEDA TERRACOTA                                 ",
+          "nome": "CASA LOTERICA PARK LTDA ME                                                                                         ",
+          "nomeFantasia": "LOTERICA PARK",
+          "nomeMunicipio": "SAO CAETANO DO SUL                 ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.024328-7",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 7,
+            "numero": 4880
+          },
+          "nome": "SAO CAETANO DO SUL",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA PARK",
+        "qtdApostas": 3,
+        "qtdCotaDisponivel": 14,
+        "qtdCotaTotal": 34,
+        "qtdNumeros": 9,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 60.03,
+        "vrCotaSemTarifa": 44.47,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 15.56,
+        "vrTarifaServicoUltimaCota": 15.71,
+        "vrUltimaCotaComTarifa": 60.2,
+        "vrUltimaCotaSemTarifa": 44.49
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935943730,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C3%B4%C2%AEB%3C5%2F%7D%C2%BF%C2%96%17%23%1Fw%C2%B8%3D9%0F%13;E%0B%C2%8E%C2%AD%3F%C3%85s%03%C3%BFJ%C3%BA%C2%9B%C2%BF!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:29.713",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              8,
+              13,
+              25,
+              40,
+              43,
+              58
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              6,
+              9,
+              17,
+              21,
+              59
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              8,
+              10,
+              31,
+              52,
+              59
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              6,
+              7,
+              31,
+              34,
+              42,
+              58
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              6,
+              11,
+              18,
+              24,
+              35,
+              53
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              11,
+              22,
+              26,
+              38,
+              41,
+              57
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              14,
+              21,
+              25,
+              39,
+              55,
+              57
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              5,
+              8,
+              14,
+              22,
+              40,
+              55
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              12,
+              18,
+              36,
+              43,
+              57,
+              60
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 19830,
+        "lotericaFormatada": {
+          "bairro": " JORDANÓPOLIS                           ",
+          "codigo": "21.019830-3",
+          "dv": 3,
+          "dvMunicipio": 8,
+          "id": 19830,
+          "idMunicipio": 4870,
+          "idUF": 35,
+          "logradouro": "AV. PADRE ANCHIETA                                ",
+          "nome": "CASA LOTERICA ROYALE LTDA                                                                                          ",
+          "nomeFantasia": "LOTERICA ROYALE",
+          "nomeMunicipio": "SAO BERNARDO DO CAMPO              ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.019830-3",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 8,
+            "numero": 4870
+          },
+          "nome": "SAO BERNARDO DO CAMPO",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "LOTERICA ROYALE",
+        "qtdApostas": 9,
+        "qtdCotaDisponivel": 3,
+        "qtdCotaTotal": 6,
+        "qtdNumeros": 6,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 12.15,
+        "vrCotaSemTarifa": 9,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 3.15,
+        "vrTarifaServicoUltimaCota": 3.15,
+        "vrUltimaCotaComTarifa": 12.15,
+        "vrUltimaCotaSemTarifa": 9
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935946301,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%88%C3%99%C3%88%C3%A3%C2%8D%C2%AF%C3%8B%C2%9D%C3%B1Q%C3%B8%C2%88%C2%A1Z%C3%A9%C3%B0%197%C2%92%C2%B5I%3FJ%0D%C2%B6%C3%B9F%C3%81e%C2%BD%C3%9E%03!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:32.355",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              5,
+              9,
+              12,
+              25,
+              27,
+              47,
+              48,
+              51,
+              60
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              5,
+              6,
+              7,
+              8,
+              19,
+              24,
+              33,
+              46,
+              47
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              3,
+              8,
+              11,
+              12,
+              17,
+              19,
+              47,
+              48,
+              59
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              5,
+              7,
+              8,
+              26,
+              36,
+              38,
+              45,
+              46,
+              51
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              12,
+              19,
+              20,
+              23,
+              27,
+              28,
+              40,
+              59
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 14374,
+        "lotericaFormatada": {
+          "bairro": "JARDIM CALIFORNIA                       ",
+          "codigo": "21.014374-6",
+          "dv": 6,
+          "dvMunicipio": 9,
+          "id": 14374,
+          "idMunicipio": 2050,
+          "idUF": 35,
+          "logradouro": "AV FRANCISCO DE PAULA LEITE                       ",
+          "nome": "GAZAFI & BORSARI LOTERICA CECAP LTDA                                                                               ",
+          "nomeFantasia": "VANDO LOTERIAS CECAP",
+          "nomeMunicipio": "INDAIATUBA                         ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.014374-6",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 9,
+            "numero": 2050
+          },
+          "nome": "INDAIATUBA",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "VANDO LOTERIAS CECAP",
+        "qtdApostas": 5,
+        "qtdCotaDisponivel": 14,
+        "qtdCotaTotal": 20,
+        "qtdNumeros": 9,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 170.1,
+        "vrCotaSemTarifa": 126,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 44.1,
+        "vrTarifaServicoUltimaCota": 44.1,
+        "vrUltimaCotaComTarifa": 170.1,
+        "vrUltimaCotaSemTarifa": 126
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935948947,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1Ae%0A%C3%87%C2%92%C2%89%C2%836%C3%BDD%C3%A6%C2%A8%7Da%C2%8B%C2%85z-tfsii;%C2%A3%C3%A8D%03S%C2%9A%C3%AA%C2%8E%1A!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:35.048",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              7,
+              15,
+              18,
+              22,
+              35,
+              44,
+              52,
+              58
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              1,
+              8,
+              10,
+              14,
+              31,
+              32,
+              34,
+              53
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 14122,
+        "lotericaFormatada": {
+          "bairro": "ITAQUERA                                ",
+          "codigo": "21.014122-0",
+          "dv": 0,
+          "dvMunicipio": 8,
+          "id": 14122,
+          "idMunicipio": 5030,
+          "idUF": 35,
+          "logradouro": "RUA SABADO D ANGELO                               ",
+          "nome": "POP MANIA LOTERIAS LTDA ME                                                                                         ",
+          "nomeFantasia": "POP MANIA",
+          "nomeMunicipio": "SAO PAULO                          ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.014122-0",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 8,
+            "numero": 5030
+          },
+          "nome": "SAO PAULO",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "POP MANIA",
+        "qtdApostas": 2,
+        "qtdCotaDisponivel": 7,
+        "qtdCotaTotal": 15,
+        "qtdNumeros": 8,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 30.24,
+        "vrCotaSemTarifa": 22.4,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 7.84,
+        "vrTarifaServicoUltimaCota": 7.84,
+        "vrUltimaCotaComTarifa": 30.24,
+        "vrUltimaCotaSemTarifa": 22.4
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935951624,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A~%0E%C3%A3f%C3%95%C3%83%C2%B7%1Bl%C3%8CAI%C3%B9%C3%BA%3D%C2%AD%C2%86%C2%9D%C2%AB%C3%8Av%C2%AA%C2%89%C2%8D%C2%AA%02%C2%AA%C3%AFkv%C3%9Er!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:37.555",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              17,
+              22,
+              23,
+              27,
+              33,
+              52,
+              56
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              3,
+              6,
+              14,
+              20,
+              24,
+              25,
+              42,
+              54
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": false,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 1296,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "21.001296-0",
+          "dv": 0,
+          "dvMunicipio": 9,
+          "id": 1296,
+          "idMunicipio": 4780,
+          "idUF": 35,
+          "logradouro": "R CEL OLIVEIRA LIMA 499                           ",
+          "nome": "MORAIS LOTERIAS COMERCIO E SERVICOS LTDA                                                                           ",
+          "nomeFantasia": "MORAIS LOTERIAS",
+          "nomeMunicipio": "SANTO ANDRE                        ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.001296-0",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 9,
+            "numero": 4780
+          },
+          "nome": "SANTO ANDRE",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "MORAIS LOTERIAS",
+        "qtdApostas": 2,
+        "qtdCotaDisponivel": 13,
+        "qtdCotaTotal": 30,
+        "qtdNumeros": 8,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 15.12,
+        "vrCotaSemTarifa": 11.2,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 3.92,
+        "vrTarifaServicoUltimaCota": 3.92,
+        "vrUltimaCotaComTarifa": 15.12,
+        "vrUltimaCotaSemTarifa": 11.2
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935954134,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1Ajk%C3%B6%C3%8B%0Ayk%C3%9B%C3%A5%C3%9F%C3%8F%C3%AF%5E3%C3%84%C3%A1%C3%9Dk%C3%9A%C2%87%C2%85b%C3%BD%0B%C2%81%C2%94%C3%BC%C3%BA%C3%BC%C2%8B8%C3%A8!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-11-06T00:32:40.418",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              6,
+              13,
+              14,
+              38,
+              42,
+              48
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              9,
+              22,
+              27,
+              38
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              7,
+              13,
+              24,
+              38,
+              46,
+              57
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              12,
+              14,
+              22,
+              50,
+              54,
+              58
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              5,
+              6,
+              19,
+              24,
+              42,
+              56
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              5,
+              10,
+              24,
+              26,
+              28,
+              32
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              10,
+              15,
+              23,
+              30,
+              41,
+              51
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              19,
+              20,
+              30,
+              43,
+              45,
+              57
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              5,
+              8,
+              21,
+              27,
+              38,
+              51
+            ],
+            "indicadorSurpresinha": true
+          },
+          {
+            "dezenas": [
+              21,
+              22,
+              27,
+              29,
+              30,
+              58
+            ],
+            "indicadorSurpresinha": true
+          }
+        ],
+        "concurso": 3100,
+        "contemResiduo": true,
+        "dataSorteio": "01/01/2027",
+        "diaSorteio": "Sexta-feira",
+        "horaSorteio": "11:00:00",
+        "loterica": 22031,
+        "lotericaFormatada": {
+          "bairro": "VILA ZANETTI                            ",
+          "codigo": "21.022031-7",
+          "dv": 7,
+          "dvMunicipio": 2,
+          "id": 22031,
+          "idMunicipio": 4910,
+          "idUF": 35,
+          "logradouro": "AVENIDA BRASILIA                                  ",
+          "nome": "BIG SORTE SAO JOAO LTDA                                                                                            ",
+          "nomeFantasia": "B IG SORTE SAO JOAO LTDA ME",
+          "nomeMunicipio": "SAO JOAO DA BOA VISTA              ",
+          "nomeUF": "SAO PAULO           ",
+          "numeroFormatado": "21.022031-7",
+          "polo": 21,
+          "situacao": {
+            "codigo": 1,
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "MEGA_SENA",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 35,
+            "digitoVerificador": 2,
+            "numero": 4910
+          },
+          "nome": "SAO JOAO DA BOA VISTA",
+          "uf": {
+            "id": 35,
+            "nome": "SAO PAULO           ",
+            "sigla": "SP"
+          }
+        },
+        "nomeFantasia": "B IG SORTE SAO JOAO LTDA ME",
+        "qtdApostas": 10,
+        "qtdCotaDisponivel": 8,
+        "qtdCotaTotal": 8,
+        "qtdNumeros": 6,
+        "tipoConcurso": 2,
+        "uf": {
+          "id": 35,
+          "nome": "SAO PAULO           ",
+          "sigla": "SP"
+        },
+        "vrCotaComTarifa": 10.12,
+        "vrCotaSemTarifa": 7.5,
+        "vrPremioEstimado": 1000000000,
+        "vrTarifaServicoCota": 2.62,
+        "vrTarifaServicoUltimaCota": 2.66,
+        "vrUltimaCotaComTarifa": 10.16,
+        "vrUltimaCotaSemTarifa": 7.5
+      },
+      "versao": "2.99.10.32"
+    },
+    "ts": 1793935957006,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%8C%3C5%C3%8B%02%05%C2%BB%C2%8C%18%C2%A7%0F%C3%96%023%C2%90%7D%C2%81d%C3%98%C3%88%C2%96%C3%B8-hW+t%C2%91%C3%83%C2%96%C2%B0B!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  }
+]

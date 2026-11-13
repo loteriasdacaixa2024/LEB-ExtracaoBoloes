@@ -1,0 +1,125 @@
+[
+  {
+    "data": {
+      "dataHoraServidor": "2026-09-09T11:07:20.958",
+      "payload": "https://login.caixa.gov.br/auth",
+      "versao": "2.99.2.10"
+    },
+    "ts": 1788963065869,
+    "url": "/silce-servico-rest/rest/v1/cGFyYW1ldHJvcy91cmwtYXV0ZW50aWNhY2Fv/"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-09-09T11:07:20.781",
+      "payload": {
+        "mapa": {
+          "cachePublicKeyCliente": false,
+          "concursoLotecaPais": 1265,
+          "concursoMega30Anos": 3010,
+          "consultaMinhasApostas": true,
+          "descricaoSSOIndisponivel": "A página solicitada está em manutenção. Tente novamente em alguns instantes.<br>",
+          "grupoCpfsAcessamNovoConferenciaAposta": 100,
+          "grupoDeCpfsQueAcessamOBff": "40;08696173627;00990840158;",
+          "grupoDeCpfsQueAcessamOBffPiloto": "100",
+          "grupoDeCpfsQueAcessamOServicoDaAzure": "100",
+          "habilitaExclusaoAutimaticaCotas": true,
+          "habilitaVendaCotasBolao": true,
+          "habilitarConferenciaAutomaticaApostas": true,
+          "hostMicroServicoApostadorHabilitado": "100;00990840158;61082584380;46251634120;72291834134;08696173627;00079648622",
+          "hostMicroServicoApostadorHabilitadoPiloto": "100",
+          "hostMicroServicoApostadorPiloto": "https://silce.carrinho.plt.caixa.gov.br/loterias-web-plt/apostador/v1/",
+          "hostMicroServicoApostadorProducao": "https://silce.carrinho.caixa.gov.br/loterias-web/apostador/v1/",
+          "hostMicroServicoBff": "https://silce.carrinho.caixa.gov.br/loterias-web/bff/v1",
+          "hostMicroServicoBffPiloto": "https://silce.carrinho.plt.caixa.gov.br/loterias-web-plt/bff/v1",
+          "hostMicroServicoCarrinhoPiloto": "https://silce.carrinho.plt.caixa.gov.br/loterias-web-plt/carrinho/v1",
+          "hostMicroServicoCarrinhoProducao": "https://silce.carrinho.caixa.gov.br/loterias-web/carrinho/v1",
+          "hostMicroServicoConferenciaAposta": "https://mobileloterias.caixa.gov.br/silce-servico-rest/rest/v2",
+          "hostMicroServicoConferenciaApostaWeb": "https://www.loteriasonline.caixa.gov.br/silce-servico-rest/rest/v2",
+          "hostNovoMicroServicoConferenciaApostaPilotoWeb": "https://pilotoloterias.caixa.gov.br/loterias/silce-consulta-apostas/",
+          "hostNovoMicroServicoConferenciaApostaProducaoWeb": "-",
+          "linkDownload": "simlo.caixa",
+          "mostrar6meses+": false,
+          "mostrarLinkAlteracaoSSO": false,
+          "mostrarPagina": false,
+          "nomeAmbiente": "prd",
+          "nuvemApikey": "635c94f6079c4c909e88389564c7e0fb",
+          "qtdeMaximaApostaBolaoFiltro": 15,
+          "qtdeMinimaApostaBolaoFiltro": 1,
+          "tempoCacheEscudos": {
+            "calendar": 1788886428000,
+            "day": 8,
+            "diaSemana": true,
+            "finalDeSemana": false,
+            "hora": {
+              "calendar": -59958255972000,
+              "horaDoDia": 13,
+              "minuto": 53,
+              "segundo": 48,
+              "time": -59958255972000
+            },
+            "month": 9,
+            "passado": true,
+            "time": 1788886428000,
+            "timeInMillis": 1788886428000,
+            "year": 2026
+          },
+          "tempoCacheMeiosPagamento": "3600",
+          "temposPermitidosSuspensao": [
+            "24h",
+            "48h",
+            "7 dias",
+            "15 dias",
+            "30 dias"
+          ]
+        }
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1788963065880,
+    "url": "/silce-servico-rest/rest/v1/cGFyYW1ldHJvcy9jb25maWd1cmF2ZWlzLXdlYg=="
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-09-09T11:11:06.440",
+      "payload": {
+        "aceitaReceberNoticias": false,
+        "apostas": [],
+        "cep": "13152336",
+        "cpf": "11752400879",
+        "dataNascimento": "31/05/1969",
+        "email": "marciofernando.maia@yahoo.com.br",
+        "limiteDiario": 9300,
+        "limiteDiarioAutorizado": 9300,
+        "limiteMinimoDiario": 2,
+        "mercadoPagoCustomerId": "1404997341-PE0FNY2att5pdr",
+        "municipioId": {
+          "digitoVerificador": 3,
+          "idUF": 35,
+          "numero": 1280
+        },
+        "nome": "Marcio Fernando Maia",
+        "sexo": "M"
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1788963069589,
+    "url": "/silce-servico-rest/rest/v1/dXN1YXJpb3MvcmVjdXBlcmFyLWRhZG9z/"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-09-09T11:11:09.590",
+      "versao": "2.99.2.10"
+    },
+    "ts": 1788963072184,
+    "url": "/silce-servico-rest/rest/v1/dXN1YXJpb3MvdmVyaWZpY2FyLWFwb3N0YWRvci1ibG9xdWVhZG8=/"
+  },
+  {
+    "data": {
+      "codigo": "",
+      "mensagem": "Não foi possível realizar a operação.",
+      "tipo": 2
+    },
+    "ts": 1788963076689,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL3JlY3VwZXJhci1ib2xvZXMtZGlzcG9uaXZlaXM=/?q=d%C3%8Ff%C3%99%0C%C2%8F%C2%BFE%3E%C3%AFR%05-Y%12%C3%97g%C3%8Be%C3%8EL%C2%B9j%07%C3%8D%C3%9B%7BH%7F%3C%7D%C2%B1%C3%9B~g%19Dg%1F~0%10%C3%9A%C3%91%C2%B5%C3%AE%C3%8Db_%C3%B8%22%C2%AD%03%18%C3%89iy%C2%A0j%C2%A6%1B%C2%86%C3%94%C3%90%C3%9E%C3%94'%C2%AE%25%02%C3%A5%C2%89%C2%9A%C3%AAY%5D%26;%2B%C2%9B1%05%C2%A2T%C3%9F%C3%8C%C3%8F%1F%C3%87%C2%92%C2%80%01R%C2%9CP%1C1%C2%86k%C3%A5d%C3%87%C2%8A%C2%9F%C3%BE%C3%99%C3%82%C2%B2%C2%98%5B%C3%B5G!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  }
+]

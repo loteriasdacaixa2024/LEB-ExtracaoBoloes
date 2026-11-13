@@ -1,0 +1,5641 @@
+[
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:11:33.835",
+      "payload": {
+        "contemResiduo": false,
+        "cotas": [
+          {
+            "codigoBolao": "MjAyNjs4OzQ4MDI4OTgyMTsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 870,
+            "index": 4,
+            "loterica": 1522,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 52,
+                "digitoVerificador": 7,
+                "numero": 870
+              },
+              "nome": "GOIANIA",
+              "uf": {
+                "id": 52,
+                "nome": "GOIAS               ",
+                "sigla": "GO"
+              }
+            },
+            "nomeFantasia": "LOTERIA ESPORTIVA PONTO 15",
+            "nomeRazaoSocial": "LOTERIA ESPORTIVA PONTO 15 LTDA",
+            "numeroUF": 52,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 9,
+            "qtdCotaDigital": 2,
+            "qtdCotaDisponivel": 1,
+            "qtdCotaTotal": 3,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 52,
+              "nome": "GOIAS               ",
+              "sigla": "GO"
+            },
+            "valorTarifaServico": 2.62,
+            "vrCotaComTarifa": 10.12,
+            "vrCotaSemTarifa": 7.5,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 2.63,
+            "vrUltimaCotaComTarifa": 10.13,
+            "vrUltimaCotaSemTarifa": 7.5
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ4MjI1NjAyMzsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 690,
+            "index": 4,
+            "loterica": 13011,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 41,
+                "digitoVerificador": 2,
+                "numero": 690
+              },
+              "nome": "CURITIBA",
+              "uf": {
+                "id": 41,
+                "nome": "PARANA              ",
+                "sigla": "PR"
+              }
+            },
+            "nomeFantasia": "LOTERIAS ATTILIO",
+            "nomeRazaoSocial": "AGUIA LOTERIAS LTDA",
+            "numeroUF": 41,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 3,
+            "qtdCotaDisponivel": 3,
+            "qtdCotaTotal": 7,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 41,
+              "nome": "PARANA              ",
+              "sigla": "PR"
+            },
+            "valorTarifaServico": 1.25,
+            "vrCotaComTarifa": 4.82,
+            "vrCotaSemTarifa": 3.57,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.25,
+            "vrUltimaCotaComTarifa": 4.83,
+            "vrUltimaCotaSemTarifa": 3.58
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ3MjkwNzUyMTsxMDcwMjs=",
+            "concurso": 1276,
+            "contemResiduo": false,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 260,
+            "index": 5,
+            "loterica": 24457,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 13,
+                "digitoVerificador": 3,
+                "numero": 260
+              },
+              "nome": "MANAUS",
+              "uf": {
+                "id": 13,
+                "nome": "AMAZONAS            ",
+                "sigla": "AM"
+              }
+            },
+            "nomeFantasia": "LOTERIA TIO PATINHAS",
+            "nomeRazaoSocial": "LOTERICA TIO PATINHAS LTDA  ME",
+            "numeroUF": 13,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 4,
+            "qtdCotaTotal": 5,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 13,
+              "nome": "AMAZONAS            ",
+              "sigla": "AM"
+            },
+            "valorTarifaServico": 1.75,
+            "vrCotaComTarifa": 6.75,
+            "vrCotaSemTarifa": 5,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.75,
+            "vrUltimaCotaComTarifa": 6.75,
+            "vrUltimaCotaSemTarifa": 5
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ5NDg3NDc5NzsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 2740,
+            "index": 4,
+            "loterica": 18359,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 29,
+                "digitoVerificador": 8,
+                "numero": 2740
+              },
+              "nome": "SALVADOR",
+              "uf": {
+                "id": 29,
+                "nome": "BAHIA               ",
+                "sigla": "BA"
+              }
+            },
+            "nomeFantasia": "TOP SORTE",
+            "nomeRazaoSocial": "TOP SORTE LTDA",
+            "numeroUF": 29,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 7,
+            "qtdCotaDisponivel": 6,
+            "qtdCotaTotal": 7,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 29,
+              "nome": "BAHIA               ",
+              "sigla": "BA"
+            },
+            "valorTarifaServico": 1.25,
+            "vrCotaComTarifa": 4.82,
+            "vrCotaSemTarifa": 3.57,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.25,
+            "vrUltimaCotaComTarifa": 4.83,
+            "vrUltimaCotaSemTarifa": 3.58
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ3NzI4MDE0NzsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 10,
+            "loterica": 5802,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MORORO XEREZ LOTERIAS",
+            "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 3,
+            "qtdCotaTotal": 7,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 1.25,
+            "vrCotaComTarifa": 4.82,
+            "vrCotaSemTarifa": 3.57,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.25,
+            "vrUltimaCotaComTarifa": 4.83,
+            "vrUltimaCotaSemTarifa": 3.58
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ3NzI4MDEwNzsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": false,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 4,
+            "loterica": 5802,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MORORO XEREZ LOTERIAS",
+            "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 3,
+            "qtdCotaTotal": 5,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 1.75,
+            "vrCotaComTarifa": 6.75,
+            "vrCotaSemTarifa": 5,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.75,
+            "vrUltimaCotaComTarifa": 6.75,
+            "vrUltimaCotaSemTarifa": 5
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ4OTE5MTQyNTsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": false,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 760,
+            "index": 5,
+            "loterica": 7565,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 51,
+                "digitoVerificador": 2,
+                "numero": 760
+              },
+              "nome": "RONDONOPOLIS",
+              "uf": {
+                "id": 51,
+                "nome": "MATO GROSSO         ",
+                "sigla": "MT"
+              }
+            },
+            "nomeFantasia": "LOTERICA 13 DE MAIO",
+            "nomeRazaoSocial": "Loterica 13 de Maio LTDA",
+            "numeroUF": 51,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 6,
+            "qtdCotaDigital": 2,
+            "qtdCotaDisponivel": 2,
+            "qtdCotaTotal": 3,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 51,
+              "nome": "MATO GROSSO         ",
+              "sigla": "MT"
+            },
+            "valorTarifaServico": 1.75,
+            "vrCotaComTarifa": 6.75,
+            "vrCotaSemTarifa": 5,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.75,
+            "vrUltimaCotaComTarifa": 6.75,
+            "vrUltimaCotaSemTarifa": 5
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ3NzI4MDE0MTsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 8,
+            "loterica": 5802,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MORORO XEREZ LOTERIAS",
+            "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 4,
+            "qtdCotaTotal": 7,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 1.25,
+            "vrCotaComTarifa": 4.82,
+            "vrCotaSemTarifa": 3.57,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.25,
+            "vrUltimaCotaComTarifa": 4.83,
+            "vrUltimaCotaSemTarifa": 3.58
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ3OTQyNzkwNzsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": false,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 4,
+            "loterica": 18353,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MEGA SORTE LOTERIAS",
+            "nomeRazaoSocial": "MARQUES & MONTEIRO LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 8,
+            "qtdCotaDigital": 4,
+            "qtdCotaDisponivel": 4,
+            "qtdCotaTotal": 4,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 1.75,
+            "vrCotaComTarifa": 6.75,
+            "vrCotaSemTarifa": 5,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.75,
+            "vrUltimaCotaComTarifa": 6.75,
+            "vrUltimaCotaSemTarifa": 5
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ3NzI4MDEwODsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": false,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 5,
+            "loterica": 5802,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MORORO XEREZ LOTERIAS",
+            "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 4,
+            "qtdCotaDigital": 2,
+            "qtdCotaDisponivel": 2,
+            "qtdCotaTotal": 2,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 8,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 14,
+            "vrCotaComTarifa": 54,
+            "vrCotaSemTarifa": 40,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 14,
+            "vrUltimaCotaComTarifa": 54,
+            "vrUltimaCotaSemTarifa": 40
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQxNjc2MDI4MzsxMDcwMjs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 6660,
+            "index": 5,
+            "loterica": 22355,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 31,
+                "digitoVerificador": 0,
+                "numero": 6660
+              },
+              "nome": "SERRA DA SAUDADE",
+              "uf": {
+                "id": 31,
+                "nome": "MINAS GERAIS        ",
+                "sigla": "MG"
+              }
+            },
+            "nomeFantasia": "LOTERICA MEGA MILHO",
+            "nomeRazaoSocial": "CASA LOTERICA SERRA DA SAUDADE LTDA",
+            "numeroUF": 31,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 6,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 6,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 31,
+              "nome": "MINAS GERAIS        ",
+              "sigla": "MG"
+            },
+            "valorTarifaServico": 1.45,
+            "vrCotaComTarifa": 5.61,
+            "vrCotaSemTarifa": 4.16,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.5,
+            "vrUltimaCotaComTarifa": 5.7,
+            "vrUltimaCotaSemTarifa": 4.2
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ5MDQwMzk0NzsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 760,
+            "index": 4,
+            "loterica": 24705,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 51,
+                "digitoVerificador": 2,
+                "numero": 760
+              },
+              "nome": "RONDONOPOLIS",
+              "uf": {
+                "id": 51,
+                "nome": "MATO GROSSO         ",
+                "sigla": "MT"
+              }
+            },
+            "nomeFantasia": "AQUI SORTE",
+            "nomeRazaoSocial": "LOTERICA AQUI SORTE LTDA",
+            "numeroUF": 51,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 6,
+            "qtdCotaDigital": 3,
+            "qtdCotaDisponivel": 1,
+            "qtdCotaTotal": 4,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 51,
+              "nome": "MATO GROSSO         ",
+              "sigla": "MT"
+            },
+            "valorTarifaServico": 1.31,
+            "vrCotaComTarifa": 5.06,
+            "vrCotaSemTarifa": 3.75,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.32,
+            "vrUltimaCotaComTarifa": 5.07,
+            "vrUltimaCotaSemTarifa": 3.75
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ5MjAzMzkyMDsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": false,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 4,
+            "loterica": 5798,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MORORO XEREZ LOTERIAS",
+            "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 5,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 1.75,
+            "vrCotaComTarifa": 6.75,
+            "vrCotaSemTarifa": 5,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.75,
+            "vrUltimaCotaComTarifa": 6.75,
+            "vrUltimaCotaSemTarifa": 5
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ3NzI4MDEzODsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 7,
+            "loterica": 5802,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MORORO XEREZ LOTERIAS",
+            "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 4,
+            "qtdCotaTotal": 7,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 1.25,
+            "vrCotaComTarifa": 4.82,
+            "vrCotaSemTarifa": 3.57,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.25,
+            "vrUltimaCotaComTarifa": 4.83,
+            "vrUltimaCotaSemTarifa": 3.58
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ4MTkzMDA4MTsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 910,
+            "index": 4,
+            "loterica": 18845,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 42,
+                "digitoVerificador": 2,
+                "numero": 910
+              },
+              "nome": "JOINVILLE",
+              "uf": {
+                "id": 42,
+                "nome": "SANTA CATARINA      ",
+                "sigla": "SC"
+              }
+            },
+            "nomeFantasia": "LOTERICA PARAISO",
+            "nomeRazaoSocial": "LOTERICA E LOJA  DE CONV RIBEIRO LTDA",
+            "numeroUF": 42,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 7,
+            "qtdCotaDigital": 2,
+            "qtdCotaDisponivel": 2,
+            "qtdCotaTotal": 5,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 42,
+              "nome": "SANTA CATARINA      ",
+              "sigla": "SC"
+            },
+            "valorTarifaServico": 1.22,
+            "vrCotaComTarifa": 4.72,
+            "vrCotaSemTarifa": 3.5,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.24,
+            "vrUltimaCotaComTarifa": 4.74,
+            "vrUltimaCotaSemTarifa": 3.5
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ3NzI4MDE0NDsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 9,
+            "loterica": 5802,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MORORO XEREZ LOTERIAS",
+            "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 3,
+            "qtdCotaTotal": 7,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 1.25,
+            "vrCotaComTarifa": 4.82,
+            "vrCotaSemTarifa": 3.57,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.25,
+            "vrUltimaCotaComTarifa": 4.83,
+            "vrUltimaCotaSemTarifa": 3.58
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ3NzI4MDEzNTsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 6,
+            "loterica": 5802,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MORORO XEREZ LOTERIAS",
+            "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 4,
+            "qtdCotaTotal": 7,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 1.25,
+            "vrCotaComTarifa": 4.82,
+            "vrCotaSemTarifa": 3.57,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.25,
+            "vrUltimaCotaComTarifa": 4.83,
+            "vrUltimaCotaSemTarifa": 3.58
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ4NzE0MDQ1NjsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 760,
+            "index": 4,
+            "loterica": 7565,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 51,
+                "digitoVerificador": 2,
+                "numero": 760
+              },
+              "nome": "RONDONOPOLIS",
+              "uf": {
+                "id": 51,
+                "nome": "MATO GROSSO         ",
+                "sigla": "MT"
+              }
+            },
+            "nomeFantasia": "LOTERICA 13 DE MAIO",
+            "nomeRazaoSocial": "Loterica 13 de Maio LTDA",
+            "numeroUF": 51,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 6,
+            "qtdCotaDigital": 2,
+            "qtdCotaDisponivel": 1,
+            "qtdCotaTotal": 4,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 51,
+              "nome": "MATO GROSSO         ",
+              "sigla": "MT"
+            },
+            "valorTarifaServico": 1.31,
+            "vrCotaComTarifa": 5.06,
+            "vrCotaSemTarifa": 3.75,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.32,
+            "vrUltimaCotaComTarifa": 5.07,
+            "vrUltimaCotaSemTarifa": 3.75
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ3OTQyNzkwODsxMDcwMzs=",
+            "concurso": 1276,
+            "contemResiduo": false,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 5,
+            "loterica": 18353,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MEGA SORTE LOTERIAS",
+            "nomeRazaoSocial": "MARQUES & MONTEIRO LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 8,
+            "qtdCotaDigital": 4,
+            "qtdCotaDisponivel": 4,
+            "qtdCotaTotal": 4,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 1.75,
+            "vrCotaComTarifa": 6.75,
+            "vrCotaSemTarifa": 5,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 1.75,
+            "vrUltimaCotaComTarifa": 6.75,
+            "vrUltimaCotaSemTarifa": 5
+          },
+          {
+            "codigoBolao": "MjAyNjs4OzQ3MjkwNzUyMjsxMDcwMjs=",
+            "concurso": 1276,
+            "contemResiduo": true,
+            "dataSorteio": "19/08/2026",
+            "diaSorteio": "Quarta-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 260,
+            "index": 6,
+            "loterica": 24457,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 13,
+                "digitoVerificador": 3,
+                "numero": 260
+              },
+              "nome": "MANAUS",
+              "uf": {
+                "id": 13,
+                "nome": "AMAZONAS            ",
+                "sigla": "AM"
+              }
+            },
+            "nomeFantasia": "LOTERIA TIO PATINHAS",
+            "nomeRazaoSocial": "LOTERICA TIO PATINHAS LTDA  ME",
+            "numeroUF": 13,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 4,
+            "qtdCotaDisponivel": 4,
+            "qtdCotaTotal": 4,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 13,
+              "nome": "AMAZONAS            ",
+              "sigla": "AM"
+            },
+            "valorTarifaServico": 2.18,
+            "vrCotaComTarifa": 8.43,
+            "vrCotaSemTarifa": 6.25,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 2.21,
+            "vrUltimaCotaComTarifa": 8.46,
+            "vrUltimaCotaSemTarifa": 6.25
+          }
+        ],
+        "paginaAtual": 26,
+        "totalRegistros": 770,
+        "ultimaPagina": 26,
+        "valorMenorCota": 3
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159490977,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL3JlY3VwZXJhci1ib2xvZXMtZGlzcG9uaXZlaXM=/?q=%5E%04%C2%B4%C3%AB%C2%82%C2%84%3D%C2%A3%0A%7D%C2%8D%C3%81e%C3%93%C3%A9%C2%BC~o%C3%A8t%C2%B8%C2%B6%2B%1F%C2%BD%18%C3%94%C2%A1N%C3%B3%C2%AD%C2%9A%C3%99%02%C3%A0%C2%93;9'%00%C3%90%C2%AF%C2%82q%19%C2%91(%C3%AFl%C2%B8%C3%BA)D%C3%9A%C3%8F%C2%95V%07,%C2%9B%C3%A6%C2%A2oq%C3%BE%C2%AFs%C3%92%C2%97W3%25%C3%BC%C2%B5Y7%0C%C2%83%5E%C2%97%C3%88%C2%95%C2%A8Qr%17%5E%0D%C2%9E:%14%C3%A2%C3%B0%C2%A5U%C2%AEd.p%C3%A9%C2%B2%C2%A2%26%C2%88%C2%AD%C3%A7%3F%C2%BA%C3%81%C2%BD%3C%C3%81!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:11:48.901",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              3,
+              5,
+              12,
+              14,
+              22,
+              29,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JAN",
+              "nome": "Janeiro",
+              "numero": 1
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              9,
+              10,
+              13,
+              15,
+              20,
+              25
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "AGO",
+              "nome": "Agosto",
+              "numero": 8
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              9,
+              13,
+              20,
+              23,
+              29,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "NOV",
+              "nome": "Novembro",
+              "numero": 11
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              4,
+              6,
+              9,
+              15,
+              17,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUN",
+              "nome": "Junho",
+              "numero": 6
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              6,
+              14,
+              17,
+              18,
+              24,
+              25
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              3,
+              6,
+              9,
+              23,
+              29,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "DEZ",
+              "nome": "Dezembro",
+              "numero": 12
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              3,
+              5,
+              9,
+              26,
+              28,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "FEV",
+              "nome": "Fevereiro",
+              "numero": 2
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              9,
+              16,
+              22,
+              23,
+              29,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUL",
+              "nome": "Julho",
+              "numero": 7
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              5,
+              8,
+              9,
+              15,
+              23,
+              28
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "OUT",
+              "nome": "Outubro",
+              "numero": 10
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 1522,
+        "lotericaFormatada": {
+          "bairro": "BRO SANTO HILARIO                       ",
+          "codigo": "08.001522-0",
+          "dv": 0,
+          "dvMunicipio": 7,
+          "id": 1522,
+          "idMunicipio": 870,
+          "idUF": 52,
+          "logradouro": "PC DINIZ DE OLIVEIRA PINTO 38                     ",
+          "nome": "LOTERIA ESPORTIVA PONTO 15 LTDA                                                                                    ",
+          "nomeFantasia": "LOTERIA ESPORTIVA PONTO 15",
+          "nomeMunicipio": "GOIANIA                            ",
+          "nomeUF": "GOIAS               ",
+          "numeroFormatado": "08.001522-0",
+          "polo": 8,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 52,
+            "digitoVerificador": 7,
+            "numero": 870
+          },
+          "nome": "GOIANIA",
+          "uf": {
+            "id": 52,
+            "nome": "GOIAS               ",
+            "sigla": "GO"
+          }
+        },
+        "nomeFantasia": "LOTERIA ESPORTIVA PONTO 15",
+        "nomeRazaoSocial": "LOTERIA ESPORTIVA PONTO 15 LTDA",
+        "qtdApostas": 9,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 1,
+        "qtdCotaDigital": 2,
+        "qtdCotaDisponivel": 1,
+        "qtdCotaFisica": 1,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 3,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 52,
+          "nome": "GOIAS               ",
+          "sigla": "GO"
+        },
+        "vrCotaComTarifa": 10.12,
+        "vrCotaSemTarifa": 7.5,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 7.87,
+        "vrTarifaServicoCota": 2.62,
+        "vrTarifaServicoUltimaCota": 2.63,
+        "vrTotalBolaoComTarifa": 30.37,
+        "vrTotalBolaoSemTarifa": 22.5,
+        "vrUltimaCotaComTarifa": 10.13,
+        "vrUltimaCotaSemTarifa": 7.5
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159505983,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C3%A1)%22%5C%2F%C2%ABK.%C3%B9;%C2%A3%C3%85%C2%9E%3E%C3%A0%C3%A2%C2%85%13'U%0D%C2%86%C2%85V%C2%AC%C2%A0%C3%8A:%C2%9C%C2%90%C3%86%7D!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:11:51.889",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              3,
+              8,
+              10,
+              11,
+              12,
+              21,
+              22
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JAN",
+              "nome": "Janeiro",
+              "numero": 1
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              7,
+              8,
+              11,
+              19,
+              22,
+              24
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "NOV",
+              "nome": "Novembro",
+              "numero": 11
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              4,
+              8,
+              9,
+              18,
+              22,
+              27
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAI",
+              "nome": "Maio",
+              "numero": 5
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              5,
+              6,
+              16,
+              17,
+              21,
+              24
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "SET",
+              "nome": "Setembro",
+              "numero": 9
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              6,
+              8,
+              14,
+              15,
+              22,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "FEV",
+              "nome": "Fevereiro",
+              "numero": 2
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              8,
+              10,
+              13,
+              15,
+              16,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "AGO",
+              "nome": "Agosto",
+              "numero": 8
+            }
+          },
+          {
+            "dezenas": [
+              5,
+              12,
+              13,
+              14,
+              17,
+              22,
+              27
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "FEV",
+              "nome": "Fevereiro",
+              "numero": 2
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              5,
+              10,
+              12,
+              16,
+              21,
+              23
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAI",
+              "nome": "Maio",
+              "numero": 5
+            }
+          },
+          {
+            "dezenas": [
+              11,
+              16,
+              17,
+              21,
+              27,
+              28,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              2,
+              3,
+              5,
+              10,
+              15,
+              26
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "SET",
+              "nome": "Setembro",
+              "numero": 9
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 13011,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "14.013011-0",
+          "dv": 0,
+          "dvMunicipio": 2,
+          "id": 13011,
+          "idMunicipio": 690,
+          "idUF": 41,
+          "logradouro": "RUA JOSE LOUREIRO                                 ",
+          "nome": "AGUIA LOTERIAS LTDA                                                                                                ",
+          "nomeFantasia": "LOTERIAS ATTILIO",
+          "nomeMunicipio": "CURITIBA                           ",
+          "nomeUF": "PARANA              ",
+          "numeroFormatado": "14.013011-0",
+          "polo": 14,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 41,
+            "digitoVerificador": 2,
+            "numero": 690
+          },
+          "nome": "CURITIBA",
+          "uf": {
+            "id": 41,
+            "nome": "PARANA              ",
+            "sigla": "PR"
+          }
+        },
+        "nomeFantasia": "LOTERIAS ATTILIO",
+        "nomeRazaoSocial": "AGUIA LOTERIAS LTDA",
+        "qtdApostas": 10,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 0,
+        "qtdCotaDigital": 3,
+        "qtdCotaDisponivel": 3,
+        "qtdCotaFisica": 4,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 7,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 41,
+          "nome": "PARANA              ",
+          "sigla": "PR"
+        },
+        "vrCotaComTarifa": 4.82,
+        "vrCotaSemTarifa": 3.57,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 8.75,
+        "vrTarifaServicoCota": 1.25,
+        "vrTarifaServicoUltimaCota": 1.25,
+        "vrTotalBolaoComTarifa": 33.75,
+        "vrTotalBolaoSemTarifa": 25,
+        "vrUltimaCotaComTarifa": 4.83,
+        "vrUltimaCotaSemTarifa": 3.58
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159508962,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A0B%5E%22%18M1p%C3%90%C2%9FA%C3%8F%7B%C2%AF%C2%BE%C2%88%C2%B6,v(0%C3%8C%C2%A7W%C3%92%C2%A9r%C2%84m%C3%A8S%C3%AF!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:11:54.928",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              6,
+              10,
+              12,
+              14,
+              24,
+              26,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "OUT",
+              "nome": "Outubro",
+              "numero": 10
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              8,
+              17,
+              18,
+              20,
+              22,
+              24
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JAN",
+              "nome": "Janeiro",
+              "numero": 1
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              6,
+              7,
+              20,
+              24,
+              25,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "AGO",
+              "nome": "Agosto",
+              "numero": 8
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              6,
+              7,
+              16,
+              27,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUL",
+              "nome": "Julho",
+              "numero": 7
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              9,
+              10,
+              12,
+              16,
+              17,
+              19
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUN",
+              "nome": "Junho",
+              "numero": 6
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              11,
+              13,
+              22,
+              25,
+              27,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "FEV",
+              "nome": "Fevereiro",
+              "numero": 2
+            }
+          },
+          {
+            "dezenas": [
+              8,
+              9,
+              13,
+              14,
+              15,
+              19,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "NOV",
+              "nome": "Novembro",
+              "numero": 11
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              7,
+              9,
+              15,
+              20,
+              26,
+              28
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAI",
+              "nome": "Maio",
+              "numero": 5
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              13,
+              14,
+              15,
+              23,
+              26,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAR",
+              "nome": "Março",
+              "numero": 3
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              20,
+              23,
+              27,
+              28,
+              29,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "SET",
+              "nome": "Setembro",
+              "numero": 9
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": false,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 24457,
+        "lotericaFormatada": {
+          "bairro": "MONTE DAS OLIVEIRAS                     ",
+          "codigo": "02.024457-6",
+          "dv": 6,
+          "dvMunicipio": 3,
+          "id": 24457,
+          "idMunicipio": 260,
+          "idUF": 13,
+          "logradouro": "AV ARQUITETO J H B RODRIGUES LJ 101               ",
+          "nome": "LOTERICA TIO PATINHAS LTDA  ME                                                                                     ",
+          "nomeFantasia": "LOTERIA TIO PATINHAS",
+          "nomeMunicipio": "MANAUS                             ",
+          "nomeUF": "AMAZONAS            ",
+          "numeroFormatado": "02.024457-6",
+          "polo": 2,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 13,
+            "digitoVerificador": 3,
+            "numero": 260
+          },
+          "nome": "MANAUS",
+          "uf": {
+            "id": 13,
+            "nome": "AMAZONAS            ",
+            "sigla": "AM"
+          }
+        },
+        "nomeFantasia": "LOTERIA TIO PATINHAS",
+        "nomeRazaoSocial": "LOTERICA TIO PATINHAS LTDA  ME",
+        "qtdApostas": 10,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 0,
+        "qtdCotaDigital": 5,
+        "qtdCotaDisponivel": 4,
+        "qtdCotaFisica": 0,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 5,
+        "qtdCotaVendidas": 1,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 13,
+          "nome": "AMAZONAS            ",
+          "sigla": "AM"
+        },
+        "vrCotaComTarifa": 6.75,
+        "vrCotaSemTarifa": 5,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 8.75,
+        "vrTarifaServicoCota": 1.75,
+        "vrTarifaServicoUltimaCota": 1.75,
+        "vrTotalBolaoComTarifa": 33.75,
+        "vrTotalBolaoSemTarifa": 25,
+        "vrUltimaCotaComTarifa": 6.75,
+        "vrUltimaCotaSemTarifa": 5
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159512000,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%AF9%0C+T%1E%C2%8B%5B%C2%BF%C2%A7%7D%C3%B5+%C2%98(%C3%B5%C3%B9%C2%AE%C3%B9%C2%B52%C3%AD%C2%B2n%C3%87%C3%8E%C2%86Q%C3%86%C2%85k%C2%87!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:11:58.294",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              3,
+              5,
+              10,
+              13,
+              14,
+              24,
+              25
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "FEV",
+              "nome": "Fevereiro",
+              "numero": 2
+            }
+          },
+          {
+            "dezenas": [
+              8,
+              15,
+              16,
+              21,
+              22,
+              25,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "OUT",
+              "nome": "Outubro",
+              "numero": 10
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              4,
+              9,
+              16,
+              18,
+              22,
+              23
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "NOV",
+              "nome": "Novembro",
+              "numero": 11
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              5,
+              6,
+              8,
+              23,
+              25,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAI",
+              "nome": "Maio",
+              "numero": 5
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              9,
+              12,
+              15,
+              18,
+              22,
+              24
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "DEZ",
+              "nome": "Dezembro",
+              "numero": 12
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              3,
+              12,
+              15,
+              16,
+              19,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "SET",
+              "nome": "Setembro",
+              "numero": 9
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              2,
+              3,
+              7,
+              25,
+              26,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAR",
+              "nome": "Março",
+              "numero": 3
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              10,
+              15,
+              16,
+              21,
+              23,
+              24
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              15,
+              23,
+              24,
+              27,
+              29,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUL",
+              "nome": "Julho",
+              "numero": 7
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              7,
+              10,
+              15,
+              19,
+              25,
+              26
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JAN",
+              "nome": "Janeiro",
+              "numero": 1
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 18359,
+        "lotericaFormatada": {
+          "bairro": "CAMINHO DAS ARVORES                     ",
+          "codigo": "03.018359-6",
+          "dv": 6,
+          "dvMunicipio": 8,
+          "id": 18359,
+          "idMunicipio": 2740,
+          "idUF": 29,
+          "logradouro": "RUA DA ALFAZEMA                                   ",
+          "nome": "TOP SORTE LTDA                                                                                                     ",
+          "nomeFantasia": "TOP SORTE",
+          "nomeMunicipio": "SALVADOR                           ",
+          "nomeUF": "BAHIA               ",
+          "numeroFormatado": "03.018359-6",
+          "polo": 3,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 29,
+            "digitoVerificador": 8,
+            "numero": 2740
+          },
+          "nome": "SALVADOR",
+          "uf": {
+            "id": 29,
+            "nome": "BAHIA               ",
+            "sigla": "BA"
+          }
+        },
+        "nomeFantasia": "TOP SORTE",
+        "nomeRazaoSocial": "TOP SORTE LTDA",
+        "qtdApostas": 10,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 1,
+        "qtdCotaDigital": 7,
+        "qtdCotaDisponivel": 6,
+        "qtdCotaFisica": 0,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 7,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 29,
+          "nome": "BAHIA               ",
+          "sigla": "BA"
+        },
+        "vrCotaComTarifa": 4.82,
+        "vrCotaSemTarifa": 3.57,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 8.75,
+        "vrTarifaServicoCota": 1.25,
+        "vrTarifaServicoUltimaCota": 1.25,
+        "vrTotalBolaoComTarifa": 33.75,
+        "vrTotalBolaoSemTarifa": 25,
+        "vrUltimaCotaComTarifa": 4.83,
+        "vrUltimaCotaSemTarifa": 3.58
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159515364,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1Au%13%C2%BA%C2%929%19%C2%9E%1B%08%C3%84y%06W%C2%A9%60%C2%B0%C2%B6%23%C3%BB%C2%8A)%11%C3%BD%C3%9E%C2%A7%077%C2%94%C2%9A%C3%BD%C3%91%C2%A5!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:01.670",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              2,
+              3,
+              10,
+              12,
+              13,
+              17,
+              18
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              6,
+              7,
+              8,
+              17,
+              26,
+              28
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              7,
+              17,
+              26,
+              29,
+              31
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              10,
+              14,
+              23,
+              24,
+              28,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              15,
+              16,
+              18,
+              20,
+              25,
+              26,
+              31
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              6,
+              8,
+              10,
+              11,
+              12,
+              22
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              6,
+              7,
+              8,
+              11,
+              21,
+              23,
+              28
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              3,
+              7,
+              9,
+              21,
+              25,
+              27
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              5,
+              11,
+              20,
+              21,
+              23,
+              27,
+              28
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              4,
+              9,
+              11,
+              12,
+              20,
+              26
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 5802,
+        "lotericaFormatada": {
+          "bairro": "ALDEOTA                                 ",
+          "codigo": "05.005802-9",
+          "dv": 9,
+          "dvMunicipio": 0,
+          "id": 5802,
+          "idMunicipio": 440,
+          "idUF": 23,
+          "logradouro": "AV SANTOS DUMONT                                  ",
+          "nome": "MORORO XEREZ LOTERIAS LTDA                                                                                         ",
+          "nomeFantasia": "MORORO XEREZ LOTERIAS",
+          "nomeMunicipio": "FORTALEZA                          ",
+          "nomeUF": "CEARA               ",
+          "numeroFormatado": "05.005802-9",
+          "polo": 5,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 23,
+            "digitoVerificador": 0,
+            "numero": 440
+          },
+          "nome": "FORTALEZA",
+          "uf": {
+            "id": 23,
+            "nome": "CEARA               ",
+            "sigla": "CE"
+          }
+        },
+        "nomeFantasia": "MORORO XEREZ LOTERIAS",
+        "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+        "qtdApostas": 10,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 1,
+        "qtdCotaDigital": 5,
+        "qtdCotaDisponivel": 3,
+        "qtdCotaFisica": 2,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 7,
+        "qtdCotaVendidas": 1,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 23,
+          "nome": "CEARA               ",
+          "sigla": "CE"
+        },
+        "vrCotaComTarifa": 4.82,
+        "vrCotaSemTarifa": 3.57,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 8.75,
+        "vrTarifaServicoCota": 1.25,
+        "vrTarifaServicoUltimaCota": 1.25,
+        "vrTotalBolaoComTarifa": 33.75,
+        "vrTotalBolaoSemTarifa": 25,
+        "vrUltimaCotaComTarifa": 4.83,
+        "vrUltimaCotaSemTarifa": 3.58
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159518745,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%87%2B%0F%C3%BB%2F%C2%8D%C3%A2oS%C3%94%C3%BBv%C2%B0dWe%C3%AC%C2%BF%C2%84%C3%93B%18%C2%8B%7Ce%2Bv%7C%C2%B3K%C3%AA%C2%AE!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:04.767",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              9,
+              13,
+              16,
+              23,
+              30,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JAN",
+              "nome": "Janeiro",
+              "numero": 1
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              7,
+              8,
+              13,
+              21,
+              23,
+              28
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUN",
+              "nome": "Junho",
+              "numero": 6
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              7,
+              8,
+              11,
+              14,
+              18,
+              24
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAI",
+              "nome": "Maio",
+              "numero": 5
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              8,
+              10,
+              17,
+              18,
+              28,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "AGO",
+              "nome": "Agosto",
+              "numero": 8
+            }
+          },
+          {
+            "dezenas": [
+              5,
+              8,
+              10,
+              15,
+              21,
+              24,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAR",
+              "nome": "Março",
+              "numero": 3
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              6,
+              8,
+              20,
+              24,
+              26,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "DEZ",
+              "nome": "Dezembro",
+              "numero": 12
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              3,
+              17,
+              20,
+              21,
+              22,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUL",
+              "nome": "Julho",
+              "numero": 7
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              2,
+              5,
+              9,
+              10,
+              26,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "SET",
+              "nome": "Setembro",
+              "numero": 9
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              5,
+              12,
+              19,
+              22,
+              24,
+              26
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "FEV",
+              "nome": "Fevereiro",
+              "numero": 2
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              9,
+              11,
+              13,
+              15,
+              20,
+              28
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "OUT",
+              "nome": "Outubro",
+              "numero": 10
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": false,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 5802,
+        "lotericaFormatada": {
+          "bairro": "ALDEOTA                                 ",
+          "codigo": "05.005802-9",
+          "dv": 9,
+          "dvMunicipio": 0,
+          "id": 5802,
+          "idMunicipio": 440,
+          "idUF": 23,
+          "logradouro": "AV SANTOS DUMONT                                  ",
+          "nome": "MORORO XEREZ LOTERIAS LTDA                                                                                         ",
+          "nomeFantasia": "MORORO XEREZ LOTERIAS",
+          "nomeMunicipio": "FORTALEZA                          ",
+          "nomeUF": "CEARA               ",
+          "numeroFormatado": "05.005802-9",
+          "polo": 5,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 23,
+            "digitoVerificador": 0,
+            "numero": 440
+          },
+          "nome": "FORTALEZA",
+          "uf": {
+            "id": 23,
+            "nome": "CEARA               ",
+            "sigla": "CE"
+          }
+        },
+        "nomeFantasia": "MORORO XEREZ LOTERIAS",
+        "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+        "qtdApostas": 10,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 1,
+        "qtdCotaDigital": 5,
+        "qtdCotaDisponivel": 3,
+        "qtdCotaFisica": 0,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 5,
+        "qtdCotaVendidas": 1,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 23,
+          "nome": "CEARA               ",
+          "sigla": "CE"
+        },
+        "vrCotaComTarifa": 6.75,
+        "vrCotaSemTarifa": 5,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 8.75,
+        "vrTarifaServicoCota": 1.75,
+        "vrTarifaServicoUltimaCota": 1.75,
+        "vrTotalBolaoComTarifa": 33.75,
+        "vrTotalBolaoSemTarifa": 25,
+        "vrUltimaCotaComTarifa": 6.75,
+        "vrUltimaCotaSemTarifa": 5
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159521841,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C3%90%7F4%14%C3%84%C3%82%1F%C3%BF%C3%B7%C2%9C%C2%96%C2%BE%C2%92%7B%09_%C3%B8X%13%C2%84%C3%B5%C2%9A%C2%ACQ%0B%18%C2%8E%C3%B5%5E%C3%B0%15%7B!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:07.551",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              2,
+              7,
+              10,
+              13,
+              22,
+              23,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "FEV",
+              "nome": "Fevereiro",
+              "numero": 2
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              7,
+              12,
+              20,
+              22,
+              29,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "OUT",
+              "nome": "Outubro",
+              "numero": 10
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              11,
+              14,
+              17,
+              24,
+              26
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              5,
+              15,
+              17,
+              21,
+              23,
+              26
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "SET",
+              "nome": "Setembro",
+              "numero": 9
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              4,
+              11,
+              13,
+              22,
+              26,
+              27
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAR",
+              "nome": "Março",
+              "numero": 3
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              2,
+              11,
+              15,
+              23,
+              24,
+              26
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUN",
+              "nome": "Junho",
+              "numero": 6
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": false,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 7565,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "10.007565-7",
+          "dv": 7,
+          "dvMunicipio": 2,
+          "id": 7565,
+          "idMunicipio": 760,
+          "idUF": 51,
+          "logradouro": "RUA 13 DE MAIO                                    ",
+          "nome": "Loterica 13 de Maio LTDA                                                                                           ",
+          "nomeFantasia": "LOTERICA 13 DE MAIO",
+          "nomeMunicipio": "RONDONOPOLIS                       ",
+          "nomeUF": "MATO GROSSO         ",
+          "numeroFormatado": "10.007565-7",
+          "polo": 10,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 51,
+            "digitoVerificador": 2,
+            "numero": 760
+          },
+          "nome": "RONDONOPOLIS",
+          "uf": {
+            "id": 51,
+            "nome": "MATO GROSSO         ",
+            "sigla": "MT"
+          }
+        },
+        "nomeFantasia": "LOTERICA 13 DE MAIO",
+        "nomeRazaoSocial": "Loterica 13 de Maio LTDA",
+        "qtdApostas": 6,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 0,
+        "qtdCotaDigital": 2,
+        "qtdCotaDisponivel": 2,
+        "qtdCotaFisica": 1,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 3,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 51,
+          "nome": "MATO GROSSO         ",
+          "sigla": "MT"
+        },
+        "vrCotaComTarifa": 6.75,
+        "vrCotaSemTarifa": 5,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 5.25,
+        "vrTarifaServicoCota": 1.75,
+        "vrTarifaServicoUltimaCota": 1.75,
+        "vrTotalBolaoComTarifa": 20.25,
+        "vrTotalBolaoSemTarifa": 15,
+        "vrUltimaCotaComTarifa": 6.75,
+        "vrUltimaCotaSemTarifa": 5
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159524604,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%A8%26%C2%A2L%C3%A9j7%C3%A2%C3%88cL%C3%B9%C3%BEe%C3%87V%C2%92%C2%A4%C2%90%C3%BCSv%0E%C3%B4z%C3%93%3FE%04%C2%98%C3%AD%C3%A6!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:10.265",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              2,
+              23,
+              25,
+              26,
+              27,
+              28
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              12,
+              17,
+              18,
+              22,
+              24,
+              25,
+              31
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              7,
+              8,
+              9,
+              19,
+              20,
+              23
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              11,
+              12,
+              22,
+              23,
+              27,
+              28,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              7,
+              8,
+              9,
+              11,
+              16,
+              31
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              5,
+              7,
+              11,
+              25,
+              26,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              8,
+              9,
+              18,
+              22,
+              29,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              16,
+              19,
+              20,
+              21,
+              24,
+              26
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              9,
+              12,
+              13,
+              18,
+              24,
+              26
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              3,
+              8,
+              10,
+              27,
+              28,
+              31
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 5802,
+        "lotericaFormatada": {
+          "bairro": "ALDEOTA                                 ",
+          "codigo": "05.005802-9",
+          "dv": 9,
+          "dvMunicipio": 0,
+          "id": 5802,
+          "idMunicipio": 440,
+          "idUF": 23,
+          "logradouro": "AV SANTOS DUMONT                                  ",
+          "nome": "MORORO XEREZ LOTERIAS LTDA                                                                                         ",
+          "nomeFantasia": "MORORO XEREZ LOTERIAS",
+          "nomeMunicipio": "FORTALEZA                          ",
+          "nomeUF": "CEARA               ",
+          "numeroFormatado": "05.005802-9",
+          "polo": 5,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 23,
+            "digitoVerificador": 0,
+            "numero": 440
+          },
+          "nome": "FORTALEZA",
+          "uf": {
+            "id": 23,
+            "nome": "CEARA               ",
+            "sigla": "CE"
+          }
+        },
+        "nomeFantasia": "MORORO XEREZ LOTERIAS",
+        "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+        "qtdApostas": 10,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 1,
+        "qtdCotaDigital": 5,
+        "qtdCotaDisponivel": 4,
+        "qtdCotaFisica": 2,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 7,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 23,
+          "nome": "CEARA               ",
+          "sigla": "CE"
+        },
+        "vrCotaComTarifa": 4.82,
+        "vrCotaSemTarifa": 3.57,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 8.75,
+        "vrTarifaServicoCota": 1.25,
+        "vrTarifaServicoUltimaCota": 1.25,
+        "vrTotalBolaoComTarifa": 33.75,
+        "vrTotalBolaoSemTarifa": 25,
+        "vrUltimaCotaComTarifa": 4.83,
+        "vrUltimaCotaSemTarifa": 3.58
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159527335,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%16'%C3%91%C2%93%C3%96%3D%C2%94%C3%A6%C3%9F%C2%A6l%C3%AC%C2%9A%C2%A5%C3%B5%23%C3%ADy%C2%88,H%C2%B3%17%C3%AE9%1D%22@V%12%C3%B1w!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:13.098",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              6,
+              10,
+              17,
+              19,
+              21,
+              25
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "JAN",
+              "nome": "Janeiro",
+              "numero": 1
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              5,
+              7,
+              9,
+              24,
+              28,
+              31
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "SET",
+              "nome": "Setembro",
+              "numero": 9
+            }
+          },
+          {
+            "dezenas": [
+              5,
+              10,
+              12,
+              17,
+              21,
+              25,
+              29
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "NOV",
+              "nome": "Novembro",
+              "numero": 11
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              3,
+              4,
+              11,
+              19,
+              21,
+              24
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUN",
+              "nome": "Junho",
+              "numero": 6
+            }
+          },
+          {
+            "dezenas": [
+              14,
+              18,
+              19,
+              22,
+              27,
+              28,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "NOV",
+              "nome": "Novembro",
+              "numero": 11
+            }
+          },
+          {
+            "dezenas": [
+              5,
+              9,
+              10,
+              19,
+              22,
+              25,
+              27
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "AGO",
+              "nome": "Agosto",
+              "numero": 8
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              2,
+              18,
+              21,
+              27,
+              28,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "DEZ",
+              "nome": "Dezembro",
+              "numero": 12
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              14,
+              18,
+              20,
+              23,
+              29,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUL",
+              "nome": "Julho",
+              "numero": 7
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": false,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 18353,
+        "lotericaFormatada": {
+          "bairro": "SERRINHA                                ",
+          "codigo": "05.018353-2",
+          "dv": 2,
+          "dvMunicipio": 0,
+          "id": 18353,
+          "idMunicipio": 440,
+          "idUF": 23,
+          "logradouro": "AV DR SILAS MUNGUBA                               ",
+          "nome": "MARQUES & MONTEIRO LOTERIAS LTDA                                                                                   ",
+          "nomeFantasia": "MEGA SORTE LOTERIAS",
+          "nomeMunicipio": "FORTALEZA                          ",
+          "nomeUF": "CEARA               ",
+          "numeroFormatado": "05.018353-2",
+          "polo": 5,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 23,
+            "digitoVerificador": 0,
+            "numero": 440
+          },
+          "nome": "FORTALEZA",
+          "uf": {
+            "id": 23,
+            "nome": "CEARA               ",
+            "sigla": "CE"
+          }
+        },
+        "nomeFantasia": "MEGA SORTE LOTERIAS",
+        "nomeRazaoSocial": "MARQUES & MONTEIRO LOTERIAS LTDA",
+        "qtdApostas": 8,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 0,
+        "qtdCotaDigital": 4,
+        "qtdCotaDisponivel": 4,
+        "qtdCotaFisica": 0,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 4,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 23,
+          "nome": "CEARA               ",
+          "sigla": "CE"
+        },
+        "vrCotaComTarifa": 6.75,
+        "vrCotaSemTarifa": 5,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 7,
+        "vrTarifaServicoCota": 1.75,
+        "vrTarifaServicoUltimaCota": 1.75,
+        "vrTotalBolaoComTarifa": 27,
+        "vrTotalBolaoSemTarifa": 20,
+        "vrUltimaCotaComTarifa": 6.75,
+        "vrUltimaCotaSemTarifa": 5
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159530165,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%BFY:%3D%C3%B5%C2%A9%C2%A7%C2%AE%7Fk%04%C2%A26%14N%C3%9FA%C2%87%1E%C2%83!%C2%8A%C3%9E%C3%A8%C2%AF'%C2%BC%C3%A2%1B0%C3%A0%13!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:15.798",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              13,
+              14,
+              18,
+              24,
+              25,
+              27,
+              29,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JAN",
+              "nome": "Janeiro",
+              "numero": 1
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              5,
+              7,
+              20,
+              23,
+              24,
+              25,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAR",
+              "nome": "Março",
+              "numero": 3
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              5,
+              7,
+              12,
+              23,
+              24,
+              27,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "OUT",
+              "nome": "Outubro",
+              "numero": 10
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              6,
+              20,
+              23,
+              27,
+              29,
+              30,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUL",
+              "nome": "Julho",
+              "numero": 7
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": false,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 5802,
+        "lotericaFormatada": {
+          "bairro": "ALDEOTA                                 ",
+          "codigo": "05.005802-9",
+          "dv": 9,
+          "dvMunicipio": 0,
+          "id": 5802,
+          "idMunicipio": 440,
+          "idUF": 23,
+          "logradouro": "AV SANTOS DUMONT                                  ",
+          "nome": "MORORO XEREZ LOTERIAS LTDA                                                                                         ",
+          "nomeFantasia": "MORORO XEREZ LOTERIAS",
+          "nomeMunicipio": "FORTALEZA                          ",
+          "nomeUF": "CEARA               ",
+          "numeroFormatado": "05.005802-9",
+          "polo": 5,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 23,
+            "digitoVerificador": 0,
+            "numero": 440
+          },
+          "nome": "FORTALEZA",
+          "uf": {
+            "id": 23,
+            "nome": "CEARA               ",
+            "sigla": "CE"
+          }
+        },
+        "nomeFantasia": "MORORO XEREZ LOTERIAS",
+        "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+        "qtdApostas": 4,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 0,
+        "qtdCotaDigital": 2,
+        "qtdCotaDisponivel": 2,
+        "qtdCotaFisica": 0,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 2,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 8,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 23,
+          "nome": "CEARA               ",
+          "sigla": "CE"
+        },
+        "vrCotaComTarifa": 54,
+        "vrCotaSemTarifa": 40,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 28,
+        "vrTarifaServicoCota": 14,
+        "vrTarifaServicoUltimaCota": 14,
+        "vrTotalBolaoComTarifa": 108,
+        "vrTotalBolaoSemTarifa": 80,
+        "vrUltimaCotaComTarifa": 54,
+        "vrUltimaCotaSemTarifa": 40
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159532857,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%88%C3%AC%C2%8E%C3%9A%C3%85E%15%C3%80%3F%C3%BB%3C%C3%92%C2%BD%C3%B9%C3%BA%C2%87%C3%94W,%C3%BD;%06;A%15%03!%3E_%C3%9E%C2%B1%C3%96!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:19.114",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              7,
+              8,
+              16,
+              17,
+              20,
+              25,
+              29
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              8,
+              10,
+              20,
+              26,
+              27,
+              28
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              5,
+              9,
+              11,
+              17,
+              26,
+              27,
+              29
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              5,
+              8,
+              9,
+              18,
+              19,
+              21,
+              24
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "MAI",
+              "nome": "Maio",
+              "numero": 5
+            }
+          },
+          {
+            "dezenas": [
+              8,
+              10,
+              11,
+              17,
+              24,
+              27,
+              29
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "AGO",
+              "nome": "Agosto",
+              "numero": 8
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              8,
+              10,
+              21,
+              27,
+              29,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              10,
+              11,
+              13,
+              14,
+              25,
+              26,
+              27
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              5,
+              7,
+              10,
+              11,
+              18,
+              20,
+              21
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "OUT",
+              "nome": "Outubro",
+              "numero": 10
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              17,
+              18,
+              19,
+              27,
+              28,
+              29
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "OUT",
+              "nome": "Outubro",
+              "numero": 10
+            }
+          },
+          {
+            "dezenas": [
+              5,
+              7,
+              17,
+              20,
+              21,
+              24,
+              26
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "MAR",
+              "nome": "Março",
+              "numero": 3
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 22355,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "11.022355-1",
+          "dv": 1,
+          "dvMunicipio": 0,
+          "id": 22355,
+          "idMunicipio": 6660,
+          "idUF": 31,
+          "logradouro": "RUA LUIZ ALFREDO RICARDO                          ",
+          "nome": "CASA LOTERICA SERRA DA SAUDADE LTDA                                                                                ",
+          "nomeFantasia": "LOTERICA MEGA MILHO",
+          "nomeMunicipio": "SERRA DA SAUDADE                   ",
+          "nomeUF": "MINAS GERAIS        ",
+          "numeroFormatado": "11.022355-1",
+          "polo": 11,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 31,
+            "digitoVerificador": 0,
+            "numero": 6660
+          },
+          "nome": "SERRA DA SAUDADE",
+          "uf": {
+            "id": 31,
+            "nome": "MINAS GERAIS        ",
+            "sigla": "MG"
+          }
+        },
+        "nomeFantasia": "LOTERICA MEGA MILHO",
+        "nomeRazaoSocial": "CASA LOTERICA SERRA DA SAUDADE LTDA",
+        "qtdApostas": 10,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 1,
+        "qtdCotaDigital": 6,
+        "qtdCotaDisponivel": 5,
+        "qtdCotaFisica": 0,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 6,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 31,
+          "nome": "MINAS GERAIS        ",
+          "sigla": "MG"
+        },
+        "vrCotaComTarifa": 5.61,
+        "vrCotaSemTarifa": 4.16,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 8.75,
+        "vrTarifaServicoCota": 1.45,
+        "vrTarifaServicoUltimaCota": 1.5,
+        "vrTotalBolaoComTarifa": 33.75,
+        "vrTotalBolaoSemTarifa": 25,
+        "vrUltimaCotaComTarifa": 5.7,
+        "vrUltimaCotaSemTarifa": 4.2
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159536278,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C3%89%C3%B2%3E%7C%0D3%0Cg-%C3%A5%5C%C3%B4%1C@%C2%B9%C2%BB%C3%AA%C3%8C%0BMoJ%C2%84k%26%C2%BB)%C3%BB%C3%A3%C2%97%C3%87%C2%9D!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:22.253",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              5,
+              10,
+              23,
+              26,
+              29,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "SET",
+              "nome": "Setembro",
+              "numero": 9
+            }
+          },
+          {
+            "dezenas": [
+              5,
+              7,
+              18,
+              23,
+              25,
+              27,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "NOV",
+              "nome": "Novembro",
+              "numero": 11
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              10,
+              19,
+              21,
+              24,
+              26,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JAN",
+              "nome": "Janeiro",
+              "numero": 1
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              8,
+              9,
+              13,
+              23,
+              30,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "DEZ",
+              "nome": "Dezembro",
+              "numero": 12
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              9,
+              14,
+              16,
+              20,
+              22,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAI",
+              "nome": "Maio",
+              "numero": 5
+            }
+          },
+          {
+            "dezenas": [
+              11,
+              13,
+              20,
+              23,
+              24,
+              25,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUL",
+              "nome": "Julho",
+              "numero": 7
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 24705,
+        "lotericaFormatada": {
+          "bairro": "PARQUE RESIDENCIAL UNIVERSITARIO        ",
+          "codigo": "10.024705-9",
+          "dv": 9,
+          "dvMunicipio": 2,
+          "id": 24705,
+          "idMunicipio": 760,
+          "idUF": 51,
+          "logradouro": "AV. ARAPONGAS                                     ",
+          "nome": "LOTERICA AQUI SORTE LTDA                                                                                           ",
+          "nomeFantasia": "AQUI SORTE",
+          "nomeMunicipio": "RONDONOPOLIS                       ",
+          "nomeUF": "MATO GROSSO         ",
+          "numeroFormatado": "10.024705-9",
+          "polo": 10,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 51,
+            "digitoVerificador": 2,
+            "numero": 760
+          },
+          "nome": "RONDONOPOLIS",
+          "uf": {
+            "id": 51,
+            "nome": "MATO GROSSO         ",
+            "sigla": "MT"
+          }
+        },
+        "nomeFantasia": "AQUI SORTE",
+        "nomeRazaoSocial": "LOTERICA AQUI SORTE LTDA",
+        "qtdApostas": 6,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 2,
+        "qtdCotaDigital": 3,
+        "qtdCotaDisponivel": 1,
+        "qtdCotaFisica": 1,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 4,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 51,
+          "nome": "MATO GROSSO         ",
+          "sigla": "MT"
+        },
+        "vrCotaComTarifa": 5.06,
+        "vrCotaSemTarifa": 3.75,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 5.25,
+        "vrTarifaServicoCota": 1.31,
+        "vrTarifaServicoUltimaCota": 1.32,
+        "vrTotalBolaoComTarifa": 20.25,
+        "vrTotalBolaoSemTarifa": 15,
+        "vrUltimaCotaComTarifa": 5.07,
+        "vrUltimaCotaSemTarifa": 3.75
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159539331,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%8E%12x%C3%A8u%C2%BC%C2%90V%C2%8F%5C%C3%85E%C2%95%C3%97%5B%C2%9D%C2%90%C2%AB%C2%9D%05%15%C2%A3aC9%C2%97+%7B%1Ct%03%1A!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:24.938",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              6,
+              9,
+              15,
+              23,
+              24,
+              26,
+              27
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAI",
+              "nome": "Maio",
+              "numero": 5
+            }
+          },
+          {
+            "dezenas": [
+              16,
+              18,
+              19,
+              23,
+              26,
+              27,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "FEV",
+              "nome": "Fevereiro",
+              "numero": 2
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              10,
+              12,
+              18,
+              21,
+              29,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JAN",
+              "nome": "Janeiro",
+              "numero": 1
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              5,
+              22,
+              23,
+              24,
+              28,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUN",
+              "nome": "Junho",
+              "numero": 6
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              5,
+              7,
+              8,
+              11,
+              12,
+              27
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "OUT",
+              "nome": "Outubro",
+              "numero": 10
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              8,
+              10,
+              19,
+              26,
+              27,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAR",
+              "nome": "Março",
+              "numero": 3
+            }
+          },
+          {
+            "dezenas": [
+              10,
+              16,
+              18,
+              20,
+              25,
+              26,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUL",
+              "nome": "Julho",
+              "numero": 7
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              3,
+              6,
+              13,
+              24,
+              29,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "NOV",
+              "nome": "Novembro",
+              "numero": 11
+            }
+          },
+          {
+            "dezenas": [
+              9,
+              10,
+              11,
+              19,
+              26,
+              28,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "DEZ",
+              "nome": "Dezembro",
+              "numero": 12
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              6,
+              14,
+              15,
+              21,
+              23,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "AGO",
+              "nome": "Agosto",
+              "numero": 8
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": false,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 5798,
+        "lotericaFormatada": {
+          "bairro": "COCO                                    ",
+          "codigo": "05.005798-7",
+          "dv": 7,
+          "dvMunicipio": 0,
+          "id": 5798,
+          "idMunicipio": 440,
+          "idUF": 23,
+          "logradouro": "AV SANTOS DUMONT                                  ",
+          "nome": "MORORO XEREZ LOTERIAS LTDA                                                                                         ",
+          "nomeFantasia": "MORORO XEREZ LOTERIAS",
+          "nomeMunicipio": "FORTALEZA                          ",
+          "nomeUF": "CEARA               ",
+          "numeroFormatado": "05.005798-7",
+          "polo": 5,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 23,
+            "digitoVerificador": 0,
+            "numero": 440
+          },
+          "nome": "FORTALEZA",
+          "uf": {
+            "id": 23,
+            "nome": "CEARA               ",
+            "sigla": "CE"
+          }
+        },
+        "nomeFantasia": "MORORO XEREZ LOTERIAS",
+        "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+        "qtdApostas": 10,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 0,
+        "qtdCotaDigital": 5,
+        "qtdCotaDisponivel": 5,
+        "qtdCotaFisica": 0,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 5,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 23,
+          "nome": "CEARA               ",
+          "sigla": "CE"
+        },
+        "vrCotaComTarifa": 6.75,
+        "vrCotaSemTarifa": 5,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 8.75,
+        "vrTarifaServicoCota": 1.75,
+        "vrTarifaServicoUltimaCota": 1.75,
+        "vrTotalBolaoComTarifa": 33.75,
+        "vrTotalBolaoSemTarifa": 25,
+        "vrUltimaCotaComTarifa": 6.75,
+        "vrUltimaCotaSemTarifa": 5
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159542005,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1Ai'%C2%B4w%0412%C3%B2G%0A%C3%98%3DQlx%C2%80%C2%8FF%C2%A1%5BbB%C3%9FY4%C3%A3%25%C3%94_%C2%A9G%C3%9B!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:27.633",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              4,
+              6,
+              9,
+              11,
+              17,
+              27,
+              28
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              4,
+              6,
+              8,
+              10,
+              14,
+              31
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              8,
+              13,
+              14,
+              19,
+              22,
+              28
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              17,
+              18,
+              19,
+              22,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              8,
+              27,
+              28,
+              29,
+              30,
+              31
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              8,
+              18,
+              21,
+              27,
+              28,
+              29
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              2,
+              3,
+              13,
+              15,
+              23,
+              27
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              5,
+              12,
+              22,
+              23,
+              25,
+              27
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              9,
+              14,
+              19,
+              20,
+              22,
+              29,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              12,
+              16,
+              19,
+              24,
+              28,
+              29
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 5802,
+        "lotericaFormatada": {
+          "bairro": "ALDEOTA                                 ",
+          "codigo": "05.005802-9",
+          "dv": 9,
+          "dvMunicipio": 0,
+          "id": 5802,
+          "idMunicipio": 440,
+          "idUF": 23,
+          "logradouro": "AV SANTOS DUMONT                                  ",
+          "nome": "MORORO XEREZ LOTERIAS LTDA                                                                                         ",
+          "nomeFantasia": "MORORO XEREZ LOTERIAS",
+          "nomeMunicipio": "FORTALEZA                          ",
+          "nomeUF": "CEARA               ",
+          "numeroFormatado": "05.005802-9",
+          "polo": 5,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 23,
+            "digitoVerificador": 0,
+            "numero": 440
+          },
+          "nome": "FORTALEZA",
+          "uf": {
+            "id": 23,
+            "nome": "CEARA               ",
+            "sigla": "CE"
+          }
+        },
+        "nomeFantasia": "MORORO XEREZ LOTERIAS",
+        "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+        "qtdApostas": 10,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 1,
+        "qtdCotaDigital": 5,
+        "qtdCotaDisponivel": 4,
+        "qtdCotaFisica": 2,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 7,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 23,
+          "nome": "CEARA               ",
+          "sigla": "CE"
+        },
+        "vrCotaComTarifa": 4.82,
+        "vrCotaSemTarifa": 3.57,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 8.75,
+        "vrTarifaServicoCota": 1.25,
+        "vrTarifaServicoUltimaCota": 1.25,
+        "vrTotalBolaoComTarifa": 33.75,
+        "vrTotalBolaoSemTarifa": 25,
+        "vrUltimaCotaComTarifa": 4.83,
+        "vrUltimaCotaSemTarifa": 3.58
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159544773,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C3%8E%C2%A6%C2%A0%18G_G%1D%C2%92V%C2%A0H%C3%9C%C2%99%1E5%7DE%C2%89%3D%C3%A8%2F%C2%BB%C2%89%C2%B6%C2%A3%C3%BE%14%C3%A5:%C2%968!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:30.361",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              5,
+              8,
+              12,
+              13,
+              15,
+              16,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "NOV",
+              "nome": "Novembro",
+              "numero": 11
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              3,
+              7,
+              8,
+              12,
+              24,
+              27
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAI",
+              "nome": "Maio",
+              "numero": 5
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              14,
+              17,
+              19,
+              23,
+              30,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "DEZ",
+              "nome": "Dezembro",
+              "numero": 12
+            }
+          },
+          {
+            "dezenas": [
+              5,
+              6,
+              9,
+              10,
+              13,
+              27,
+              28
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "OUT",
+              "nome": "Outubro",
+              "numero": 10
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              3,
+              13,
+              14,
+              16,
+              23,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "AGO",
+              "nome": "Agosto",
+              "numero": 8
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              6,
+              15,
+              17,
+              26,
+              27,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAR",
+              "nome": "Março",
+              "numero": 3
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              10,
+              12,
+              22,
+              23,
+              24,
+              28
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUL",
+              "nome": "Julho",
+              "numero": 7
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 18845,
+        "lotericaFormatada": {
+          "bairro": "JARDIM PARAISO                          ",
+          "codigo": "20.018845-3",
+          "dv": 3,
+          "dvMunicipio": 2,
+          "id": 18845,
+          "idMunicipio": 910,
+          "idUF": 42,
+          "logradouro": "AV JUPITER                                        ",
+          "nome": "LOTERICA E LOJA  DE CONV RIBEIRO LTDA                                                                              ",
+          "nomeFantasia": "LOTERICA PARAISO",
+          "nomeMunicipio": "JOINVILLE                          ",
+          "nomeUF": "SANTA CATARINA      ",
+          "numeroFormatado": "20.018845-3",
+          "polo": 20,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 42,
+            "digitoVerificador": 2,
+            "numero": 910
+          },
+          "nome": "JOINVILLE",
+          "uf": {
+            "id": 42,
+            "nome": "SANTA CATARINA      ",
+            "sigla": "SC"
+          }
+        },
+        "nomeFantasia": "LOTERICA PARAISO",
+        "nomeRazaoSocial": "LOTERICA E LOJA  DE CONV RIBEIRO LTDA",
+        "qtdApostas": 7,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 0,
+        "qtdCotaDigital": 2,
+        "qtdCotaDisponivel": 2,
+        "qtdCotaFisica": 3,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 5,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 42,
+          "nome": "SANTA CATARINA      ",
+          "sigla": "SC"
+        },
+        "vrCotaComTarifa": 4.72,
+        "vrCotaSemTarifa": 3.5,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 6.12,
+        "vrTarifaServicoCota": 1.22,
+        "vrTarifaServicoUltimaCota": 1.24,
+        "vrTotalBolaoComTarifa": 23.62,
+        "vrTotalBolaoSemTarifa": 17.5,
+        "vrUltimaCotaComTarifa": 4.74,
+        "vrUltimaCotaSemTarifa": 3.5
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159547419,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%979%C2%A6%C3%9D%C3%A5%17T%12%5E%C2%AE%25%C2%8Fz%C3%89%C2%97%C3%98%C2%A7%C3%A2%C3%A8%C2%8E%0A~%C3%AF%C2%867%C3%BC%25%C3%85%1D%C2%9DJ%17!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:33.130",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              3,
+              6,
+              7,
+              16,
+              17,
+              18,
+              24
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              8,
+              10,
+              25,
+              29,
+              30,
+              31
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              2,
+              8,
+              9,
+              14,
+              26,
+              28
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              3,
+              11,
+              12,
+              18,
+              21,
+              29
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              3,
+              4,
+              8,
+              16,
+              21,
+              24
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              17,
+              23,
+              24,
+              25,
+              26,
+              30,
+              31
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              5,
+              26,
+              27,
+              28,
+              30,
+              31
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              12,
+              15,
+              16,
+              18,
+              24,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              12,
+              13,
+              14,
+              16,
+              25,
+              26,
+              29
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              7,
+              19,
+              22,
+              25,
+              27,
+              28
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 5802,
+        "lotericaFormatada": {
+          "bairro": "ALDEOTA                                 ",
+          "codigo": "05.005802-9",
+          "dv": 9,
+          "dvMunicipio": 0,
+          "id": 5802,
+          "idMunicipio": 440,
+          "idUF": 23,
+          "logradouro": "AV SANTOS DUMONT                                  ",
+          "nome": "MORORO XEREZ LOTERIAS LTDA                                                                                         ",
+          "nomeFantasia": "MORORO XEREZ LOTERIAS",
+          "nomeMunicipio": "FORTALEZA                          ",
+          "nomeUF": "CEARA               ",
+          "numeroFormatado": "05.005802-9",
+          "polo": 5,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 23,
+            "digitoVerificador": 0,
+            "numero": 440
+          },
+          "nome": "FORTALEZA",
+          "uf": {
+            "id": 23,
+            "nome": "CEARA               ",
+            "sigla": "CE"
+          }
+        },
+        "nomeFantasia": "MORORO XEREZ LOTERIAS",
+        "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+        "qtdApostas": 10,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 1,
+        "qtdCotaDigital": 5,
+        "qtdCotaDisponivel": 3,
+        "qtdCotaFisica": 2,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 7,
+        "qtdCotaVendidas": 1,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 23,
+          "nome": "CEARA               ",
+          "sigla": "CE"
+        },
+        "vrCotaComTarifa": 4.82,
+        "vrCotaSemTarifa": 3.57,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 8.75,
+        "vrTarifaServicoCota": 1.25,
+        "vrTarifaServicoUltimaCota": 1.25,
+        "vrTotalBolaoComTarifa": 33.75,
+        "vrTotalBolaoSemTarifa": 25,
+        "vrUltimaCotaComTarifa": 4.83,
+        "vrUltimaCotaSemTarifa": 3.58
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159550191,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C3%AB%7D%C2%9A)%C3%B7%0C%C3%8D%C2%A8@w%C2%9D%7Fj%C2%9E%11%0F%C2%BF%C3%A6%C3%93o%C2%A7%C2%8E%C3%A1%C2%8E%7F%C2%85%3D%C3%B4%C2%89Qp%C2%A1!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:36.093",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              7,
+              9,
+              15,
+              16,
+              21,
+              26,
+              28
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              8,
+              17,
+              20,
+              22,
+              25,
+              26,
+              29
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              9,
+              13,
+              15,
+              17,
+              20,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              6,
+              7,
+              13,
+              15,
+              20,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              8,
+              9,
+              15,
+              17,
+              19,
+              21,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              7,
+              8,
+              21,
+              23,
+              24,
+              25
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              6,
+              13,
+              17,
+              18,
+              22,
+              28,
+              31
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              17,
+              18,
+              19,
+              26,
+              29,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              7,
+              12,
+              14,
+              17,
+              18,
+              24
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              10,
+              11,
+              15,
+              23,
+              24,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 5802,
+        "lotericaFormatada": {
+          "bairro": "ALDEOTA                                 ",
+          "codigo": "05.005802-9",
+          "dv": 9,
+          "dvMunicipio": 0,
+          "id": 5802,
+          "idMunicipio": 440,
+          "idUF": 23,
+          "logradouro": "AV SANTOS DUMONT                                  ",
+          "nome": "MORORO XEREZ LOTERIAS LTDA                                                                                         ",
+          "nomeFantasia": "MORORO XEREZ LOTERIAS",
+          "nomeMunicipio": "FORTALEZA                          ",
+          "nomeUF": "CEARA               ",
+          "numeroFormatado": "05.005802-9",
+          "polo": 5,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 23,
+            "digitoVerificador": 0,
+            "numero": 440
+          },
+          "nome": "FORTALEZA",
+          "uf": {
+            "id": 23,
+            "nome": "CEARA               ",
+            "sigla": "CE"
+          }
+        },
+        "nomeFantasia": "MORORO XEREZ LOTERIAS",
+        "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+        "qtdApostas": 10,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 1,
+        "qtdCotaDigital": 5,
+        "qtdCotaDisponivel": 4,
+        "qtdCotaFisica": 2,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 7,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 23,
+          "nome": "CEARA               ",
+          "sigla": "CE"
+        },
+        "vrCotaComTarifa": 4.82,
+        "vrCotaSemTarifa": 3.57,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 8.75,
+        "vrTarifaServicoCota": 1.25,
+        "vrTarifaServicoUltimaCota": 1.25,
+        "vrTotalBolaoComTarifa": 33.75,
+        "vrTotalBolaoSemTarifa": 25,
+        "vrUltimaCotaComTarifa": 4.83,
+        "vrUltimaCotaSemTarifa": 3.58
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159553154,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%00o%C2%ADU%C3%92D%C3%92%C2%B7H%C3%AF%C2%9D%C3%89%C2%A1%C2%8B%C2%8Fb%5C8%C3%85d%C3%89%C3%A11%0C%C3%B0%C3%9B$%C2%97.%C2%BD_Y!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:38.882",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              7,
+              13,
+              21,
+              25,
+              26,
+              28,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              15,
+              16,
+              18,
+              20,
+              22,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "DEZ",
+              "nome": "Dezembro",
+              "numero": 12
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              7,
+              13,
+              17,
+              20,
+              24,
+              26
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "OUT",
+              "nome": "Outubro",
+              "numero": 10
+            }
+          },
+          {
+            "dezenas": [
+              4,
+              5,
+              10,
+              12,
+              13,
+              18,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JAN",
+              "nome": "Janeiro",
+              "numero": 1
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              9,
+              13,
+              17,
+              26,
+              28,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAR",
+              "nome": "Março",
+              "numero": 3
+            }
+          },
+          {
+            "dezenas": [
+              6,
+              8,
+              12,
+              23,
+              24,
+              25,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "AGO",
+              "nome": "Agosto",
+              "numero": 8
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 7565,
+        "lotericaFormatada": {
+          "bairro": "CENTRO                                  ",
+          "codigo": "10.007565-7",
+          "dv": 7,
+          "dvMunicipio": 2,
+          "id": 7565,
+          "idMunicipio": 760,
+          "idUF": 51,
+          "logradouro": "RUA 13 DE MAIO                                    ",
+          "nome": "Loterica 13 de Maio LTDA                                                                                           ",
+          "nomeFantasia": "LOTERICA 13 DE MAIO",
+          "nomeMunicipio": "RONDONOPOLIS                       ",
+          "nomeUF": "MATO GROSSO         ",
+          "numeroFormatado": "10.007565-7",
+          "polo": 10,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 51,
+            "digitoVerificador": 2,
+            "numero": 760
+          },
+          "nome": "RONDONOPOLIS",
+          "uf": {
+            "id": 51,
+            "nome": "MATO GROSSO         ",
+            "sigla": "MT"
+          }
+        },
+        "nomeFantasia": "LOTERICA 13 DE MAIO",
+        "nomeRazaoSocial": "Loterica 13 de Maio LTDA",
+        "qtdApostas": 6,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 1,
+        "qtdCotaDigital": 2,
+        "qtdCotaDisponivel": 1,
+        "qtdCotaFisica": 2,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 4,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 51,
+          "nome": "MATO GROSSO         ",
+          "sigla": "MT"
+        },
+        "vrCotaComTarifa": 5.06,
+        "vrCotaSemTarifa": 3.75,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 5.25,
+        "vrTarifaServicoCota": 1.31,
+        "vrTarifaServicoUltimaCota": 1.32,
+        "vrTotalBolaoComTarifa": 20.25,
+        "vrTotalBolaoSemTarifa": 15,
+        "vrUltimaCotaComTarifa": 5.07,
+        "vrUltimaCotaSemTarifa": 3.75
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159555934,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C3%AB%C2%B0%C2%9F%C2%B8X%C2%9A%C2%94%01%C2%B5%C3%A0%C3%BE%C2%BA%C3%9F%C2%9F%3F%C3%A4%C2%88%60%C3%969%0B_Y%C3%AB3%C2%B8%C2%B4%5D%16R%C3%95%10!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:41.683",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              1,
+              3,
+              5,
+              16,
+              18,
+              23,
+              25
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "SET",
+              "nome": "Setembro",
+              "numero": 9
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              6,
+              10,
+              12,
+              17,
+              25,
+              29
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "MAR",
+              "nome": "Março",
+              "numero": 3
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              7,
+              9,
+              12,
+              15,
+              26,
+              30
+            ],
+            "indicadorSurpresinha": false,
+            "mesDeSorte": {
+              "abreviacao": "FEV",
+              "nome": "Fevereiro",
+              "numero": 2
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              4,
+              8,
+              17,
+              27,
+              29,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "AGO",
+              "nome": "Agosto",
+              "numero": 8
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              6,
+              8,
+              10,
+              13,
+              25,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUN",
+              "nome": "Junho",
+              "numero": 6
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              2,
+              11,
+              14,
+              26,
+              29,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "NOV",
+              "nome": "Novembro",
+              "numero": 11
+            }
+          },
+          {
+            "dezenas": [
+              9,
+              14,
+              16,
+              20,
+              26,
+              27,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "SET",
+              "nome": "Setembro",
+              "numero": 9
+            }
+          },
+          {
+            "dezenas": [
+              1,
+              9,
+              10,
+              12,
+              13,
+              24,
+              25
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": false,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 18353,
+        "lotericaFormatada": {
+          "bairro": "SERRINHA                                ",
+          "codigo": "05.018353-2",
+          "dv": 2,
+          "dvMunicipio": 0,
+          "id": 18353,
+          "idMunicipio": 440,
+          "idUF": 23,
+          "logradouro": "AV DR SILAS MUNGUBA                               ",
+          "nome": "MARQUES & MONTEIRO LOTERIAS LTDA                                                                                   ",
+          "nomeFantasia": "MEGA SORTE LOTERIAS",
+          "nomeMunicipio": "FORTALEZA                          ",
+          "nomeUF": "CEARA               ",
+          "numeroFormatado": "05.018353-2",
+          "polo": 5,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 23,
+            "digitoVerificador": 0,
+            "numero": 440
+          },
+          "nome": "FORTALEZA",
+          "uf": {
+            "id": 23,
+            "nome": "CEARA               ",
+            "sigla": "CE"
+          }
+        },
+        "nomeFantasia": "MEGA SORTE LOTERIAS",
+        "nomeRazaoSocial": "MARQUES & MONTEIRO LOTERIAS LTDA",
+        "qtdApostas": 8,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 0,
+        "qtdCotaDigital": 4,
+        "qtdCotaDisponivel": 4,
+        "qtdCotaFisica": 0,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 4,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 23,
+          "nome": "CEARA               ",
+          "sigla": "CE"
+        },
+        "vrCotaComTarifa": 6.75,
+        "vrCotaSemTarifa": 5,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 7,
+        "vrTarifaServicoCota": 1.75,
+        "vrTarifaServicoUltimaCota": 1.75,
+        "vrTotalBolaoComTarifa": 27,
+        "vrTotalBolaoSemTarifa": 20,
+        "vrUltimaCotaComTarifa": 6.75,
+        "vrUltimaCotaSemTarifa": 5
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159558744,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C3%8F%05UpV%C2%AE%C2%AE%C3%9A%C3%8D%C3%86%C2%A8%C2%BD%5B%15%22)%14%C2%A0%C3%B0%0B%1EO-%C2%883%C3%9F%C3%81%C2%98r%0C%C2%AA%C3%B2!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-19T14:12:45.177",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              3,
+              11,
+              15,
+              19,
+              24,
+              28,
+              30
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "NOV",
+              "nome": "Novembro",
+              "numero": 11
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              6,
+              8,
+              12,
+              16,
+              20,
+              25
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "DEZ",
+              "nome": "Dezembro",
+              "numero": 12
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              4,
+              6,
+              11,
+              16,
+              27,
+              28
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUN",
+              "nome": "Junho",
+              "numero": 6
+            }
+          },
+          {
+            "dezenas": [
+              5,
+              6,
+              11,
+              12,
+              15,
+              17,
+              25
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "MAI",
+              "nome": "Maio",
+              "numero": 5
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              10,
+              14,
+              16,
+              19,
+              28,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JAN",
+              "nome": "Janeiro",
+              "numero": 1
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              8,
+              15,
+              16,
+              19,
+              20,
+              23
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "FEV",
+              "nome": "Fevereiro",
+              "numero": 2
+            }
+          },
+          {
+            "dezenas": [
+              7,
+              9,
+              12,
+              16,
+              22,
+              30,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "AGO",
+              "nome": "Agosto",
+              "numero": 8
+            }
+          },
+          {
+            "dezenas": [
+              2,
+              8,
+              11,
+              13,
+              20,
+              23,
+              31
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "SET",
+              "nome": "Setembro",
+              "numero": 9
+            }
+          },
+          {
+            "dezenas": [
+              3,
+              7,
+              13,
+              16,
+              17,
+              23,
+              25
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "OUT",
+              "nome": "Outubro",
+              "numero": 10
+            }
+          },
+          {
+            "dezenas": [
+              8,
+              9,
+              10,
+              13,
+              14,
+              20,
+              23
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "JUL",
+              "nome": "Julho",
+              "numero": 7
+            }
+          }
+        ],
+        "concurso": 1276,
+        "contemResiduo": true,
+        "dataSorteio": "19/08/2026",
+        "diaSorteio": "Quarta-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 24457,
+        "lotericaFormatada": {
+          "bairro": "MONTE DAS OLIVEIRAS                     ",
+          "codigo": "02.024457-6",
+          "dv": 6,
+          "dvMunicipio": 3,
+          "id": 24457,
+          "idMunicipio": 260,
+          "idUF": 13,
+          "logradouro": "AV ARQUITETO J H B RODRIGUES LJ 101               ",
+          "nome": "LOTERICA TIO PATINHAS LTDA  ME                                                                                     ",
+          "nomeFantasia": "LOTERIA TIO PATINHAS",
+          "nomeMunicipio": "MANAUS                             ",
+          "nomeUF": "AMAZONAS            ",
+          "numeroFormatado": "02.024457-6",
+          "polo": 2,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 13,
+            "digitoVerificador": 3,
+            "numero": 260
+          },
+          "nome": "MANAUS",
+          "uf": {
+            "id": 13,
+            "nome": "AMAZONAS            ",
+            "sigla": "AM"
+          }
+        },
+        "nomeFantasia": "LOTERIA TIO PATINHAS",
+        "nomeRazaoSocial": "LOTERICA TIO PATINHAS LTDA  ME",
+        "qtdApostas": 10,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 0,
+        "qtdCotaDigital": 4,
+        "qtdCotaDisponivel": 4,
+        "qtdCotaFisica": 0,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 4,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 7,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 13,
+          "nome": "AMAZONAS            ",
+          "sigla": "AM"
+        },
+        "vrCotaComTarifa": 8.43,
+        "vrCotaSemTarifa": 6.25,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 8.75,
+        "vrTarifaServicoCota": 2.18,
+        "vrTarifaServicoUltimaCota": 2.21,
+        "vrTotalBolaoComTarifa": 33.75,
+        "vrTotalBolaoSemTarifa": 25,
+        "vrUltimaCotaComTarifa": 8.46,
+        "vrUltimaCotaSemTarifa": 6.25
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1787159562244,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1Af%C2%86%C3%94%C3%8A%01%C2%91,r%C3%97p%C3%9F2%C3%84%0B$d%05%C2%91%1B%C3%90%C3%81%02%C2%AA%C3%B0%C3%9F%C3%97%C3%B4g%C2%BAIC%C3%A7!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  }
+]

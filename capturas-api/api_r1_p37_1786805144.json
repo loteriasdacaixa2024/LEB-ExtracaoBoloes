@@ -1,0 +1,602 @@
+[
+  {
+    "data": {
+      "dataHoraServidor": "2026-08-15T11:45:37.356",
+      "payload": {
+        "contemResiduo": false,
+        "cotas": [
+          {
+            "codigoBolao": "MjAyNjs4Ozg2MDQ3NDU3MjsxMDY5ODs=",
+            "concurso": 1273,
+            "contemResiduo": true,
+            "dataSorteio": "16/08/2026",
+            "diaSorteio": "Domingo",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 6660,
+            "index": 10,
+            "loterica": 22355,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 31,
+                "digitoVerificador": 0,
+                "numero": 6660
+              },
+              "nome": "SERRA DA SAUDADE",
+              "uf": {
+                "id": 31,
+                "nome": "MINAS GERAIS        ",
+                "sigla": "MG"
+              }
+            },
+            "nomeFantasia": "LOTERICA MEGA MILHO",
+            "nomeRazaoSocial": "CASA LOTERICA SERRA DA SAUDADE LTDA",
+            "numeroUF": 31,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 6,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 6,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 31,
+              "nome": "MINAS GERAIS        ",
+              "sigla": "MG"
+            },
+            "valorTarifaServico": 1.45,
+            "vrCotaComTarifa": 5.61,
+            "vrCotaSemTarifa": 4.16,
+            "vrPremioEstimado": 400000,
+            "vrTarifaServicoUltimaCota": 1.5,
+            "vrUltimaCotaComTarifa": 5.7,
+            "vrUltimaCotaSemTarifa": 4.2
+          },
+          {
+            "codigoBolao": "MjAyNjs4Ozg2NjkxODE0NjsxMDY5OTs=",
+            "concurso": 1273,
+            "contemResiduo": true,
+            "dataSorteio": "16/08/2026",
+            "diaSorteio": "Domingo",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 870,
+            "index": 8,
+            "loterica": 1528,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 52,
+                "digitoVerificador": 7,
+                "numero": 870
+              },
+              "nome": "GOIANIA",
+              "uf": {
+                "id": 52,
+                "nome": "GOIAS               ",
+                "sigla": "GO"
+              }
+            },
+            "nomeFantasia": "CRISTAL LOTERIAS",
+            "nomeRazaoSocial": "AGENCIA LOTERICA CRISTAL LTDA",
+            "numeroUF": 52,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 9,
+            "qtdCotaDigital": 7,
+            "qtdCotaDisponivel": 6,
+            "qtdCotaTotal": 7,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 52,
+              "nome": "GOIAS               ",
+              "sigla": "GO"
+            },
+            "valorTarifaServico": 1.12,
+            "vrCotaComTarifa": 4.33,
+            "vrCotaSemTarifa": 3.21,
+            "vrPremioEstimado": 400000,
+            "vrTarifaServicoUltimaCota": 1.15,
+            "vrUltimaCotaComTarifa": 4.39,
+            "vrUltimaCotaSemTarifa": 3.24
+          },
+          {
+            "codigoBolao": "MjAyNjs4Ozg2MDQ3NDU3NzsxMDY5ODs=",
+            "concurso": 1273,
+            "contemResiduo": true,
+            "dataSorteio": "16/08/2026",
+            "diaSorteio": "Domingo",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 6660,
+            "index": 15,
+            "loterica": 22355,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 31,
+                "digitoVerificador": 0,
+                "numero": 6660
+              },
+              "nome": "SERRA DA SAUDADE",
+              "uf": {
+                "id": 31,
+                "nome": "MINAS GERAIS        ",
+                "sigla": "MG"
+              }
+            },
+            "nomeFantasia": "LOTERICA MEGA MILHO",
+            "nomeRazaoSocial": "CASA LOTERICA SERRA DA SAUDADE LTDA",
+            "numeroUF": 31,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 6,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 6,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 31,
+              "nome": "MINAS GERAIS        ",
+              "sigla": "MG"
+            },
+            "valorTarifaServico": 1.45,
+            "vrCotaComTarifa": 5.61,
+            "vrCotaSemTarifa": 4.16,
+            "vrPremioEstimado": 400000,
+            "vrTarifaServicoUltimaCota": 1.5,
+            "vrUltimaCotaComTarifa": 5.7,
+            "vrUltimaCotaSemTarifa": 4.2
+          },
+          {
+            "codigoBolao": "MjAyNjs4Ozg2NDAwMTIzODsxMDY5OTs=",
+            "concurso": 1273,
+            "contemResiduo": true,
+            "dataSorteio": "16/08/2026",
+            "diaSorteio": "Domingo",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 9,
+            "loterica": 5802,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MORORO XEREZ LOTERIAS",
+            "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 2,
+            "qtdCotaTotal": 7,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 1.25,
+            "vrCotaComTarifa": 4.82,
+            "vrCotaSemTarifa": 3.57,
+            "vrPremioEstimado": 400000,
+            "vrTarifaServicoUltimaCota": 1.25,
+            "vrUltimaCotaComTarifa": 4.83,
+            "vrUltimaCotaSemTarifa": 3.58
+          },
+          {
+            "codigoBolao": "MjAyNjs4Ozg2MDQ3NDU3NTsxMDY5ODs=",
+            "concurso": 1273,
+            "contemResiduo": true,
+            "dataSorteio": "16/08/2026",
+            "diaSorteio": "Domingo",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 6660,
+            "index": 13,
+            "loterica": 22355,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 31,
+                "digitoVerificador": 0,
+                "numero": 6660
+              },
+              "nome": "SERRA DA SAUDADE",
+              "uf": {
+                "id": 31,
+                "nome": "MINAS GERAIS        ",
+                "sigla": "MG"
+              }
+            },
+            "nomeFantasia": "LOTERICA MEGA MILHO",
+            "nomeRazaoSocial": "CASA LOTERICA SERRA DA SAUDADE LTDA",
+            "numeroUF": 31,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 6,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 6,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 31,
+              "nome": "MINAS GERAIS        ",
+              "sigla": "MG"
+            },
+            "valorTarifaServico": 1.45,
+            "vrCotaComTarifa": 5.61,
+            "vrCotaSemTarifa": 4.16,
+            "vrPremioEstimado": 400000,
+            "vrTarifaServicoUltimaCota": 1.5,
+            "vrUltimaCotaComTarifa": 5.7,
+            "vrUltimaCotaSemTarifa": 4.2
+          },
+          {
+            "codigoBolao": "MjAyNjs4Ozg2MDQ3NDU3NDsxMDY5ODs=",
+            "concurso": 1273,
+            "contemResiduo": true,
+            "dataSorteio": "16/08/2026",
+            "diaSorteio": "Domingo",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 6660,
+            "index": 12,
+            "loterica": 22355,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 31,
+                "digitoVerificador": 0,
+                "numero": 6660
+              },
+              "nome": "SERRA DA SAUDADE",
+              "uf": {
+                "id": 31,
+                "nome": "MINAS GERAIS        ",
+                "sigla": "MG"
+              }
+            },
+            "nomeFantasia": "LOTERICA MEGA MILHO",
+            "nomeRazaoSocial": "CASA LOTERICA SERRA DA SAUDADE LTDA",
+            "numeroUF": 31,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 6,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 6,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 31,
+              "nome": "MINAS GERAIS        ",
+              "sigla": "MG"
+            },
+            "valorTarifaServico": 1.45,
+            "vrCotaComTarifa": 5.61,
+            "vrCotaSemTarifa": 4.16,
+            "vrPremioEstimado": 400000,
+            "vrTarifaServicoUltimaCota": 1.5,
+            "vrUltimaCotaComTarifa": 5.7,
+            "vrUltimaCotaSemTarifa": 4.2
+          },
+          {
+            "codigoBolao": "MjAyNjs4Ozg2MDQ3NDU3ODsxMDY5ODs=",
+            "concurso": 1273,
+            "contemResiduo": true,
+            "dataSorteio": "16/08/2026",
+            "diaSorteio": "Domingo",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 6660,
+            "index": 16,
+            "loterica": 22355,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 31,
+                "digitoVerificador": 0,
+                "numero": 6660
+              },
+              "nome": "SERRA DA SAUDADE",
+              "uf": {
+                "id": 31,
+                "nome": "MINAS GERAIS        ",
+                "sigla": "MG"
+              }
+            },
+            "nomeFantasia": "LOTERICA MEGA MILHO",
+            "nomeRazaoSocial": "CASA LOTERICA SERRA DA SAUDADE LTDA",
+            "numeroUF": 31,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 6,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 6,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 31,
+              "nome": "MINAS GERAIS        ",
+              "sigla": "MG"
+            },
+            "valorTarifaServico": 1.45,
+            "vrCotaComTarifa": 5.61,
+            "vrCotaSemTarifa": 4.16,
+            "vrPremioEstimado": 400000,
+            "vrTarifaServicoUltimaCota": 1.5,
+            "vrUltimaCotaComTarifa": 5.7,
+            "vrUltimaCotaSemTarifa": 4.2
+          },
+          {
+            "codigoBolao": "MjAyNjs4Ozg2NDAwMTIzNTsxMDY5OTs=",
+            "concurso": 1273,
+            "contemResiduo": true,
+            "dataSorteio": "16/08/2026",
+            "diaSorteio": "Domingo",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 8,
+            "loterica": 5802,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MORORO XEREZ LOTERIAS",
+            "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 5,
+            "qtdCotaDisponivel": 4,
+            "qtdCotaTotal": 7,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 1.25,
+            "vrCotaComTarifa": 4.82,
+            "vrCotaSemTarifa": 3.57,
+            "vrPremioEstimado": 400000,
+            "vrTarifaServicoUltimaCota": 1.25,
+            "vrUltimaCotaComTarifa": 4.83,
+            "vrUltimaCotaSemTarifa": 3.58
+          },
+          {
+            "codigoBolao": "MjAyNjs4Ozg2MDQ3NDU3NjsxMDY5ODs=",
+            "concurso": 1273,
+            "contemResiduo": true,
+            "dataSorteio": "16/08/2026",
+            "diaSorteio": "Domingo",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 6660,
+            "index": 14,
+            "loterica": 22355,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 31,
+                "digitoVerificador": 0,
+                "numero": 6660
+              },
+              "nome": "SERRA DA SAUDADE",
+              "uf": {
+                "id": 31,
+                "nome": "MINAS GERAIS        ",
+                "sigla": "MG"
+              }
+            },
+            "nomeFantasia": "LOTERICA MEGA MILHO",
+            "nomeRazaoSocial": "CASA LOTERICA SERRA DA SAUDADE LTDA",
+            "numeroUF": 31,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 6,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 6,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 31,
+              "nome": "MINAS GERAIS        ",
+              "sigla": "MG"
+            },
+            "valorTarifaServico": 1.45,
+            "vrCotaComTarifa": 5.61,
+            "vrCotaSemTarifa": 4.16,
+            "vrPremioEstimado": 400000,
+            "vrTarifaServicoUltimaCota": 1.5,
+            "vrUltimaCotaComTarifa": 5.7,
+            "vrUltimaCotaSemTarifa": 4.2
+          },
+          {
+            "codigoBolao": "MjAyNjs4Ozg2MDQ3NDU3MzsxMDY5ODs=",
+            "concurso": 1273,
+            "contemResiduo": true,
+            "dataSorteio": "16/08/2026",
+            "diaSorteio": "Domingo",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 6660,
+            "index": 11,
+            "loterica": 22355,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 31,
+                "digitoVerificador": 0,
+                "numero": 6660
+              },
+              "nome": "SERRA DA SAUDADE",
+              "uf": {
+                "id": 31,
+                "nome": "MINAS GERAIS        ",
+                "sigla": "MG"
+              }
+            },
+            "nomeFantasia": "LOTERICA MEGA MILHO",
+            "nomeRazaoSocial": "CASA LOTERICA SERRA DA SAUDADE LTDA",
+            "numeroUF": 31,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 6,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 6,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 31,
+              "nome": "MINAS GERAIS        ",
+              "sigla": "MG"
+            },
+            "valorTarifaServico": 1.45,
+            "vrCotaComTarifa": 5.61,
+            "vrCotaSemTarifa": 4.16,
+            "vrPremioEstimado": 400000,
+            "vrTarifaServicoUltimaCota": 1.5,
+            "vrUltimaCotaComTarifa": 5.7,
+            "vrUltimaCotaSemTarifa": 4.2
+          },
+          {
+            "codigoBolao": "MjAyNjs4Ozg2MDQ3NDU3MTsxMDY5ODs=",
+            "concurso": 1273,
+            "contemResiduo": true,
+            "dataSorteio": "16/08/2026",
+            "diaSorteio": "Domingo",
+            "horaSorteio": "11:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 6660,
+            "index": 9,
+            "loterica": 22355,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 31,
+                "digitoVerificador": 0,
+                "numero": 6660
+              },
+              "nome": "SERRA DA SAUDADE",
+              "uf": {
+                "id": 31,
+                "nome": "MINAS GERAIS        ",
+                "sigla": "MG"
+              }
+            },
+            "nomeFantasia": "LOTERICA MEGA MILHO",
+            "nomeRazaoSocial": "CASA LOTERICA SERRA DA SAUDADE LTDA",
+            "numeroUF": 31,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 10,
+            "qtdCotaDigital": 6,
+            "qtdCotaDisponivel": 5,
+            "qtdCotaTotal": 6,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 7,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 31,
+              "nome": "MINAS GERAIS        ",
+              "sigla": "MG"
+            },
+            "valorTarifaServico": 1.45,
+            "vrCotaComTarifa": 5.61,
+            "vrCotaSemTarifa": 4.16,
+            "vrPremioEstimado": 400000,
+            "vrTarifaServicoUltimaCota": 1.5,
+            "vrUltimaCotaComTarifa": 5.7,
+            "vrUltimaCotaSemTarifa": 4.2
+          }
+        ],
+        "paginaAtual": 37,
+        "totalRegistros": 1091,
+        "ultimaPagina": 37,
+        "valorMenorCota": 3
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1786805136476,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL3JlY3VwZXJhci1ib2xvZXMtZGlzcG9uaXZlaXM=/?q=%5E%04%C2%B4%C3%AB%C2%82%C2%84%3D%C2%A3%0A%7D%C2%8D%C3%81e%C3%93%C3%A9%C2%BC~o%C3%A8t%C2%B8%C2%B6%2B%1F%C2%BD%18%C3%94%C2%A1N%C3%B3%C2%AD%C2%9A%C3%99%02%C3%A0%C2%93;9'%00%C3%90%C2%AF%C2%82q%19%C2%91(%C3%AF'O%C3%8C%C3%95t%C2%9B%C3%97%C3%94%C3%96%C3%BA%C3%8D%C2%AC%C2%92%16%23g%C3%BD%C2%B1)%11f%C3%98%C2%96%C3%97%5D%C2%B3%C2%9D%3F%C2%8DH%0C%C2%AA%C3%9A%C3%B5h6%C2%80%C2%98%C2%83%C3%AD%C3%93E%2F%0D%00:%C2%89%C2%BB%C3%9A%C2%84%3F%C3%A1(%1D%08f%C3%89%C3%85n%C3%91%C3%A1%C2%9C%C3%A1%C3%84!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  }
+]

@@ -1,0 +1,38 @@
+# Credenciais e segredos (NUNCA versionar)
+config.local.json
+credentials.json
+.env
+.env.*
+!.env.example
+
+# Logs locais
+logs/
+*.log
+
+# Atalhos gerados pelo iniciar_servidores_boloes.bat
+_run_servidor.cmd
+_run_extrator.cmd
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+LEB_venv/
+.env.local
+
+# Sistema / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Capturas / dados sensíveis de sessão (se existirem)
+cookies*.json
+session*.json
+*token*
+
+
+__pycache__/
+*.pyc

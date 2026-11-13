@@ -1,0 +1,171 @@
+[
+  {
+    "data": {
+      "dataHoraServidor": "2026-09-08T10:24:05.055",
+      "payload": {
+        "contemResiduo": false,
+        "cotas": [
+          {
+            "codigoBolao": "MjAyNjs5OzQ2OTIzMjczNDsxMDcyMjs=",
+            "concurso": 1292,
+            "contemResiduo": true,
+            "dataSorteio": "08/09/2026",
+            "diaSorteio": "Terça-feira",
+            "horaSorteio": "21:00:00",
+            "idModalidade": 11,
+            "idMunicipio": 440,
+            "index": 10,
+            "loterica": 5802,
+            "lotericaFavorita": false,
+            "modalidade": "DIA_DE_SORTE",
+            "municipio": {
+              "id": {
+                "codigoUF": 23,
+                "digitoVerificador": 0,
+                "numero": 440
+              },
+              "nome": "FORTALEZA",
+              "uf": {
+                "id": 23,
+                "nome": "CEARA               ",
+                "sigla": "CE"
+              }
+            },
+            "nomeFantasia": "MORORO XEREZ LOTERIAS",
+            "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+            "numeroUF": 23,
+            "operacaoExecutadaComSucesso": false,
+            "qtdApostas": 1,
+            "qtdCotaDigital": 2,
+            "qtdCotaDisponivel": 2,
+            "qtdCotaTotal": 2,
+            "qtdDuplosLoteca": 0,
+            "qtdNumeros": 9,
+            "qtdSimplesLoteca": 0,
+            "qtdTrevos": 0,
+            "qtdTriplosLoteca": 0,
+            "tipoConcurso": 1,
+            "uf": {
+              "id": 23,
+              "nome": "CEARA               ",
+              "sigla": "CE"
+            },
+            "valorTarifaServico": 15.74,
+            "vrCotaComTarifa": 60.74,
+            "vrCotaSemTarifa": 45,
+            "vrPremioEstimado": 100000,
+            "vrTarifaServicoUltimaCota": 15.75,
+            "vrUltimaCotaComTarifa": 60.75,
+            "vrUltimaCotaSemTarifa": 45
+          }
+        ],
+        "paginaAtual": 27,
+        "totalRegistros": 781,
+        "ultimaPagina": 27,
+        "valorMenorCota": 3
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1788873845935,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL3JlY3VwZXJhci1ib2xvZXMtZGlzcG9uaXZlaXM=/?q=%5E%04%C2%B4%C3%AB%C2%82%C2%84%3D%C2%A3%0A%7D%C2%8D%C3%81e%C3%93%C3%A9%C2%BC~o%C3%A8t%C2%B8%C2%B6%2B%1F%C2%BD%18%C3%94%C2%A1N%C3%B3%C2%AD%C2%9A%C3%99%02%C3%A0%C2%93;9'%00%C3%90%C2%AF%C2%82q%19%C2%91(%C3%AF%5DUU%17Y%5D%C2%84%C2%BFHX%C2%AE%C2%A8E%C3%A0+%C2%A6%08z~p%C2%82R%C3%B5%C2%BA%C2%B8%5D%C2%82%C2%9B+%C3%BAz%C3%B8%C3%A8%C3%B00L%C2%A2%C3%86%C3%AA8dO%C3%B5%C2%A8%C3%B7%04co%5C%C2%A2%C3%87%C2%B2%C3%92%18%C3%BD%0A%C3%9AH%C2%AF%C3%A3%C3%A5%C2%9C%C3%83m!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  },
+  {
+    "data": {
+      "dataHoraServidor": "2026-09-08T10:24:19.637",
+      "payload": {
+        "apostas": [
+          {
+            "dezenas": [
+              2,
+              7,
+              8,
+              9,
+              14,
+              18,
+              19,
+              28,
+              29
+            ],
+            "indicadorSurpresinha": true,
+            "mesDeSorte": {
+              "abreviacao": "ABR",
+              "nome": "Abril",
+              "numero": 4
+            }
+          }
+        ],
+        "concurso": 1292,
+        "contemResiduo": true,
+        "dataSorteio": "08/09/2026",
+        "diaSorteio": "Terça-feira",
+        "horaSorteio": "21:00:00",
+        "loterica": 5802,
+        "lotericaFormatada": {
+          "bairro": "ALDEOTA                                 ",
+          "codigo": "05.005802-9",
+          "dv": 9,
+          "dvMunicipio": 0,
+          "id": 5802,
+          "idMunicipio": 440,
+          "idUF": 23,
+          "logradouro": "AV SANTOS DUMONT                                  ",
+          "nome": "MORORO XEREZ LOTERIAS LTDA                                                                                         ",
+          "nomeFantasia": "MORORO XEREZ LOTERIAS",
+          "nomeMunicipio": "FORTALEZA                          ",
+          "nomeUF": "CEARA               ",
+          "numeroFormatado": "05.005802-9",
+          "polo": 5,
+          "situacao": {
+            "descricao": "ATIVO                              ",
+            "valor": 1
+          }
+        },
+        "modalidade": "DIA_DE_SORTE",
+        "municipioCota": {
+          "id": {
+            "codigoUF": 23,
+            "digitoVerificador": 0,
+            "numero": 440
+          },
+          "nome": "FORTALEZA",
+          "uf": {
+            "id": 23,
+            "nome": "CEARA               ",
+            "sigla": "CE"
+          }
+        },
+        "nomeFantasia": "MORORO XEREZ LOTERIAS",
+        "nomeRazaoSocial": "MORORO XEREZ LOTERIAS LTDA",
+        "qtdApostas": 1,
+        "qtdCotaBaixadas": 0,
+        "qtdCotaBaixadasImpressas": 0,
+        "qtdCotaDigital": 2,
+        "qtdCotaDisponivel": 2,
+        "qtdCotaFisica": 0,
+        "qtdCotaReservada": 0,
+        "qtdCotaTotal": 2,
+        "qtdCotaVendidas": 0,
+        "qtdNumeros": 9,
+        "tipoConcurso": 1,
+        "uf": {
+          "id": 23,
+          "nome": "CEARA               ",
+          "sigla": "CE"
+        },
+        "vrCotaComTarifa": 60.74,
+        "vrCotaSemTarifa": 45,
+        "vrPremioEstimado": 100000,
+        "vrTarifaBolao": 31.49,
+        "vrTarifaServicoCota": 15.74,
+        "vrTarifaServicoUltimaCota": 15.75,
+        "vrTotalBolaoComTarifa": 121.49,
+        "vrTotalBolaoSemTarifa": 90,
+        "vrUltimaCotaComTarifa": 60.75,
+        "vrUltimaCotaSemTarifa": 45
+      },
+      "versao": "2.99.2.10"
+    },
+    "ts": 1788873860497,
+    "url": "/silce-servico-rest/rest/v1/Ym9sb2VzL2RldGFsaGFyLWJvbGFv/?q=%60%0F%26%04Ra%1B%C3%B8$%C3%9C%C3%BCg%03%C2%B2$%1A%C2%80%03%C3%84%C3%A0%C3%B9%02$%17%C2%BD%C2%B6Z%C2%B7Z%C3%86%C3%B5gRQ%C3%A4%C2%87p%C3%9C%C3%AE%7B%C2%8E%11t%15%19%C2%91%2B%C3%96!%23!%23!%C2%85%C3%BA%C3%88YSY%0Bl%C3%A4ta%C2%A4%C2%9Ahl%1B!%23!%23!forge.random.get"
+  }
+]

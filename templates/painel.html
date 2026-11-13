@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ sigla }} — {{ nome }}</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/Faveicon.png') }}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/Faveicon.ico') }}">
+  <link rel="shortcut icon" href="{{ url_for('favicon') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/painel.css') }}">
+</head>
+<body>
+  <main class="pagina">
+    <form id="form-extrator" class="cartao" method="post" action="{{ url_for('iniciar_extrator') }}">
+      <header class="marca">
+        <img src="{{ url_for('static', filename='img/Faveicon.png') }}" alt="{{ sigla }}" width="72" height="72">
+        <div>
+          <p class="sigla">{{ sigla }}</p>
+          <h1>{{ nome }}</h1>
+        </div>
+      </header>
+
+      <p class="texto">
+        Abre o Edge neste computador, entra na Caixa e baixa os bolões.
+        O código do e-mail continua manual.
+      </p>
+
+      <button type="submit" id="abrir" {% if not pode_iniciar %}disabled{% endif %}>
+        Abrir extrator neste PC
+      </button>
+
+      <p id="aviso" class="aviso" {% if pode_iniciar %}hidden{% endif %}>
+        Pelo endereço público dá para ver esta tela. A extração só inicia no atalho
+        ou em http://127.0.0.1:8088/ — o Edge precisa da tela deste computador.
+      </p>
+
+      <section id="painel" class="status" aria-live="polite">
+        <p class="rotulo">Status</p>
+        <p id="mensagem">Aguardando neste computador.</p>
+      </section>
+    </form>
+  </main>
+  <script>
+    window.APP_ROOT = {{ request.script_root|tojson }};
+  </script>
+  <script src="{{ url_for('static', filename='js/painel.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,3890 @@
+# -*- coding: utf-8 -*-
+"""Filtros de lotérica e modalidade na extração de bolões — Caixa (Selenium)."""
+
+from __future__ import annotations
+
+import json
+import os
+import re
+import time
+import unicodedata
+from dataclasses import dataclass, field
+from datetime import datetime
+from typing import Callable, List, Optional, Tuple
+
+from selenium.common.exceptions import TimeoutException, WebDriverException
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select, WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
+@dataclass
+class FiltroLotericaConfig:
+    termo: str
+    codigo: Optional[str] = None
+    nome: Optional[str] = None
+    qtd_dezenas: Optional[int] = None
+    varrer_dezenas: bool = False
+    qualquer_loterica: bool = False
+
+
+from boloes_modalidades import (  # noqa: E402
+    CONCURSOS_ESPECIAIS,
+    MODALIDADES_MENU,
+    ModalidadeMenu as ModalidadeBolaoConfig,
+    TODAS_MODALIDADES,
+    hint_filtro_dezenas,
+    imprimir_menu_modalidades,
+    ler_modalidade_terminal,
+    resolver_modalidade_menu,
+)
+
+CATALOGO_MODALIDADES = TODAS_MODALIDADES
+
+LogFn = Optional[Callable[[str], None]]
+
+_CONFIG_CACHE = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    'ultima_config_boloes.json',
+)
+
+
+def _salvar_config_cache(loterica: FiltroLotericaConfig, modalidade: Optional[ModalidadeBolaoConfig]) -> None:
+    try:
+        payload = {
+            'termo': loterica.termo,
+            'codigo': loterica.codigo,
+            'nome': loterica.nome,
+            'qtd_dezenas': loterica.qtd_dezenas,
+            'varrer_dezenas': loterica.varrer_dezenas,
+            'qualquer_loterica': loterica.qualquer_loterica,
+            'modalidade_numero': modalidade.numero if modalidade else None,
+            'rotulo_slug': modalidade.slug if modalidade else None,
+            'rotulo_label': modalidade.label if modalidade else None,
+            'parser_slug': modalidade.parser_slug if modalidade else None,
+            'extracao': modalidade.extracao if modalidade else None,
+            'base_label': modalidade.base_label if modalidade else None,
+            'epoca': modalidade.epoca if modalidade else None,
+            'tecla': modalidade.tecla if modalidade else None,
+        }
+        with open(_CONFIG_CACHE, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
+
+
+def _carregar_config_cache() -> Optional[Tuple[FiltroLotericaConfig, Optional[ModalidadeBolaoConfig]]]:
+    if not os.path.isfile(_CONFIG_CACHE):
+        return None
+    try:
+        with open(_CONFIG_CACHE, encoding='utf-8') as f:
+            data = json.load(f)
+        loterica = FiltroLotericaConfig(
+            termo=data['termo'],
+            codigo=data.get('codigo'),
+            nome=data.get('nome'),
+            qtd_dezenas=data.get('qtd_dezenas'),
+            varrer_dezenas=bool(data.get('varrer_dezenas')),
+            qualquer_loterica=bool(data.get('qualquer_loterica')),
+        )
+        modalidade = None
+        if data.get('rotulo_slug'):
+            modalidade = resolver_modalidade_menu(
+                data.get('tecla') or str(data.get('modalidade_numero') or data['rotulo_slug']),
+            )
+            if modalidade is None:
+                modalidade = ModalidadeBolaoConfig(
+                    numero=int(data.get('modalidade_numero') or 0),
+                    slug=data['rotulo_slug'],
+                    parser_slug=data.get('parser_slug') or data['rotulo_slug'],
+                    label=data.get('rotulo_label') or data['rotulo_slug'],
+                    extracao=data.get('extracao') or '',
+                    base_label=data.get('base_label') or '',
+                    epoca=data.get('epoca') or '',
+                    tecla=data.get('tecla') or '',
+                    especial=bool(int(data.get('modalidade_numero') or 0) > 100),
+                )
+        return loterica, modalidade
+    except Exception:
+        return None
+
+
+def _log(msg: str, log_fn: LogFn = None) -> None:
+    if log_fn:
+        log_fn(msg)
+    else:
+        print(msg)
+
+
+URL_LISTA_BOLOES = 'https://www.loteriasonline.caixa.gov.br/silce-web/#/bolao-caixa'
+
+_MARCAS_ERRO_REDE = (
+    'err_name_not_resolved',
+    'err_connection_timed_out',
+    'err_connection_reset',
+    'err_connection_refused',
+    'err_connection_closed',
+    'err_internet_disconnected',
+    'err_address_unreachable',
+    'err_timed_out',
+    'err_network_changed',
+    'err_socks_connection_failed',
+    'err_proxy_connection_failed',
+    'dns_probe_finished_nxdomain',
+    'dns_probe_finished_no_internet',
+    'não consigo chegar',
+    'nao consigo chegar',
+    'this site can’t be reached',
+    "this site can't be reached",
+    'endereço ip do servidor',
+    'endereco ip do servidor',
+    'net::err',
+)
+
+_FALHA_REDE_PAGINACAO = False
+
+
+def falha_rede_paginacao() -> bool:
+    """True se a última paginação parou por DNS/rede (não é fim da lista)."""
+    return bool(_FALHA_REDE_PAGINACAO)
+
+
+def _marcar_falha_rede(valor: bool) -> None:
+    global _FALHA_REDE_PAGINACAO
+    _FALHA_REDE_PAGINACAO = bool(valor)
+
+
+def _excecao_indica_rede(exc: BaseException) -> bool:
+    msg = str(exc or '').lower()
+    if any(m in msg for m in _MARCAS_ERRO_REDE):
+        return True
+    return any(
+        x in msg
+        for x in (
+            'timeout',
+            'timed out',
+            'err_name',
+            'name not resolved',
+            'net::',
+            'dns',
+            'without establishing a connection',
+            'failed to decode response',
+        )
+    )
+
+
+def _pagina_erro_rede(driver) -> str:
+    """Código/texto do erro de rede do Edge, ou '' se a página está ok."""
+    try:
+        blob = driver.execute_script(
+            """
+            var t = (document.title || '') + '\\n';
+            t += (document.body && document.body.innerText) ? document.body.innerText : '';
+            var code = document.querySelector('.error-code, #error-code');
+            if (code) t += '\\n' + (code.textContent || '');
+            return t;
+            """
+        ) or ''
+    except Exception as exc:
+        return str(exc)[:120] if _excecao_indica_rede(exc) else ''
+    low = str(blob).lower()
+    for marca in _MARCAS_ERRO_REDE:
+        if marca in low:
+            return marca
+    return ''
+
+
+def _url_lista_ou_padrao(driver) -> str:
+    try:
+        url = (driver.current_url or '').strip()
+    except Exception:
+        url = ''
+    low = url.lower()
+    if url and 'loteriasonline.caixa.gov.br' in low:
+        if not any(x in low for x in ('chrome-error', 'chromewebdata', 'data:', 'about:blank')):
+            return url
+    return URL_LISTA_BOLOES
+
+
+def _recuperar_apos_erro_rede(
+    driver, log_fn: LogFn = None, url: str = '', tentativas: int = 8,
+) -> bool:
+    """Espera DNS/rede voltar e recarrega a lista. Não marca modalidade como concluída."""
+    dest = (url or '').strip() or _url_lista_ou_padrao(driver)
+    espera = 5
+    marca = _pagina_erro_rede(driver) or 'falha de rede'
+    _log(
+        f'  [REDE] {marca} — JSON intacto. Aguardando o site da Caixa voltar...',
+        log_fn,
+    )
+    for i in range(1, tentativas + 1):
+        _log(
+            f'  [REDE] Tentativa {i}/{tentativas} — espera {espera}s e recarrega...',
+            log_fn,
+        )
+        time.sleep(espera)
+        try:
+            driver.get(dest)
+        except Exception as exc:
+            _log(f'  [REDE] Reload ainda falhou: {exc}', log_fn)
+            espera = min(int(espera * 2), 45)
+            continue
+        time.sleep(2.5)
+        if _pagina_erro_rede(driver):
+            espera = min(int(espera * 2), 45)
+            continue
+        _aguardar_lista_apos_aplicar(driver, timeout=12)
+        if _pagina_erro_rede(driver):
+            espera = min(int(espera * 2), 45)
+            continue
+        barra = _ler_pagina_barra_somente(driver)
+        _log(
+            f'  [REDE] Site voltou (barra={barra or "?"} — se voltou à pág. 1, '
+            f'retoma os cliques em Seguinte; JSON não foi perdido).',
+            log_fn,
+        )
+        return True
+    _marcar_falha_rede(True)
+    _log(
+        '  [REDE] Site não voltou. Pausa nesta modalidade '
+        '(NÃO marca como concluída; rode [C] de novo).',
+        log_fn,
+    )
+    return False
+
+
+def normalizar_texto(texto: str) -> str:
+    if not texto:
+        return ''
+    texto = unicodedata.normalize('NFD', texto)
+    texto = ''.join(c for c in texto if unicodedata.category(c) != 'Mn')
+    return re.sub(r'\s+', ' ', texto.lower().strip())
+
+
+def parse_termo_loterica(termo: str) -> Tuple[Optional[str], Optional[str]]:
+    termo = (termo or '').strip()
+    if not termo:
+        return None, None
+    if termo.isdigit():
+        return termo, None
+    match = re.match(r'^(\d{3,6})\s*[-–]?\s*(.*)$', termo)
+    if match:
+        nome = match.group(2).strip() or None
+        return match.group(1), nome
+    return None, termo
+
+
+def resolver_modalidade(termo: str) -> Optional[ModalidadeBolaoConfig]:
+    return resolver_modalidade_menu(termo)
+
+
+def modalidade_por_slug(slug: str) -> Optional[ModalidadeBolaoConfig]:
+    slug = (slug or '').strip().lower()
+    for mod in CATALOGO_MODALIDADES:
+        if mod.slug == slug:
+            return mod
+    return None
+
+
+def parse_modalidades_input(raw: str) -> List[ModalidadeBolaoConfig]:
+    """Ex: '1' | '1,*' | 'Quina de São João,*' | '1,6,7'"""
+    raw = (raw or '').strip()
+    if not raw:
+        return []
+
+    varrer_resto = False
+    if raw.endswith(',*') or raw.endswith('+') or raw.lower().endswith(',varrer'):
+        varrer_resto = True
+        raw = re.sub(r',(\*|varrer|\+)$', '', raw, flags=re.I).strip()
+
+    if raw in ('*', 'todas', 'TODAS'):
+        varrer_resto = True
+        raw = ''
+
+    resultado: List[ModalidadeBolaoConfig] = []
+    vistos = set()
+
+    def _add(mod: Optional[ModalidadeBolaoConfig]):
+        if mod and mod.slug not in vistos:
+            resultado.append(mod)
+            vistos.add(mod.slug)
+
+    if raw:
+        for parte in raw.split(','):
+            parte = parte.strip()
+            if not parte or parte == '*':
+                continue
+            _add(resolver_modalidade(parte))
+
+    if varrer_resto:
+        for mod in CATALOGO_MODALIDADES:
+            _add(mod)
+
+    return resultado
+
+
+def cfg_qualquer_loterica(qtd_dezenas: Optional[int] = 15) -> FiltroLotericaConfig:
+    """Todas as lotéricas da lista/página — filtra só pela qtd. de dezenas por aposta."""
+    return FiltroLotericaConfig(
+        termo='',
+        codigo=None,
+        nome=None,
+        qtd_dezenas=qtd_dezenas,
+        varrer_dezenas=False,
+        qualquer_loterica=True,
+    )
+
+
+def cfg_varredura_automatica(
+    modalidade: Optional[ModalidadeBolaoConfig],
+    qtd_override: Optional[int] = None,
+) -> FiltroLotericaConfig:
+    """Modo [1] automático: qualquer lotérica + dezenas conforme a modalidade."""
+    from boloes_modalidades import dezena_filtro_varredura
+
+    qtd = dezena_filtro_varredura(modalidade, qtd_override)
+    return cfg_qualquer_loterica(qtd)
+
+
+def bolao_apostas_todas_com_n_dezenas(dados: dict, n: int) -> bool:
+    """True se cada aposta do bolão tem exatamente n dezenas (ex.: 2×15, 1×15)."""
+    apostas = dados.get('apostas') or []
+    if apostas:
+        for ap in apostas:
+            if not isinstance(ap, dict):
+                continue
+            dz = ap.get('dezenas') or []
+            if len(dz) != int(n):
+                return False
+        return True
+    dz = dados.get('dezenas_aposta') or []
+    if dz:
+        return len(dz) == int(n)
+    q1 = dados.get('qtd_dezenas_aposta_1')
+    return q1 is not None and int(q1) == int(n)
+
+
+def _ler_filtro_loterica_terminal(modalidade: ModalidadeBolaoConfig) -> FiltroLotericaConfig:
+    print('\n' + '=' * 60)
+    print('  FILTRO DE LOTERICA')
+    print('=' * 60)
+    print('  * ou ENTER vazio = QUALQUER lotérica (só filtra dezenas)')
+    print('  (codigo ex: 9833 — NAO digite 0 do menu aqui)')
+    termo = input('\nLotérica (* = qualquer): ').strip()
+    while termo == '0':
+        print('>>> "0" e opcao do MENU (fechar Edge). Informe a loterica ou *')
+        termo = input('Lotérica (* = qualquer): ').strip()
+
+    hint = hint_filtro_dezenas(modalidade)
+    dezenas_raw = input(f'Quant. de dezenas [{hint}]: ').strip()
+    qtd_dezenas = None
+    if dezenas_raw:
+        try:
+            qtd_dezenas = int(dezenas_raw)
+        except ValueError:
+            qtd_dezenas = None
+
+    if termo in ('*', '-', 'todas', 'qualquer', 'QUALQUER', 'TODAS'):
+        varrer_raw = input('Varrer faixa de dezenas? [n] (recomendado: n para fixar 15): ').strip().lower()
+        varrer_dezenas = varrer_raw == 's'
+        if qtd_dezenas is None:
+            qtd_dezenas = 15
+        return cfg_qualquer_loterica(qtd_dezenas)
+
+    varrer_raw = input('Varrer faixa de dezenas desta modalidade? [S/n]: ').strip().lower()
+    varrer_dezenas = varrer_raw != 'n'
+
+    codigo, nome = parse_termo_loterica(termo)
+    return FiltroLotericaConfig(
+        termo=termo, codigo=codigo, nome=nome,
+        qtd_dezenas=qtd_dezenas, varrer_dezenas=varrer_dezenas,
+    )
+
+
+def _imprimir_menu_modalidades() -> None:
+    imprimir_menu_modalidades()
+
+
+def ler_modalidades_terminal() -> List[ModalidadeBolaoConfig]:
+    mod = ler_modalidade_terminal()
+    return [mod]
+
+
+def ler_config_extracao() -> Tuple[FiltroLotericaConfig, Optional[ModalidadeBolaoConfig]]:
+    """Lotérica + modalidade (menu 1–9 / teclas DSP QSJ LTI MSV MS3). Mesma modalidade no site."""
+    cached = _carregar_config_cache()
+    if cached:
+        loterica, modalidade = cached
+        dez = loterica.qtd_dezenas or 'qualquer'
+        varrer = 'sim' if loterica.varrer_dezenas else 'nao'
+        mod_nome = modalidade.label if modalidade else '(nao definida)'
+        print('\n' + '=' * 60)
+        print('  CONFIG ANTERIOR ENCONTRADA')
+        print('=' * 60)
+        print(f'\n  Modalidade: {mod_nome}')
+        if loterica.qualquer_loterica:
+            print(f'  Lotérica: QUALQUER | dezenas: {dez} | varrer: {varrer}')
+        else:
+            print(f'  Lotérica: {loterica.termo} | dezenas: {dez} | varrer: {varrer}')
+        print('\n  (n = reconfigurar — menu 1-9 + DSP QSJ LTI MSV MS3)')
+        reuse = input('\nUsar esta config? [S/n]: ').strip().lower()
+        if reuse != 'n':
+            if modalidade:
+                print(f'>>> Modalidade: {modalidade.label} ({modalidade.extracao})')
+                if modalidade.especial:
+                    print(f'>>> Tecla: {modalidade.tecla} | Base: {modalidade.base_label} | Epoca: {modalidade.epoca}')
+            return loterica, modalidade
+
+    modalidade = ler_modalidade_terminal()
+    loterica = _ler_filtro_loterica_terminal(modalidade)
+    dez = loterica.qtd_dezenas or 'qualquer'
+    varrer = 'sim' if loterica.varrer_dezenas else 'nao'
+    print(f'\n>>> Modalidade: {modalidade.label} | Lotérica: ', end='')
+    if loterica.qualquer_loterica:
+        print(f'QUALQUER (todas na página)')
+    else:
+        print(loterica.termo)
+    print(f'>>> Dezenas: {dez} | varrer: {varrer}')
+    lot_slug = 'todas_lotericas' if loterica.qualquer_loterica else slug_loterica(loterica)
+    print(f'>>> Arquivo: boloes_{lot_slug}_{modalidade.slug}_...')
+    _salvar_config_cache(loterica, modalidade)
+    return loterica, modalidade
+
+
+def ler_config_terminal() -> FiltroLotericaConfig:
+    """Compatibilidade — lotérica + modalidade padrão Quina."""
+    mod = resolver_modalidade_menu('2') or MODALIDADES_MENU[1]
+    return _ler_filtro_loterica_terminal(mod)
+
+
+def config_from_api(loterica: str, qtd_dezenas=None, varrer_dezenas: bool = False) -> Optional[FiltroLotericaConfig]:
+    termo = (loterica or '').strip()
+    if not termo:
+        return None
+    qtd = None
+    if qtd_dezenas is not None and str(qtd_dezenas).strip() != '':
+        try:
+            qtd = int(qtd_dezenas)
+        except (TypeError, ValueError):
+            qtd = None
+    codigo, nome = parse_termo_loterica(termo)
+    return FiltroLotericaConfig(
+        termo=termo, codigo=codigo, nome=nome,
+        qtd_dezenas=qtd, varrer_dezenas=bool(varrer_dezenas),
+    )
+
+
+def resolver_slug_parser(modalidade_slug: str) -> str:
+    """Slug do catálogo → chave do parser (9 modalidades)."""
+    s = (modalidade_slug or 'quina').lower()
+    if 'quina' in s:
+        return 'quina'
+    if 'lotofacil' in s or 'independencia' in s or 'independência' in s:
+        return 'lotofacil'
+    if 'mega' in s:
+        return 'mega-sena'
+    if 'lotomania' in s:
+        return 'lotomania'
+    if 'timemania' in s:
+        return 'timemania'
+    if 'dia-de-sorte' in s or 'dia de sorte' in s:
+        return 'dia-de-sorte'
+    if 'super-sete' in s or 'super sete' in s:
+        return 'super-sete'
+    if 'dupla' in s:
+        return 'dupla-sena'
+    if 'milion' in s:
+        return 'mais-milionaria'
+    return s if s in ('mega-sena', 'quina', 'lotofacil', 'lotomania', 'timemania',
+                      'dia-de-sorte', 'super-sete', 'dupla-sena', 'mais-milionaria') else 'quina'
+
+
+def fila_qtd_dezenas(cfg: FiltroLotericaConfig, modalidade_slug: str = 'quina') -> List[Optional[int]]:
+    """
+    Fila de filtros de dezenas. Com varrer_dezenas=True: 15→14→…→min da modalidade (Quina: até 5).
+    """
+    if not cfg or not cfg.varrer_dezenas:
+        return [cfg.qtd_dezenas if cfg else None]
+
+    from boloes_extrair_popup import MODALIDADES
+
+    key = resolver_slug_parser(modalidade_slug)
+    mod = MODALIDADES.get(key, MODALIDADES['quina'])
+    inicio = cfg.qtd_dezenas if cfg.qtd_dezenas is not None else mod.max_dez
+    inicio = min(max(inicio, mod.min_dez), mod.max_dez)
+    return list(range(inicio, mod.min_dez - 1, -1))
+
+
+def cfg_com_qtd(cfg: FiltroLotericaConfig, qtd: Optional[int]) -> FiltroLotericaConfig:
+    return FiltroLotericaConfig(
+        termo=cfg.termo, codigo=cfg.codigo, nome=cfg.nome,
+        qtd_dezenas=qtd, varrer_dezenas=cfg.varrer_dezenas,
+        qualquer_loterica=cfg.qualquer_loterica,
+    )
+
+
+def modalidades_from_api(modalidade_slug: str, varrer_resto: bool = False,
+                         modalidades_extra: Optional[List[str]] = None) -> List[ModalidadeBolaoConfig]:
+    resultado: List[ModalidadeBolaoConfig] = []
+    vistos = set()
+
+    def _add(mod: Optional[ModalidadeBolaoConfig]):
+        if mod and mod.slug not in vistos:
+            resultado.append(mod)
+            vistos.add(mod.slug)
+
+    if modalidades_extra:
+        for slug in modalidades_extra:
+            _add(modalidade_por_slug(slug))
+
+    _add(modalidade_por_slug(modalidade_slug) or resolver_modalidade(modalidade_slug))
+
+    if varrer_resto:
+        for mod in CATALOGO_MODALIDADES:
+            _add(mod)
+
+    return resultado
+
+
+def slug_loterica(cfg: FiltroLotericaConfig) -> str:
+    if cfg.qualquer_loterica or (not (cfg.termo or '').strip() and not cfg.codigo):
+        return 'todas_lotericas'
+    if cfg.codigo:
+        return cfg.codigo
+    slug = normalizar_texto(cfg.nome or cfg.termo)
+    slug = re.sub(r'[^a-z0-9]+', '_', slug).strip('_')
+    return (slug[:40] or 'loterica')
+
+
+def gerar_arquivo_base(
+    cfg: FiltroLotericaConfig,
+    modalidade: Optional[ModalidadeBolaoConfig] = None,
+    concurso: str = '',
+) -> str:
+    """boloes_{concurso}_{modalidade} — ex.: boloes_364_mais-milionaria"""
+    from boloes_modalidades import nome_arquivo_sessao
+    return nome_arquivo_sessao(concurso or 'sem-concurso', modalidade)
+
+
+def gerar_arquivo_base_estado(
+    cfg: FiltroLotericaConfig,
+    modalidade: Optional[ModalidadeBolaoConfig],
+    estado,
+) -> str:
+    """Nome de arquivo incluindo UF — ex.: boloes_sp_todas_lotericas_d15_quina-sao-joao_..."""
+    ts = datetime.now().strftime('%Y%m%d_%H%M%S')
+    lot = slug_loterica(cfg)
+    mod = modalidade.slug if modalidade else 'boloes'
+    dez = f'_d{cfg.qtd_dezenas}' if cfg.qtd_dezenas else ''
+    uf = getattr(estado, 'sigla', '') or ''
+    uf_part = f'{uf.lower()}_' if uf else ''
+    return f'boloes_{uf_part}{lot}{dez}_{mod}_{ts}'
+
+
+def bolao_corresponde_loterica(dados: dict, cfg: FiltroLotericaConfig) -> bool:
+    if not cfg or not cfg.termo:
+        return True
+
+    nome = dados.get('nome_loterica') or ''
+    cod_api = str(dados.get('codigo_loterica') or '').strip()
+    texto = dados.get('texto_completo') or ''
+    haystack = normalizar_texto(f'{nome} {texto} {cod_api}')
+    raw = f'{nome} {texto} {cod_api}'
+    digits = re.sub(r'\D', '', raw)
+
+    if cfg.codigo:
+        codigo = cfg.codigo.strip()
+        if cod_api and (cod_api == codigo or codigo in cod_api):
+            return True
+        # Caixa: "LOTERIA ALDEOTA - 05.009833-0" → 9833 está em 009833
+        if codigo in digits:
+            return True
+        if re.search(r'(?:^|\D)' + re.escape(codigo) + r'(?:\D|$)', raw):
+            return True
+        if re.search(r'[\d\.]+' + re.escape(codigo) + r'(?:\D|$)', raw):
+            return True
+        if cfg.nome and normalizar_texto(cfg.nome) in haystack:
+            return True
+        return False
+
+    alvo = normalizar_texto(cfg.nome or cfg.termo)
+    if alvo in haystack:
+        return True
+    palavras = [p for p in alvo.split() if len(p) >= 3] or [alvo]
+    return sum(1 for p in palavras if p in haystack) >= min(2, len(palavras))
+
+
+def bolao_atende_filtro(dados: dict, cfg: FiltroLotericaConfig) -> bool:
+    """Lotérica (se houver) + exatamente N dezenas em cada aposta."""
+    if cfg.qualquer_loterica or (not (cfg.termo or '').strip() and not cfg.codigo):
+        if cfg.qtd_dezenas is None:
+            return True
+        return bolao_apostas_todas_com_n_dezenas(dados, cfg.qtd_dezenas)
+    if not bolao_corresponde_loterica(dados, cfg):
+        return False
+    if cfg.qtd_dezenas is None:
+        return True
+    return bolao_apostas_todas_com_n_dezenas(dados, cfg.qtd_dezenas)
+
+
+def _ler_qtd_dezenas_do_site(driver) -> Optional[int]:
+    """Lê quantidade de dezenas selecionada no filtro do site."""
+    try:
+        raw = driver.execute_script("""
+            function parseDez(t) {
+                t = (t || '').trim();
+                if (!t) return null;
+                var m = t.match(/^(\\d+)\\s*dezena/i);
+                if (m) return parseInt(m[1], 10);
+                if (/^\\d+$/.test(t)) return parseInt(t, 10);
+                var nums = t.match(/\\d+/g);
+                if (nums && nums.length === 1) return parseInt(nums[0], 10);
+                return null;
+            }
+            var sels = document.querySelectorAll('select');
+            for (var i = 0; i < sels.length; i++) {
+                var sel = sels[i];
+                if (!sel.offsetParent) continue;
+                var opt = sel.options[sel.selectedIndex];
+                if (!opt) continue;
+                var n = parseDez(opt.text) || parseDez(opt.value);
+                if (n) return n;
+            }
+            if (typeof angular !== 'undefined') {
+                var sc = angular.element(document.body).scope();
+                for (var d = 0; d < 14 && sc; d++) {
+                    var q = sc.qtdNumeros || sc.qtdDezenas || sc.quantidadeDezenas;
+                    if (q != null && q !== '') return parseInt(q, 10);
+                    if (sc.filtro && sc.filtro.qtdNumeros != null) return parseInt(sc.filtro.qtdNumeros, 10);
+                    sc = sc.$parent;
+                }
+            }
+            return null;
+        """)
+        if raw is not None and int(raw) > 0:
+            return int(raw)
+    except Exception:
+        pass
+    return None
+
+
+_JS_LER_LOTERICA_PAGINA = """
+function codigoDeTexto(t) {
+  t = (t || '').trim();
+  if (!t) return '';
+  if (/^\\d{3,6}$/.test(t)) return t;
+  var m = t.match(/(\\d{2})\\.(\\d{6})/);
+  if (m) {
+    var seis = m[2];
+    return seis.length >= 4 ? seis.slice(-4) : seis;
+  }
+  m = t.match(/LOTERIA[^\\d]*(\\d{4,6})/i);
+  if (m) return m[1].slice(-4);
+  m = t.match(/\\b(\\d{4})\\b/);
+  if (m) return m[1];
+  return t;
+}
+function pushTermo(list, t) {
+  t = (t || '').trim();
+  if (!t || t.length < 3) return;
+  if (list.indexOf(t) < 0) list.push(t);
+}
+var candidatos = [];
+try {
+  var inp = document.getElementById('nomeCodigoLoterica');
+  if (inp && inp.value) pushTermo(candidatos, inp.value.trim());
+} catch (e) {}
+document.querySelectorAll('input[type="text"], input:not([type])').forEach(function (inp) {
+  if (!inp.offsetParent) return;
+  var ph = (inp.placeholder || '').toLowerCase();
+  var ng = (inp.getAttribute('ng-model') || '').toLowerCase();
+  if (ph.indexOf('loter') >= 0 || ng.indexOf('loter') >= 0) {
+    if (inp.value) pushTermo(candidatos, inp.value.trim());
+  }
+});
+document.querySelectorAll(
+  '[class*="loteria"], [class*="Loteria"], .ui-state-active, .filtro-ativo, aside li, aside div, .sidebar *'
+).forEach(function (el) {
+  if (!el || !el.offsetParent) return;
+  var t = (el.innerText || el.textContent || '').trim();
+  if (t.length > 120 || t.length < 4) return;
+  if (/loteria|loteric|\\d{2}\\.\\d{6}|\\b\\d{4}\\b/i.test(t)) {
+    if (/loteria/i.test(t) || /\\d{2}\\.\\d{6}/.test(t)) pushTermo(candidatos, t);
+  }
+});
+document.querySelectorAll('.card, [class*="bolao"], [class*="Bolao"]').forEach(function (card) {
+  if (!card || !card.offsetParent) return;
+  var t = (card.innerText || '').trim();
+  if (/loteria/i.test(t)) {
+    var linhas = t.split(/\\n/);
+    for (var i = 0; i < linhas.length; i++) {
+      if (/loteria/i.test(linhas[i])) { pushTermo(candidatos, linhas[i].trim()); break; }
+    }
+  }
+});
+if (typeof angular !== 'undefined') {
+  try {
+    var nodes = document.querySelectorAll('[ng-controller], [ng-repeat], .card, [class*="bolao"]');
+    for (var ni = 0; ni < nodes.length; ni++) {
+      var sc = angular.element(nodes[ni]).scope();
+      for (var d = 0; d < 16 && sc; d++) {
+        var vals = [
+          sc.nomeCodigoLoterica, sc.nomeLoterica, sc.lotericaFiltro,
+          sc.lotericaSelecionada, sc.codigoLoterica
+        ];
+        for (var vi = 0; vi < vals.length; vi++) {
+          if (vals[vi] && String(vals[vi]).trim()) pushTermo(candidatos, String(vals[vi]).trim());
+        }
+        if (sc.filtro) {
+          if (sc.filtro.nomeCodigoLoterica) pushTermo(candidatos, String(sc.filtro.nomeCodigoLoterica).trim());
+          if (sc.filtro.loterica) pushTermo(candidatos, String(sc.filtro.loterica).trim());
+        }
+        if (sc.loterica && typeof sc.loterica === 'object') {
+          var lf = sc.loterica.nomeFantasia || sc.loterica.nome || sc.loterica.codigo;
+          if (lf) pushTermo(candidatos, String(lf).trim());
+        }
+        sc = sc.$parent;
+      }
+    }
+  } catch (e) {}
+}
+return candidatos.length ? candidatos[0] : '';
+"""
+
+
+def _ler_loterica_texto_pagina(driver) -> str:
+    try:
+        raw = driver.execute_script(_JS_LER_LOTERICA_PAGINA)
+        if isinstance(raw, str) and raw.strip():
+            return raw.strip()
+    except Exception:
+        pass
+    return ''
+
+
+def _ler_loterica_da_lista_api(driver) -> str:
+    """Apos Aplicar, o campo pode esvaziar — loterica vem da lista/API ou dos cards."""
+    try:
+        from boloes_api_caixa import ler_capturas_api, _eh_url_lista_boloes
+    except ImportError:
+        return ''
+
+    lotericas: dict = {}
+
+    def registrar(item: dict) -> None:
+        if not isinstance(item, dict) or not item.get('codigoBolao'):
+            return
+        fmt = item.get('lotericaFormatada') or {}
+        termo = ''
+        if isinstance(fmt, dict):
+            termo = (
+                fmt.get('nomeFantasia') or fmt.get('nomeRazaoSocial')
+                or fmt.get('codigo') or fmt.get('numeroFormatado') or ''
+            ).strip()
+        if not termo:
+            lot = item.get('loterica') or item.get('codigoLoterica')
+            if lot is not None:
+                termo = str(lot)
+        if termo:
+            lotericas[termo] = lotericas.get(termo, 0) + 1
+
+    def walk(node, depth: int = 0) -> None:
+        if depth > 14:
+            return
+        if isinstance(node, dict):
+            if node.get('codigoBolao'):
+                registrar(node)
+            for val in node.values():
+                walk(val, depth + 1)
+        elif isinstance(node, list):
+            for item in node:
+                walk(item, depth + 1)
+
+    for cap in reversed(ler_capturas_api(driver)):
+        if not _eh_url_lista_boloes(cap.get('url') or ''):
+            continue
+        walk(cap.get('data'))
+        if lotericas:
+            break
+
+    if not lotericas:
+        return ''
+
+    return max(lotericas.items(), key=lambda x: x[1])[0]
+
+
+def ler_filtro_aplicado_site(driver, log_fn: LogFn = None) -> Optional[FiltroLotericaConfig]:
+    """
+    Lê o filtro que VOCE aplicou no site (campo lotérica + dezenas).
+    O script usa isso para baixar SOMENTE bolões deste filtro.
+    """
+    _scroll_para_filtros(driver)
+    termo = ''
+    fonte = ''
+    try:
+        el = _find_input_loterica(driver)
+        if el:
+            termo = (el.get_attribute('value') or '').strip()
+            if termo:
+                fonte = 'campo lotérica'
+    except Exception:
+        pass
+    if not termo:
+        try:
+            termo = (driver.execute_script("""
+                var inp = document.getElementById('nomeCodigoLoterica');
+                if (inp && inp.value) return inp.value.trim();
+                if (typeof angular !== 'undefined') {
+                    var sc = angular.element(document.body).scope();
+                    for (var d = 0; d < 14 && sc; d++) {
+                        var v = sc.nomeCodigoLoterica || sc.nomeLoterica || sc.lotericaFiltro;
+                        if (v && String(v).trim()) return String(v).trim();
+                        if (sc.filtro && sc.filtro.nomeCodigoLoterica)
+                            return String(sc.filtro.nomeCodigoLoterica).trim();
+                        sc = sc.$parent;
+                    }
+                }
+                return '';
+            """) or '').strip()
+            if termo:
+                fonte = 'angular/campo'
+        except Exception:
+            pass
+
+    if not termo:
+        termo = _ler_loterica_texto_pagina(driver)
+        if termo:
+            fonte = 'texto da pagina (sidebar/cards)'
+
+    if not termo:
+        termo = _ler_loterica_da_lista_api(driver)
+        if termo:
+            fonte = 'lista API (apos Aplicar)'
+
+    if not termo:
+        qtd_dezenas = _ler_qtd_dezenas_do_site(driver)
+        if qtd_dezenas:
+            cfg = cfg_qualquer_loterica(qtd_dezenas)
+            _log(
+                f'  [FILTRO DETECTADO] Qualquer lotérica | Dezenas: {qtd_dezenas} | via: site (sem lotérica)',
+                log_fn,
+            )
+            _log('  → Baixando bolões de TODAS as lotéricas visíveis com essa qtd. de dezenas.', log_fn)
+            return cfg
+        _log('  [FILTRO] Nao detectei lotérica no site.', log_fn)
+        _log('  → No site: só 15 dezenas + estado (ex. SP), sem lotérica — ou digite * no terminal.', log_fn)
+        return None
+
+    qtd_dezenas = _ler_qtd_dezenas_do_site(driver)
+    codigo, nome = parse_termo_loterica(termo)
+    cfg = FiltroLotericaConfig(
+        termo=termo, codigo=codigo, nome=nome, qtd_dezenas=qtd_dezenas,
+    )
+    dez_txt = str(qtd_dezenas) if qtd_dezenas else 'qualquer'
+    _log(f'  [FILTRO DETECTADO] Lotérica: {termo} | Dezenas: {dez_txt} | via: {fonte}', log_fn)
+    _log('  → Baixando SOMENTE bolões deste filtro.', log_fn)
+    return cfg
+
+
+def sessao_caixa_ativa(driver) -> bool:
+    try:
+        url = (driver.current_url or '').lower()
+        if any(x in url for x in ('login.caixa.gov.br', 'openid-connect', '/auth/realms/')):
+            return False
+        if 'loteriasonline.caixa.gov.br' not in url and 'silce-web' not in url:
+            return False
+        if 'bolao-caixa' in url or '#/bolao' in url:
+            return True
+        try:
+            logado = driver.execute_script("""
+                try {
+                    var body = (document.body && document.body.innerText) || '';
+                    if (/Olá|Ola|Minha conta|Sair/i.test(body)) return true;
+                } catch (e) {}
+                return false;
+            """)
+            if logado:
+                return True
+        except Exception:
+            pass
+        for sel in ('#kc-form-login', '.login-pf-page'):
+            for el in driver.find_elements(By.CSS_SELECTOR, sel):
+                if el.is_displayed():
+                    return False
+        return False
+    except Exception:
+        return False
+
+
+def manter_sessao_ativa(driver) -> None:
+    try:
+        driver.execute_script("""
+            try {
+                window.dispatchEvent(new Event('focus'));
+                window.dispatchEvent(new Event('mousemove'));
+            } catch (e) {}
+        """)
+    except Exception:
+        pass
+
+
+def garantir_sessao_caixa(
+    driver,
+    pagina_atual: int = 1,
+    log_fn: LogFn = None,
+    modo_web: bool = False,
+    estado_check: Optional[dict] = None,
+    ao_expirar: Optional[Callable[[], bool]] = None,
+) -> bool:
+    if sessao_caixa_ativa(driver):
+        manter_sessao_ativa(driver)
+        return True
+
+    _log('', log_fn)
+    _log('  *** SESSAO CAIXA EXPIROU (Keycloak / login) ***', log_fn)
+    _log(f'  Continua sozinho da pagina {pagina_atual} (checkpoint).', log_fn)
+
+    if ao_expirar is not None:
+        _log('  [SESSÃO] Relogin automático — volta ao checkpoint e segue a paginação.', log_fn)
+        try:
+            ok = bool(ao_expirar())
+        except Exception as exc:
+            _log(f'  [SESSÃO] Relogin automático falhou: {exc}', log_fn)
+            ok = False
+        if ok:
+            _log('  [SESSÃO] Sessão restaurada — continuando da página do checkpoint.', log_fn)
+        else:
+            _log('  [SESSÃO] Ainda sem sessão. Nova tentativa sem parar no ENTER.', log_fn)
+        return ok
+
+    try:
+        from login_caixa.fluxo import executar_login_automatizado
+        _log('  [SESSÃO] Tentando login automático (sem esperar ENTER)...', log_fn)
+        executar_login_automatizado(driver=driver, manter_navegador_aberto=True)
+        time.sleep(1.0)
+        if sessao_caixa_ativa(driver):
+            _log('  Sessao OK — continuando.', log_fn)
+            return True
+    except Exception as exc:
+        _log(f'  [SESSÃO] Login automático não concluiu: {exc}', log_fn)
+
+    if modo_web:
+        _log('  Aguardando relogin (ate 3 min)...', log_fn)
+        for _ in range(36):
+            if estado_check and estado_check.get('status') != 'rodando':
+                return False
+            time.sleep(5)
+            if sessao_caixa_ativa(driver):
+                _log('  Sessao restaurada — continuando.', log_fn)
+                return True
+        _log('  Tempo esgotado aguardando relogin.', log_fn)
+        return False
+
+    _log('  Pressione ENTER apos relogin...', log_fn)
+    try:
+        input('\n>>> ENTER apos relogin e voltar aos boloes... ')
+    except EOFError:
+        pass
+    time.sleep(1)
+    ok = sessao_caixa_ativa(driver)
+    if ok:
+        _log('  Sessao OK — continuando.', log_fn)
+    else:
+        _log('  Ainda sem sessao ativa.', log_fn)
+    return ok
+
+
+def _dismiss_overlays(driver) -> None:
+    try:
+        driver.execute_script("""
+            document.querySelectorAll(
+                'div[style*="position:fixed"], div[style*="position: fixed"]'
+            ).forEach(function(el) {
+                if (el.closest('.modal, [role="dialog"], .modal-content')) return;
+                var st = window.getComputedStyle(el);
+                var z = parseInt(st.zIndex || '0', 10);
+                var top = parseFloat(st.top || '999');
+                if (z >= 100000 || (st.position === 'fixed' && top <= 20 && z >= 1000)) {
+                    el.style.pointerEvents = 'none';
+                    el.style.visibility = 'hidden';
+                }
+            });
+            document.querySelectorAll('.modal-backdrop').forEach(function(el) {
+                if (!document.querySelector('.modal.show, .modal.in, [role="dialog"][style*="display: block"]')) {
+                    el.style.display = 'none';
+                }
+            });
+        """)
+    except Exception:
+        pass
+
+    try:
+        from boloes_cards_inicio import fechar_tutorial_bolao_digital
+        fechar_tutorial_bolao_digital(driver, log_fn=lambda *_a, **_k: None)
+    except Exception:
+        pass
+
+    for xp in (
+        "//button[contains(.,'Aceitar') or contains(.,'Concordo') or contains(.,'Fechar')]",
+        "//button[@aria-label='Close' or @aria-label='Fechar']",
+        "//*[contains(@class,'close') and (self::button or self::a)]",
+    ):
+        try:
+            for btn in driver.find_elements(By.XPATH, xp):
+                if btn.is_displayed():
+                    try:
+                        driver.execute_script('arguments[0].click();', btn)
+                    except Exception:
+                        pass
+                    time.sleep(0.2)
+        except Exception:
+            pass
+
+
+def _scroll_para_filtros(driver) -> None:
+    try:
+        for sel in ('#nomeCodigoLoterica', 'input[placeholder*="lotérica"]', 'input[placeholder*="loterica"]'):
+            els = driver.find_elements(By.CSS_SELECTOR, sel)
+            if els:
+                driver.execute_script(
+                    'arguments[0].scrollIntoView({block: "center", inline: "nearest"});',
+                    els[0],
+                )
+                time.sleep(0.4)
+                return
+        driver.execute_script('window.scrollTo(0, 280);')
+        time.sleep(0.3)
+    except Exception:
+        pass
+
+
+def _click_seguro(driver, el) -> bool:
+    try:
+        driver.execute_script(
+            'arguments[0].scrollIntoView({block: "center", inline: "nearest"});',
+            el,
+        )
+        time.sleep(0.2)
+        _dismiss_overlays(driver)
+        try:
+            el.click()
+            return True
+        except Exception:
+            driver.execute_script('arguments[0].click();', el)
+            return True
+    except Exception:
+        try:
+            driver.execute_script('arguments[0].click();', el)
+            return True
+        except Exception:
+            return False
+
+
+def _preencher_input_angular(driver, el, texto: str) -> None:
+    driver.execute_script("""
+        var el = arguments[0], val = arguments[1];
+        el.focus();
+        el.value = val;
+        el.dispatchEvent(new Event('input', {bubbles: true}));
+        el.dispatchEvent(new Event('change', {bubbles: true}));
+        el.dispatchEvent(new Event('keyup', {bubbles: true}));
+        if (typeof angular !== 'undefined') {
+            try {
+                angular.element(el).triggerHandler('input');
+                angular.element(el).triggerHandler('keyup');
+            } catch (e) {}
+        }
+    """, el, texto)
+
+
+def _expandir_painel_filtros(driver) -> None:
+    """Abre painéis colapsados (Filtrar / Lotéricas) antes de buscar o campo."""
+    xpaths = (
+        "//*[contains(translate(.,'ÉÊÃÕéêãõFILTRAR','EEAAeeaaFiltrar'),'Filtr')]",
+        "//*[contains(.,'Lotéric') or contains(.,'Loteric')]",
+        "//button[contains(@class,'filter') or contains(@class,'filtro')]",
+        "//a[contains(@class,'filter') or contains(@class,'filtro')]",
+    )
+    for xp in xpaths:
+        try:
+            for el in driver.find_elements(By.XPATH, xp):
+                if not el.is_displayed():
+                    continue
+                tag = (el.tag_name or '').lower()
+                if tag in ('input', 'select', 'textarea'):
+                    continue
+                driver.execute_script('arguments[0].click();', el)
+                time.sleep(0.35)
+        except Exception:
+            pass
+
+
+def aguardar_lista_boloes(driver, log_fn: LogFn = None, timeout: float = 45.0) -> bool:
+    """Espera tela de bolões (campo lotérica) após login — evita filtro cedo demais."""
+    _log('  Aguardando lista de bolões carregar...', log_fn)
+    fim = time.time() + timeout
+    while time.time() < fim:
+        if not sessao_caixa_ativa(driver):
+            time.sleep(0.5)
+            continue
+        if _find_input_loterica(driver):
+            time.sleep(1.2)
+            _log('  Lista de bolões pronta.', log_fn)
+            return True
+        time.sleep(0.5)
+    _log('  [AVISO] Campo de lotérica ainda não apareceu — tente ENTER de novo se falhar.', log_fn)
+    return False
+
+
+def _find_input_loterica(driver):
+    seletores = [
+        (By.ID, 'nomeCodigoLoterica'),
+        (By.CSS_SELECTOR, 'input[placeholder*="lotérica"], input[placeholder*="loterica"]'),
+        (By.CSS_SELECTOR, 'input[ng-model*="Loterica"], input[ng-model*="loterica"]'),
+        (By.CSS_SELECTOR, 'input[name*="loterica"], input[id*="loterica"]'),
+    ]
+    for by, sel in seletores:
+        try:
+            for el in driver.find_elements(by, sel):
+                if el.is_displayed() and el.is_enabled():
+                    return el
+        except Exception:
+            pass
+
+    xpaths = [
+        "//input[contains(translate(@placeholder,'ÉÊÃÕéêãõ','EEAAeeaa'),'loter')]",
+        "//label[contains(.,'Lotéric') or contains(.,'Loteric')]/following::input[1]",
+        "//*[contains(text(),'Lotéricas')]/ancestor::div[1]//input",
+    ]
+    for xp in xpaths:
+        try:
+            for el in driver.find_elements(By.XPATH, xp):
+                if el.is_displayed() and el.is_enabled():
+                    return el
+        except Exception:
+            pass
+
+    try:
+        el = driver.execute_script("""
+            var inputs = document.querySelectorAll('input[type="text"], input:not([type])');
+            for (var i = 0; i < inputs.length; i++) {
+                var inp = inputs[i];
+                if (!inp.offsetParent) continue;
+                var ph = (inp.placeholder || '').toLowerCase();
+                var ng = (inp.getAttribute('ng-model') || '').toLowerCase();
+                var id = (inp.id || '').toLowerCase();
+                var nm = (inp.name || '').toLowerCase();
+                if (ph.indexOf('loter') >= 0 || ng.indexOf('loter') >= 0
+                    || id.indexOf('loter') >= 0 || nm.indexOf('loter') >= 0)
+                    return inp;
+            }
+            return null;
+        """)
+        if el:
+            return el
+    except Exception:
+        pass
+    return None
+
+
+def _texto_busca_autocomplete(cfg: FiltroLotericaConfig) -> str:
+    if cfg.codigo:
+        return cfg.codigo
+    termo = (cfg.nome or cfg.termo or '').strip()
+    if len(termo) <= 5:
+        return termo
+    return termo[:5]
+
+
+def _coletar_itens_autocomplete(driver) -> List:
+    itens = []
+    seletores = [
+        'ul.ui-autocomplete li.ui-menu-item',
+        'ul.ui-autocomplete li',
+        'ul.ui-menu li.ui-menu-item',
+        '.ui-autocomplete .ui-menu-item',
+        "[role='listbox'] [role='option']",
+    ]
+    for css in seletores:
+        try:
+            for el in driver.find_elements(By.CSS_SELECTOR, css):
+                if el.is_displayed() and (el.text or '').strip():
+                    if el not in itens:
+                        itens.append(el)
+        except Exception:
+            pass
+    return itens
+
+
+def _melhor_item_autocomplete(itens: List, cfg: FiltroLotericaConfig):
+    if not itens:
+        return None
+
+    melhor = None
+    melhor_score = -1
+
+    for item in itens:
+        txt = (item.text or '').strip()
+        norm = normalizar_texto(txt)
+        score = 0
+
+        if cfg.codigo:
+            cod = cfg.codigo
+            if txt.startswith(f'{cod} -') or txt.startswith(f'{cod}-'):
+                score = 200
+            elif re.search(r'\b' + re.escape(cod) + r'\b', txt):
+                score = 120
+            elif cod in txt:
+                score = 80
+        else:
+            alvo = normalizar_texto(cfg.nome or cfg.termo)
+            palavras = [p for p in alvo.split() if len(p) >= 3] or [alvo]
+            score = sum(30 for p in palavras if p in norm)
+
+        if score > melhor_score:
+            melhor = item
+            melhor_score = score
+
+    if melhor_score > 0:
+        return melhor
+    return itens[0]
+
+
+def _aguardar_autocomplete(driver, timeout: int = 8) -> List:
+    fim = time.time() + timeout
+    while time.time() < fim:
+        itens = _coletar_itens_autocomplete(driver)
+        if itens:
+            return itens
+        time.sleep(0.3)
+    return []
+
+
+def _limpar_campo_loterica(campo) -> None:
+    try:
+        campo.click()
+        time.sleep(0.15)
+        campo.send_keys(Keys.CONTROL, 'a')
+        campo.send_keys(Keys.DELETE)
+        time.sleep(0.15)
+    except Exception:
+        pass
+
+
+def _digitar_busca_loterica(campo, texto: str) -> None:
+    _limpar_campo_loterica(campo)
+    campo.send_keys(texto)
+    time.sleep(0.2)
+    campo.send_keys(' ')
+    campo.send_keys(Keys.BACKSPACE)
+    time.sleep(0.1)
+
+
+def _selecionar_autocomplete(driver, cfg: FiltroLotericaConfig, log_fn: LogFn = None) -> bool:
+    itens = _aguardar_autocomplete(driver, timeout=8)
+    if not itens:
+        _log('  [FILTRO] Lista autocomplete não apareceu.', log_fn)
+        return False
+
+    alvo = _melhor_item_autocomplete(itens, cfg)
+    if not alvo:
+        return False
+
+    txt = (alvo.text or '').strip()[:60]
+    _click_seguro(driver, alvo)
+    time.sleep(0.8)
+    _log(f'  [FILTRO] Selecionado: {txt}', log_fn)
+    return True
+
+
+def _aguardar_lista_apos_aplicar(driver, timeout: int = 10) -> None:
+    fim = time.time() + timeout
+    while time.time() < fim:
+        if _pagina_erro_rede(driver):
+            return
+        try:
+            botoes = driver.find_elements(
+                By.CSS_SELECTOR,
+                "button.btn-primary, button.btn-success, .card button, [class*='bolao'] button",
+            )
+            if any(b.is_displayed() for b in botoes):
+                return
+        except Exception:
+            pass
+        time.sleep(0.4)
+    time.sleep(1.5)
+
+
+def _scroll_para_paginacao(driver) -> None:
+    try:
+        driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
+        time.sleep(0.5)
+    except Exception:
+        pass
+
+
+def _botao_pagina_clicavel(btn) -> bool:
+    if btn is None:
+        return False
+    try:
+        if not btn.is_displayed():
+            return False
+        classes = (btn.get_attribute('class') or '').lower()
+        aria = (btn.get_attribute('aria-disabled') or '').lower()
+        if 'disabled' in classes or aria == 'true':
+            return False
+        return btn.is_enabled()
+    except Exception:
+        return False
+
+
+def _texto_e_botao_seguinte(btn) -> bool:
+    try:
+        ng = (btn.get_attribute('ng-click') or '').lower()
+        txt = normalizar_texto(btn.text or '')
+        if 'anterior' in txt or 'previous' in txt:
+            return False
+        if 'funcaoproxima' in ng:
+            return True
+        return 'seguinte' in txt or 'proxima' in txt or 'proximo' in txt
+    except Exception:
+        return False
+
+
+def _encontrar_botoes_seguinte(driver, apenas_visiveis: bool = True) -> List:
+    """Localiza botão Seguinte/Próxima (habilitado ou desabilitado)."""
+    seletores = [
+        (By.CSS_SELECTOR, "button.btn-pesquisa[ng-click*='funcaoProxima']"),
+        (By.CSS_SELECTOR, "button[ng-click*='funcaoProxima']"),
+        (By.XPATH, "//button[contains(@ng-click,'funcaoProxima')]"),
+        (By.XPATH, "//button[contains(@class,'btn-pesquisa') and contains(.,'Seguinte')]"),
+        (By.XPATH, "//button[contains(normalize-space(.),'Seguinte')]"),
+        (By.XPATH, "//button[contains(normalize-space(.),'Próxim') or contains(normalize-space(.),'Proxim')]"),
+    ]
+    candidatos: List = []
+    for by, sel in seletores:
+        try:
+            for btn in driver.find_elements(by, sel):
+                if apenas_visiveis and not btn.is_displayed():
+                    continue
+                if not _texto_e_botao_seguinte(btn):
+                    continue
+                if btn not in candidatos:
+                    candidatos.append(btn)
+        except Exception:
+            pass
+    candidatos.sort(
+        key=lambda b: 0 if 'funcaoProxima' in (b.get_attribute('ng-click') or '') else 1,
+    )
+    return candidatos
+
+
+def _localizar_botao_seguinte(driver, apenas_habilitado: bool = True):
+    """Botão oficial Caixa: Seguinte — retorna None se só existir desabilitado."""
+    for btn in _encontrar_botoes_seguinte(driver):
+        if apenas_habilitado and not _botao_pagina_clicavel(btn):
+            continue
+        return btn
+    return None
+
+
+def _estado_botao_seguinte(driver) -> str:
+    """
+    'habilitado' | 'desabilitado' | 'ausente'
+    Desabilitado: classe disabled, aria-disabled, cursor not-allowed, azul claro.
+    """
+    botoes = _encontrar_botoes_seguinte(driver)
+    if not botoes:
+        try:
+            raw = driver.execute_script("""
+                var sels = [
+                    "button[ng-click*='funcaoProxima']",
+                    "button.btn-pesquisa"
+                ];
+                for (var si = 0; si < sels.length; si++) {
+                    var nodes = document.querySelectorAll(sels[si]);
+                    for (var i = 0; i < nodes.length; i++) {
+                        var b = nodes[i];
+                        var t = (b.textContent || '').toLowerCase();
+                        if (t.indexOf('seguinte') < 0 && t.indexOf('proxim') < 0) continue;
+                        if (t.indexOf('anterior') >= 0) continue;
+                        var st = window.getComputedStyle(b);
+                        var off = !b.offsetParent;
+                        var dis = b.disabled || b.getAttribute('aria-disabled') === 'true'
+                            || (b.className || '').toLowerCase().indexOf('disabled') >= 0
+                            || st.pointerEvents === 'none' || st.cursor === 'not-allowed';
+                        return dis ? 'desabilitado' : 'habilitado';
+                    }
+                }
+                return 'ausente';
+            """)
+            if raw in ('habilitado', 'desabilitado', 'ausente'):
+                return raw
+        except Exception:
+            pass
+        return 'ausente'
+
+    for btn in botoes:
+        if _botao_pagina_clicavel(btn):
+            return 'habilitado'
+    return 'desabilitado'
+
+
+def _eh_primeira_pagina_caixa(driver) -> bool:
+    """True se o botão Anterior está desabilitado — página 1 real da barra."""
+    try:
+        return bool(driver.execute_script("""
+            var nodes = document.querySelectorAll('button, a');
+            for (var i = 0; i < nodes.length; i++) {
+                var el = nodes[i];
+                var t = (el.textContent || '').replace(/\\s+/g, ' ').trim().toLowerCase();
+                var ng = el.getAttribute('ng-click') || '';
+                if (ng.indexOf('funcaoAnterior') < 0 && t.indexOf('anterior') < 0) continue;
+                if (t.indexOf('seguinte') >= 0) continue;
+                var st = window.getComputedStyle(el);
+                return !!(el.disabled
+                    || el.getAttribute('aria-disabled') === 'true'
+                    || (el.className || '').toLowerCase().indexOf('disabled') >= 0
+                    || st.pointerEvents === 'none'
+                    || st.cursor === 'not-allowed');
+            }
+            return false;
+        """))
+    except Exception:
+        return False
+
+
+def _assinatura_lista_visivel(driver) -> str:
+    """Primeiros bolões visíveis — detecta se a pagina realmente mudou."""
+    try:
+        partes: List[str] = []
+        for btn in driver.find_elements(By.CSS_SELECTOR, 'button'):
+            if not btn.is_displayed():
+                continue
+            txt = (btn.text or '').lower()
+            if not any(p in txt for p in ('detalh', 'ver', 'comprar', 'apostar')):
+                continue
+            try:
+                card = btn.find_element(
+                    By.XPATH,
+                    './ancestor::*[contains(@class,"card") or contains(@class,"bolao")][1]',
+                )
+                t = (card.text or '').strip().replace('\n', ' ')[:120]
+            except Exception:
+                t = (btn.text or '').strip()[:80]
+            if t and len(t) > 12:
+                partes.append(t)
+            if len(partes) >= 3:
+                break
+        if partes:
+            return '||'.join(partes)
+        for sel in ('.card', 'tr', '[class*="bolao"]'):
+            for el in driver.find_elements(By.CSS_SELECTOR, sel):
+                if not el.is_displayed():
+                    continue
+                t = (el.text or '').strip().replace('\n', ' ')[:100]
+                if t and len(t) > 15:
+                    partes.append(t)
+                if len(partes) >= 3:
+                    break
+            if partes:
+                break
+        return '||'.join(partes)
+    except Exception:
+        return ''
+
+
+def _ler_pagina_barra_somente(driver) -> Optional[int]:
+    """Só o número visível entre Anterior/Seguinte — NÃO lê Angular (evita mentira pós-salto)."""
+    try:
+        raw = driver.execute_script("""
+            function visivel(el) {
+                if (!el) return false;
+                try {
+                    if (el.offsetParent) return true;
+                    return !!(el.getClientRects && el.getClientRects().length);
+                } catch (e) { return false; }
+            }
+            function soNumero(node) {
+                if (!node) return null;
+<<<<<<< HEAD
+                if (node.nodeType === 3) {
+                    var mt = String(node.textContent || '').trim().match(/^\\d+$/);
+                    return mt ? parseInt(mt[0], 10) : null;
+                }
+                if (node.nodeType !== 1) return null;
+                var tag = (node.tagName || '').toLowerCase();
+                if (tag === 'button' || tag === 'a') return null;
+                var t = String(node.textContent || '').replace(/\\s+/g, ' ').trim();
+=======
+                var t = '';
+                if (node.nodeType === 3) {
+                    t = String(node.textContent || '').trim();
+                } else if (node.nodeType === 1) {
+                    t = String(node.textContent || '').replace(/\\s+/g, ' ').trim();
+                } else {
+                    return null;
+                }
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+                var m = t.match(/^\\d+$/);
+                return m ? parseInt(m[0], 10) : null;
+            }
+            function vizinhoNumerico(el, prev) {
+                var n = prev ? el.previousSibling : el.nextSibling;
+                while (n) {
+                    var v = soNumero(n);
+                    if (v) return v;
+                    n = prev ? n.previousSibling : n.nextSibling;
+                }
+                return null;
+            }
+            var ant = null, prox = null;
+            var nodes = document.querySelectorAll('button, a');
+            for (var i = 0; i < nodes.length; i++) {
+                var el = nodes[i];
+                if (!visivel(el)) continue;
+                var t = (el.textContent || '').replace(/\\s+/g, ' ').trim().toLowerCase();
+                var ng = (el.getAttribute('ng-click') || '');
+                if (!prox && (ng.indexOf('funcaoProxima') >= 0 || t.indexOf('seguinte') >= 0)) {
+                    if (t.indexOf('anterior') < 0) prox = el;
+                }
+                if (!ant && (ng.indexOf('funcaoAnterior') >= 0 || t.indexOf('anterior') >= 0)) {
+                    ant = el;
+                }
+            }
+<<<<<<< HEAD
+            if (prox) {
+                var a = vizinhoNumerico(prox, true);
+                if (a) return a;
+            }
+            if (ant) {
+                var b = vizinhoNumerico(ant, false);
+                if (b) return b;
+            }
+            var root = null;
+            if (ant && prox && ant.parentElement === prox.parentElement) root = ant.parentElement;
+            else if (prox) root = prox.parentElement;
+            else if (ant) root = ant.parentElement;
+            if (root) {
+                for (var c = root.firstChild; c; c = c.nextSibling) {
+                    var v = soNumero(c);
+                    if (v) return v;
+                }
+=======
+            // O que o usuário vê: "< Anterior  151  Seguinte >"
+            var raizBarra = null;
+            if (ant && prox && ant.parentElement === prox.parentElement) raizBarra = ant.parentElement;
+            else if (prox) raizBarra = prox.parentElement;
+            else if (ant) raizBarra = ant.parentElement;
+            if (raizBarra) {
+                var tx = String(raizBarra.textContent || '').replace(/\\s+/g, ' ').trim();
+                var mx = tx.match(/anterior\\s+(\\d+)\\s+seguinte/i);
+                if (mx) return parseInt(mx[1], 10);
+                var campos = raizBarra.querySelectorAll('input, span, strong, em, b, label');
+                for (var k = 0; k < campos.length; k++) {
+                    var rawv = (campos[k].value != null && String(campos[k].value).trim() !== '')
+                        ? String(campos[k].value)
+                        : String(campos[k].textContent || '');
+                    rawv = rawv.replace(/\\s+/g, '').trim();
+                    if (/^\\d+$/.test(rawv)) {
+                        var nn = parseInt(rawv, 10);
+                        if (nn > 0 && nn < 5000) return nn;
+                    }
+                }
+            }
+            if (prox) {
+                var a = vizinhoNumerico(prox, true);
+                if (a) return a;
+            }
+            if (ant) {
+                var b = vizinhoNumerico(ant, false);
+                if (b) return b;
+            }
+            var root = null;
+            if (ant && prox && ant.parentElement === prox.parentElement) root = ant.parentElement;
+            else if (prox) root = prox.parentElement;
+            else if (ant) root = ant.parentElement;
+            if (root) {
+                for (var c = root.firstChild; c; c = c.nextSibling) {
+                    var v = soNumero(c);
+                    if (v) return v;
+                }
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+            }
+            return null;
+        """)
+        return int(raw) if raw else None
+    except Exception:
+        return None
+
+
+def _ler_pagina_atual_ui(driver) -> Optional[int]:
+    """Índice da página atual: barra (Anterior N Seguinte), depois Angular.
+
+    Não usa ``button.btn-pesquisa`` genérico — no reload o Angular zera
+    ``paginaAtual`` (1) e o 1º btn-pesquisa pode ser Pesquisar/Anterior.
+    A barra da Caixa mostra só o número atual (ex.: 10); parseInt de
+    string e o dígito entre os botões evitam ler 10 como 1.
+    """
+    # Preferência absoluta: número na barra (o que o usuário vê).
+    barra = _ler_pagina_barra_somente(driver)
+    if barra:
+        return barra
+    try:
+        raw = driver.execute_script("""
+            function parsePos(v) {
+                if (v == null || v === '') return null;
+                var n = parseInt(String(v).replace(/\\s+/g, ''), 10);
+                return (!isNaN(n) && n > 0) ? n : null;
+            }
+            function paginaAngular() {
+                var btn = document.querySelector("button[ng-click*='funcaoProxima']")
+                    || document.querySelector("a[ng-click*='funcaoProxima']");
+                if (!btn || typeof angular === 'undefined') return null;
+                try {
+                    var scope = angular.element(btn).scope();
+                    for (var j = 0; j < 6 && scope; j++) {
+                        var cands = [scope];
+                        if (scope.vm) cands.push(scope.vm);
+                        for (var i = 0; i < cands.length; i++) {
+                            var s = cands[i];
+                            var n = parsePos(s.paginaAtual);
+                            if (n == null) n = parsePos(s.pagina);
+                            if (n == null) n = parsePos(s.currentPage);
+                            if (n != null) return n;
+                        }
+                        scope = scope.$parent;
+                    }
+                } catch (e) {}
+                return null;
+            }
+            function paginaAtiva() {
+                var ativos = document.querySelectorAll(
+                    '.pagination .active, .page-item.active, [class*="pagina"][class*="ativa"]'
+                );
+                for (var i = 0; i < ativos.length; i++) {
+                    var n = parsePos((ativos[i].textContent || '').trim());
+                    if (n) return n;
+                }
+                return null;
+            }
+            var ang = paginaAngular();
+            if (ang) return ang;
+            return paginaAtiva();
+        """)
+        return int(raw) if raw else None
+    except Exception:
+        return None
+
+
+def _invoke_funcao_proxima_angular(driver, btn) -> bool:
+    """Chama funcaoProxima só no scope do botão Seguinte (sem varrer a árvore Angular)."""
+    try:
+        return bool(driver.execute_script("""
+            var btn = arguments[0];
+            try {
+                if (typeof angular === 'undefined') return false;
+                var el = angular.element(btn);
+                var scope = el.scope() || (el.isolateScope && el.isolateScope());
+                for (var j = 0; j < 12 && scope; j++) {
+                    if (typeof scope.funcaoProxima === 'function') {
+                        scope.funcaoProxima();
+                        if (!scope.$$phase) scope.$apply();
+                        return true;
+                    }
+                    if (scope.vm && typeof scope.vm.funcaoProxima === 'function') {
+                        scope.vm.funcaoProxima();
+                        if (!scope.$$phase) scope.$apply();
+                        return true;
+                    }
+                    scope = scope.$parent;
+                }
+            } catch (e) {}
+            return false;
+        """, btn))
+    except Exception:
+        return False
+
+
+def _clicar_elemento_nativo(driver, el) -> None:
+    _dismiss_overlays(driver)
+    driver.execute_script(
+        'arguments[0].scrollIntoView({block:"center", inline:"nearest"});', el,
+    )
+    time.sleep(0.35)
+    try:
+        ActionChains(driver).move_to_element(el).pause(0.25).click(el).perform()
+    except Exception:
+        try:
+            el.click()
+        except Exception:
+            driver.execute_script('arguments[0].click();', el)
+
+
+def _clicar_seguinte_caixa(driver, btn, log_fn: LogFn = None) -> None:
+    """Um único acionamento de Seguinte — evita pular várias páginas."""
+    try:
+        _dismiss_overlays(driver)
+        driver.execute_script(
+            'arguments[0].scrollIntoView({block:"center", inline:"nearest"});', btn,
+        )
+        time.sleep(0.4)
+
+        if _invoke_funcao_proxima_angular(driver, btn):
+            _log('  [PAGINA] Seguinte via Angular (1 clique).', log_fn)
+            time.sleep(1.8)
+            return
+
+        _clicar_elemento_nativo(driver, btn)
+        _log('  [PAGINA] Seguinte via clique nativo (1 clique).', log_fn)
+        time.sleep(1.8)
+    except (TimeoutException, WebDriverException) as exc:
+        if _excecao_indica_rede(exc) or _pagina_erro_rede(driver):
+            _log(f'  [REDE] Clique em Seguinte interrompido: {exc}', log_fn)
+            return
+        raise
+
+
+def _clicar_pagina_numero(driver, numero: int, log_fn: LogFn = None) -> bool:
+    """Clica no número da página (ex.: botão '2') na barra de paginação."""
+    alvo = str(numero)
+    xpaths = [
+        f"//button[normalize-space()='{alvo}']",
+        f"//a[normalize-space()='{alvo}']",
+        f"//*[contains(@class,'pagination')]//button[normalize-space()='{alvo}']",
+        f"//*[contains(@class,'pagination')]//a[normalize-space()='{alvo}']",
+        f"//*[contains(@class,'paginacao')]//*[normalize-space()='{alvo}']",
+    ]
+    for xp in xpaths:
+        try:
+            for el in driver.find_elements(By.XPATH, xp):
+                if not _botao_pagina_clicavel(el):
+                    continue
+                _clicar_elemento_nativo(driver, el)
+                _log(f'  [PAGINA] Clicou no número {numero}.', log_fn)
+                return True
+        except Exception:
+            pass
+    return False
+
+
+def _scope_paginacao_js() -> str:
+    """JS: acha o scope Angular do botão Seguinte (funcaoProxima / paginaAtual)."""
+    return """
+        function visivel(el) {
+            if (!el) return false;
+            try {
+                if (el.offsetParent) return true;
+                return !!(el.getClientRects && el.getClientRects().length);
+            } catch (e) { return false; }
+        }
+        function acharBtnProxima() {
+            var nodes = document.querySelectorAll('button, a');
+            for (var i = 0; i < nodes.length; i++) {
+                var el = nodes[i];
+                if (!visivel(el)) continue;
+                var ng = el.getAttribute('ng-click') || '';
+                var t = (el.textContent || '').replace(/\\s+/g, ' ').trim().toLowerCase();
+                if (ng.indexOf('funcaoProxima') >= 0) return el;
+                if (t.indexOf('seguinte') >= 0 && t.indexOf('anterior') < 0) return el;
+            }
+            return null;
+        }
+        function acharScopePagina() {
+            if (typeof angular === 'undefined') return null;
+            var btn = acharBtnProxima();
+            if (!btn) return null;
+            var el = angular.element(btn);
+            var scope = el.scope() || (el.isolateScope && el.isolateScope());
+            var best = null;
+            for (var j = 0; j < 14 && scope; j++) {
+                var cands = [scope];
+                if (scope.vm) cands.push(scope.vm);
+                for (var i = 0; i < cands.length; i++) {
+                    var s = cands[i];
+                    if (typeof s.funcaoProxima === 'function'
+                        || typeof s.irParaPagina === 'function'
+                        || typeof s.funcaoIrParaPagina === 'function'
+                        || typeof s.irPagina === 'function') {
+                        return {scope: scope, alvo: s};
+                    }
+                    if (!best && s.paginaAtual != null) {
+                        best = {scope: scope, alvo: s};
+                    }
+                }
+                scope = scope.$parent;
+            }
+            return best;
+        }
+        function aplicar(scope) {
+            try { if (scope && !scope.$$phase) scope.$apply(); } catch (e) {}
+        }
+    """
+
+
+def _localizar_input_pagina_barra(driver):
+    """Campo numérico da barra Anterior N Seguinte (se existir)."""
+    try:
+        return driver.execute_script("""
+            function visivel(el) {
+                if (!el) return false;
+                try {
+                    if (el.offsetParent) return true;
+                    return !!(el.getClientRects && el.getClientRects().length);
+                } catch (e) { return false; }
+            }
+            var ant = null, prox = null;
+            var nodes = document.querySelectorAll('button, a');
+            for (var i = 0; i < nodes.length; i++) {
+                var el = nodes[i];
+                if (!visivel(el)) continue;
+                var t = (el.textContent || '').replace(/\\s+/g, ' ').trim().toLowerCase();
+                var ng = el.getAttribute('ng-click') || '';
+                if (!prox && (ng.indexOf('funcaoProxima') >= 0 || t.indexOf('seguinte') >= 0)) {
+                    if (t.indexOf('anterior') < 0) prox = el;
+                }
+                if (!ant && (ng.indexOf('funcaoAnterior') >= 0 || t.indexOf('anterior') >= 0)) {
+                    ant = el;
+                }
+            }
+            var raiz = null;
+            if (ant && prox && ant.parentElement === prox.parentElement) raiz = ant.parentElement;
+            else if (prox) raiz = prox.parentElement;
+            else if (ant) raiz = ant.parentElement;
+            if (!raiz) return null;
+            var inputs = raiz.querySelectorAll('input');
+            for (var k = 0; k < inputs.length; k++) {
+                if (visivel(inputs[k])) return inputs[k];
+            }
+            return null;
+        """)
+    except Exception:
+        return None
+
+
+def _alinhar_angular_na_barra(driver, numero: int) -> None:
+    """Se o salto mentiu, devolve paginaAtual ao número da barra para o Seguinte funcionar."""
+    try:
+        n = int(numero)
+    except (TypeError, ValueError):
+        return
+    try:
+        driver.execute_script(
+            _scope_paginacao_js()
+            + """
+            var n = arguments[0];
+            var found = acharScopePagina();
+            if (!found) return false;
+            try {
+                found.alvo.paginaAtual = n;
+                if (found.alvo.pagina != null) found.alvo.pagina = n;
+                if (found.alvo.currentPage != null) found.alvo.currentPage = n;
+            } catch (e) {}
+            aplicar(found.scope);
+            return true;
+            """,
+            n,
+        )
+    except Exception:
+        pass
+
+
+def _angular_ir_para_pagina(driver, numero: int, log_fn: LogFn = None) -> bool:
+    """Pede a página no Angular e dispara o carregamento real (não só paginaAtual).
+
+    Sucesso aqui = o Angular ACEITOU o pedido. A BARRA ainda precisa confirmar
+    (senão o salto mente: Angular 272, lista ainda na 1).
+    """
+    try:
+        ok = driver.execute_script(
+            _scope_paginacao_js()
+            + """
+            var n = arguments[0];
+            try {
+                if (typeof angular === 'undefined') return '';
+                var nomesIr = [
+                    'funcaoIrParaPagina', 'irParaPagina', 'irPagina', 'gotoPage',
+                    'irPara', 'setPage', 'mudarPagina', 'goToPage', 'paginar'
+                ];
+                var nomesLoad = [
+                    'consultar', 'pesquisar', 'buscar', 'carregar', 'carregarLista',
+                    'consultarBoloes', 'pesquisarBoloes', 'buscarBoloes', 'listar',
+                    'atualizar', 'atualizarLista', 'funcaoPesquisar', 'pesquisarBolao',
+                    'consultarBolao', 'buscarBolao', 'carregarBoloes'
+                ];
+                var found = acharScopePagina();
+                if (found) {
+                    var s = found.alvo;
+                    var scope = found.scope;
+                    for (var f = 0; f < nomesIr.length; f++) {
+                        if (typeof s[nomesIr[f]] === 'function') {
+                            s[nomesIr[f]](n);
+                            aplicar(scope);
+                            return nomesIr[f];
+                        }
+                    }
+                    try { s.paginaAtual = n; } catch (e1) {}
+                    for (var L = 0; L < nomesLoad.length; L++) {
+                        if (typeof s[nomesLoad[L]] === 'function') {
+                            try {
+                                s[nomesLoad[L]]();
+                                aplicar(scope);
+                                return 'paginaAtual+' + nomesLoad[L];
+                            } catch (e2) {}
+                        }
+                    }
+                    if (typeof s.funcaoProxima === 'function') {
+                        try { s.paginaAtual = n - 1; } catch (e3) {}
+                        s.funcaoProxima();
+                        aplicar(scope);
+                        return 'paginaAtual-1+funcaoProxima';
+                    }
+                }
+                var inj = angular.element(document.body).injector();
+                if (!inj) return '';
+                var tentar = function(scope, depth) {
+                    if (!scope || depth > 18) return '';
+                    var candidatos = [scope, scope.vm].filter(Boolean);
+                    for (var i = 0; i < candidatos.length; i++) {
+                        var s2 = candidatos[i];
+                        for (var f2 = 0; f2 < nomesIr.length; f2++) {
+                            if (typeof s2[nomesIr[f2]] === 'function') {
+                                s2[nomesIr[f2]](n);
+                                aplicar(scope);
+                                return nomesIr[f2];
+                            }
+                        }
+                    }
+                    var c = scope.$$childHead;
+                    while (c) {
+                        var r = tentar(c, depth + 1);
+                        if (r) return r;
+                        c = c.$$nextSibling;
+                    }
+                    return tentar(scope.$parent, depth + 1);
+                };
+                return tentar(inj.get('$rootScope'), 0) || '';
+            } catch (e) { return ''; }
+            """,
+            int(numero),
+        )
+        if ok:
+            _log(
+                f'  [PAGINA] Angular {ok} — pediu página {numero} (ainda confirma na BARRA).',
+                log_fn,
+            )
+            time.sleep(2.5)
+        return bool(ok)
+    except Exception:
+        return False
+
+
+def _saltar_digitando_na_barra(driver, destino: int, log_fn: LogFn = None) -> bool:
+    """Digita o número no campo da barra Anterior N Seguinte e dá Enter."""
+    inp = _localizar_input_pagina_barra(driver)
+    if inp is None:
+        _log('  [PAGINA] Sem campo para digitar o número da página.', log_fn)
+        return False
+    try:
+        driver.execute_script(
+            'arguments[0].scrollIntoView({block:"center", inline:"nearest"});', inp,
+        )
+        time.sleep(0.25)
+        try:
+            inp.click()
+        except Exception:
+            driver.execute_script('arguments[0].focus(); arguments[0].click();', inp)
+        time.sleep(0.15)
+        inp.send_keys(Keys.CONTROL, 'a')
+        inp.send_keys(Keys.DELETE)
+        inp.send_keys(str(int(destino)))
+        time.sleep(0.2)
+        inp.send_keys(Keys.ENTER)
+        time.sleep(0.35)
+        try:
+            inp.send_keys(Keys.TAB)
+        except Exception:
+            pass
+        driver.execute_script(
+            _scope_paginacao_js()
+            + """
+            var inp = arguments[0];
+            var n = arguments[1];
+            try {
+                if (typeof angular === 'undefined' || !inp) return false;
+                var ae = angular.element(inp);
+                var ng = ae.controller && ae.controller('ngModel');
+                if (ng) {
+                    ng.$setViewValue(String(n));
+                    ng.$render();
+                } else {
+                    ae.val(String(n));
+                }
+                ae.triggerHandler('input');
+                ae.triggerHandler('change');
+                ae.triggerHandler('blur');
+                var found = acharScopePagina();
+                if (found) {
+                    try { found.alvo.paginaAtual = n; } catch (e) {}
+                    aplicar(found.scope);
+                }
+                return true;
+            } catch (e) { return false; }
+            """,
+            inp,
+            int(destino),
+        )
+        _log(f'  [PAGINA] Digitou {destino} no campo da barra e deu Enter.', log_fn)
+        time.sleep(2.0)
+        return True
+    except Exception as exc:
+        _log(f'  [PAGINA] Não conseguiu digitar na barra: {exc}', log_fn)
+        return False
+
+
+def _confirmar_salto_pagina(
+    driver, destino: int, sig_antes: str, log_fn: LogFn = None,
+) -> Optional[int]:
+    """Confirma salto na BARRA (não no Angular). None = falhou; int = página da barra."""
+    _aguardar_lista_apos_aplicar(driver, timeout=12)
+    if _pagina_erro_rede(driver):
+        return None
+    barra = _ler_pagina_barra_somente(driver)
+    if barra is None:
+        time.sleep(1.2)
+        barra = _ler_pagina_barra_somente(driver)
+    if barra is None:
+        return None
+    barra = int(barra)
+    sig = _assinatura_lista_visivel(driver)
+    lista_igual = bool(sig_antes and sig and sig == sig_antes)
+    if barra >= int(destino) and int(destino) > 1 and _eh_primeira_pagina_caixa(driver):
+        _log(
+            '  [PAGINA] Salto MENTIU — barra/Angular no alvo, mas Anterior '
+            'ainda desabilitado (lista na pág. 1).',
+            log_fn,
+        )
+        return None
+    if barra >= int(destino) and lista_igual:
+        _log(
+            '  [PAGINA] Salto MENTIU — Angular/campo no alvo, mas a lista não mudou.',
+            log_fn,
+        )
+        return None
+    if barra == int(destino):
+        _log(
+            f'  [PAGINA] SALTO OK — barra do site na {barra} '
+            f'(pedido {destino}). Extração pode começar.',
+            log_fn,
+        )
+        return barra
+    if barra > int(destino):
+        return barra
+    if 1 < barra < int(destino) and sig_antes and sig and sig != sig_antes:
+        _log(
+            f'  [PAGINA] Salto parcial — barra na {barra} (pedido {destino}). '
+            f'Falta pouco; completa com Seguinte.',
+            log_fn,
+        )
+        return barra
+    return None
+
+
+def _tentar_salto_direto_pagina(driver, destino: int, log_fn: LogFn = None) -> bool:
+    """Tenta ir à página sem clicar Seguinte. Só vale se a BARRA confirmar."""
+    _scroll_para_paginacao(driver)
+    barra0 = _ler_pagina_barra_somente(driver)
+    sig_antes = _assinatura_lista_visivel(driver)
+    _log(
+        f'  [PAGINA] Tentando SALTO DIRETO para {destino} (sem clicar Seguinte)...',
+        log_fn,
+    )
+
+    metodos = (
+        ('campo da barra', lambda: _saltar_digitando_na_barra(driver, destino, log_fn)),
+        ('número visível', lambda: _clicar_pagina_numero(driver, destino, log_fn)),
+        ('Angular', lambda: _angular_ir_para_pagina(driver, destino, log_fn)),
+    )
+    for nome, fn in metodos:
+        try:
+            if not fn():
+                continue
+        except Exception as exc:
+            _log(f'  [PAGINA] {nome} falhou: {exc}', log_fn)
+            continue
+        lida = _confirmar_salto_pagina(driver, destino, sig_antes, log_fn)
+        if lida is not None and int(lida) >= int(destino):
+            if int(lida) > int(destino):
+                _log(
+                    f'  [PAGINA] Salto passou do alvo ({lida} > {destino}) — '
+                    f'não extrai páginas puladas. Tratando como falha.',
+                    log_fn,
+                )
+                if barra0:
+                    _alinhar_angular_na_barra(driver, barra0)
+                continue
+            return True
+        if lida is not None and 1 < int(lida) < int(destino):
+            return False
+        _log(
+            f'  [PAGINA] {nome} não confirmou na barra '
+            f'(está {_ler_pagina_barra_somente(driver) or "?"}, pedido {destino}).',
+            log_fn,
+        )
+        if barra0:
+            _alinhar_angular_na_barra(driver, barra0)
+
+    _log(
+        f'  [PAGINA] Salto direto não chegou. Clicando SEGUINTE até a barra mostrar {destino}...',
+        log_fn,
+    )
+    return False
+
+
+def _aguardar_paginacao_manual(pagina: int, log_fn: LogFn = None) -> bool:
+    _log(
+        f'\n  *** PAGINAÇÃO MANUAL (página {pagina}) ***\n'
+        f'  O script NÃO vai clicar em Seguinte.\n'
+        f'  No navegador: vá até a página {pagina} (você controla).\n'
+        f'  Quando estiver na página certa, pressione ENTER aqui...',
+        log_fn,
+    )
+    try:
+        input()
+        return True
+    except EOFError:
+        return False
+
+
+def _ir_para_pagina(driver, destino: int, log_fn: LogFn = None) -> bool:
+    """Vai à página destino: salto direto se confirmar na barra; senão Seguinte."""
+    return ir_direto_para_pagina_lista(driver, destino, log_fn)
+
+
+def _confirmar_alvo_barra(driver, destino: int, log_fn: LogFn = None) -> bool:
+    """True se a barra (Anterior N Seguinte) já está no alvo — extração pode começar."""
+    lida = _ler_pagina_barra_somente(driver)
+    if lida is not None and int(lida) >= int(destino):
+        if int(destino) > 1 and _eh_primeira_pagina_caixa(driver):
+            _log(
+                f'  [PAGINA] Barra diz {int(lida)} mas Anterior ainda desabilitado '
+                f'(lista na pág. 1) — não confirma o alvo {destino}.',
+                log_fn,
+            )
+            return False
+        _log(
+            f'  [PAGINA] ALVO ATINGIDO — barra do site na {int(lida)} '
+            f'(pedido {destino}). Parando Seguinte. Extração começa agora.',
+            log_fn,
+        )
+        return True
+    return False
+
+
+def ir_direto_para_pagina_lista(driver, destino: int, log_fn: LogFn = None) -> bool:
+    """
+    Fluxo de retomada:
+      1) lê a página na BARRA (Anterior N Seguinte)
+      2) tenta SALTO DIRETO (campo da barra / Angular)
+      3) só se o salto não confirmar na barra, clica SEGUINTE uma a uma
+      4) extração começa quando N == destino
+
+    Salto só vale se a BARRA mudar (Angular sozinho mentia 182 com lista na 1).
+    Se DNS/rede cair no meio, espera o site voltar e continua
+    (a lista pode voltar à pág. 1 — o JSON do checkpoint permanece).
+    """
+    _marcar_falha_rede(False)
+    if destino <= 1:
+        return True
+    url_ok = _url_lista_ou_padrao(driver)
+    if _pagina_erro_rede(driver):
+        if not _recuperar_apos_erro_rede(driver, log_fn, url_ok):
+            return False
+    _scroll_para_paginacao(driver)
+    barra = _ler_pagina_barra_somente(driver)
+    if barra is None:
+        time.sleep(0.8)
+        _scroll_para_paginacao(driver)
+        barra = _ler_pagina_barra_somente(driver)
+    if _confirmar_alvo_barra(driver, destino, log_fn):
+        return True
+    if barra is None:
+        primeira = _eh_primeira_pagina_caixa(driver)
+        barra = 1
+        if primeira:
+            _log('  [PAGINA] Barra ilegível, Anterior desabilitado — tratando como pág. 1.', log_fn)
+        else:
+            _log(
+                '  [PAGINA] Barra ilegível — tenta salto; se falhar, clica SEGUINTE até '
+                f'a barra mostrar {destino}.',
+                log_fn,
+            )
+    elif int(destino) > 1 and _eh_primeira_pagina_caixa(driver):
+        barra = 1
+
+    _log(
+        f'  [PAGINA] JSON/checkpoint pede pág. {destino} | site na {barra}. '
+        f'Tentando ir direto; se não confirmar, clica SEGUINTE.',
+        log_fn,
+    )
+    if _tentar_salto_direto_pagina(driver, destino, log_fn):
+        return True
+    if _confirmar_alvo_barra(driver, destino, log_fn):
+        return True
+    lida = _ler_pagina_barra_somente(driver)
+    if int(destino) > 1 and _eh_primeira_pagina_caixa(driver):
+        barra = 1
+        _log('  [PAGINA] Salto não firmou — lista ainda na pág. 1. Clicando SEGUINTE.', log_fn)
+    elif lida is not None:
+        barra = int(lida)
+        if barra > 1 and barra < destino:
+            _log(
+                f'  [PAGINA] Segue com SEGUINTE a partir da barra {barra} → {destino}.',
+                log_fn,
+            )
+
+    passos = 0
+    travado = 0
+    teto = max(int(destino) + 40, int(destino) - int(barra) + 40)
+    while barra < destino and passos < teto:
+        if _pagina_erro_rede(driver):
+            if not _recuperar_apos_erro_rede(driver, log_fn, url_ok):
+                return False
+            if _confirmar_alvo_barra(driver, destino, log_fn):
+                return True
+            lida = _ler_pagina_barra_somente(driver)
+            barra = int(lida) if lida else (1 if _eh_primeira_pagina_caixa(driver) else barra)
+            travado = 0
+            continue
+        _scroll_para_paginacao(driver)
+        if _confirmar_alvo_barra(driver, destino, log_fn):
+            return True
+        btn = _localizar_botao_seguinte(driver, apenas_habilitado=True)
+        if not btn:
+            if _pagina_erro_rede(driver):
+                if not _recuperar_apos_erro_rede(driver, log_fn, url_ok):
+                    return False
+                if _confirmar_alvo_barra(driver, destino, log_fn):
+                    return True
+                lida = _ler_pagina_barra_somente(driver)
+                barra = int(lida) if lida else barra
+                travado = 0
+                continue
+            _log(
+                f'  [PAGINA] Seguinte indisponível na barra {barra} (alvo {destino}).',
+                log_fn,
+            )
+            return False
+        antes = barra
+        sig_antes = _assinatura_lista_visivel(driver)
+        try:
+            _clicar_seguinte_caixa(driver, btn, None)
+            time.sleep(1.8)
+            _aguardar_lista_apos_aplicar(driver, timeout=10)
+        except (TimeoutException, WebDriverException) as exc:
+            if _excecao_indica_rede(exc) or _pagina_erro_rede(driver):
+                if not _recuperar_apos_erro_rede(driver, log_fn, url_ok):
+                    return False
+                if _confirmar_alvo_barra(driver, destino, log_fn):
+                    return True
+                lida = _ler_pagina_barra_somente(driver)
+                barra = int(lida) if lida else barra
+                travado = 0
+                continue
+            raise
+        if _pagina_erro_rede(driver):
+            if not _recuperar_apos_erro_rede(driver, log_fn, url_ok):
+                return False
+            if _confirmar_alvo_barra(driver, destino, log_fn):
+                return True
+            lida = _ler_pagina_barra_somente(driver)
+            barra = int(lida) if lida else barra
+            travado = 0
+            continue
+        if _confirmar_alvo_barra(driver, destino, log_fn):
+            return True
+        barra = _ler_pagina_barra_somente(driver)
+        if barra is None:
+            time.sleep(1.2)
+            barra = _ler_pagina_barra_somente(driver)
+        if barra is not None and int(barra) >= int(destino):
+            _log(
+                f'  [PAGINA] ALVO ATINGIDO — barra do site na {int(barra)} '
+                f'(pedido {destino}). Parando Seguinte. Extração começa agora.',
+                log_fn,
+            )
+            return True
+        sig = _assinatura_lista_visivel(driver)
+        lista_mudou = bool(sig_antes and sig and sig != sig_antes)
+        if barra and int(barra) > int(antes):
+            travado = 0
+            barra = int(barra)
+        elif lista_mudou:
+            travado = 0
+            barra = int(antes) + 1
+            _log(
+                f'  [PAGINA] Lista mudou (barra={barra or "ilegível"}) — '
+                f'contando {antes} → {barra}',
+                log_fn,
+            )
+        else:
+            travado += 1
+            _log(
+                f'  [PAGINA] Clique em Seguinte — barra ainda {barra or antes} '
+                f'(sem avanço {travado}/8). Tentando de novo...',
+                log_fn,
+            )
+            if travado >= 8:
+                _log(
+                    '  [PAGINA] Seguinte parou de avançar. '
+                    'Ciclo PAUSA nesta modalidade (não vai para a próxima).',
+                    log_fn,
+                )
+                return False
+            barra = int(antes)
+            continue
+        if int(barra) >= int(destino):
+            _log(
+                f'  [PAGINA] ALVO ATINGIDO — barra/contagem {barra} '
+                f'(pedido {destino}). Parando Seguinte. Extração começa agora.',
+                log_fn,
+            )
+            return True
+        passos += 1
+        _log(f'  [PAGINA] Seguinte {antes} → {barra}   alvo {destino}', log_fn)
+
+    if _confirmar_alvo_barra(driver, destino, log_fn):
+        return True
+    _log(f'  [PAGINA] FALHA — parou na {barra}, queria {destino}.', log_fn)
+    return False
+
+
+<<<<<<< HEAD
+def _contar_detalhes_rapido(driver) -> int:
+    """Contagem leve de botões Detalhes (sem scroll completo)."""
+    try:
+        return int(driver.execute_script("""
+            var n = 0;
+            var nodes = document.querySelectorAll('button, a');
+            for (var i = 0; i < nodes.length; i++) {
+                var el = nodes[i];
+                try {
+                    if (!el.offsetParent && !(el.getClientRects && el.getClientRects().length))
+                        continue;
+                } catch (e) { continue; }
+                var t = (el.textContent || '').replace(/\\s+/g, ' ').trim().toLowerCase();
+                if (t.indexOf('detalh') >= 0) n++;
+            }
+            return n;
+        """) or 0)
+    except Exception:
+        return 0
+
+
+=======
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+def _pagina_avancou(
+    driver,
+    assinatura_antes: str,
+    pagina_antes: Optional[int],
+    aceitar_lista_nova: bool = False,
+) -> bool:
+    """
+    True se a página avançou (número maior).
+
+    aceitar_lista_nova=True: wrap 8→1 com lista nova conta como avanço.
+    [1] e [C] usam False: o número precisa SUBIR (ex. SP pág.10 → MG pág.11).
+    Recuo 9→2 nunca é avanço. Volta real à pág. 1 é detectada no loop.
+<<<<<<< HEAD
+    Lista vazia (0 Detalhes) NUNCA conta como avanço — evita encerrar só em SP.
+=======
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+    """
+    n_det = _contar_detalhes_rapido(driver)
+    if n_det < 1:
+        return False
+    pagina_depois = _ler_pagina_atual_ui(driver)
+    if pagina_antes is not None and pagina_depois is not None:
+        if pagina_depois > pagina_antes:
+            return True
+        if not aceitar_lista_nova:
+            return False
+    assinatura_depois = _assinatura_lista_visivel(driver)
+    return bool(assinatura_depois and assinatura_depois != assinatura_antes)
+
+
+def _detectou_wrap_paginacao(
+    pagina_antes: Optional[int],
+    pagina_depois: Optional[int],
+) -> bool:
+    """Indício: número da página diminuiu. Confirmar com _wrap_confirmado."""
+    if pagina_antes is None or pagina_depois is None:
+        return False
+    return int(pagina_depois) < int(pagina_antes)
+
+
+def _aguardar_pagina_estabilizar(
+    driver,
+    pagina_antes: Optional[int],
+    assinatura_antes: str,
+    timeout: float = 8.0,
+) -> Optional[int]:
+    """Espera o Angular terminar o reload (paginaAtual some/volta a 1 no meio)."""
+    fim = time.time() + timeout
+    ultimo: Optional[int] = None
+    iguais = 0
+    while time.time() < fim:
+        atual = _ler_pagina_atual_ui(driver)
+        if (
+            atual is not None
+            and pagina_antes is not None
+            and int(atual) > int(pagina_antes)
+        ):
+            return atual
+        if atual is not None and atual == ultimo:
+            iguais += 1
+            if iguais >= 3 and int(atual) > 1:
+                return atual
+            if iguais >= 6:
+                return atual
+        else:
+            iguais = 0
+            ultimo = atual
+        time.sleep(0.45)
+    return _ler_pagina_atual_ui(driver)
+
+
+def _wrap_confirmado(
+    driver,
+    pagina_antes: Optional[int],
+    pagina_depois: Optional[int],
+    assinatura_antes: str,
+    log_fn: LogFn = None,
+) -> bool:
+    """True só se a lista REALMENTE voltou à página 1 (não é 10 lido como 1)."""
+    if not _detectou_wrap_paginacao(pagina_antes, pagina_depois):
+        return False
+
+    estavel = _aguardar_pagina_estabilizar(driver, pagina_antes, assinatura_antes, timeout=6.0)
+    if estavel is None:
+        _log('  [PAGINA] Wrap aparente, mas número da página não leu — não encerra.', log_fn)
+        return False
+    if pagina_antes is not None and int(estavel) >= int(pagina_antes):
+        _log(
+            f'  [PAGINA] Wrap descartado — UI estável em {estavel} '
+            f'(antes {pagina_antes}).',
+            log_fn,
+        )
+        return False
+    if int(estavel) != 1:
+        _log(
+            f'  [PAGINA] Página {estavel} após avanço — não é wrap para 1.',
+            log_fn,
+        )
+        return False
+
+    time.sleep(1.2)
+    extra = _ler_pagina_atual_ui(driver)
+    if extra is not None and int(extra) > 1:
+        _log(f'  [PAGINA] Wrap descartado após espera extra — UI={extra}.', log_fn)
+        return False
+
+    estado = _estado_botao_seguinte(driver)
+    if estado == 'habilitado':
+        sig = _assinatura_lista_visivel(driver)
+        if sig and assinatura_antes and sig != assinatura_antes:
+            time.sleep(1.5)
+            extra2 = _ler_pagina_atual_ui(driver)
+            if extra2 is not None and int(extra2) > 1:
+                _log(
+                    f'  [PAGINA] Wrap descartado — lista mudou e UI={extra2} '
+                    f'(Seguinte ainda habilitado).',
+                    log_fn,
+                )
+                return False
+
+    _log(
+        f'  [PAGINA] Wrap confirmado ({pagina_antes} → {extra or estavel}).',
+        log_fn,
+    )
+    return True
+
+
+<<<<<<< HEAD
+def _api_ainda_tem_paginas(driver) -> Tuple[int, int, bool]:
+    """True quando a API da lista ainda não está na última página."""
+    try:
+        from boloes_api_caixa import ler_metadados_paginacao_api
+        meta = ler_metadados_paginacao_api(driver) or {}
+        pa = int(meta.get('pagina_atual') or 0)
+        up = int(meta.get('ultima_pagina') or 0)
+        return pa, up, bool(up and pa < up)
+    except Exception:
+        return 0, 0, False
+
+
+=======
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+def _ir_proxima_pagina_lista(
+    driver, log_fn: LogFn = None, encerrar_no_wrap: bool = True,
+) -> bool:
+    """
+    Avança exatamente UMA página.
+
+    Se Seguinte estiver DESABILITADO e a lista não mudar após 1 tentativa,
+    é FIM REAL da lista (não fica em loop de retentativas/Angular).
+<<<<<<< HEAD
+    """
+    aceitar_lista = not encerrar_no_wrap
+
+    _scroll_para_paginacao(driver)
+    _dismiss_overlays(driver)
+
+    assinatura_antes = _assinatura_lista_visivel(driver)
+    pagina_antes = _ler_pagina_barra_somente(driver) or _ler_pagina_atual_ui(driver)
+
+    btn_ok = _localizar_botao_seguinte(driver, apenas_habilitado=True)
+    btn_qualquer = None if btn_ok else _localizar_botao_seguinte(driver, apenas_habilitado=False)
+    forcou_disabled = bool(btn_qualquer and not btn_ok)
+    btn = btn_ok or btn_qualquer
+
+    if forcou_disabled:
+        _log(
+            '  [PAGINA] Seguinte DESABILITADO — 1 tentativa; se a lista não mudar = FIM.',
+            log_fn,
+        )
+
+=======
+    Queda de DNS/rede NÃO é fim — recupera e realinha na página seguinte.
+    """
+    aceitar_lista = not encerrar_no_wrap
+    _marcar_falha_rede(False)
+    url_ok = _url_lista_ou_padrao(driver)
+
+    if _pagina_erro_rede(driver):
+        if not _recuperar_apos_erro_rede(driver, log_fn, url_ok):
+            return False
+        _marcar_falha_rede(True)
+        _log(
+            '  [REDE] Lista recarregou (provável pág. 1). '
+            'Sinaliza realinhamento — NÃO é fim da modalidade.',
+            log_fn,
+        )
+        return False
+
+    _scroll_para_paginacao(driver)
+    _dismiss_overlays(driver)
+
+    assinatura_antes = _assinatura_lista_visivel(driver)
+    pagina_antes = _ler_pagina_barra_somente(driver) or _ler_pagina_atual_ui(driver)
+
+    btn_ok = _localizar_botao_seguinte(driver, apenas_habilitado=True)
+    btn_qualquer = None if btn_ok else _localizar_botao_seguinte(driver, apenas_habilitado=False)
+    forcou_disabled = bool(btn_qualquer and not btn_ok)
+    btn = btn_ok or btn_qualquer
+
+    if not btn and _pagina_erro_rede(driver):
+        if not _recuperar_apos_erro_rede(driver, log_fn, url_ok):
+            return False
+        destino = (pagina_antes or 1) + 1
+        _log(f'  [REDE] Realinhando até a página {destino}...', log_fn)
+        return ir_direto_para_pagina_lista(driver, destino, log_fn)
+
+    if forcou_disabled:
+        _log(
+            '  [PAGINA] Seguinte DESABILITADO — 1 tentativa; se a lista não mudar = FIM.',
+            log_fn,
+        )
+
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+    if btn:
+        try:
+            _clicar_seguinte_caixa(driver, btn, log_fn)
+            time.sleep(2.0)
+            _aguardar_lista_apos_aplicar(driver, timeout=12)
+<<<<<<< HEAD
+=======
+            if _pagina_erro_rede(driver):
+                if not _recuperar_apos_erro_rede(driver, log_fn, url_ok):
+                    return False
+                destino = (pagina_antes or 1) + 1
+                _log(f'  [REDE] Realinhando até a página {destino}...', log_fn)
+                return ir_direto_para_pagina_lista(driver, destino, log_fn)
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+            pagina_depois = _aguardar_pagina_estabilizar(
+                driver, pagina_antes, assinatura_antes,
+            )
+            if _wrap_confirmado(
+                driver, pagina_antes, pagina_depois, assinatura_antes, log_fn,
+            ):
+                if encerrar_no_wrap:
+                    _log(
+                        f'  [PAGINA] FIM — wrap confirmado '
+                        f'({pagina_antes} → {pagina_depois}). Não continua.',
+                        log_fn,
+                    )
+                    return False
+                _log(
+                    f'  [PAGINA] Wrap aparente ({pagina_antes} → {pagina_depois}) '
+                    f'ignorado — continua.',
+                    log_fn,
+                )
+            pagina_depois = (
+                _ler_pagina_barra_somente(driver)
+                or _ler_pagina_atual_ui(driver)
+                or pagina_depois
+            )
+
+            if _pagina_avancou(
+                driver, assinatura_antes, pagina_antes, aceitar_lista_nova=aceitar_lista,
+            ):
+                if (
+                    pagina_antes is not None
+                    and pagina_depois is not None
+                    and int(pagina_depois) < int(pagina_antes)
+                    and int(pagina_depois) > 1
+                ):
+                    _log(
+                        f'  [PAGINA] Recuo {pagina_antes} → {pagina_depois} '
+                        f'ignorado — não é avanço (Seguinte).',
+                        log_fn,
+                    )
+                else:
+<<<<<<< HEAD
+                    n_ok = _contar_detalhes_rapido(driver)
+                    if n_ok < 1:
+                        time.sleep(2.0)
+                        n_ok = _contar_detalhes_rapido(driver)
+                    if n_ok < 1:
+                        _log(
+                            f'  [PAGINA] Avanço descartado — 0 Detalhes após Seguinte '
+                            f'({pagina_antes or "?"} → {pagina_depois or "?"}).',
+                            log_fn,
+                        )
+                    else:
+                        _log(
+                            f'  [PAGINA] OK — {pagina_antes or "?"} → '
+                            f'{pagina_depois or "nova lista"} '
+                            f'({n_ok} Detalhes).',
+                            log_fn,
+                        )
+                        return True
+
+            _log('  [PAGINA] Seguinte clicado mas a lista não mudou.', log_fn)
+        except Exception as exc:
+            _log(f'  [PAGINA] Erro ao clicar Seguinte: {exc}', log_fn)
+    else:
+        _log('  [PAGINA] Botão Seguinte não encontrado.', log_fn)
+
+    # Seguinte ausente ou desabilitado NÃO encerra a modalidade.
+    # A paginação do site é que troca de estado. Tenta de novo e, se a API
+    # ainda tiver páginas, salta para a próxima. Não procura UF no site.
+    for tentativa in range(1, 4):
+        _scroll_para_paginacao(driver)
+        _dismiss_overlays(driver)
+        time.sleep(1.0 if tentativa == 1 else 1.6)
+        barra = _ler_pagina_barra_somente(driver) or _ler_pagina_atual_ui(driver)
+        assinatura_agora = _assinatura_lista_visivel(driver)
+        lista_mudou = bool(
+            assinatura_agora and assinatura_antes and assinatura_agora != assinatura_antes
+        )
+        barra_subiu = (
+            pagina_antes is not None and barra is not None and int(barra) > int(pagina_antes)
+        )
+        if lista_mudou or barra_subiu:
+            n_ok = _contar_detalhes_rapido(driver)
+            if n_ok < 1:
+                time.sleep(1.5)
+                n_ok = _contar_detalhes_rapido(driver)
+            if n_ok < 1:
+                _log(
+                    f'  [PAGINA] Retentativa {tentativa}: lista mudou mas 0 Detalhes — '
+                    f'não conta como avanço.',
+                    log_fn,
+                )
+            else:
+                _log(
+                    f'  [PAGINA] Lista avançou na retentativa {tentativa} '
+                    f'({pagina_antes or "?"} → {barra or "nova lista"}, {n_ok} Detalhes).',
+                    log_fn,
+                )
+                return True
+
+        pa, up, tem_mais = _api_ainda_tem_paginas(driver)
+        if tem_mais:
+            destino = int(pa) + 1
+            _log(
+                f'  [PAGINA] API {pa}/{up} — Seguinte não andou. '
+                f'Salto para a página {destino} (paginação, sem filtro de estado).',
+                log_fn,
+            )
+            saltou = _angular_ir_para_pagina(driver, destino, log_fn) or _clicar_pagina_numero(
+                driver, destino, log_fn,
+            )
+            if saltou:
+                time.sleep(2.0)
+                _aguardar_lista_apos_aplicar(driver, timeout=10)
+                barra2 = _ler_pagina_barra_somente(driver) or _ler_pagina_atual_ui(driver)
+                avancou_ok = _pagina_avancou(
+                    driver, assinatura_antes, pagina_antes, aceitar_lista_nova=aceitar_lista,
+                ) or (
+                    barra2 is not None
+                    and int(barra2) >= destino
+                    and _contar_detalhes_rapido(driver) >= 1
+                )
+                if avancou_ok:
+                    _log(f'  [PAGINA] OK — salto para {barra2 or destino}.', log_fn)
+                    return True
+
+        btn_retry = _localizar_botao_seguinte(driver, apenas_habilitado=True)
+        if btn_retry:
+            try:
+                _clicar_seguinte_caixa(driver, btn_retry, log_fn)
+                time.sleep(2.0)
+                _aguardar_lista_apos_aplicar(driver, timeout=12)
+                barra2 = _ler_pagina_barra_somente(driver) or _ler_pagina_atual_ui(driver)
+                if _pagina_avancou(
+                    driver, assinatura_antes, pagina_antes, aceitar_lista_nova=aceitar_lista,
+                ):
+                    _log(
+                        f'  [PAGINA] OK — {pagina_antes or "?"} → {barra2 or "nova lista"}.',
+                        log_fn,
+                    )
+                    return True
+            except Exception as exc:
+                _log(f'  [PAGINA] Erro ao clicar Seguinte: {exc}', log_fn)
+
+    pa, up, tem_mais = _api_ainda_tem_paginas(driver)
+    barra_fim = _ler_pagina_barra_somente(driver) or _ler_pagina_atual_ui(driver)
+    seg_fim = _estado_botao_seguinte(driver)
+    if tem_mais:
+        _log(
+            f'  [PAGINA] Não avançou agora, mas a API ainda está em {pa}/{up}. '
+            f'A modalidade continua.',
+            log_fn,
+        )
+        return False
+    _log(
+        f'  [PAGINA] Sem próxima página nesta tentativa '
+        f'(barra={barra_fim or "?"}, Seguinte={seg_fim}'
+        + (f', API {pa}/{up}' if up else '')
+        + ').',
+=======
+                    _log(
+                        f'  [PAGINA] OK — {pagina_antes or "?"} → '
+                        f'{pagina_depois or "nova lista"}.',
+                        log_fn,
+                    )
+                    return True
+
+            _log('  [PAGINA] Seguinte clicado mas a lista não mudou.', log_fn)
+        except Exception as exc:
+            if _excecao_indica_rede(exc) or _pagina_erro_rede(driver):
+                if not _recuperar_apos_erro_rede(driver, log_fn, url_ok):
+                    return False
+                destino = (pagina_antes or 1) + 1
+                _log(f'  [REDE] Realinhando até a página {destino}...', log_fn)
+                return ir_direto_para_pagina_lista(driver, destino, log_fn)
+            _log(f'  [PAGINA] Erro ao clicar Seguinte: {exc}', log_fn)
+    else:
+        if _pagina_erro_rede(driver):
+            if not _recuperar_apos_erro_rede(driver, log_fn, url_ok):
+                return False
+            destino = (pagina_antes or 1) + 1
+            _log(f'  [REDE] Realinhando até a página {destino}...', log_fn)
+            return ir_direto_para_pagina_lista(driver, destino, log_fn)
+        _log('  [PAGINA] Botão Seguinte não encontrado.', log_fn)
+
+    if _pagina_erro_rede(driver):
+        if not _recuperar_apos_erro_rede(driver, log_fn, url_ok):
+            return False
+        destino = (pagina_antes or 1) + 1
+        _log(f'  [REDE] Realinhando até a página {destino}...', log_fn)
+        return ir_direto_para_pagina_lista(driver, destino, log_fn)
+
+    # Seguinte disabled / sem mudança → FIM. Sem retentativa 4x e sem Angular mentiroso.
+    if forcou_disabled or not btn_ok:
+        barra = _ler_pagina_barra_somente(driver) or _ler_pagina_atual_ui(driver)
+        assinatura_agora = _assinatura_lista_visivel(driver)
+        mesma_lista = (
+            not assinatura_antes
+            or not assinatura_agora
+            or assinatura_agora == assinatura_antes
+        )
+        mesma_barra = (
+            pagina_antes is None
+            or barra is None
+            or int(barra) == int(pagina_antes)
+        )
+        if mesma_lista and mesma_barra:
+            _log(
+                f'  [PAGINA] FIM REAL — Seguinte desabilitado e lista parada '
+                f'(barra={barra or "?"}). Encerrando esta modalidade.',
+                log_fn,
+            )
+            return False
+
+    # Só tenta Angular/número se Seguinte ainda parecia HABILITADO mas o clique falhou
+    if not btn_ok:
+        barra = _ler_pagina_barra_somente(driver) or _ler_pagina_atual_ui(driver)
+        _log(
+            f'  [PAGINA] FIM REAL — sem Seguinte habilitado (barra={barra or "?"}).',
+            log_fn,
+        )
+        return False
+
+    # Fallbacks leves (Seguinte estava habilitado mas clique falhou)
+    pagina_antes = _ler_pagina_barra_somente(driver) or _ler_pagina_atual_ui(driver)
+    assinatura_antes = _assinatura_lista_visivel(driver)
+    destino = (pagina_antes or 0) + 1
+    if destino < 2:
+        destino = 2
+
+    def _confirmou_avanco(destino_alvo: int) -> bool:
+        time.sleep(0.8)
+        barra = _ler_pagina_barra_somente(driver)
+        assinatura = _assinatura_lista_visivel(driver)
+        if barra is not None and pagina_antes is not None and int(barra) > int(pagina_antes):
+            return True
+        if barra is not None and int(barra) == int(destino_alvo):
+            if assinatura and assinatura_antes and assinatura != assinatura_antes:
+                return True
+            if assinatura and not assinatura_antes:
+                return True
+            return False
+        return False
+
+    if _clicar_pagina_numero(driver, destino, log_fn):
+        time.sleep(2.0)
+        _aguardar_lista_apos_aplicar(driver, timeout=10)
+        if _confirmou_avanco(destino):
+            return True
+
+    barra_fim = _ler_pagina_barra_somente(driver) or _ler_pagina_atual_ui(driver)
+    seg_fim = _estado_botao_seguinte(driver)
+    _log(
+        f'  [PAGINA] FIM REAL — não avançou (barra={barra_fim or "?"}, '
+        f'Seguinte={seg_fim}).',
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+        log_fn,
+    )
+    return False
+
+
+def _tem_proxima_pagina(driver) -> bool:
+    _scroll_para_paginacao(driver)
+    # Aparência disabled NÃO prova fim — ainda pode haver próxima (virada de UF).
+    # Só "ausente" é indício forte; o avanço real confirma em _ir_proxima_pagina_lista.
+    estado = _estado_botao_seguinte(driver)
+    return estado in ('habilitado', 'desabilitado')
+
+
+def eh_ultima_pagina(driver) -> bool:
+    """
+    Indício fraco: Seguinte ausente.
+    NÃO usar sozinho como fim da modalidade (falso positivo na virada de UF).
+    Preferir falha real de avanço em _ir_proxima_pagina_lista.
+    """
+    _scroll_para_paginacao(driver)
+    return _estado_botao_seguinte(driver) == 'ausente'
+
+
+def _filtro_loterica_no_campo(valor_campo: str, cfg: FiltroLotericaConfig) -> bool:
+    """Evita redigitar 9833 se o usuário já selecionou a lotérica no site."""
+    raw = (valor_campo or '').strip()
+    if not raw:
+        return False
+    if cfg.codigo and re.search(r'(?:^|\D)' + re.escape(cfg.codigo) + r'(?:\D|$)', raw):
+        return True
+    nome = normalizar_texto(cfg.nome or '')
+    if nome and len(nome) >= 4 and nome in normalizar_texto(raw):
+        return True
+    return False
+
+
+def _opcao_dezenas_corresponde(txt: str, ov: str, qtd: int) -> bool:
+    valor = str(qtd)
+    t = (txt or '').strip()
+    o = (ov or '').strip()
+    if t == valor or o == valor:
+        return True
+    if t.startswith(valor + ' ') or t.startswith(valor + 'dezena'):
+        return True
+    if re.match(rf'^{qtd}\s*dezena', t, re.I):
+        return True
+    nums = re.findall(r'\d+', t)
+    return len(nums) == 1 and nums[0] == valor
+
+
+def _selecionar_qtd_dezenas(driver, qtd: int, log_fn: LogFn = None) -> bool:
+    valor = str(qtd)
+
+    def tentar_select(sel) -> bool:
+        try:
+            if not sel.is_displayed():
+                return False
+            dropdown = Select(sel)
+            for opt in dropdown.options:
+                txt = (opt.text or '').strip()
+                ov = (opt.get_attribute('value') or '').strip()
+                if not _opcao_dezenas_corresponde(txt, ov, qtd):
+                    continue
+                try:
+                    dropdown.select_by_visible_text(txt)
+                except Exception:
+                    dropdown.select_by_value(ov or txt)
+                driver.execute_script("""
+                    var el = arguments[0], v = arguments[1];
+                    el.value = v;
+                    el.dispatchEvent(new Event('change', {bubbles: true}));
+                    el.dispatchEvent(new Event('input', {bubbles: true}));
+                    if (typeof angular !== 'undefined') {
+                        try {
+                            angular.element(el).triggerHandler('change');
+                            angular.element(el).triggerHandler('input');
+                        } catch (e) {}
+                    }
+                """, sel, ov or txt)
+                time.sleep(0.5)
+                _log(f'  [FILTRO] Dezenas no site: {txt or ov}', log_fn)
+                return True
+        except Exception:
+            pass
+        return False
+
+    for sel in driver.find_elements(By.TAG_NAME, 'select'):
+        if tentar_select(sel):
+            return True
+
+    for xp in (
+        "//*[contains(translate(.,'ÉÊÃÕéêãõ','EEAAeeaa'),'Quant') and contains(.,'Dezenas')]/following::select[1]",
+        "//*[contains(.,'Qtd') and contains(.,'Dezenas')]/following::select[1]",
+        "//label[contains(.,'Dezenas')]/following::select[1]",
+        "//select[contains(@ng-model,'dezena') or contains(@ng-model,'Dezenas')]",
+        "//select[contains(@id,'dezena') or contains(@name,'dezena')]",
+    ):
+        try:
+            for sel in driver.find_elements(By.XPATH, xp):
+                if tentar_select(sel):
+                    return True
+        except Exception:
+            pass
+
+    _log(f'  [FILTRO] AVISO: nao foi possivel selecionar {valor} dezenas no site.', log_fn)
+    return False
+
+
+def _clicar_aplicar(driver) -> bool:
+    for xp in (
+        "//button[normalize-space()='Aplicar']",
+        "//button[contains(.,'Aplicar') and not(contains(.,'Limpar'))]",
+        "//*[contains(@ng-click,'aplicar') or contains(@ng-click,'Aplicar')]",
+        "//input[@type='button' and contains(@value,'Aplicar')]",
+        "//a[contains(.,'Aplicar') and not(contains(.,'Limpar'))]",
+    ):
+        try:
+            for btn in driver.find_elements(By.XPATH, xp):
+                if btn.is_displayed() and btn.is_enabled() and 'limpar' not in (btn.text or '').lower():
+                    _click_seguro(driver, btn)
+                    time.sleep(2.5)
+                    return True
+        except Exception:
+            pass
+    return False
+
+
+def aplicar_filtro_somente_dezenas(
+    driver,
+    cfg: FiltroLotericaConfig,
+    log_fn: LogFn = None,
+) -> bool:
+    """Aplica só qtd. de dezenas no site (sem lotérica) — varredura por estado/páginas."""
+    if not cfg or not cfg.qtd_dezenas:
+        _log('  [FILTRO] Modo qualquer lotérica — sem alterar filtros no site.', log_fn)
+        return True
+    try:
+        driver.execute_script('window.scrollTo(0, 0);')
+        time.sleep(0.4)
+        _dismiss_overlays(driver)
+        _expandir_painel_filtros(driver)
+        _scroll_para_filtros(driver)
+        if _selecionar_qtd_dezenas(driver, cfg.qtd_dezenas, log_fn):
+            if _clicar_aplicar(driver):
+                _aguardar_lista_apos_aplicar(driver)
+            _log(f'  [FILTRO] Aplicado: {cfg.qtd_dezenas} dezenas (qualquer lotérica)', log_fn)
+        else:
+            _log('  [FILTRO] Dezenas no site não alteradas — use filtro manual no Edge.', log_fn)
+        return True
+    except Exception as exc:
+        _log(f'  [FILTRO] Erro (somente dezenas): {exc}', log_fn)
+        return True
+
+
+def aplicar_filtro_loterica(
+    driver,
+    cfg: FiltroLotericaConfig,
+    log_fn: LogFn = None,
+    somente_loterica: bool = False,
+) -> bool:
+    """
+    Lotérica + Aplicar. Com somente_loterica=True: nao mexe em qtd de dezenas.
+    Se o campo já tiver a lotérica certa, NÃO redigita.
+    """
+    if cfg and cfg.qualquer_loterica:
+        if somente_loterica:
+            return True
+        return aplicar_filtro_somente_dezenas(driver, cfg, log_fn)
+    if not cfg or not cfg.termo:
+        return True
+    try:
+        driver.execute_script('window.scrollTo(0, 0);')
+        time.sleep(0.4)
+        _dismiss_overlays(driver)
+        _expandir_painel_filtros(driver)
+        _scroll_para_filtros(driver)
+
+        campo = None
+        for _ in range(24):
+            campo = _find_input_loterica(driver)
+            if campo:
+                break
+            time.sleep(0.5)
+
+        if not campo:
+            if not sessao_caixa_ativa(driver):
+                _log('  [FILTRO] Sessao expirada — campo de loterica sumiu.', log_fn)
+            else:
+                _log('  [FILTRO] Campo de lotérica não encontrado.', log_fn)
+            return False
+
+        valor_atual = (campo.get_attribute('value') or '').strip()
+        if _filtro_loterica_no_campo(valor_atual, cfg):
+            _log(f'  [FILTRO] Lotérica já no campo — sem redigitar ({valor_atual[:55]})', log_fn)
+        else:
+            busca = _texto_busca_autocomplete(cfg)
+            _log(f'  [FILTRO] Digitando: {busca}', log_fn)
+            _digitar_busca_loterica(campo, busca)
+            time.sleep(1.5)
+            if not _selecionar_autocomplete(driver, cfg, log_fn):
+                try:
+                    campo.send_keys(Keys.ARROW_DOWN)
+                    time.sleep(0.3)
+                    campo.send_keys(Keys.ENTER)
+                    time.sleep(0.5)
+                except Exception:
+                    pass
+
+        if not somente_loterica and cfg.qtd_dezenas:
+            _selecionar_qtd_dezenas(driver, cfg.qtd_dezenas, log_fn)
+
+        loteria_ok = _filtro_loterica_no_campo(valor_atual, cfg) or _filtro_loterica_no_campo(
+            (campo.get_attribute('value') or '').strip(), cfg,
+        )
+        if not _clicar_aplicar(driver):
+            if somente_loterica and loteria_ok:
+                _log('  [FILTRO] Aplicar ausente — lotérica já no campo, continuando.', log_fn)
+            else:
+                _log('  [FILTRO] Botão Aplicar não encontrado.', log_fn)
+                return False
+        else:
+            _aguardar_lista_apos_aplicar(driver)
+
+        if somente_loterica:
+            _log(f'  [FILTRO] Lotérica aplicada: {cfg.termo}', log_fn)
+        else:
+            dez = f' | {cfg.qtd_dezenas} dez.' if cfg.qtd_dezenas else ''
+            _log(f'  [FILTRO] Aplicado: {cfg.termo}{dez}', log_fn)
+        return True
+    except Exception as exc:
+        _log(f'  [FILTRO] Erro: {exc}', log_fn)
+        return False
+
+
+def preparar_pagina_loterica(
+    driver,
+    cfg: FiltroLotericaConfig,
+    pagina: int,
+    log_fn: LogFn = None,
+    modo_web: bool = False,
+    estado_check: Optional[dict] = None,
+) -> bool:
+    """
+    Página 2+: reaplica só o nome da lotérica + Aplicar, depois navega até a página.
+    Reaplicar sempre volta à página 1 — depois avança com Seguinte.
+    """
+    if pagina < 1:
+        pagina = 1
+
+    _log(f'\n  >>> Preparando página {pagina} (lotérica + navegação)...', log_fn)
+
+    if not garantir_sessao_caixa(driver, pagina, log_fn, modo_web, estado_check):
+        return False
+
+    if not aplicar_filtro_loterica(driver, cfg, log_fn, somente_loterica=True):
+        if not sessao_caixa_ativa(driver):
+            if garantir_sessao_caixa(driver, pagina, log_fn, modo_web, estado_check):
+                if not aplicar_filtro_loterica(driver, cfg, log_fn, somente_loterica=True):
+                    return False
+            else:
+                return False
+        else:
+            return False
+
+    time.sleep(1.0)
+    driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
+    time.sleep(0.4)
+    driver.execute_script('window.scrollTo(0, 0);')
+    time.sleep(0.5)
+
+    for i in range(pagina - 1):
+        _scroll_para_paginacao(driver)
+        if not _ir_proxima_pagina_lista(driver, log_fn):
+            _log(f'  [FILTRO] Não foi possível avançar para página {pagina} (passo {i + 1}).', log_fn)
+            return pagina == 1
+        time.sleep(0.8)
+
+    _log(f'  [FILTRO] Página {pagina} pronta (lotérica {cfg.termo}).', log_fn)
+    return True
+
+
+def preparar_pagina_filtrada(
+    driver,
+    cfg: FiltroLotericaConfig,
+    pagina: int,
+    log_fn: LogFn = None,
+    modo_web: bool = False,
+    estado_check: Optional[dict] = None,
+) -> bool:
+    """
+    Garante filtro completo (lotérica + dezenas) NA página correta.
+    Reaplicar filtro sempre volta à página 1 — depois avança até a página desejada.
+    """
+    if pagina < 1:
+        pagina = 1
+
+    _log(f'\n  >>> Preparando página {pagina} (filtro + navegação)...', log_fn)
+
+    if not garantir_sessao_caixa(driver, pagina, log_fn, modo_web, estado_check):
+        return False
+
+    if not aplicar_filtro_loterica(driver, cfg, log_fn):
+        if not sessao_caixa_ativa(driver):
+            if garantir_sessao_caixa(driver, pagina, log_fn, modo_web, estado_check):
+                if not aplicar_filtro_loterica(driver, cfg, log_fn):
+                    return False
+            else:
+                return False
+        else:
+            return False
+
+    time.sleep(1.0)
+    driver.execute_script('window.scrollTo(0, document.body.scrollHeight);')
+    time.sleep(0.4)
+    driver.execute_script('window.scrollTo(0, 0);')
+    time.sleep(0.5)
+
+    for i in range(pagina - 1):
+        _scroll_para_paginacao(driver)
+        if not _ir_proxima_pagina_lista(driver, log_fn):
+            _log(f'  [FILTRO] Não foi possível avançar para página {pagina} (passo {i + 1}).', log_fn)
+            return pagina == 1
+        time.sleep(0.8)
+
+    _log(f'  [FILTRO] Página {pagina} pronta.', log_fn)
+    return True
+
+
+def preparar_extracao_pagina(
+    driver,
+    cfg: FiltroLotericaConfig,
+    pagina: int,
+    log_fn: LogFn = None,
+    modo_web: bool = False,
+    estado_check: Optional[dict] = None,
+    navegacao_manual: bool = False,
+) -> bool:
+    """
+    Prepara a página para extração.
+
+    Página 1: aplica filtro + Aplicar.
+    Página 2+ manual: NÃO clica — usuário já navegou.
+    Página 2+ auto: UM clique Seguinte (sem cascata).
+    """
+    if pagina <= 1:
+        return preparar_pagina_filtrada(driver, cfg, 1, log_fn, modo_web, estado_check)
+
+    if navegacao_manual:
+        _log(f'\n  >>> Página {pagina}: extração sem clique automático (você controla).', log_fn)
+        return True
+
+    _log(f'\n  >>> Página {pagina}: 1 clique Seguinte (automático)...', log_fn)
+
+    if not garantir_sessao_caixa(driver, pagina, log_fn, modo_web, estado_check):
+        return False
+
+    _scroll_para_paginacao(driver)
+    if _ir_proxima_pagina_lista(driver, log_fn):
+        _log(f'  [FILTRO] Página {pagina} pronta.', log_fn)
+        return True
+
+    _log(
+        f'  [FILTRO] Seguinte automático falhou na página {pagina}.\n'
+        f'  Use opção [2] Por Páginas — lá VOCÊ navega e o script só extrai.',
+        log_fn,
+    )
+    return False
+
+
+def reforcar_filtro_antes_da_pagina(
+    driver,
+    cfg: FiltroLotericaConfig,
+    pagina: int,
+    log_fn: LogFn = None,
+) -> bool:
+    return preparar_pagina_filtrada(driver, cfg, pagina, log_fn)
+
+
+def _texto_modalidade_casa(el_texto: str, mod: ModalidadeBolaoConfig) -> bool:
+    linhas = [normalizar_texto(l) for l in (el_texto or '').split('\n') if l.strip()]
+    blob = linhas[0] if linhas else normalizar_texto(el_texto)
+    if not blob:
+        return False
+
+    na_label = normalizar_texto(mod.label)
+
+    if mod.slug == 'quina':
+        return blob == 'quina' or (blob.startswith('quina') and 'sao joao' not in blob and 'são joão' not in (el_texto or '').lower())
+
+    if blob == na_label:
+        return True
+    if len(na_label.split()) >= 2 and na_label in blob:
+        return True
+    for kw in mod.keywords:
+        na = normalizar_texto(kw)
+        if na and (blob == na or (len(na.split()) >= 2 and na in blob)):
+            return True
+    return False
+
+
+def selecionar_modalidade_bolao(driver, mod: ModalidadeBolaoConfig, log_fn: LogFn = None) -> bool:
+    try:
+        driver.execute_script('window.scrollTo(0, 0);')
+        time.sleep(0.5)
+
+        # Cards horizontais "Modalidades" no topo da página de bolões
+        seletores = [
+            'div[class*="card"]',
+            'button[class*="card"]',
+            '[class*="modalidade"]',
+            '[role="tab"]',
+            'button',
+            'a',
+        ]
+
+        melhor = None
+        melhor_score = 0
+
+        for css in seletores:
+            try:
+                for el in driver.find_elements(By.CSS_SELECTOR, css):
+                    if not el.is_displayed():
+                        continue
+                    txt = (el.text or '').strip()
+                    if not txt or len(txt) > 120:
+                        continue
+                    if not _texto_modalidade_casa(txt, mod):
+                        continue
+                    score = len(normalizar_texto(mod.label))
+                    if score > melhor_score:
+                        melhor = el
+                        melhor_score = score
+            except Exception:
+                pass
+
+        if melhor:
+            driver.execute_script('arguments[0].scrollIntoView({block: "center", inline: "center"});', melhor)
+            time.sleep(0.4)
+            try:
+                melhor.click()
+            except Exception:
+                driver.execute_script('arguments[0].click();', melhor)
+            time.sleep(2.2)
+            _log(f'  [MODALIDADE] Selecionada: {mod.label}', log_fn)
+            return True
+
+        # Fallback XPath por label
+        for frag in [mod.label] + mod.keywords[:2]:
+            frag_esc = frag.replace("'", " ")
+            for xp in (
+                f"//*[contains(@class,'card')][contains(., '{frag_esc}')]",
+                f"//button[contains(., '{frag_esc}')]",
+            ):
+                try:
+                    for el in driver.find_elements(By.XPATH, xp):
+                        if el.is_displayed():
+                            driver.execute_script('arguments[0].scrollIntoView({block: "center"});', el)
+                            time.sleep(0.3)
+                            el.click()
+                            time.sleep(2.2)
+                            _log(f'  [MODALIDADE] Selecionada: {mod.label}', log_fn)
+                            return True
+                except Exception:
+                    pass
+
+        _log(f'  [MODALIDADE] Card não encontrado: {mod.label}', log_fn)
+        return False
+    except Exception as exc:
+        _log(f'  [MODALIDADE] Erro: {exc}', log_fn)
+        return False
+
+
+def _estado_no_texto(texto: str, estado) -> bool:
+    if not texto or not estado:
+        return False
+    t = normalizar_texto(texto)
+    sigla = estado.sigla.upper()
+    nome = normalizar_texto(estado.nome)
+    tokens = t.replace('-', ' ').replace('/', ' ').split()
+    if sigla.lower() in tokens:
+        return True
+    if nome and nome in t:
+        return True
+    if estado.sigla == 'SP' and 'sao paulo' in t:
+        return True
+    if str(estado.codigo_ibge) in tokens:
+        return True
+    return False
+
+
+def _diagnostico_selects_uf(driver) -> str:
+    """Resumo dos <select> (log quando falha UF)."""
+    try:
+        info = driver.execute_script("""
+            var out = [];
+            var sels = document.querySelectorAll('select');
+            for (var i = 0; i < Math.min(sels.length, 8); i++) {
+                var s = sels[i];
+                var vis = !!(s.offsetParent || (s.getClientRects && s.getClientRects().length));
+                var opts = [];
+                for (var j = 0; j < Math.min((s.options||[]).length, 3); j++) {
+                    opts.push(((s.options[j].text||'')+'='+(s.options[j].value||'')).trim().slice(0,40));
+                }
+                out.push({
+                    i: i, vis: vis, n: (s.options||[]).length,
+                    id: s.id||'', name: s.name||'',
+                    model: s.getAttribute('ng-model')||'',
+                    sample: opts
+                });
+            }
+            return {total: sels.length, items: out};
+        """) or {}
+        total = info.get('total', 0)
+        parts = [f'selects={total}']
+        for it in info.get('items') or []:
+            parts.append(
+                f"#{it.get('i')} vis={it.get('vis')} n={it.get('n')} "
+                f"model={it.get('model') or it.get('id') or it.get('name')} "
+                f"ex={it.get('sample')}"
+            )
+        return ' | '.join(parts)[:500]
+    except Exception as exc:
+        return f'diag-erro:{exc}'
+
+
+def _ler_estado_selecionado_ui(driver) -> str:
+    """Tenta ler o texto/valor do filtro de estado atualmente selecionado."""
+    try:
+        return (driver.execute_script("""
+            function visivel(el) {
+                if (!el) return false;
+                try { return !!(el.offsetParent || el.getClientRects().length); } catch(e) { return false; }
+            }
+            var labs = document.querySelectorAll('label, span, div, strong');
+            for (var i = 0; i < labs.length; i++) {
+                var t = (labs[i].textContent || '').trim().toUpperCase();
+                if (t !== 'ESTADO' && t !== 'UF' && t.indexOf('ESTADO') !== 0 && t !== 'UNIDADE FEDERATIVA') continue;
+                var root = labs[i].parentElement || labs[i];
+                var sel = root.querySelector('select');
+                if (!sel) {
+                    var nxt = labs[i].nextElementSibling;
+                    for (var k = 0; k < 4 && nxt && !sel; k++) {
+                        if (nxt.tagName === 'SELECT') sel = nxt;
+                        else sel = nxt.querySelector && nxt.querySelector('select');
+                        nxt = nxt.nextElementSibling;
+                    }
+                }
+                if (sel && sel.options && sel.selectedIndex >= 0) {
+                    var opt = sel.options[sel.selectedIndex];
+                    return ((opt && opt.text) || sel.value || '').trim();
+                }
+            }
+            var sels = document.querySelectorAll('select');
+            for (var s = 0; s < sels.length; s++) {
+                var sel2 = sels[s];
+                var ng = ((sel2.getAttribute('ng-model')||'')+' '+(sel2.id||'')+' '+(sel2.name||'')).toLowerCase();
+                if (ng.indexOf('estado') < 0 && ng.indexOf('uf') < 0 && ng.indexOf('iduf') < 0) continue;
+                if (sel2.options && sel2.selectedIndex >= 0) {
+                    var o2 = sel2.options[sel2.selectedIndex];
+                    return ((o2 && o2.text) || sel2.value || '').trim();
+                }
+            }
+            return '';
+        """) or '').strip()
+    except Exception:
+        return ''
+
+
+def selecionar_estado_bolao(driver, estado, log_fn: LogFn = None) -> bool:
+    """
+    Seleciona UF no filtro do site.
+    Angular muitas vezes esconde o <select> — NÃO exigir is_displayed().
+    """
+    if not estado:
+        return False
+    try:
+        _dismiss_overlays(driver)
+        _expandir_painel_filtros(driver)
+        _scroll_para_filtros(driver)
+        time.sleep(0.4)
+
+        payload = {
+            'nome': estado.nome,
+            'sigla': estado.sigla,
+            'codigo_ibge': int(estado.codigo_ibge),
+        }
+
+        ok_js = driver.execute_script("""
+            var estado = arguments[0];
+            function norm(t) {
+                return (t || '').toUpperCase().normalize('NFD')
+                    .replace(/[\\u0300-\\u036f]/g,'').replace(/\\s+/g,' ').trim();
+            }
+            function hitOpt(txt, val) {
+                var t = norm(txt);
+                var v = String(val || '');
+                var nome = norm(estado.nome);
+                var sigla = norm(estado.sigla);
+                var ibge = String(estado.codigo_ibge);
+                if (v === ibge || v === sigla) return true;
+                if (sigla && ((' '+t+' ').indexOf(' '+sigla+' ') >= 0
+                    || t.indexOf(sigla+'-') === 0 || t.indexOf(sigla+' -') === 0))
+                    return true;
+                if (nome && t.indexOf(nome) >= 0) return true;
+                if (sigla === 'SP' && t.indexOf('SAO PAULO') >= 0) return true;
+                return false;
+            }
+            function trig(sel) {
+                sel.dispatchEvent(new Event('input', {bubbles:true}));
+                sel.dispatchEvent(new Event('change', {bubbles:true}));
+                if (typeof angular !== 'undefined') {
+                    try { angular.element(sel).triggerHandler('change'); } catch(e) {}
+                    try { angular.element(sel).triggerHandler('input'); } catch(e) {}
+                }
+            }
+
+            var sels = document.querySelectorAll('select');
+            var ranked = [];
+            for (var i = 0; i < sels.length; i++) {
+                var sel = sels[i];
+                if (!sel.options || sel.options.length < 8) continue;
+                var meta = ((sel.getAttribute('ng-model')||'')+' '+(sel.id||'')+' '+(sel.name||'')
+                    +' '+(sel.getAttribute('aria-label')||'')).toLowerCase();
+                var score = sel.options.length;
+                if (meta.indexOf('estado')>=0 || meta.indexOf('iduf')>=0 || meta.indexOf('uf')>=0) score += 100;
+                ranked.push({sel: sel, score: score});
+            }
+            ranked.sort(function(a,b){ return b.score - a.score; });
+            for (var r = 0; r < ranked.length; r++) {
+                var sel2 = ranked[r].sel;
+                for (var j = 0; j < sel2.options.length; j++) {
+                    var opt = sel2.options[j];
+                    if (!hitOpt(opt.text, opt.value)) continue;
+                    sel2.selectedIndex = j;
+                    sel2.value = opt.value;
+                    trig(sel2);
+                    return 'select:' + ((opt.text||opt.value||'').trim());
+                }
+            }
+
+            var labs = document.querySelectorAll('label, span, div, button, a, strong');
+            for (var L = 0; L < labs.length; L++) {
+                var lab = labs[L];
+                var lt = norm((lab.textContent || '').trim());
+                if (!(lt === 'ESTADO' || lt === 'UF' || lt.indexOf('ESTADO') === 0 || lt === 'UNIDADE FEDERATIVA'))
+                    continue;
+                try { lab.click(); } catch(e) {}
+                var root = lab.closest('div,td,li,fieldset,form') || lab.parentElement;
+                if (!root) continue;
+                var cand = root.querySelectorAll(
+                    'select, option, li, a, button, div[role="option"], md-option, .ui-select-choices-row'
+                );
+                for (var c = 0; c < cand.length; c++) {
+                    var el = cand[c];
+                    var tx = (el.textContent || '').trim();
+                    var vl = el.getAttribute('value') || el.getAttribute('data-value') || '';
+                    if (!hitOpt(tx, vl)) continue;
+                    if (el.tagName === 'OPTION') {
+                        var ps = el.parentElement;
+                        if (ps && ps.tagName === 'SELECT') {
+                            ps.value = el.value;
+                            trig(ps);
+                            return 'option-parent:' + tx;
+                        }
+                    }
+                    try { el.click(); return 'click:' + tx.slice(0, 40); } catch(e) {}
+                }
+            }
+
+            if (typeof angular === 'undefined') return null;
+            function setUF(obj, pathHint) {
+                if (!obj || typeof obj !== 'object') return null;
+                var chaves = ['idUF','codigoUF','uf','estado','idEstado','codigoEstado','sgUf','siglaUF','codigoIbge'];
+                for (var i = 0; i < chaves.length; i++) {
+                    var k = chaves[i];
+                    if (obj[k] === undefined) continue;
+                    try {
+                        var kl = k.toLowerCase();
+                        if (kl === 'uf' || kl === 'sguf' || kl === 'siglauf' || kl.indexOf('sigla') >= 0)
+                            obj[k] = estado.sigla;
+                        else if (typeof obj[k] === 'object' && obj[k] !== null) {
+                            obj[k].sigla = estado.sigla;
+                            obj[k].codigo = estado.codigo_ibge;
+                            obj[k].id = estado.codigo_ibge;
+                            obj[k].nome = estado.nome;
+                        } else
+                            obj[k] = estado.codigo_ibge;
+                        return (pathHint || '') + k;
+                    } catch(e) {}
+                }
+                return null;
+            }
+            var sc = angular.element(document.body).scope();
+            for (var d = 0; d < 25 && sc; d++) {
+                var hit = setUF(sc, 'scope.');
+                if (!hit && sc.filtro) hit = setUF(sc.filtro, 'filtro.');
+                if (!hit && sc.vm && sc.vm.filtro) hit = setUF(sc.vm.filtro, 'vm.filtro.');
+                if (!hit && sc.$ctrl && sc.$ctrl.filtro) hit = setUF(sc.$ctrl.filtro, '$ctrl.filtro.');
+                if (hit) {
+                    try { if (sc.$applyAsync) sc.$applyAsync(); else if (sc.$apply) sc.$apply(); } catch(e) {}
+                    return 'angular-' + hit;
+                }
+                sc = sc.$parent;
+            }
+            return null;
+        """, payload)
+
+        if ok_js:
+            time.sleep(0.7)
+            _log(f'  [ESTADO] Aplicado ({ok_js}): {estado.nome} ({estado.sigla})', log_fn)
+            return True
+
+        alvos_txt = [
+            estado.nome,
+            estado.nome.replace('SAO', 'SÃO'),
+            f'{estado.sigla} -',
+            f'{estado.sigla} –',
+            estado.sigla,
+            str(estado.codigo_ibge),
+        ]
+        if estado.sigla == 'SP':
+            alvos_txt.extend(['SAO PAULO', 'SÃO PAULO', 'São Paulo'])
+
+        for sel_el in driver.find_elements(By.TAG_NAME, 'select'):
+            try:
+                dropdown = Select(sel_el)
+                if len(dropdown.options) < 8:
+                    continue
+                for opt in dropdown.options:
+                    txt = (opt.text or '').strip()
+                    val = (opt.get_attribute('value') or '').strip()
+                    if not txt and not val:
+                        continue
+                    hit = (
+                        _estado_no_texto(txt, estado)
+                        or str(estado.codigo_ibge) == val
+                        or estado.sigla == val
+                    )
+                    if not hit:
+                        tu = (txt or '').upper()
+                        for alvo in alvos_txt:
+                            if alvo and alvo.upper() in tu:
+                                hit = True
+                                break
+                    if not hit:
+                        continue
+                    try:
+                        if val:
+                            dropdown.select_by_value(val)
+                        else:
+                            dropdown.select_by_visible_text(txt)
+                    except Exception:
+                        driver.execute_script(
+                            """
+                            var sel = arguments[0], val = arguments[1];
+                            sel.value = val;
+                            sel.dispatchEvent(new Event('input', {bubbles:true}));
+                            sel.dispatchEvent(new Event('change', {bubbles:true}));
+                            if (typeof angular !== 'undefined') {
+                                try { angular.element(sel).triggerHandler('change'); } catch(e) {}
+                            }
+                            """,
+                            sel_el,
+                            val,
+                        )
+                    time.sleep(0.5)
+                    _log(f'  [ESTADO] Selecionado (Selenium): {txt or val} ({estado.sigla})', log_fn)
+                    return True
+            except Exception:
+                continue
+
+        diag = _diagnostico_selects_uf(driver)
+        _log(
+            f'  [ESTADO] Não encontrado no site: {estado.nome} ({estado.sigla}). '
+            f'Diag: {diag}',
+            log_fn,
+        )
+        return False
+    except Exception as exc:
+        _log(f'  [ESTADO] Erro: {exc}', log_fn)
+        return False
+
+
+def aplicar_filtro_varredura_automatica(
+    driver,
+    cfg: FiltroLotericaConfig,
+    modalidade_cfg: ModalidadeBolaoConfig,
+    estado,
+    log_fn: LogFn = None,
+) -> bool:
+    """
+    Modo [1]/[C] por UF: modalidade + ESTADO + Aplicar → página 1.
+    Só retorna True se o estado foi selecionado (evita rebaixar SP em loop).
+    """
+    _log(f'\n  [VARREDURA] Preparando {estado.sigla} — {modalidade_cfg.label} | {cfg.qtd_dezenas} dez.', log_fn)
+    selecionar_modalidade_bolao(driver, modalidade_cfg, log_fn)
+    time.sleep(1.0)
+    _dismiss_overlays(driver)
+    _expandir_painel_filtros(driver)
+    _scroll_para_filtros(driver)
+
+    try:
+        el = _find_input_loterica(driver)
+        if el and (el.get_attribute('value') or '').strip():
+            _preencher_input_angular(driver, el, '')
+            time.sleep(0.3)
+    except Exception:
+        pass
+
+    ok_estado = selecionar_estado_bolao(driver, estado, log_fn)
+    if not ok_estado:
+        time.sleep(0.8)
+        _expandir_painel_filtros(driver)
+        _scroll_para_filtros(driver)
+        try:
+            driver.execute_script('window.scrollTo(0, 420);')
+            time.sleep(0.3)
+        except Exception:
+            pass
+        ok_estado = selecionar_estado_bolao(driver, estado, log_fn)
+    if not ok_estado:
+        _log(
+            f'  [VARREDURA] Estado {estado.sigla} NÃO selecionado — '
+            'não vou Aplicar (evita baixar de novo a lista errada).',
+            log_fn,
+        )
+        _log(
+            '  [VARREDURA] Dica: no Edge abra Filtrar, escolha o Estado, Aplicar, '
+            'e rode [C] Continuar — ou atualize a página e tente de novo.',
+            log_fn,
+        )
+        return False
+
+    time.sleep(0.4)
+    if cfg.qtd_dezenas:
+        _selecionar_qtd_dezenas(driver, cfg.qtd_dezenas, log_fn)
+
+    if not _clicar_aplicar(driver):
+        _log('  [VARREDURA] Botão Aplicar não encontrado — confira filtros no Edge.', log_fn)
+        return False
+
+    _aguardar_lista_apos_aplicar(driver)
+    lido = _ler_estado_selecionado_ui(driver)
+    if lido and not _estado_no_texto(lido, estado):
+        _log(
+            f'  [VARREDURA] Após Aplicar, UI mostra "{lido}" — esperado {estado.sigla}.',
+            log_fn,
+        )
+        return False
+
+    _log(f'  [VARREDURA] Filtro aplicado — {estado.sigla} | pagina 1', log_fn)
+    return True
+
+
+def aplicar_filtros_completos(
+    driver,
+    loterica_cfg: FiltroLotericaConfig,
+    modalidade_cfg: ModalidadeBolaoConfig,
+    log_fn: LogFn = None,
+) -> bool:
+    """Legado — preferir modalidade manual + aplicar_filtro_loterica."""
+    ok_mod = selecionar_modalidade_bolao(driver, modalidade_cfg, log_fn)
+    time.sleep(0.5)
+    _dismiss_overlays(driver)
+    _scroll_para_filtros(driver)
+    ok_lot = aplicar_filtro_loterica(driver, loterica_cfg, log_fn)
+    return ok_mod and ok_lot
+
+
+def tem_proxima_pagina(driver) -> bool:
+    try:
+        _scroll_para_paginacao(driver)
+    except Exception:
+        pass
+    return _tem_proxima_pagina(driver)
+
+
+def ultima_pagina_detectada(driver) -> bool:
+    """
+    Indício fraco de fim (Seguinte ausente após waits).
+
+    NÃO prova fim da modalidade: na virada SP→MG o botão pode parecer
+    desabilitado e ainda avançar. O loop deve tentar avançar; só encerra
+    se _ir_proxima_pagina_lista falhar de verdade (sem mudança de lista).
+    """
+    for espera in (0, 1.2, 2.0):
+        if espera:
+            time.sleep(espera)
+        _scroll_para_paginacao(driver)
+        estado = _estado_botao_seguinte(driver)
+        if estado == 'habilitado':
+            return False
+        # 'desabilitado' → ainda pode haver próxima página (não é fim)
+        if estado == 'desabilitado':
+            return False
+    return eh_ultima_pagina(driver)
+
+
+def ir_para_pagina_lista(driver, destino: int, log_fn: LogFn = None) -> bool:
+    """Vai para a página destino (Angular direto; Seguinte só para 1 ou 2 páginas)."""
+    if destino <= 1:
+        return True
+    atual = _ler_pagina_atual_ui(driver)
+    if atual == destino:
+        return True
+    gap = destino - int(atual or 1)
+    if gap > 2:
+        _log(
+            f'  [PAGINA] Distância {atual or 1} → {destino}. Salto Angular, sem clicar Seguinte uma a uma.',
+            log_fn,
+        )
+        if _angular_ir_para_pagina(driver, destino, log_fn):
+            time.sleep(2.0)
+            _aguardar_lista_apos_aplicar(driver, timeout=10)
+            if (_ler_pagina_atual_ui(driver) or 0) >= destino:
+                return True
+        _log(
+            f'  [PAGINA] Salto não confirmou a pág. {destino}. Não percorre a lista inteira.',
+            log_fn,
+        )
+        return False
+    if atual and atual < destino:
+        if _ir_para_pagina(driver, destino, log_fn):
+            return True
+    if _angular_ir_para_pagina(driver, destino, log_fn):
+        time.sleep(2.0)
+        _aguardar_lista_apos_aplicar(driver, timeout=10)
+        return (_ler_pagina_atual_ui(driver) or 0) >= destino
+    return _clicar_pagina_numero(driver, destino, log_fn)
+
+
+<<<<<<< HEAD
+def ir_direto_para_pagina_lista(driver, destino: int, log_fn: LogFn = None) -> bool:
+    """
+    Salto DIRETO para a página destino (retomada/checkpoint).
+    Prioridade: Angular → clique no número.
+    NÃO usa Seguinte passo a passo (isso demora demais e confunde a retomada).
+    Só retorna True se a UI confirmar a página destino.
+    """
+    if destino <= 1:
+        return True
+    atual = _ler_pagina_atual_ui(driver) or 1
+    if atual == destino:
+        _log(f'  [PAGINA] Já na página {destino}.', log_fn)
+        return True
+
+    _log(f'  [PAGINA] Salto direto {atual} → {destino}...', log_fn)
+
+    for tentativa in range(1, 4):
+        if tentativa > 1:
+            _log(f'  [PAGINA] Retentativa salto {tentativa}/3...', log_fn)
+        if _angular_ir_para_pagina(driver, destino, log_fn):
+            time.sleep(2.2)
+            _aguardar_lista_apos_aplicar(driver, timeout=14)
+        elif _clicar_pagina_numero(driver, destino, log_fn):
+            time.sleep(2.2)
+            _aguardar_lista_apos_aplicar(driver, timeout=14)
+        else:
+            # tenta Angular de novo mesmo se retornou False antes
+            _angular_ir_para_pagina(driver, destino, log_fn)
+            time.sleep(2.2)
+            _aguardar_lista_apos_aplicar(driver, timeout=14)
+
+        depois = _ler_pagina_atual_ui(driver)
+        if depois == destino:
+            _log(f'  [PAGINA] OK — confirmado na página {destino}.', log_fn)
+            return True
+        _log(f'  [PAGINA] Ainda em {depois or "?"} (queríamos {destino}).', log_fn)
+
+    _log(
+        f'  [PAGINA] Salto Angular falhou — avançando com Seguinte até a pág. {destino} '
+        f'(mesmo critério do [1]).',
+        log_fn,
+    )
+    if _ir_para_pagina(driver, destino, log_fn):
+        depois = _ler_pagina_atual_ui(driver)
+        if depois == destino or (depois and int(depois) >= destino):
+            _log(f'  [PAGINA] OK — chegou na {depois} via Seguinte.', log_fn)
+            return True
+
+    _log(f'  [PAGINA] FALHA — não confirmou página {destino}.', log_fn)
+    return False
+
+
+=======
+>>>>>>> 9b31c3cfb91ce8f2a5d6b33bcd31f23daf18a257
+def ir_proxima_pagina_lista(
+    driver, log_fn: LogFn = None, encerrar_no_wrap: bool = True,
+) -> bool:
+    """Avança uma página clicando em Seguinte (Caixa)."""
+    return _ir_proxima_pagina_lista(
+        driver, log_fn, encerrar_no_wrap=encerrar_no_wrap,
+    )
+
+
+def avancar_para_pagina_filtrada(
+    driver,
+    cfg: FiltroLotericaConfig,
+    pagina_destino: int,
+    log_fn: LogFn = None,
+    modo_web: bool = False,
+    estado_check: Optional[dict] = None,
+    navegacao_manual: bool = False,
+) -> bool:
+    """Chamado ao TERMINAR uma página — avança para pagina_destino."""
+    _log(f'\n  >>> Pagina concluida — indo para pagina {pagina_destino}...', log_fn)
+    return preparar_extracao_pagina(
+        driver, cfg, pagina_destino, log_fn, modo_web, estado_check, navegacao_manual,
+    )
+
+
+def reforcar_filtros_antes_da_pagina(
+    driver,
+    loterica_cfg: FiltroLotericaConfig,
+    modalidade_cfg: ModalidadeBolaoConfig,
+    pagina: int,
+    log_fn: LogFn = None,
+) -> bool:
+    """Legado — use preparar_pagina_filtrada (só lotérica)."""
+    return preparar_pagina_filtrada(driver, loterica_cfg, pagina, log_fn)
